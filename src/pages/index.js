@@ -50,7 +50,8 @@ class IndexPage extends PureComponent {
               cursor={{
                 show: true,
                 blink: true,
-                element: '▍',
+                // element: '▍',
+                element: '_',
                 hideWhenDone: false,
               }}
             >

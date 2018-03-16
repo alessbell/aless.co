@@ -1,7 +1,9 @@
 import React, { PureComponent } from 'react'
 import Link from 'gatsby-link'
 import { Shaders, Node, GLSL } from "gl-react";
+import 'react-typist/dist/Typist.css';
 // import { Surface } from "gl-react-dom"; // for React DOM
+import Typist from 'react-typist';
 import HelloBlue from '../components/animated';
 import timeloop from '../components/HOC/timeloop';
 import styled from 'emotion/react';
@@ -38,9 +40,22 @@ class IndexPage extends PureComponent {
               fontSize: '2.5rem',
               lineHeight: '4rem',
               textAlign: 'center',
+              minHeight: '16rem',
+              minWidth: '28rem',
             }}
           >
-            alessia bellisario is a programmer working on the web in new york city
+            <Typist
+              avgTypingDelay={80}
+              stdTypingDelay={50}
+              cursor={{
+                show: true,
+                blink: true,
+                element: '▍',
+                hideWhenDone: false,
+              }}
+            >
+              alessia bellisario is a programmer working on the web in new york city
+            </Typist>
           </p>
           <div style={{ textAlign: 'center' }}>
             <Linx href="mailto:bellisario.alessia@gmail.com">email</Linx>

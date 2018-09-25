@@ -28,17 +28,12 @@ const BlinkyText = styled.p`
   text-align: center;
   font-size: ${props => `${props.fontSize}rem`};
   min-height: ${props => `${props.minHeight}rem`};
-  min-width: ${props => `${props.minWidth}rem`};
+  margin-top: ${props => `${props.marginTop}rem`};
+  width: ${props => `${props.width}rem`};
 `;
 const Container = styled.main`
   position: relative;
   margin: auto;
 `;
 
-export {
-  BlinkyText,
-  CenteredText,
-  Container,
-  Linx,
-  Wrapper,
-};
+export { BlinkyText, CenteredText, Container, Linx, Wrapper };

@@ -10,11 +10,12 @@ const shaders = Shaders.create({
     uniform float blue;
     void main() {
       gl_FragColor = vec4(uv.x, uv.y, blue, 1.0);
-    }`
-  }
+    }`,
+  },
 });
 
 export class HelloBlue extends Component {
-  render = () =>
-    <Node shader={shaders.helloBlue} uniforms={{ blue: this.props.blue }} />;
+  render = () => (
+    <Node shader={shaders.helloBlue} uniforms={{ blue: this.props.blue }} />
+  );
 }

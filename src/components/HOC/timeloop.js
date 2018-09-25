@@ -1,7 +1,7 @@
 //@flow
-import React, { PureComponent } from "react";
-import raf from "raf";
-import hoistNonReactStatics from "hoist-non-react-statics";
+import React, { PureComponent } from 'react';
+import raf from 'raf';
+import hoistNonReactStatics from 'hoist-non-react-statics';
 
 // NB this is only an utility for the examples
 export default (
@@ -9,7 +9,7 @@ export default (
   { refreshRate = 60 }: { refreshRate?: number } = {}
 ): ReactClass<*> => {
   class TL extends PureComponent {
-    static displayName = `timeLoop(${C.displayName||C.name||""})`;
+    static displayName = `timeLoop(${C.displayName || C.name || ''})`;
     state: { time: number };
     state = {
       time: 0,
@@ -37,10 +37,7 @@ export default (
       raf.cancel(this._r);
     }
     render() {
-      return <C
-        {...this.props}
-        {...this.state}
-      />;
+      return <C {...this.props} {...this.state} />;
     }
   }
 

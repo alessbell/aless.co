@@ -3,7 +3,13 @@ import 'react-typist/dist/Typist.css';
 import Typist from 'react-typist';
 import Layout from '../components/layout';
 import HelloBlue from '../components/animated';
-import { Linx, CenteredText, Container, Wrapper, BlinkyText } from '../components/styles';
+import {
+  Linx,
+  CenteredText,
+  Container,
+  Wrapper,
+  BlinkyText,
+} from '../components/styles';
 
 let Surface;
 const SIZES = {
@@ -20,8 +26,8 @@ const SIZES = {
     textMinHeight: 25,
     textMinWidth: 15,
     fontSize: 2.5,
-  }
-}
+  },
+};
 
 class IndexPage extends Component {
   constructor(props) {
@@ -45,11 +51,12 @@ class IndexPage extends Component {
       screenSize: window.innerWidth > 515 ? 'LARGE' : 'SMALL',
     });
 
-  renderBlinkyText = () =>
+  renderBlinkyText = () => (
     <BlinkyText
+      width={SIZES[this.state.screenSize].textMinWidth}
       minHeight={SIZES[this.state.screenSize].textMinHeight}
-      minWidth={SIZES[this.state.screenSize].textMinWidth}
       fontSize={SIZES[this.state.screenSize].fontSize}
+      marginTop={-0.4}
     >
       <Typist
         avgTypingDelay={100}
@@ -64,38 +71,48 @@ class IndexPage extends Component {
         alessia bellisario is a programmer working on the web in new york city
       </Typist>
     </BlinkyText>
+  );
 
-  renderLinks = () =>
+  renderLinks = () => (
     <CenteredText>
       <Linx href="mailto:bellisario.alessia@gmail.com">email</Linx>
-      <Linx href="https://twitter.com/alessbell" target="_blank" rel="noopener">twitter</Linx>
-      <Linx href="https://instagram.com/alessbell" target="_blank" rel="noopener">instagram</Linx>
-      <Linx href="https://github.com/alessbell" target="_blank" rel="noopener">github</Linx>
-    </CenteredText>;
+      <Linx href="https://twitter.com/alessbell" target="_blank" rel="noopener">
+        twitter
+      </Linx>
+      <Linx
+        href="https://instagram.com/alessbell"
+        target="_blank"
+        rel="noopener"
+      >
+        instagram
+      </Linx>
+      <Linx href="https://github.com/alessbell" target="_blank" rel="noopener">
+        github
+      </Linx>
+    </CenteredText>
+  );
 
   render() {
     if (this.state.screenSize) {
       const { screenSize } = this.state;
       return (
         <Layout>
-          <Wrapper
-            maxWidth={SIZES[screenSize].surfaceWidth}
-          >
+          <Wrapper maxWidth={SIZES[screenSize].surfaceWidth}>
             <Container>
               {this.renderBlinkyText()}
               {this.renderLinks()}
-
-              <Surface
-                width={SIZES[screenSize].surfaceWidth}
-                height={SIZES[screenSize].surfaceHeight}
-                style={{ position: 'absolute', top: 0 }}
-              >
-                <HelloBlue />
-              </Surface>
+              <div style={{ position: 'absolute', top: 0 }}>
+                <Surface
+                  width={SIZES[screenSize].surfaceWidth}
+                  height={SIZES[screenSize].surfaceHeight}
+                >
+                  <HelloBlue />
+                </Surface>
+              </div>
             </Container>
           </Wrapper>
         </Layout>
-      )
+      );
     } else {
       return null;
     }

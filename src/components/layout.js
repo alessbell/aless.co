@@ -1,9 +1,9 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
+import React from 'react';
+import PropTypes from 'prop-types';
+import Helmet from 'react-helmet';
 
-import '../layouts/font-face.css'
-import '../layouts/index.css'
+import '../layouts/font-face.css';
+import '../layouts/index.css';
 
 const TemplateWrapper = ({ children }) => (
   <div>
@@ -12,8 +12,9 @@ const TemplateWrapper = ({ children }) => (
       meta={[
         {
           name: 'description',
-          content: 'alessia bellisario is a programmer working on the web in new york city'
-        }
+          content:
+            'alessia bellisario is a programmer working on the web in new york city',
+        },
       ]}
     >
       <html lang="en" />
@@ -24,10 +25,10 @@ const TemplateWrapper = ({ children }) => (
     <div id="right" />
     {children}
   </div>
-)
+);
 
 TemplateWrapper.propTypes = {
   children: PropTypes.object,
-}
+};
 
-export default TemplateWrapper
+export default TemplateWrapper;

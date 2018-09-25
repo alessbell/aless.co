@@ -14,18 +14,20 @@ import {
 let Surface;
 const SIZES = {
   LARGE: {
-    surfaceWidth: 500,
-    surfaceHeight: 280,
+    surfaceWidth: 447,
+    surfaceHeight: 240,
     textMinHeight: 16,
-    textMinWidth: 28,
+    textMinWidth: '28rem',
     fontSize: 2.5,
+    marginTop: -0.4,
   },
   SMALL: {
-    surfaceWidth: 410,
-    surfaceHeight: 440,
+    surfaceWidth: 370,
+    surfaceHeight: 400,
     textMinHeight: 25,
-    textMinWidth: 15,
+    textMinWidth: '100%',
     fontSize: 2.5,
+    marginTop: 0,
   },
 };
 
@@ -56,7 +58,7 @@ class IndexPage extends Component {
       width={SIZES[this.state.screenSize].textMinWidth}
       minHeight={SIZES[this.state.screenSize].textMinHeight}
       fontSize={SIZES[this.state.screenSize].fontSize}
-      marginTop={-0.4}
+      marginTop={SIZES[this.state.screenSize].marginTop}
     >
       <Typist
         avgTypingDelay={100}

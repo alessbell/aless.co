@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
+import { LeftBar, RightBar, TopBar, BottomBar } from './styles';
 
-import '../layouts/font-face.css';
-import '../layouts/index.css';
+import '../css/font-face.css';
 
 const TemplateWrapper = ({ children }) => (
   <div>
@@ -19,10 +19,10 @@ const TemplateWrapper = ({ children }) => (
     >
       <html lang="en" />
     </Helmet>
-    <div id="top" />
-    <div id="bottom" />
-    <div id="left" />
-    <div id="right" />
+    <TopBar />
+    <BottomBar />
+    <LeftBar />
+    <RightBar />
     {children}
   </div>
 );

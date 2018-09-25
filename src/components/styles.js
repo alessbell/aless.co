@@ -1,5 +1,36 @@
 import styled from 'react-emotion';
 
+const BORDER_WIDTH = '3px';
+const BORDER_COLOR = 'red';
+
+const BaseBar = styled.div`
+  background: ${BORDER_COLOR};
+  position: fixed;
+  z-index: 101;
+`;
+const LRSides = styled(BaseBar)`
+  top: 0;
+  bottom: 0;
+  width: ${BORDER_WIDTH};
+`;
+const TBSides = styled(BaseBar)`
+  left: 0;
+  right: 0;
+  height: ${BORDER_WIDTH};
+`;
+const LeftBar = styled(LRSides)`
+  left: 0;
+`;
+const RightBar = styled(LRSides)`
+  right: 0;
+`;
+const TopBar = styled(TBSides)`
+  top: 0;
+`;
+const BottomBar = styled(TBSides)`
+  bottom: 0;
+`;
+
 const Linx = styled.a`
   margin: 1rem;
   color: blue;
@@ -19,7 +50,7 @@ const Wrapper = styled.div`
   grid-template-rows: 100vh;
   max-width: ${props => props.maxWidth};
 `;
-const BlinkyText = styled.p`
+const BlinkyText = styled.div`
   z-index: 100;
   position: relative;
   mix-blend-mode: screen;
@@ -29,11 +60,22 @@ const BlinkyText = styled.p`
   font-size: ${props => `${props.fontSize}rem`};
   min-height: ${props => `${props.minHeight}rem`};
   margin-top: ${props => `${props.marginTop}rem`};
-  width: ${props => `${props.width}rem`};
+  width: ${props => `${props.width}`};
+  margin-bottom: 2.5rem;
 `;
 const Container = styled.main`
   position: relative;
   margin: auto;
 `;
 
-export { BlinkyText, CenteredText, Container, Linx, Wrapper };
+export {
+  BlinkyText,
+  CenteredText,
+  Container,
+  Linx,
+  Wrapper,
+  LeftBar,
+  RightBar,
+  TopBar,
+  BottomBar,
+};

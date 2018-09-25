@@ -7,7 +7,8 @@ body {
 }
 #top, #bottom, #left, #right {
 	background: red;
-	position: fixed;
+  position: fixed;
+  z-index: 101;
 	}
 	#left, #right {
 		top: 0; bottom: 0;

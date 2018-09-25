@@ -1,73 +1,100 @@
-import React, { PureComponent } from 'react'
-import Link from 'gatsby-link'
-import { Shaders, Node, GLSL } from "gl-react";
+import React, { Component } from 'react';
 import 'react-typist/dist/Typist.css';
-// import { Surface } from "gl-react-dom"; // for React DOM
 import Typist from 'react-typist';
+import Layout from '../components/layout';
 import HelloBlue from '../components/animated';
-import timeloop from '../components/HOC/timeloop';
-import styled from 'emotion/react';
+import { Linx, CenteredText, Container, Wrapper, BlinkyText } from '../components/styles';
+
 let Surface;
-const Linx = styled.a`
-  margin: 1rem;
-  color: blue;
-  &:hover {
-    color: red;
+const SIZES = {
+  LARGE: {
+    surfaceWidth: 500,
+    surfaceHeight: 280,
+    textMinHeight: 16,
+    textMinWidth: 28,
+    fontSize: 2.5,
+  },
+  SMALL: {
+    surfaceWidth: 410,
+    surfaceHeight: 440,
+    textMinHeight: 25,
+    textMinWidth: 15,
+    fontSize: 2.5,
   }
-`;
+}
 
-
-class IndexPage extends PureComponent {
+class IndexPage extends Component {
   constructor(props) {
     super(props);
-    this.state = { mount: false };
+
+    this.state = {
+      screenSize: null,
+    };
+    this.renderBlinkyText = this.renderBlinkyText.bind(this);
   }
+
   componentDidMount() {
     const reactDOM = require('gl-react-dom');
     Surface = reactDOM.Surface;
-    this.setState( { mount : true }); //To rerender.
+    this.setWindowSize();
+    window.onresize = this.setWindowSize;
   }
+
+  setWindowSize = () =>
+    this.setState({
+      screenSize: window.innerWidth > 515 ? 'LARGE' : 'SMALL',
+    });
+
+  renderBlinkyText = () =>
+    <BlinkyText
+      minHeight={SIZES[this.state.screenSize].textMinHeight}
+      minWidth={SIZES[this.state.screenSize].textMinWidth}
+      fontSize={SIZES[this.state.screenSize].fontSize}
+    >
+      <Typist
+        avgTypingDelay={100}
+        stdTypingDelay={50}
+        cursor={{
+          show: true,
+          blink: true,
+          element: '▍',
+          hideWhenDone: false,
+        }}
+      >
+        alessia bellisario is a programmer working on the web in new york city
+      </Typist>
+    </BlinkyText>
+
+  renderLinks = () =>
+    <CenteredText>
+      <Linx href="mailto:bellisario.alessia@gmail.com">email</Linx>
+      <Linx href="https://twitter.com/alessbell" target="_blank" rel="noopener">twitter</Linx>
+      <Linx href="https://instagram.com/alessbell" target="_blank" rel="noopener">instagram</Linx>
+      <Linx href="https://github.com/alessbell" target="_blank" rel="noopener">github</Linx>
+    </CenteredText>;
+
   render() {
-    if (this.state.mount) {
+    if (this.state.screenSize) {
+      const { screenSize } = this.state;
       return (
-        <div style={{ position: 'relative', margin: 'auto' }} id="parent">
-          <p
-            style={{
-              position: 'relative',
-              zIndex: 100,
-              mixBlendMode: 'screen',
-              backgroundColor: 'white',
-              fontSize: '2.5rem',
-              lineHeight: '4rem',
-              textAlign: 'center',
-              minHeight: '16rem',
-              minWidth: '28rem',
-            }}
+        <Layout>
+          <Wrapper
+            maxWidth={SIZES[screenSize].surfaceWidth}
           >
-            <Typist
-              avgTypingDelay={80}
-              stdTypingDelay={50}
-              cursor={{
-                show: true,
-                blink: true,
-                // element: '▍',
-                element: '_',
-                hideWhenDone: false,
-              }}
-            >
-              alessia bellisario is a programmer working on the web in new york city
-            </Typist>
-          </p>
-          <div style={{ textAlign: 'center' }}>
-            <Linx href="mailto:bellisario.alessia@gmail.com">email</Linx>
-            <Linx href="https://twitter.com/alessbell" target="_blank">twitter</Linx>
-            <Linx href="https://instagram.com/alessbell" target="_blank">instagram</Linx>
-            <Linx href="https://github.com/alessbell" target="_blank">github</Linx>
-          </div>
-          <Surface width={500} height={280} style={{ position: 'absolute', top: 0 }} id="canvas">
-            <HelloBlue />
-          </Surface>
-        </div>
+            <Container>
+              {this.renderBlinkyText()}
+              {this.renderLinks()}
+
+              <Surface
+                width={SIZES[screenSize].surfaceWidth}
+                height={SIZES[screenSize].surfaceHeight}
+                style={{ position: 'absolute', top: 0 }}
+              >
+                <HelloBlue />
+              </Surface>
+            </Container>
+          </Wrapper>
+        </Layout>
       )
     } else {
       return null;
@@ -75,6 +102,4 @@ class IndexPage extends PureComponent {
   }
 }
 
-
-
-export default IndexPage
+export default IndexPage;

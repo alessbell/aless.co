@@ -1,5 +1,5 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "alessbell",
   "description": "alessia.website",
   "version": "1.0.0",
   "author": "Alessia Bellisario <bellisario.alessia@gmail.com>",
@@ -22,7 +22,10 @@
     "react-typist": "^2.0.5"
   },
   "keywords": [
-    "gatsby"
+    "gatsby",
+    "emotion",
+    "gl-react",
+    "prettier"
   ],
   "license": "MIT",
   "main": "n/a",
@@ -30,13 +33,22 @@
     "build": "gatsby build",
     "dev": "gatsby develop",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\"",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "deploy": "gatsby build --prefix-paths && gh-pages -d public"
   },
   "devDependencies": {
     "babel-preset-flow": "^6.23.0",
+    "chrome-launcher": "^0.10.5",
     "flow-bin": "^0.89.0",
     "gh-pages": "^1.1.0",
+    "jest": "^23.6.0",
+    "lighthouse": "^4.0.0-alpha.2-3.2.1",
     "prettier": "^1.15.3"
+  },
+  "jest": {
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/.cache"
+    ]
   }
 }

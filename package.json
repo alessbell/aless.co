@@ -40,7 +40,7 @@
     "babel-preset-flow": "6.23.0",
     "chrome-launcher": "0.10.5",
     "flow-bin": "0.89.0",
-    "gh-pages": "1.2.0",
+    "gh-pages": "2.0.1",
     "jest": "23.6.0",
     "lighthouse": "4.0.0-beta",
     "prettier": "1.15.3"

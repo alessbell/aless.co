@@ -20,8 +20,10 @@ const launchChromeAndRunLighthouse = (
   });
 
 test('Meaningful first paint score', () =>
-  launchChromeAndRunLighthouse(`https://www.example.com`).then(
+  launchChromeAndRunLighthouse(`https://aless.co`).then(
     ({ lhr: { audits } }) => {
-      expect(audits['first-meaningful-paint'].score).toBe(1);
+      expect(audits['first-meaningful-paint'].score).toBeGreaterThanOrEqual(
+        0.9
+      );
     }
   ));

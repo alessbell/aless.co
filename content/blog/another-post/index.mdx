@@ -1,0 +1,57 @@
+---
+title: This is a new post!
+date: '2014-05-01T22:12:03.284Z'
+---
+
+# Hello!
+
+This is an MDX page. Pretty simple, nothing crazy.
+
+```jsx
+class FlavorForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { value: 'coconut' };
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleChange(event) {
+    this.setState({ value: event.target.value });
+  }
+
+  handleSubmit(event) {
+    alert('Your favorite flavor is: ' + this.state.value);
+    event.preventDefault();
+  }
+
+  render() {
+    return (
+      <form onSubmit={this.handleSubmit}>
+        <label>
+          Pick your favorite flavor:
+          <select value={this.state.value} onChange={this.handleChange}>
+            <option value="grapefruit">Grapefruit</option>
+            <option value="lime">Lime</option>
+            <option value="coconut">Coconut</option>
+            <option value="mango">Mango</option>
+          </select>
+        </label>
+        <input type="submit" value="Submit" />
+      </form>
+    );
+  }
+}
+```
+
+Something else
+
+<!-- ## blah blah
+
+```js react-live
+const onClick = () => {
+  alert('clicked');
+};
+render(<button onClick={onClick}>Click Me!</button>);
+``` -->

@@ -1,124 +1,63 @@
-import React, { Component } from 'react';
-import 'react-typist/dist/Typist.css';
-import Typist from 'react-typist';
+import React from 'react';
+import { Link, graphql } from 'gatsby';
+
 import Layout from '../components/layout';
-import HelloBlue from '../components/animated';
-import {
-  Linx,
-  CenteredText,
-  Container,
-  Wrapper,
-  BlinkyText,
-} from '../components/styles';
+import SEO from '../components/seo';
 
-let Surface;
-const SIZES = {
-  LARGE: {
-    surfaceWidth: 447,
-    surfaceHeight: 240,
-    textMinHeight: 16,
-    textMinWidth: '28rem',
-    fontSize: 2.5,
-    marginTop: -0.4,
-  },
-  SMALL: {
-    surfaceWidth: 370,
-    surfaceHeight: 400,
-    textMinHeight: 25,
-    textMinWidth: '100%',
-    fontSize: 2.5,
-    marginTop: 0,
-  },
-};
-
-class IndexPage extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      screenSize: null,
-    };
-    this.renderBlinkyText = this.renderBlinkyText.bind(this);
-  }
-
-  componentDidMount() {
-    const reactDOM = require('gl-react-dom');
-    Surface = reactDOM.Surface;
-    this.setWindowSize();
-    window.onresize = this.setWindowSize;
-  }
-
-  setWindowSize = () =>
-    this.setState({
-      screenSize: window.innerWidth > 515 ? 'LARGE' : 'SMALL',
-    });
-
-  renderBlinkyText = () => (
-    <BlinkyText
-      width={SIZES[this.state.screenSize].textMinWidth}
-      minHeight={SIZES[this.state.screenSize].textMinHeight}
-      fontSize={SIZES[this.state.screenSize].fontSize}
-      marginTop={SIZES[this.state.screenSize].marginTop}
-    >
-      <Typist
-        avgTypingDelay={100}
-        stdTypingDelay={50}
-        cursor={{
-          show: true,
-          blink: true,
-          element: '▍',
-          hideWhenDone: false,
-        }}
-      >
-        alessia bellisario is a programmer working on the web in new york city
-      </Typist>
-    </BlinkyText>
-  );
-
-  renderLinks = () => (
-    <CenteredText>
-      <Linx href="mailto:bellisario.alessia@gmail.com">email</Linx>
-      <Linx href="https://twitter.com/alessbell" target="_blank" rel="noopener">
-        twitter
-      </Linx>
-      <Linx
-        href="https://instagram.com/alessbell"
-        target="_blank"
-        rel="noopener"
-      >
-        instagram
-      </Linx>
-      <Linx href="https://github.com/alessbell" target="_blank" rel="noopener">
-        github
-      </Linx>
-    </CenteredText>
-  );
-
+class BlogIndex extends React.Component {
   render() {
-    if (this.state.screenSize) {
-      const { screenSize } = this.state;
-      return (
-        <Layout>
-          <Wrapper maxWidth={SIZES[screenSize].surfaceWidth}>
-            <Container>
-              {this.renderBlinkyText()}
-              {this.renderLinks()}
-              <div style={{ position: 'absolute', top: 0 }}>
-                <Surface
-                  width={SIZES[screenSize].surfaceWidth}
-                  height={SIZES[screenSize].surfaceHeight}
-                >
-                  <HelloBlue />
-                </Surface>
-              </div>
-            </Container>
-          </Wrapper>
-        </Layout>
-      );
-    } else {
-      return null;
-    }
+    const { data } = this.props;
+    const siteTitle = data.site.siteMetadata.title;
+    const posts = data.allMdx.edges;
+
+    return (
+      <Layout location={this.props.location} title={siteTitle}>
+        <SEO
+          title="all posts"
+          keywords={[`blog`, `gatsby`, `javascript`, `react`]}
+        />
+        {posts.map(({ node }) => {
+          const title = node.frontmatter.title || node.fields.slug;
+          return (
+            <div key={node.fields.slug} style={{ margin: '3rem 0' }}>
+              <h3>
+                <Link to={node.fields.slug}>{title}</Link>
+              </h3>
+              <small>{node.frontmatter.date}</small>
+              <p
+                dangerouslySetInnerHTML={{ __html: node.frontmatter.spoiler }}
+              />
+            </div>
+          );
+        })}
+      </Layout>
+    );
   }
 }
 
-export default IndexPage;
+export default BlogIndex;
+
+export const pageQuery = graphql`
+  query {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+    allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
+      edges {
+        node {
+          excerpt
+          fields {
+            slug
+          }
+          frontmatter {
+            date(formatString: "MMMM DD, YYYY")
+            spoiler
+            title
+          }
+        }
+      }
+    }
+  }
+`;

@@ -42,7 +42,7 @@
     "flow-bin": "0.89.0",
     "gh-pages": "2.0.1",
     "jest": "23.6.0",
-    "lighthouse": "4.0.0-beta",
+    "lighthouse": "4.0.0",
     "prettier": "1.15.3"
   },
   "jest": {

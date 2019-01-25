@@ -17,9 +17,6 @@ const TemplateWrapper = ({ children }) => (
         },
       ]}
     >
-      <noscript>
-        alessia bellisario is a programmer working on the web in new york city
-      </noscript>
       <html lang="en" />
     </Helmet>
     <TopBar />

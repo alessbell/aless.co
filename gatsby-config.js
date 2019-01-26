@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `alessia\'s blog`,
-    author: `Alessia Bellisario`,
-    description: `Alessia Bellisario is a programmer working on the web in New York City`,
+    title: `this is a blog`,
+    author: `alessia bellisario`,
+    description: `alessia bellisario is a programmer working on the web in New York City`,
   },
   plugins: [
     {
@@ -39,6 +39,12 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [`roboto`],
+      },
+    },
     {
       resolve: 'gatsby-plugin-manifest',
       options: {

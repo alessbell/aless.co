@@ -32,7 +32,6 @@ const H1 = styled.h1`
 class Layout extends React.Component {
   state = { initialLoad: false };
   componentDidMount() {
-    console.log('CDM');
     const reactDOM = require('gl-react-dom');
     Surface = reactDOM.Surface;
     this.setState({ initialLoad: true });

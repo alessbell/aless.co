@@ -24,7 +24,9 @@ class BlogIndex extends React.Component {
                 <Link to={node.fields.slug}>{title}</Link>
               </h3>
               <small>{node.frontmatter.date}</small>
-              <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
+              <p
+                dangerouslySetInnerHTML={{ __html: node.frontmatter.spoiler }}
+              />
             </div>
           );
         })}
@@ -51,6 +53,7 @@ export const pageQuery = graphql`
           }
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
+            spoiler
             title
           }
         }

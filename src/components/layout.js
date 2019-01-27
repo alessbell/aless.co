@@ -105,6 +105,7 @@ class Layout extends React.Component {
             h6,
             p,
             li,
+            div,
             footer,
             small {
               font-family: 'Roboto', 'Helvetica', sans-serif;
@@ -170,13 +171,16 @@ class Layout extends React.Component {
             >
               github
             </a>
+            {'   '}🔺{'  '}
+            <a
+              href="mailto:website@bellisar.io"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              email
+            </a>
             {'   '}🔹{'  '}
-            <a href="mailto:website@bellisar.io">email</a>
-          </div>
-          <div>
-            © {new Date().getFullYear()}, built with
-            {` `}
-            <a href="https://www.gatsbyjs.org">Gatsby</a>
+            <a href="/about">about</a>
           </div>
         </footer>
         <TopBar />

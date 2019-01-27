@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `this is a blog`,
+    title: `anti-pattern`,
     author: `alessia bellisario`,
     description: `alessia bellisario is a programmer working on the web in New York City`,
   },
@@ -46,9 +46,9 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-manifest',
+      resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `alessia's blog`,
+        name: `anti-pattern: alessia's blog`,
         short_name: `alessia's blog`,
         start_url: '/',
         background_color: '#fff',

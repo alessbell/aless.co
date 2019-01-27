@@ -1,6 +1,6 @@
 {
-  "name": "alessbell",
-  "description": "alessia.website",
+  "name": "anti-pattern",
+  "description": "alessia bellisario's blog",
   "version": "1.0.0",
   "engines": {
     "node": ">=8.15 <12"

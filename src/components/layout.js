@@ -1,73 +1,11 @@
 import React from 'react';
-import { Link as BaseLink } from 'gatsby';
 import { Global, css } from '@emotion/core';
-import styled from '@emotion/styled';
 import { LeftBar, RightBar, TopBar, BottomBar } from './styles';
-import HelloBlue from './animated';
-let Surface;
-
-const Link = styled(BaseLink)`
-  box-shadow: none;
-  text-decoration: none;
-  color: inherit;
-`;
-
-const H1 = styled.h1`
-  font-size: 38px;
-  margin-top: 3rem;
-  margin-bottom: 0.5rem;
-  position: relative;
-  z-index: 100;
-  mix-blend-mode: screen;
-  background-color: white;
-  color: black;
-
-  a {
-    &:hover {
-      background-color: white;
-    }
-  }
-`;
+import Header from './header';
 
 class Layout extends React.Component {
-  state = { initialLoad: false };
-  componentDidMount() {
-    const reactDOM = require('gl-react-dom');
-    Surface = reactDOM.Surface;
-    this.setState({ initialLoad: true });
-  }
   render() {
-    const { title, children } = this.props;
-    let header;
-    let boundingRect;
-    let titleEl;
-    if (typeof document !== `undefined`) {
-      titleEl = document.getElementById('title');
-    }
-    if (titleEl) {
-      boundingRect = titleEl.getBoundingClientRect();
-    }
-
-    header = (
-      <div style={{ position: 'relative' }}>
-        <H1>
-          <Link id="title" to={`/`}>
-            {title}
-          </Link>
-        </H1>
-        {this.state.initialLoad && (
-          <div style={{ position: 'absolute', top: '0' }}>
-            <Surface width={boundingRect.width} height={boundingRect.height}>
-              <HelloBlue />
-            </Surface>
-          </div>
-        )}
-        <h3 style={{ marginTop: '0', marginBottom: '3rem' }}>
-          by alessia bellisario
-        </h3>
-      </div>
-    );
-
+    const { children } = this.props;
     return (
       <div
         style={{
@@ -116,6 +54,13 @@ class Layout extends React.Component {
               margin-bottom: 1.75rem;
             }
 
+            ::selection {
+              background: #efb617; /* WebKit/Blink Browsers */
+            }
+            ::-moz-selection {
+              background: #efb617; /* Gecko Browsers */
+            }
+
             hr {
               margin-bottom: 1.75rem;
             }
@@ -143,7 +88,7 @@ class Layout extends React.Component {
             }
           `}
         />
-        {header}
+        <Header />
         {children}
         <footer
           style={{

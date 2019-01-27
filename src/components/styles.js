@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
-const BORDER_WIDTH = '4px';
-const BORDER_COLOR = 'red';
+const BORDER_WIDTH = '6px';
+const BORDER_COLOR = '#ff2121';
 
 const BaseBar = styled.div`
   background: ${BORDER_COLOR};

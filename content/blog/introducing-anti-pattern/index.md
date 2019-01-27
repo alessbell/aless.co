@@ -1,5 +1,5 @@
 ---
-title: introducing anti-pattern
+title: Introducing Anti Pattern
 date: '2019-01-27T16:19:15.020Z'
 spoiler: It's not what you think
 ---

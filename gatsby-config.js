@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `anti-pattern`,
+    title: `anti pattern`,
     author: `alessia bellisario`,
     description: `alessia bellisario is a programmer working on the web in New York City`,
   },
@@ -10,6 +10,12 @@ module.exports = {
       options: {
         path: `${__dirname}/content/blog`,
         name: `blog`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: `UA-31075901-1`,
       },
     },
     `gatsby-plugin-react-helmet`,
@@ -48,7 +54,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `anti-pattern: alessia's blog`,
+        name: `anti pattern: alessia's blog`,
         short_name: `alessia's blog`,
         start_url: '/',
         background_color: '#fff',

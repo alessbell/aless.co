@@ -79,6 +79,9 @@ class Layout extends React.Component {
       >
         <Global
           styles={css`
+            html {
+              margin-left: calc(100vw - 100%);
+            }
             body {
               --hr: hsla(0, 0%, 0%, 0.2);
               --inlineCode-bg: rgba(255, 229, 100, 0.2);
@@ -149,7 +152,7 @@ class Layout extends React.Component {
             justifyContent: `space-between`,
             listStyle: `none`,
             padding: 0,
-            marginBottom: '2rem',
+            marginBottom: '3rem',
           }}
         >
           <div>

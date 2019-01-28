@@ -66,7 +66,7 @@
     "flow-bin": "0.91.0",
     "gh-pages": "2.0.1",
     "jest": "24.0.0",
-    "lighthouse": "4.0.0",
+    "lighthouse": "4.1.0",
     "prettier": "1.16.1"
   },
   "jest": {

@@ -5,11 +5,3 @@ spoiler: just a minute, please
 ---
 
 _whistles Jeopardy theme_
-
-```jsx
-class Test extends React.Component {
-  contructor(props) {
-    super(props);
-  }
-}
-```

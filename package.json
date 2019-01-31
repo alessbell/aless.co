@@ -63,7 +63,7 @@
   "devDependencies": {
     "babel-preset-flow": "6.23.0",
     "chrome-launcher": "0.10.5",
-    "flow-bin": "0.91.0",
+    "flow-bin": "0.92.0",
     "gh-pages": "2.0.1",
     "jest": "24.0.0",
     "lighthouse": "4.1.0",

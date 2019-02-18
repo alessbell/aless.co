@@ -2,6 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `anti/pattern`,
     author: `alessia bellisario`,
+    siteUrl: 'https://aless.co',
     description: `alessia bellisario is a programmer working on the web in New York City`,
   },
   plugins: [
@@ -63,6 +64,7 @@ module.exports = {
         icon: 'static/favicon-32x32.png',
       },
     },
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-remove-serviceworker`,
   ],
 };

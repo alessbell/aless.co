@@ -10,7 +10,7 @@ RC is often referred to as a "writer's workshop for programmers." In practice, i
 
 > There is one constraint: work at the edge of your programming capabilities. Which is to say: work on something that makes you a better programmer.
 
-Sounds simple enough! And, actually, RC asks you point blank about what you plan to work on during the application process, so you'd think I'd have this all figured out by now...
+Sounds simple enough! And, actually, RC asks you point blank about what you plan to work on during the application process, so you'd think I'd have it all figured out by now...
 
 ---
 
@@ -24,6 +24,6 @@ While I'd heard of Wasm (not web _or_ Assembly!) and Rust, I was missing the lar
 
 I started reading [The Rust Book](https://doc.rust-lang.org/stable/book/) on a recent vacation, and it's one of the best and most accessible technical books I've come across. I'm half way through, and while I'm new to the language, having a JS background makes the possibilities of Rust + Wasm all the more exciting.
 
-And in case I was doubting my inclination toward Rust, one of the other soft rules of RC is to embrace serendipity: avoid tunnel vision, and pursue what might otherwise be a passing curiosity.
+In case I was doubting my inclination toward Rust, one of the other soft rules of RC is to **embrace serendipity**: avoid tunnel vision, and pursue what might otherwise be a passing curiosity. So Rust it is.
 
-Over the next few weeks I'll be posting some of the Rust programs I'm writing, as well as my evolving plans for my project. If any of this is of particular interest, you can drop me a line via email or twitter.
+Over the next few weeks I'll be posting some of the programs I'm writing, as well as my evolving plans for my project. If any of this is of particular interest, you can drop me a line via email or twitter.

@@ -28,8 +28,8 @@ const AboutPage = () => (
       as a member of the mini 3 2019 batch.
     </p>
     <p>
-      For now, I plan on using this space to write about Rust as I learn it, and
-      to talk about my preparation for and experiences at RC.
+      I'm using this space to write about Rust as I learn it, and to talk about
+      my preparation for and experiences at RC.
     </p>
   </Layout>
 );

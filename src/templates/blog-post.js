@@ -13,6 +13,9 @@ class BlogPostTemplate extends React.Component {
       <Layout>
         <SEO title={post.frontmatter.title} description={post.excerpt} />
         <h1>{post.frontmatter.title}</h1>
+        <h3 style={{ marginTop: 0, marginBottom: 0 }}>
+          {post.frontmatter.spoiler}
+        </h3>
         <p
           style={{
             display: `block`,
@@ -61,6 +64,7 @@ export const pageQuery = graphql`
       excerpt(pruneLength: 160)
       frontmatter {
         title
+        spoiler
         date(formatString: "MMMM DD, YYYY")
       }
       code {

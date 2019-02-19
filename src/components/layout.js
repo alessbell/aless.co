@@ -130,7 +130,7 @@ class Layout extends React.Component {
                   margin-left: 0;
                   font-size: 1.2rem;
                   padding-left: 1rem;
-                  border-left: 5px solid pink;
+                  border-left: 6px solid blue;
                   font-style: italic;
                 }
 

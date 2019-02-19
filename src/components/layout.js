@@ -97,10 +97,22 @@ class Layout extends React.Component {
                 }
 
                 hr {
-                  margin-bottom: 1.75rem;
+                  box-sizing: content-box;
+                  margin-left: 0;
+                  margin-right: 0;
+                  margin-top: 0;
+                  padding-bottom: 0;
+                  padding-left: 0;
+                  padding-right: 0;
+                  padding-top: 0;
+                  margin-bottom: calc(1.75rem - 1px);
+                  background: var(--hr);
+                  border: none;
+                  height: 1px;
                 }
+
                 p {
-                  line-height: 1.5rem;
+                  line-height: 1.5;
                   font-size: 1.1rem;
                   margin-top: 0.5rem;
                   margin-bottom: 1.75rem;
@@ -113,8 +125,18 @@ class Layout extends React.Component {
                   background-color: yellow;
                 }
 
+                blockquote {
+                  color: #525252;
+                  margin-left: 0;
+                  font-size: 1.2rem;
+                  padding-left: 1rem;
+                  border-left: 6px solid blue;
+                  font-style: italic;
+                }
+
                 /* Inline code */
                 code {
+                  line-height: 1.5;
                   border-radius: 0.3em;
                   background: var(--inlineCode-bg);
                   color: var(--inlineCode-text);

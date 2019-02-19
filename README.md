@@ -1,5 +1,7 @@
 # aless.co
 
+[![CircleCI](https://circleci.com/gh/alessbell/alessbell/tree/main.svg?style=svg)](https://circleci.com/gh/alessbell/alessbell/tree/main)
+
 [![Netlify Status](https://api.netlify.com/api/v1/badges/4245956d-8b21-4b31-a405-05ca5fa8799a/deploy-status)](https://app.netlify.com/sites/alessia/deploys)
 
 A blog by me built with:

@@ -14,7 +14,7 @@
     "emotion": "^10.0.7",
     "emotion-server": "^10.0.7",
     "gatsby": "^2.1.5",
-    "gatsby-mdx": "^0.3.6",
+    "gatsby-mdx": "^0.4.0",
     "gatsby-plugin-catch-links": "^2.0.11",
     "gatsby-plugin-emotion": "^4.0.3",
     "gatsby-plugin-feed": "^2.0.13",

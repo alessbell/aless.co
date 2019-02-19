@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `anti/pattern: a blog by alessia bellisario`,
+    title: `anti/pattern`,
     author: `Alessia Bellisario`,
     siteUrl: 'https://aless.co',
     description: `Alessia Bellisario is a programmer working on the web in New York City`,

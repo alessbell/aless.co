@@ -4,6 +4,7 @@ import styled from '@emotion/styled';
 import { Link as BaseLink, StaticQuery, graphql } from 'gatsby';
 import { LeftBar, RightBar, TopBar, BottomBar } from './styles';
 import Header from './header';
+import Footer from './footer';
 
 const H1 = styled.h1`
   font-size: 38px;
@@ -157,44 +158,7 @@ class Layout extends React.Component {
               </h3>
             </div>
             {children}
-            <footer
-              style={{
-                display: `flex`,
-                flexWrap: `wrap`,
-                justifyContent: `space-between`,
-                listStyle: `none`,
-                padding: 0,
-                marginBottom: '3rem',
-              }}
-            >
-              <div>
-                <a
-                  href="https://twitter.com/alessbell"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  twitter
-                </a>
-                {'   '}🔸{'  '}
-                <a
-                  href="https://github.com/alessbell"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  github
-                </a>
-                {'   '}🔺{'  '}
-                <a
-                  href="mailto:website@bellisar.io"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  email
-                </a>
-                {'   '}🔹{'  '}
-                <a href="/about">about</a>
-              </div>
-            </footer>
+            <Footer />
             <TopBar />
             <BottomBar />
             <LeftBar />

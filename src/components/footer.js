@@ -1,44 +1,71 @@
+/* eslint-disable jsx-a11y/accessible-emoji */
+// linting error doesn't recognize emotion component as span
+// so it's raising a false positive...
+
 import React from 'react';
+import styled from '@emotion/styled';
+
+const Space = styled.span`
+  margin-right: 0.75rem;
+  margin-left: 0.75rem;
+`;
+
+const FooterWrapper = styled.footer`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style: none;
+  padding: 0;
+  margin-bottom: 3rem;
+`;
+
+const Anchor = ({ link, name, rel, target = '_self' }) => (
+  <a
+    href={link}
+    target={target}
+    rel={rel === 'noopener' ? 'noopener noreferrer' : ''}
+  >
+    {name}
+  </a>
+);
 
 const Footer = () => (
-  <footer
-    style={{
-      display: `flex`,
-      flexWrap: `wrap`,
-      justifyContent: `space-between`,
-      listStyle: `none`,
-      padding: 0,
-      marginBottom: '3rem',
-    }}
-  >
+  <FooterWrapper>
     <div>
-      <a
-        href="https://twitter.com/alessbell"
+      <Anchor
+        link="https://twitter.com/alessbell"
         target="_blank"
-        rel="noopener noreferrer"
-      >
-        twitter
-      </a>
-      {'   '}🔸{'  '}
-      <a
-        href="https://github.com/alessbell"
+        rel="noopener"
+        name="twitter"
+      />
+      <Space role="img" aria-label="orange diamond">
+        🔸
+      </Space>
+      <Anchor
+        link="https://github.com/alessbell"
         target="_blank"
-        rel="noopener noreferrer"
-      >
-        github
-      </a>
-      {'   '}🔺{'  '}
-      <a
-        href="mailto:web@bellisar.io"
+        rel="noopener"
+        name="github"
+      />
+      <Space role="img" aria-label="red triangle">
+        🔺
+      </Space>
+      <Anchor
+        link="mailto:web@bellisar.io"
         target="_blank"
-        rel="noopener noreferrer"
-      >
-        email
-      </a>
-      {'   '}🔹{'  '}
+        rel="noopener"
+        name="email"
+      />
+      <Space role="img" aria-label="blue diamond">
+        🔹
+      </Space>
+      <a href="/rss.xml">rss</a>
+      <Space role="img" aria-label="upside down red triangle">
+        🔻
+      </Space>
       <a href="/about">about</a>
     </div>
-  </footer>
+  </FooterWrapper>
 );
 
 export default Footer;

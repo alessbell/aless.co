@@ -60,20 +60,20 @@
     "test": "jest"
   },
   "devDependencies": {
-    "@babel/plugin-transform-flow-strip-types": "^7.2.3",
-    "babel-jest": "^24.1.0",
-    "babel-plugin-emotion": "^10.0.7",
+    "@babel/plugin-transform-flow-strip-types": "7.2.3",
+    "babel-jest": "24.1.0",
+    "babel-plugin-emotion": "10.0.7",
     "babel-preset-flow": "6.23.0",
-    "babel-preset-gatsby": "^0.1.8",
+    "babel-preset-gatsby": "0.1.8",
     "chrome-launcher": "0.10.5",
     "flow-bin": "0.93.0",
-    "identity-obj-proxy": "^3.0.0",
+    "identity-obj-proxy": "3.0.0",
     "jest": "24.1.0",
-    "jest-dom": "^3.1.2",
-    "jest-emotion": "^10.0.7",
+    "jest-dom": "3.1.2",
+    "jest-emotion": "10.0.7",
     "lighthouse": "4.1.0",
     "prettier": "1.16.4",
-    "react-testing-library": "^6.0.0"
+    "react-testing-library": "6.0.0"
   },
   "jest": {
     "testPathIgnorePatterns": [

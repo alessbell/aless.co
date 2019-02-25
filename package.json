@@ -60,7 +60,7 @@
     "test": "jest"
   },
   "devDependencies": {
-    "@babel/plugin-transform-flow-strip-types": "7.2.3",
+    "@babel/plugin-transform-flow-strip-types": "7.3.4",
     "babel-jest": "24.1.0",
     "babel-plugin-emotion": "10.0.7",
     "babel-preset-flow": "6.23.0",

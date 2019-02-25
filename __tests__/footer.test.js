@@ -15,6 +15,5 @@ test('Footer', () => {
     'href',
     'https://github.com/alessbell'
   );
-  expect(getByText(/email/)).toHaveAttribute('href', 'mailto:web@bellisar.io');
   expect(getByText(/about/)).toHaveAttribute('href', '/about');
 });

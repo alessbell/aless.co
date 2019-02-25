@@ -10,7 +10,7 @@
     "@emotion/core": "^10.0.7",
     "@emotion/styled": "^10.0.7",
     "@mdx-js/mdx": "^0.17.5",
-    "@mdx-js/tag": "^0.17.5",
+    "@mdx-js/tag": "^0.18.0",
     "emotion": "^10.0.7",
     "emotion-server": "^10.0.7",
     "gatsby": "^2.1.17",

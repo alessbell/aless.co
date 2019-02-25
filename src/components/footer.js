@@ -6,8 +6,8 @@ import React from 'react';
 import styled from '@emotion/styled';
 
 const Space = styled.span`
-  margin-right: 0.75rem;
-  margin-left: 0.75rem;
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
 `;
 
 const FooterWrapper = styled.footer`
@@ -50,18 +50,9 @@ const Footer = () => (
       <Space role="img" aria-label="red triangle">
         🔺
       </Space>
-      <Anchor
-        link="mailto:web@bellisar.io"
-        target="_blank"
-        rel="noopener"
-        name="email"
-      />
+      <a href="/rss.xml">rss</a>
       <Space role="img" aria-label="blue diamond">
         🔹
-      </Space>
-      <a href="/rss.xml">rss</a>
-      <Space role="img" aria-label="upside down red triangle">
-        🔻
       </Space>
       <a href="/about">about</a>
     </div>

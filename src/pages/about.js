@@ -29,7 +29,8 @@ const AboutPage = () => (
     </p>
     <p>
       I'm using this space to write about Rust as I learn it, and to talk about
-      my preparation for and experiences at RC.
+      my preparation for and experiences at RC. You can contact me at web [at]
+      bellisar.io.
     </p>
   </Layout>
 );

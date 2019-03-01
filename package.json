@@ -9,7 +9,7 @@
   "dependencies": {
     "@emotion/core": "^10.0.7",
     "@emotion/styled": "^10.0.7",
-    "@mdx-js/mdx": "^0.18.0",
+    "@mdx-js/mdx": "^0.19.0",
     "@mdx-js/tag": "^0.18.0",
     "emotion": "^10.0.7",
     "emotion-server": "^10.0.7",

@@ -39,8 +39,8 @@
     "prismjs": "1.15.0",
     "prop-types": "15.7.2",
     "raf": "3.4.1",
-    "react": "16.8.3",
-    "react-dom": "16.8.3",
+    "react": "16.8.4",
+    "react-dom": "16.8.4",
     "react-helmet": "5.2.0",
     "react-live": "1.12.0"
   },

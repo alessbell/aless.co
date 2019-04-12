@@ -154,7 +154,7 @@ class Layout extends React.Component {
               </H1>
               {typeof document !== `undefined` && <Header />}
               <h3 style={{ marginTop: '0', marginBottom: '3rem' }}>
-                by alessia bellisario
+                a blog by alessia bellisario
               </h3>
             </div>
             {children}

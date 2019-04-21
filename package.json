@@ -58,7 +58,7 @@
     "dev": "gatsby develop",
     "serve": "gatsby serve -p 8000",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\"",
-    "test": "jest"
+    "test": "jest --coverage"
   },
   "devDependencies": {
     "@babel/plugin-transform-flow-strip-types": "7.4.0",
@@ -75,11 +75,5 @@
     "lighthouse": "4.3.0",
     "prettier": "1.17.0",
     "react-testing-library": "6.1.2"
-  },
-  "jest": {
-    "testPathIgnorePatterns": [
-      "/node_modules/",
-      "/.cache"
-    ]
   }
 }

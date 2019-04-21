@@ -11,6 +11,11 @@ module.exports = {
   globals: {
     __PATH_PREFIX__: ``,
   },
-
   setupFiles: [`<rootDir>/loadershim.js`],
+  collectCoverage: true,
+  collectCoverageFrom: [
+    'src/components/**/*.js',
+    'src/pages/**/*.js',
+    'src/templates/**/*.js',
+  ],
 };

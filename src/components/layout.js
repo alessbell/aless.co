@@ -53,6 +53,23 @@ class Layout extends React.Component {
           >
             <Global
               styles={css`
+                @font-face {
+                  font-family: 'GT Pressura Mono Regular';
+                  src: url('../fonts/GT-Pressura-Mono-Regular.woff2')
+                      format('woff2'),
+                    url('../fonts/GT-Pressura-Mono-Regular.woff') format('woff');
+                  font-weight: normal;
+                  font-style: normal;
+                }
+                @font-face {
+                  font-family: 'GT Pressura Mono Bold';
+                  src: url('../fonts/GT-Pressura-Mono-Bold.woff2')
+                      format('woff2'),
+                    url('../fonts/GT-Pressura-Mono-Bold.woff') format('woff');
+                  font-weight: bold;
+                  font-style: normal;
+                }
+
                 html {
                   margin-left: calc(100vw - 100%);
                 }
@@ -61,6 +78,7 @@ class Layout extends React.Component {
                   --inlineCode-bg: rgba(255, 229, 100, 0.2);
                   --inlineCode-text: #1a1a1a;
                   padding: 0 1.5rem;
+                  margin: 0;
                 }
                 h1,
                 h2,
@@ -154,7 +172,7 @@ class Layout extends React.Component {
               </H1>
               {typeof document !== `undefined` && <Header />}
               <h3 style={{ marginTop: '0', marginBottom: '3rem' }}>
-                by alessia bellisario
+                a blog by alessia bellisario
               </h3>
             </div>
             {children}

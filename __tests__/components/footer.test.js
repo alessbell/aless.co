@@ -1,9 +1,6 @@
 import React from 'react';
 import { render } from 'react-testing-library';
-import { prettyDOM } from 'dom-testing-library';
-import Footer from '../src/components/footer';
-
-import 'jest-dom/extend-expect';
+import Footer from '../../src/components/footer';
 
 test('Footer', () => {
   const { getByText } = render(<Footer />);

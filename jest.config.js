@@ -11,11 +11,14 @@ module.exports = {
   globals: {
     __PATH_PREFIX__: ``,
   },
-  setupFiles: [`<rootDir>/loadershim.js`],
+  testMatch: ['**/*.test.js'],
+  setupFilesAfterEnv: ['<rootDir>/__tests__/config/jest-setup-test-framework'],
+  setupFiles: [`<rootDir>/loadershim.js`, `jest-canvas-mock`],
   collectCoverage: true,
   collectCoverageFrom: [
     'src/components/**/*.js',
     'src/pages/**/*.js',
     'src/templates/**/*.js',
+    '!src/components/HOC/*.js',
   ],
 };

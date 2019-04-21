@@ -6,6 +6,8 @@
 A blog by me built with:
 
 - [Gatsby](https://github.com/gatsbyjs/gatsby)
+- [GraphQL](https://graphql.org/)
 - [Emotion](https://github.com/emotion-js/emotion)
 - [MDX](https://github.com/mdx-js/mdx)
 - [Netlify](https://netlify.com)
+- [React Testing Library](https://github.com/kentcdodds/react-testing-library)

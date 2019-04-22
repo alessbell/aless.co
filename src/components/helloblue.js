@@ -16,6 +16,9 @@ const shaders = Shaders.create({
 
 export class HelloBlue extends Component {
   render = () => (
-    <Node shader={shaders.helloBlue} uniforms={{ blue: this.props.blue }} />
+    <Node
+      shader={shaders && shaders.helloBlue}
+      uniforms={{ blue: this.props.blue }}
+    />
   );
 }

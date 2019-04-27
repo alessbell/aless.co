@@ -91,6 +91,9 @@ class Layout extends React.Component {
                 h1 {
                   font-family: 'GT Pressura Mono Regular', monospace;
                 }
+                h3 {
+                  margin-bottom: 0.5rem;
+                }
                 h2,
                 h3,
                 h4,

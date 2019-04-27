@@ -13,15 +13,15 @@ const AboutPage = () => (
       Hi
       <span role="img" aria-label="waving hand">
         👋
-      </span>{' '}
-      I'm Alessia Bellisario, a programmer based in New York City.
+      </span>{'  '}
+      I'm Alessia Bellisario, a software engineer based in New York City.
     </p>
     <p>
       I work at{' '}
       <a href="https://breather.com" target="_blank" rel="noopener noreferrer">
         Breather
       </a>{' '}
-      as a web engineer, and in April 2019 I spent a week at the{' '}
+      as a Senior Front End Developer, and in April 2019 I spent a week at the{' '}
       <a href="https://recurse.com/" target="_blank" rel="noopener noreferrer">
         Recurse Center
       </a>{' '}

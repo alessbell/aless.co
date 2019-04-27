@@ -24,7 +24,7 @@ describe('About page', () => {
     expect(getByText('anti/pattern')).toBeInTheDocument();
     expect(getByText('a blog by alessia bellisario')).toBeInTheDocument();
     expect(
-      getByText(/a programmer based in new york city/i)
+      getByText(/a software engineer based in new york city/i)
     ).toBeInTheDocument();
   });
 });

@@ -36,6 +36,7 @@ const config = {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 1035,
+              showCaptions: true,
             },
           },
           {
@@ -106,7 +107,7 @@ const config = {
                         slug
                       }
                       frontmatter {
-                        date(formatString: "MMMM DD, YYYY")
+                        date(formatString: "MMMM D, YYYY")
                         spoiler
                         title
                       }

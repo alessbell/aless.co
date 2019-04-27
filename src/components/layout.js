@@ -108,11 +108,6 @@ const Layout = ({ children }) => {
                 }
               }
 
-              :not(pre) > code[class*='language-'],
-              pre[class*='language-'] {
-                margin-bottom: 1.75rem;
-              }
-
               ::selection {
                 background: #efb617; /* WebKit/Blink Browsers */
               }
@@ -136,9 +131,18 @@ const Layout = ({ children }) => {
               }
 
               p {
-                line-height: 1.5;
-                font-size: 1.1rem;
                 margin-top: 0.5rem;
+              }
+
+              ul,
+              p {
+                line-height: 1.5;
+              }
+
+              :not(pre) > code[class*='language-'],
+              pre[class*='language-'],
+              p,
+              ul {
                 margin-bottom: 1.75rem;
               }
               a {
@@ -151,11 +155,17 @@ const Layout = ({ children }) => {
                 color: black;
                 background-color: yellow;
               }
-
+              figure {
+                margin: 0;
+              }
+              figcaption {
+                font-size: 0.85rem;
+                margin-top: 0.5rem;
+              }
               blockquote {
                 color: #525252;
                 margin-left: 0;
-                font-size: 1.2rem;
+                font-size: 1.1rem;
                 padding-left: 1rem;
                 border-left: 6px solid blue;
                 font-style: italic;

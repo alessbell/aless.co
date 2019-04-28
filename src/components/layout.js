@@ -30,6 +30,24 @@ const Link = styled(BaseLink)`
 `;
 
 class Layout extends React.Component {
+  componentDidMount() {
+    setTimeout(function() {
+      const headings = document.querySelectorAll('h1');
+      let styles = ``;
+      headings.forEach(heading => {
+        const rando = `x${Math.floor(Math.random() * 16777215).toString(16)}`;
+        heading.classList.add(rando);
+        const text = heading.innerText
+          .replace(`'`, `\\'`)
+          .replace(`\n`, '\\A ');
+        styles += `.${rando}:after { content: '${text}';}`;
+      });
+
+      const style = document.createElement('style');
+      style.textContent = styles;
+      document.body.appendChild(style);
+    }, 100); // wait for css to load
+  }
   render() {
     const { children } = this.props;
     return (
@@ -89,7 +107,20 @@ class Layout extends React.Component {
                   margin-top: 3rem;
                 }
                 h1 {
+                  position: relative;
+                  color: rgba(234, 26, 65, 0.75);
                   font-family: 'GT Pressura Mono Regular', monospace;
+                  text-shadow: 6px 6px 1px rgba(0, 0, 0, 0.05);
+                  &::after {
+                    color: #f8a51a;
+                    z-index: -1;
+                    font-style: italic;
+                    text-shadow: none;
+                    position: absolute;
+                    left: 1.1rem;
+                    top: 0;
+                    transform: skew(-2deg) translateX(-20px);
+                  }
                 }
                 h3 {
                   margin-bottom: 0.5rem;

@@ -112,13 +112,14 @@ class Layout extends React.Component {
                   font-family: 'GT Pressura Mono Regular', monospace;
                   text-shadow: 6px 6px 1px rgba(0, 0, 0, 0.05);
                   &::after {
-                    color: #f8a51a;
-                    z-index: -1;
-                    font-style: italic;
-                    text-shadow: none;
-                    position: absolute;
-                    left: 1.1rem;
                     top: 0;
+                    width: 100%;
+                    z-index: -1;
+                    left: 18px;
+                    color: #f8a51a;
+                    text-shadow: none;
+                    font-style: italic;
+                    position: absolute;
                     transform: skew(-2deg) translateX(-20px);
                   }
                 }

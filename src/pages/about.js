@@ -8,7 +8,7 @@ const AboutPage = () => (
       title="about"
       keywords={[`blog`, `rust`, `gatsby`, `javascript`, `react`]}
     />
-    <h1>about</h1>
+    <h2>about</h2>
     <p>
       Hi
       <span role="img" aria-label="waving hand">

@@ -62,7 +62,7 @@
   },
   "devDependencies": {
     "@babel/plugin-transform-flow-strip-types": "7.4.4",
-    "@hot-loader/react-dom": "^16.8.6",
+    "@hot-loader/react-dom": "16.8.6",
     "babel-jest": "24.7.1",
     "babel-plugin-emotion": "10.0.9",
     "babel-preset-flow": "6.23.0",

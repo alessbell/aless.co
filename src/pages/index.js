@@ -4,6 +4,8 @@ import styled from '@emotion/styled';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 
+import '../css/font-face.css';
+
 const BlogLink = styled(Link)`
   line-height: 1.85rem;
 `;

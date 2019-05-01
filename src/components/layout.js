@@ -68,25 +68,6 @@ const Layout = ({ children }) => {
         >
           <Global
             styles={css`
-              @font-face {
-                font-family: 'GT Pressura Mono Regular';
-                font-display: swap;
-                src: url('../../fonts/GT-Pressura-Mono-Regular.woff2')
-                    format('woff2'),
-                  url('../../fonts/GT-Pressura-Mono-Regular.woff')
-                    format('woff');
-                font-weight: normal;
-                font-style: normal;
-              }
-              @font-face {
-                font-family: 'GT Pressura Mono Bold';
-                font-display: swap;
-                src: url('../../fonts/GT-Pressura-Mono-Bold.woff2')
-                    format('woff2'),
-                  url('../../fonts/GT-Pressura-Mono-Bold.woff') format('woff');
-                font-weight: bold;
-                font-style: normal;
-              }
               body {
                 --hr: hsla(0, 0%, 0%, 0.2);
                 --inlineCode-bg: rgba(255, 229, 100, 0.2);

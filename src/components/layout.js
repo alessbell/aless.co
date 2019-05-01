@@ -36,7 +36,10 @@ const Layout = ({ children }) => {
     headings.forEach(heading => {
       const rando = `x${Math.floor(Math.random() * 16777215).toString(16)}`;
       heading.classList.add(rando);
-      const text = heading.innerText.replace(`'`, `\\'`).replace(`\n`, '\\A ');
+      let text = '';
+      if (heading.innerText) {
+        text = heading.innerText.replace(`'`, `\\'`).replace(`\n`, '\\A ');
+      }
       styles += `.${rando}:after { content: '${text}';}`;
     });
 
@@ -171,9 +174,9 @@ const Layout = ({ children }) => {
               }
               a {
                 color: blue;
-                text-decoration: hotpink double underline;
+                text-decoration: hotpink underline;
                 text-decoration-style: wavy;
-                // text-underline-position: under;
+                text-underline-position: under;
               }
               a:hover {
                 color: black;

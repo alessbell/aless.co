@@ -41,7 +41,7 @@
     "raf": "3.4.1",
     "react": "16.8.6",
     "react-dom": "16.8.6",
-    "react-helmet": "5.2.0",
+    "react-helmet": "5.2.1",
     "react-live": "2.0.1",
     "unified-ui": "0.0.3"
   },

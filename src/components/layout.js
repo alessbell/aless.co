@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Global, css } from '@emotion/core';
 import styled from '@emotion/styled';
 import { Link as BaseLink, StaticQuery, graphql } from 'gatsby';
@@ -30,6 +30,20 @@ const Link = styled(BaseLink)`
 `;
 
 const Layout = ({ children }) => {
+  useEffect(() => {
+    const headings = document.querySelectorAll('h1,h2');
+    let styles = ``;
+    headings.forEach(heading => {
+      const rando = `x${Math.floor(Math.random() * 16777215).toString(16)}`;
+      heading.classList.add(rando);
+      const text = heading.innerText.replace(`'`, `\\'`).replace(`\n`, '\\A ');
+      styles += `.${rando}:after { content: '${text}';}`;
+    });
+
+    const style = document.createElement('style');
+    style.textContent = styles;
+    document.body.appendChild(style);
+  });
   return (
     <StaticQuery
       query={graphql`
@@ -68,10 +82,6 @@ const Layout = ({ children }) => {
                 font-weight: bold;
                 font-style: normal;
               }
-
-              html {
-                margin-left: calc(100vw - 100%);
-              }
               body {
                 --hr: hsla(0, 0%, 0%, 0.2);
                 --inlineCode-bg: rgba(255, 229, 100, 0.2);
@@ -106,11 +116,24 @@ const Layout = ({ children }) => {
               h3 {
                 font-family: 'GT Pressura Mono Regular', monospace;
               }
+              h1,
               h2 {
+                margin-bottom: 1rem;
                 font-size: 1.8rem;
                 position: relative;
                 color: ${BORDER_COLOR};
                 text-shadow: 5px 5px 1px rgba(0, 0, 0, 0.05);
+                &::after {
+                  top: 0;
+                  width: 100%;
+                  z-index: -1;
+                  left: 18px;
+                  color: #f8a51a;
+                  text-shadow: none;
+                  font-style: italic;
+                  position: absolute;
+                  transform: skew(-2deg) translateX(-20px);
+                }
               }
 
               :not(pre) > code[class*='language-'],
@@ -148,6 +171,9 @@ const Layout = ({ children }) => {
               }
               a {
                 color: blue;
+                text-decoration: hotpink double underline;
+                text-decoration-style: wavy;
+                // text-underline-position: under;
               }
               a:hover {
                 color: black;

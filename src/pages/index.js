@@ -1,7 +1,12 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
+import styled from '@emotion/styled';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
+
+const BlogLink = styled(Link)`
+  line-height: 1.85rem;
+`;
 
 const BlogIndex = ({
   data: {
@@ -18,7 +23,7 @@ const BlogIndex = ({
       return (
         <div key={node.fields.slug} style={{ margin: '3rem 0' }}>
           <h3>
-            <Link to={node.fields.slug}>{title}</Link>
+            <BlogLink to={node.fields.slug}>{title}</BlogLink>
           </h3>
           <small>{node.frontmatter.date}</small>
           <p dangerouslySetInnerHTML={{ __html: node.frontmatter.spoiler }} />

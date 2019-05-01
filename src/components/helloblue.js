@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Shaders, Node, GLSL } from 'gl-react';
 
 const shaders = Shaders.create({
@@ -14,11 +14,6 @@ const shaders = Shaders.create({
   },
 });
 
-export class HelloBlue extends Component {
-  render = () => (
-    <Node
-      shader={shaders && shaders.helloBlue}
-      uniforms={{ blue: this.props.blue }}
-    />
-  );
-}
+export const HelloBlue = ({ blue }) => (
+  <Node shader={shaders && shaders.helloBlue} uniforms={{ blue: blue }} />
+);

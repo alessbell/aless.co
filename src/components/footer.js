@@ -17,6 +17,10 @@ const FooterWrapper = styled.footer`
   list-style: none;
   padding: 0;
   margin-bottom: 3rem;
+
+  a {
+    text-decoration: none;
+  }
 `;
 
 const Anchor = ({ link, name, rel, target = '_self' }) => (

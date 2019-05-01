@@ -21,6 +21,8 @@ describe('About page', () => {
     const { getByText } = render(<About />);
     expect(getByText('anti/pattern')).toBeInTheDocument();
     expect(getByText('a blog by alessia bellisario')).toBeInTheDocument();
-    expect(getByText(/a programmer based in nyc/i)).toBeInTheDocument();
+    expect(
+      getByText(/a programmer based in new york city/i)
+    ).toBeInTheDocument();
   });
 });

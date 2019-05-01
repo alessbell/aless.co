@@ -1,8 +1,17 @@
 const path = require(`path`);
 const { createFilePath } = require(`gatsby-source-filesystem`);
 
-exports.onCreateWebpackConfig = ({ stage, actions }) => {
+exports.onCreateWebpackConfig = ({ getConfig, stage, actions }) => {
   const timestamp = Date.now();
+  const config = getConfig();
+
+  if (stage.startsWith('develop') && config.resolve) {
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      'react-dom': '@hot-loader/react-dom',
+    };
+  }
+
   switch (stage) {
     case 'build-javascript':
       actions.setWebpackConfig({

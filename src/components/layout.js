@@ -31,7 +31,7 @@ const Link = styled(BaseLink)`
 
 const Layout = ({ children }) => {
   useEffect(() => {
-    const headings = document.querySelectorAll('h1,h2');
+    const headings = document.querySelectorAll('h1');
     let styles = ``;
     headings.forEach(heading => {
       const rando = `x${Math.floor(Math.random() * 16777215).toString(16)}`;
@@ -68,6 +68,9 @@ const Layout = ({ children }) => {
         >
           <Global
             styles={css`
+              // html {
+              //   margin-left: calc(100vw - 100%);
+              // }
               body {
                 --hr: hsla(0, 0%, 0%, 0.2);
                 --inlineCode-bg: rgba(255, 229, 100, 0.2);

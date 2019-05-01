@@ -29,7 +29,7 @@ class Header extends React.Component {
     return (
       initialLoad && (
         <div style={{ position: 'absolute', top: '0' }}>
-          <Surface width={boundingRect.width} height={boundingRect.height}>
+          <Surface width={boundingRect.width} height={boundingRect.height - 2}>
             <HelloBlue />
           </Surface>
         </div>

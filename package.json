@@ -80,6 +80,6 @@
     "jest-emotion": "10.0.11",
     "lighthouse": "5.0.0",
     "prettier": "1.17.1",
-    "react-testing-library": "7.0.0"
+    "react-testing-library": "7.0.1"
   }
 }

@@ -3,6 +3,7 @@
 // so it's raising a false positive...
 
 import React from 'react';
+import { StaticQuery, graphql } from 'gatsby';
 import styled from '@emotion/styled';
 
 const Space = styled.span`
@@ -33,7 +34,7 @@ const Anchor = ({ link, name, rel, target = '_self' }) => (
   </a>
 );
 
-const Footer = () => (
+const Footer = ({ commit, repository }) => (
   <FooterWrapper>
     <div>
       <Anchor
@@ -59,6 +60,10 @@ const Footer = () => (
         🔹
       </Space>
       <a href="/about">about</a>
+      <Space>
+        Deployed commit of{' '}
+        <a href={`${repository}/commit/${commit}`}>{commit.substring(0, 6)}</a>
+      </Space>
     </div>
   </FooterWrapper>
 );

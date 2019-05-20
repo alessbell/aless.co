@@ -10,6 +10,8 @@ beforeEach(() => {
       site: {
         siteMetadata: {
           title: `anti/pattern`,
+          repository: `https://github.com/alessbell/alessbell`,
+          commit: `master`,
         },
       },
     })

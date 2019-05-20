@@ -54,6 +54,8 @@ const Layout = ({ children }) => {
           site {
             siteMetadata {
               title
+              commit
+              repository
             }
           }
         }
@@ -201,7 +203,10 @@ const Layout = ({ children }) => {
             </h3>
           </div>
           {children}
-          <Footer />
+          <Footer
+            commit={siteMetadata.commit}
+            repository={siteMetadata.repository}
+          />
           <TopBar />
           <BottomBar />
           <LeftBar />

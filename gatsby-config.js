@@ -1,4 +1,4 @@
-module.exports = {
+const config = {
   siteMetadata: {
     title: `anti/pattern`,
     author: `Alessia Bellisario`,
@@ -11,12 +11,6 @@ module.exports = {
       options: {
         path: `${__dirname}/content/blog`,
         name: `blog`,
-      },
-    },
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: `UA-31075901-1`,
       },
     },
     `gatsby-plugin-react-helmet`,
@@ -121,3 +115,15 @@ module.exports = {
     `gatsby-plugin-remove-serviceworker`,
   ],
 };
+
+if (process.env.CONTEXT === 'production') {
+  const googleAnalyticsConfig = {
+    resolve: `gatsby-plugin-google-analytics`,
+    options: {
+      trackingId: `UA-31075901-1`,
+    },
+  };
+  config.plugins.push(googleAnalyticsConfig);
+}
+
+module.exports = config;

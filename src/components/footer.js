@@ -65,7 +65,7 @@ const Footer = ({ commit, repository }) => (
           rel="noopener noreferrer"
           href={`${repository}/commit/${commit}`}
         >
-          {commit.substring(0, 6)}
+          {commit.substring(0, 7)}
         </a>
       </code>
     </div>

@@ -3,7 +3,6 @@
 // so it's raising a false positive...
 
 import React from 'react';
-import { StaticQuery, graphql } from 'gatsby';
 import styled from '@emotion/styled';
 
 const Space = styled.span`
@@ -12,10 +11,7 @@ const Space = styled.span`
 `;
 
 const FooterWrapper = styled.footer`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  list-style: none;
+  display: block;
   padding: 0;
   margin-bottom: 3rem;
 
@@ -36,33 +32,41 @@ const Anchor = ({ link, name, rel, target = '_self' }) => (
 
 const Footer = ({ commit, repository }) => (
   <FooterWrapper>
-    <div>
-      <Anchor
-        link="https://twitter.com/alessbell"
-        target="_blank"
-        rel="noopener"
-        name="twitter"
-      />
-      <Space role="img" aria-label="orange diamond">
-        🔸
-      </Space>
-      <Anchor
-        link="https://github.com/alessbell"
-        target="_blank"
-        rel="noopener"
-        name="github"
-      />
-      <Space role="img" aria-label="red triangle">
-        🔺
-      </Space>
-      <a href="/rss.xml">rss</a>
-      <Space role="img" aria-label="blue diamond">
-        🔹
-      </Space>
-      <a href="/about">about</a>
+    <Anchor
+      link="https://twitter.com/alessbell"
+      target="_blank"
+      rel="noopener"
+      name="twitter"
+    />
+    <Space role="img" aria-label="orange diamond">
+      🔸
+    </Space>
+    <Anchor
+      link="https://github.com/alessbell"
+      target="_blank"
+      rel="noopener"
+      name="github"
+    />
+    <Space role="img" aria-label="red triangle">
+      🔺
+    </Space>
+    <a href="/rss.xml">rss</a>
+    <Space role="img" aria-label="blue diamond">
+      🔹
+    </Space>
+    <a href="/about">about</a>
+    <div style={{ float: 'right' }}>
       <Space>
-        Deployed commit of{' '}
-        <a href={`${repository}/commit/${commit}`}>{commit.substring(0, 6)}</a>
+        deployed commit:{' '}
+        <code style={{ fontWeight: 'normal' }}>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href={`${repository}/commit/${commit}`}
+          >
+            {commit.substring(0, 6)}
+          </a>
+        </code>
       </Space>
     </div>
   </FooterWrapper>

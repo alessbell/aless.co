@@ -4,12 +4,15 @@ import { StaticQuery } from 'gatsby';
 import Layout from '../../src/components/layout';
 
 jest.mock('gl-react-dom');
-beforeEach(() => {
+
+beforeAll(() => {
   StaticQuery.mockImplementationOnce(({ render }) =>
     render({
       site: {
         siteMetadata: {
           title: `anti/pattern`,
+          repository: `https://github.com/alessbell/alessbell`,
+          commit: `master`,
         },
       },
     })

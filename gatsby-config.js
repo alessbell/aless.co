@@ -1,9 +1,11 @@
-module.exports = {
+const config = {
   siteMetadata: {
     title: `anti/pattern`,
     author: `Alessia Bellisario`,
     siteUrl: 'https://aless.co',
     description: `Alessia Bellisario is a programmer working on the web in New York City`,
+    repository: `https://github.com/alessbell/alessbell`,
+    commit: process.env.COMMIT_REF || `master`,
   },
   plugins: [
     {
@@ -11,12 +13,6 @@ module.exports = {
       options: {
         path: `${__dirname}/content/blog`,
         name: `blog`,
-      },
-    },
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: `UA-31075901-1`,
       },
     },
     `gatsby-plugin-react-helmet`,
@@ -121,3 +117,15 @@ module.exports = {
     `gatsby-plugin-remove-serviceworker`,
   ],
 };
+
+if (process.env.CONTEXT === 'production') {
+  const googleAnalyticsConfig = {
+    resolve: `gatsby-plugin-google-analytics`,
+    options: {
+      trackingId: `UA-31075901-1`,
+    },
+  };
+  config.plugins.push(googleAnalyticsConfig);
+}
+
+module.exports = config;

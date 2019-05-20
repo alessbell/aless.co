@@ -8,6 +8,7 @@ import styled from '@emotion/styled';
 const Space = styled.span`
   margin-right: 0.5rem;
   margin-left: 0.5rem;
+  color: ${({ color }) => color || 'black'};
 `;
 
 const FooterWrapper = styled.footer`
@@ -38,36 +39,35 @@ const Footer = ({ commit, repository }) => (
       rel="noopener"
       name="twitter"
     />
-    <Space role="img" aria-label="orange diamond">
-      🔸
-    </Space>
+
+    <Space color="red">•</Space>
+
     <Anchor
       link="https://github.com/alessbell"
       target="_blank"
       rel="noopener"
       name="github"
     />
-    <Space role="img" aria-label="red triangle">
-      🔺
-    </Space>
+
+    <Space color="orange">•</Space>
+
     <a href="/rss.xml">rss</a>
-    <Space role="img" aria-label="blue diamond">
-      🔹
-    </Space>
+
+    <Space color="pink">•</Space>
+
     <a href="/about">about</a>
+
     <div style={{ float: 'right' }}>
-      <Space>
-        deployed commit:{' '}
-        <code style={{ fontWeight: 'normal' }}>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href={`${repository}/commit/${commit}`}
-          >
-            {commit.substring(0, 6)}
-          </a>
-        </code>
-      </Space>
+      deployed commit:{' '}
+      <code>
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href={`${repository}/commit/${commit}`}
+        >
+          {commit.substring(0, 6)}
+        </a>
+      </code>
     </div>
   </FooterWrapper>
 );

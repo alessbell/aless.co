@@ -1,5 +1,5 @@
 const babelOptions = {
-  plugins: ['@babel/plugin-transform-flow-strip-types', 'emotion'],
+  plugins: ['emotion'],
   presets: ['babel-preset-gatsby'],
 };
 

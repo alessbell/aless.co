@@ -1,26 +1,16 @@
-//@flow
 import React, { PureComponent } from 'react';
 import raf from 'raf';
-import hoistNonReactStatics from 'hoist-non-react-statics';
 
-// NB this is only an utility for the examples
-export default (
-  C: ReactClass<*>,
-  { refreshRate = 60 }: { refreshRate?: number } = {}
-): ReactClass<*> => {
+export default C => {
   class TL extends PureComponent {
-    static displayName = `timeLoop(${C.displayName || C.name || ''})`;
-    state: { time: number };
-    state = {
-      time: 0,
-      tick: 0,
-    };
-    _r: any;
+    state = { time: 0, tick: 0 };
     componentDidMount() {
-      let startTime: number, lastTime: number;
+      let startTime;
+      let lastTime;
+      let refreshRate = 60;
       let interval = 1000 / refreshRate;
       lastTime = -interval;
-      const loop = (t: number) => {
+      const loop = t => {
         this._r = raf(loop);
         if (!startTime) startTime = t;
         if (t - lastTime > interval) {
@@ -40,8 +30,5 @@ export default (
       return <C {...this.props} {...this.state} />;
     }
   }
-
-  hoistNonReactStatics(TL, C);
-
   return TL;
 };

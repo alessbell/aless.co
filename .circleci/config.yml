@@ -21,14 +21,19 @@ jobs:
             # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
 
-      - run: npm install
+      - run: npm ci
 
       - save_cache:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
-      # run tests!
+
+      - run: npm run lint
+
+      - run: npm run type-check
+
       - run: npm run test
+
       # upload coverage report
       - codecov/upload:
           file: coverage/lcov.info

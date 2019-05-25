@@ -8,6 +8,7 @@
 A blog by me built with:
 
 - [Gatsby](https://github.com/gatsbyjs/gatsby)
+- [TypeScript](https://www.typescriptlang.org/)
 - [GraphQL](https://graphql.org/)
 - [Emotion](https://github.com/emotion-js/emotion)
 - [MDX](https://github.com/mdx-js/mdx)

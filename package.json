@@ -3,7 +3,7 @@
   "description": "alessia bellisario's blog",
   "version": "1.0.0",
   "engines": {
-    "node": ">=8.15 <12"
+    "node": "12"
   },
   "author": "Alessia Bellisario <github@bellisar.io>",
   "repository": {
@@ -23,7 +23,6 @@
     "gatsby-plugin-catch-links": "2.0.15",
     "gatsby-plugin-emotion": "4.0.7",
     "gatsby-plugin-feed": "2.2.1",
-    "gatsby-plugin-flow": "1.0.6",
     "gatsby-plugin-google-analytics": "2.0.20",
     "gatsby-plugin-google-fonts": "1.0.0",
     "gatsby-plugin-manifest": "2.1.1",
@@ -31,6 +30,7 @@
     "gatsby-plugin-remove-serviceworker": "1.0.0",
     "gatsby-plugin-sharp": "2.1.1",
     "gatsby-plugin-sitemap": "2.1.0",
+    "gatsby-plugin-typescript": "2.0.15",
     "gatsby-remark-copy-linked-files": "2.0.12",
     "gatsby-remark-images": "3.0.12",
     "gatsby-remark-smartypants": "2.0.9",
@@ -51,6 +51,7 @@
   },
   "keywords": [
     "gatsby",
+    "typescript",
     "emotion",
     "gl-react",
     "prettier"
@@ -62,17 +63,25 @@
     "dev": "gatsby develop",
     "serve": "gatsby serve -p 8000",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\"",
-    "test": "jest --coverage"
+    "test": "jest --coverage",
+    "type-check": "tsc --noEmit",
+    "lint": "tslint --project ."
   },
   "devDependencies": {
     "@babel/plugin-transform-flow-strip-types": "7.4.4",
     "@hot-loader/react-dom": "16.8.6",
+    "@types/jest": "24.0.13",
+    "@types/node": "12.0.2",
+    "@types/react": "16.8.18",
+    "@types/react-dom": "16.8.4",
+    "@types/react-helmet": "5.0.8",
     "babel-jest": "24.8.0",
     "babel-plugin-emotion": "10.0.9",
     "babel-preset-flow": "6.23.0",
     "babel-preset-gatsby": "0.1.11",
     "chrome-launcher": "0.10.7",
     "flow-bin": "0.98.1",
+    "gatsby-plugin-tslint": "0.0.2",
     "identity-obj-proxy": "3.0.0",
     "jest": "24.8.0",
     "jest-canvas-mock": "2.1.0",
@@ -80,6 +89,13 @@
     "jest-emotion": "10.0.11",
     "lighthouse": "5.0.0",
     "prettier": "1.17.1",
-    "react-testing-library": "7.0.1"
+    "react-testing-library": "7.0.1",
+    "ts-jest": "24.0.2",
+    "tslint": "5.16.0",
+    "tslint-config-prettier": "1.18.0",
+    "tslint-loader": "3.6.0",
+    "tslint-plugin-prettier": "2.0.1",
+    "tslint-react": "4.0.0",
+    "typescript": "3.4.5"
   }
 }

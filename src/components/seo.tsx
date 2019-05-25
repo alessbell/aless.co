@@ -2,7 +2,7 @@ import * as React from 'react';
 import Helmet from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
 
-interface SEOProps extends React.HTMLAttributes<HTMLAnchorElement> {
+interface SEOProps {
   /** Description text */
   description: string;
   /** Language text */
@@ -13,7 +13,7 @@ interface SEOProps extends React.HTMLAttributes<HTMLAnchorElement> {
   title: string;
 }
 
-const SEO: React.FunctionComponent<SEOProps> = ({
+const SEO: React.SFC<SEOProps> = ({
   description,
   lang,
   keywords = [],

@@ -20,6 +20,5 @@ module.exports = {
     'src/components/**/*.js',
     'src/pages/**/*.js',
     'src/templates/**/*.js',
-    '!src/components/HOC/*.js',
   ],
 };

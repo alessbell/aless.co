@@ -2,26 +2,27 @@
 // linting error doesn't recognize emotion component as span
 // so it's raising a false positive...
 
-import React from 'react';
-import styled from '@emotion/styled';
+import * as React from 'react';
+import { Space, FooterWrapper } from './styles';
 
-const Space = styled.span`
-  margin-right: 0.5rem;
-  margin-left: 0.5rem;
-  color: ${({ color }) => color || 'black'};
-`;
+interface AnchorProps extends React.HTMLAttributes<HTMLAnchorElement> {
+  link: string;
+  name: string;
+  rel?: 'noopener';
+  target?: string;
+}
 
-const FooterWrapper = styled.footer`
-  display: block;
-  padding: 0;
-  margin-bottom: 3rem;
+interface FooterProps {
+  commit: string;
+  repository: string;
+}
 
-  a {
-    text-decoration: none;
-  }
-`;
-
-const Anchor = ({ link, name, rel, target = '_self' }) => (
+const Anchor: React.SFC<AnchorProps> = ({
+  link,
+  name,
+  rel,
+  target = '_self',
+}) => (
   <a
     href={link}
     target={target}
@@ -31,7 +32,7 @@ const Anchor = ({ link, name, rel, target = '_self' }) => (
   </a>
 );
 
-const Footer = ({ commit, repository }) => (
+const Footer: React.SFC<FooterProps> = ({ commit, repository }) => (
   <FooterWrapper>
     <Anchor
       link="https://twitter.com/alessbell"

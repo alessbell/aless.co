@@ -1,8 +1,8 @@
-import React from 'react';
+import * as React from 'react';
 import { Shaders, Node, GLSL } from 'gl-react';
 
 const shaders = Shaders.create({
-  helloBlue: {
+  colorWave: {
     // uniforms are variables from JS. We pipe blue uniform into blue output color
     frag: GLSL`
     precision highp float;
@@ -14,6 +14,12 @@ const shaders = Shaders.create({
   },
 });
 
-export const HelloBlue = ({ blue }) => (
-  <Node shader={shaders && shaders.helloBlue} uniforms={{ blue: blue }} />
+interface ColorWaveProps {
+  blue: number;
+}
+
+const ColorWave: React.FunctionComponent<ColorWaveProps> = ({ blue }) => (
+  <Node shader={shaders && shaders.colorWave} uniforms={{ blue }} />
 );
+
+export default ColorWave;

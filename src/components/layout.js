@@ -1,46 +1,30 @@
 import React, { useEffect } from 'react';
 import { Global, css } from '@emotion/core';
-import styled from '@emotion/styled';
-import { Link as BaseLink, StaticQuery, graphql } from 'gatsby';
-import { LeftBar, RightBar, TopBar, BottomBar, BORDER_COLOR } from './styles';
+import { StaticQuery, graphql } from 'gatsby';
+import {
+  H1,
+  Link,
+  LeftBar,
+  RightBar,
+  TopBar,
+  BottomBar,
+  BORDER_COLOR,
+} from './styles';
 import Header from './header';
 import Footer from './footer';
-
-const H1 = styled.h1`
-  font-size: 38px;
-  margin-top: 3rem;
-  margin-bottom: 0.5rem;
-  position: relative;
-  z-index: 100;
-  mix-blend-mode: screen;
-  background-color: white;
-  color: black;
-
-  a {
-    &:hover {
-      background-color: white;
-    }
-  }
-`;
-
-const Link = styled(BaseLink)`
-  box-shadow: none;
-  text-decoration: none;
-  color: inherit;
-`;
 
 const Layout = ({ children }) => {
   useEffect(() => {
     const headings = document.querySelectorAll('h1');
     let styles = ``;
     headings.forEach(heading => {
-      const rando = `x${Math.floor(Math.random() * 16777215).toString(16)}`;
-      heading.classList.add(rando);
+      const random = `x${Math.floor(Math.random() * 16777215).toString(16)}`;
+      heading.classList.add(random);
       let text = '';
       if (heading.innerText) {
         text = heading.innerText.replace(`'`, `\\'`).replace(`\n`, '\\A ');
       }
-      styles += `.${rando}:after { content: '${text}';}`;
+      styles += `.${random}:after { content: '${text}';}`;
     });
 
     const style = document.createElement('style');
@@ -70,9 +54,6 @@ const Layout = ({ children }) => {
         >
           <Global
             styles={css`
-              // html {
-              //   margin-left: calc(100vw - 100%);
-              // }
               body {
                 --hr: hsla(0, 0%, 0%, 0.2);
                 --inlineCode-bg: rgba(255, 229, 100, 0.2);

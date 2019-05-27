@@ -4,18 +4,18 @@ import { StaticQuery, graphql } from 'gatsby';
 
 interface SEOProps {
   /** Description text */
-  description: string;
+  description?: string;
   /** Language text */
-  lang: string;
-  /** Email body text */
+  lang?: string;
+  /** SEO keywords */
   keywords: string[];
-  /** Email body text */
+  /** Document title */
   title: string;
 }
 
-const SEO: React.SFC<SEOProps> = ({
+const SEO: React.FunctionComponent<SEOProps> = ({
   description,
-  lang,
+  lang = 'en',
   keywords = [],
   title,
 }) => {

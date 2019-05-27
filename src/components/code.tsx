@@ -1,10 +1,20 @@
-import React from 'react';
-import Highlight, { defaultProps } from 'prism-react-renderer';
+import * as React from 'react';
+import Highlight, { defaultProps, Language } from 'prism-react-renderer';
 import Theme from 'prism-react-renderer/themes/nightOwl';
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
 
-export default ({ children, className, live, render }) => {
-  const language = className.replace(/language-/, '');
+interface CodeProps {
+  live: boolean;
+  render: boolean;
+  children: string;
+}
+
+const Code: React.FunctionComponent<
+  CodeProps & React.HTMLAttributes<HTMLDivElement>
+> = ({ children, className, live, render }) => {
+  const language = (className
+    ? className.replace(/language-/, '')
+    : 'javascript') as Language;
 
   if (live) {
     return (
@@ -35,8 +45,8 @@ export default ({ children, className, live, render }) => {
       code={children}
       language={language}
     >
-      {({ className, style, tokens, getLineProps, getTokenProps }) => (
-        <pre className={className} style={{ ...style, padding: '20px' }}>
+      {({ style, tokens, getLineProps, getTokenProps, ...rest }) => (
+        <pre className={rest.className} style={{ ...style, padding: '20px' }}>
           {/* render null for last empty line because
           it was adding a span that looked like padding */}
           {tokens.map((line, i) => {
@@ -55,3 +65,5 @@ export default ({ children, className, live, render }) => {
     </Highlight>
   );
 };
+
+export default Code;

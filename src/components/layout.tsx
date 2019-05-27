@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import * as React from 'react';
 import { Global, css } from '@emotion/core';
 import { StaticQuery, graphql } from 'gatsby';
 import {
@@ -13,8 +13,8 @@ import {
 import Header from './header';
 import Footer from './footer';
 
-const Layout = ({ children }) => {
-  useEffect(() => {
+const Layout: React.FunctionComponent = ({ children }) => {
+  React.useEffect(() => {
     const headings = document.querySelectorAll('h1');
     let styles = ``;
     headings.forEach(heading => {
@@ -31,6 +31,7 @@ const Layout = ({ children }) => {
     style.textContent = styles;
     document.body.appendChild(style);
   });
+
   return (
     <StaticQuery
       query={graphql`
@@ -108,11 +109,6 @@ const Layout = ({ children }) => {
                 }
               }
 
-              :not(pre) > code[class*='language-'],
-              pre[class*='language-'] {
-                margin-bottom: 1.75rem;
-              }
-
               ::selection {
                 background: #efb617; /* WebKit/Blink Browsers */
               }
@@ -136,9 +132,18 @@ const Layout = ({ children }) => {
               }
 
               p {
-                line-height: 1.5;
-                font-size: 1.1rem;
                 margin-top: 0.5rem;
+              }
+
+              ul,
+              p {
+                line-height: 1.5;
+              }
+
+              :not(pre) > code[class*='language-'],
+              pre[class*='language-'],
+              p,
+              ul {
                 margin-bottom: 1.75rem;
               }
               a {
@@ -151,11 +156,17 @@ const Layout = ({ children }) => {
                 color: black;
                 background-color: yellow;
               }
-
+              figure {
+                margin: 0;
+              }
+              figcaption {
+                font-size: 0.85rem;
+                margin-top: 0.5rem;
+              }
               blockquote {
                 color: #525252;
                 margin-left: 0;
-                font-size: 1.2rem;
+                font-size: 1.1rem;
                 padding-left: 1rem;
                 border-left: 6px solid blue;
                 font-style: italic;

@@ -2,8 +2,8 @@ const config = {
   siteMetadata: {
     title: `anti/pattern`,
     author: `Alessia Bellisario`,
-    siteUrl: 'https://aless.co',
-    description: `Alessia Bellisario is a programmer working on the web in New York City`,
+    siteUrl: `https://aless.co`,
+    description: `Alessia Bellisario is a software engineer working on the web in New York City`,
     repository: `https://github.com/alessbell/alessbell`,
     commit: process.env.COMMIT_REF || `master`,
   },
@@ -15,7 +15,6 @@ const config = {
         name: `blog`,
       },
     },
-    `gatsby-plugin-tslint`,
     {
       resolve: `gatsby-plugin-typescript`,
       options: {
@@ -24,6 +23,7 @@ const config = {
         allExtensions: true, // defaults to false
       },
     },
+    `gatsby-plugin-tslint`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-catch-links`,
     `gatsby-plugin-emotion`,
@@ -36,6 +36,7 @@ const config = {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 1035,
+              showCaptions: true,
             },
           },
           {
@@ -106,7 +107,7 @@ const config = {
                         slug
                       }
                       frontmatter {
-                        date(formatString: "MMMM DD, YYYY")
+                        date(formatString: "MMMM D, YYYY")
                         spoiler
                         title
                       }

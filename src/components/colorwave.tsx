@@ -3,7 +3,6 @@ import { Shaders, Node, GLSL } from 'gl-react';
 
 const shaders = Shaders.create({
   colorWave: {
-    // uniforms are variables from JS. We pipe blue uniform into blue output color
     frag: GLSL`
     precision highp float;
     varying vec2 uv;

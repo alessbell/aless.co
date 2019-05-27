@@ -1,13 +1,13 @@
 import * as React from 'react';
-import ColorWave from './colorwave';
 import * as raf from 'raf';
+import ColorWave from './colorwave';
 
 let r: number;
 let startTime: number;
 let lastTime: number;
 const interval = 1000 / 60;
 
-const AnimatedColorWave: React.SFC = () => {
+const AnimatedColorWave: React.FunctionComponent = () => {
   const [time, setTime] = React.useState(0);
   const [tick, setTick] = React.useState(0);
 

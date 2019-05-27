@@ -1,8 +1,8 @@
-import React from 'react';
+import * as React from 'react';
 import SEO from '../components/seo';
 import Layout from '../components/layout';
 
-const AboutPage = () => (
+const AboutPage: React.FunctionComponent = () => (
   <Layout>
     <SEO
       title="about"
@@ -13,7 +13,8 @@ const AboutPage = () => (
       Hi
       <span role="img" aria-label="waving hand">
         👋
-      </span>{'  '}
+      </span>
+      {'  '}
       I'm Alessia Bellisario, a software engineer based in New York City.
     </p>
     <p>

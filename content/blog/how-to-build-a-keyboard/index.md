@@ -37,7 +37,7 @@ I knew I'd have to solder the switches to the board, something I'd never done be
 - the ["Blink" Learn to Solder Kit](https://www.amazon.com/gp/product/B017S00DJ2/ref=ppx_yo_dt_b_asin_title_o07_s00?ie=UTF8&psc=1)
 - a pair of [micro wire cutters](https://www.amazon.com/gp/product/B00FZPDG1K/ref=ppx_yo_dt_b_asin_title_o06_s00?ie=UTF8&psc=1)
 - this [fan](https://www.amazon.com/gp/product/B0711LFYJ1/ref=ppx_yo_dt_b_asin_title_o09_s00?ie=UTF8&psc=1) to remove solder fumes
-- a now-discontinued $17 soldering iron kit that came with an iron, some solder, and a carrying case
+- a now-discontinued \$17 soldering iron kit that came with an iron, some solder, and a carrying case
 
 I found the learn to solder kit to be very approachable: it comes with a single small PCB, 3x LEDs, 3x resistors, 3x push button switches and a 3V coin battery and battery holder. I watched a few YouTube videos of people soldering and came across the great [Adafruit Guide to Excellent Soldering](https://learn.adafruit.com/adafruit-guide-excellent-soldering/common-problems) before I gave it a shot. In about ten minutes, I had turned a pile of loose parts into a tidy row of buttons hooked up to a battery that could summon light from LEDs. 🤯
 
@@ -50,7 +50,6 @@ I was ready to try my luck with the Planck PCB. Something I didn't fully appreci
 There are two main layouts for the Planck: **grid**, consisting of 48 keys (4x12), and **MIT**, consisting of 47 keys (a similar grid, except a single switch is used for the spacebar in the bottom row with an optional stabilizer bar). As I'd read online, the best strategy for soldering plate mounted switches is to pop in the four corner switches, solder those, and then proceed to solder the rest of the board.
 
 I went with the MIT layout, so I had 47 x 2 pins per switch = **94 pins to solder** (!). This sounded like a lot, but once I got into a flow state (pun regrettably intended), I blinked and was suddenly done.
-
 
 ![Planck keyboard, Cherry MX Blue switches soldered but no keycaps on yet](./olkb4.jpg)
 

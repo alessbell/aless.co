@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import * as React from 'react';
 import { Global, css } from '@emotion/core';
 import { StaticQuery, graphql } from 'gatsby';
 import {
@@ -13,8 +13,8 @@ import {
 import Header from './header';
 import Footer from './footer';
 
-const Layout = ({ children }) => {
-  useEffect(() => {
+const Layout: React.FunctionComponent = ({ children }) => {
+  React.useEffect(() => {
     const headings = document.querySelectorAll('h1');
     let styles = ``;
     headings.forEach(heading => {
@@ -31,6 +31,7 @@ const Layout = ({ children }) => {
     style.textContent = styles;
     document.body.appendChild(style);
   });
+
   return (
     <StaticQuery
       query={graphql`

@@ -1,14 +1,10 @@
 import React from 'react';
-import { Link, graphql } from 'gatsby';
-import styled from '@emotion/styled';
+import { graphql } from 'gatsby';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
+import { BlogLink } from '../components/styles';
 
 import '../css/font-face.css';
-
-const BlogLink = styled(Link)`
-  line-height: 1.85rem;
-`;
 
 const BlogIndex = ({
   data: {

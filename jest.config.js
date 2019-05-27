@@ -17,8 +17,8 @@ module.exports = {
   setupFiles: [`<rootDir>/loadershim.js`, `jest-canvas-mock`],
   collectCoverage: true,
   collectCoverageFrom: [
-    'src/components/**/*.js',
-    'src/pages/**/*.js',
-    'src/templates/**/*.js',
+    'src/components/**/*',
+    'src/pages/**/*',
+    'src/templates/**/*',
   ],
 };

@@ -66,3 +66,6 @@ export const Link = styled(BaseLink)`
   text-decoration: none;
   color: inherit;
 `;
+export const BlogLink = styled(BaseLink)`
+  line-height: 1.85rem;
+`;

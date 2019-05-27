@@ -1,7 +1,3 @@
-/* eslint-disable jsx-a11y/accessible-emoji */
-// linting error doesn't recognize emotion component as span
-// so it's raising a false positive...
-
 import * as React from 'react';
 import { Space, FooterWrapper } from './styles';
 
@@ -9,7 +5,7 @@ interface AnchorProps extends React.HTMLAttributes<HTMLAnchorElement> {
   link: string;
   name: string;
   rel?: 'noopener';
-  target?: string;
+  target?: '_blank';
 }
 
 interface FooterProps {
@@ -17,7 +13,7 @@ interface FooterProps {
   repository: string;
 }
 
-const Anchor: React.SFC<AnchorProps> = ({
+const Anchor: React.FunctionComponent<AnchorProps> = ({
   link,
   name,
   rel,

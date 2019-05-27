@@ -15,7 +15,6 @@ const config = {
         name: `blog`,
       },
     },
-    `gatsby-plugin-tslint`,
     {
       resolve: `gatsby-plugin-typescript`,
       options: {
@@ -24,6 +23,7 @@ const config = {
         allExtensions: true, // defaults to false
       },
     },
+    `gatsby-plugin-tslint`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-catch-links`,
     `gatsby-plugin-emotion`,

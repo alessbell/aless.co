@@ -37,7 +37,7 @@ const next = {
 };
 
 beforeEach(() => {
-  (StaticQuery as jest.Mock).mockImplementation(({ render }) =>
+  StaticQuery.mockImplementation(({ render }) =>
     render({
       site: {
         siteMetadata: {

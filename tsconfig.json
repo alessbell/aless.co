@@ -10,5 +10,5 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["./src/**/*", "./__tests__/config/jest-setup-test-framework.ts"]
+  "include": ["./src/**/*"]
 }

@@ -17,7 +17,7 @@ module.exports = {
   setupFilesAfterEnv: [
     '<rootDir>/__tests__/config/jest-setup-test-framework.ts',
   ],
-  setupFiles: [`<rootDir>/loadershim.ts`, `jest-canvas-mock`],
+  setupFiles: [`<rootDir>/loadershim.js`, `jest-canvas-mock`],
   collectCoverage: true,
   collectCoverageFrom: [
     'src/components/**/*',

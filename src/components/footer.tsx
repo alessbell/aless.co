@@ -1,14 +1,14 @@
 import * as React from 'react';
 import { Space, FooterWrapper } from './styles';
 
-interface AnchorProps extends React.HTMLAttributes<HTMLAnchorElement> {
+export interface AnchorProps extends React.HTMLAttributes<HTMLAnchorElement> {
   link: string;
   name: string;
   rel?: 'noopener';
   target?: '_blank';
 }
 
-interface FooterProps {
+export interface FooterProps {
   commit: string;
   repository: string;
 }

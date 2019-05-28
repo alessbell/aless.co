@@ -13,7 +13,7 @@ const shaders = Shaders.create({
   },
 });
 
-interface ColorWaveProps {
+export interface ColorWaveProps {
   blue: number;
 }
 

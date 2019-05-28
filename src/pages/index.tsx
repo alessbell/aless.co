@@ -1,12 +1,32 @@
-import React from 'react';
+import * as React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import { BlogLink } from '../components/styles';
-
 import '../css/font-face.css';
 
-const BlogIndex = ({
+export interface Edge {
+  node: {
+    frontmatter: {
+      title: string;
+      spoiler: string;
+      date: string;
+    };
+    fields: {
+      slug: string;
+    };
+  };
+}
+
+export interface BlogIndexProps {
+  data: {
+    allMdx: {
+      edges: Edge[];
+    };
+  };
+}
+
+const BlogIndex: React.FunctionComponent<BlogIndexProps> = ({
   data: {
     allMdx: { edges },
   },

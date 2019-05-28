@@ -2,7 +2,7 @@ import * as React from 'react';
 import Helmet from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
 
-interface SEOProps {
+export interface SEOProps {
   /** Description text */
   description?: string;
   /** Language text */

@@ -1,5 +1,6 @@
 import React from 'react';
 import { render } from 'react-testing-library';
+import 'jest-dom/extend-expect';
 import { StaticQuery } from 'gatsby';
 import BlogPost from '../../src/templates/blog-post';
 

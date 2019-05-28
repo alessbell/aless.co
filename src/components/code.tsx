@@ -4,8 +4,8 @@ import Theme from 'prism-react-renderer/themes/nightOwl';
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
 
 export interface CodeProps {
-  live: boolean;
-  render: boolean;
+  live?: boolean;
+  render?: boolean;
   children: string;
 }
 

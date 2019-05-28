@@ -1,11 +1,12 @@
-import React from 'react';
+import * as React from 'react';
 import { render } from 'react-testing-library';
+import 'jest-dom/extend-expect';
 import { StaticQuery } from 'gatsby';
-import About from '../../src/pages/about';
+import NotFound from '../../src/pages/404';
 
 jest.mock('gl-react-dom');
 beforeEach(() => {
-  StaticQuery.mockImplementation(({ render }) =>
+  (StaticQuery as jest.Mock).mockImplementation(({ render }) =>
     render({
       site: {
         siteMetadata: {
@@ -18,13 +19,13 @@ beforeEach(() => {
   );
 });
 
-describe('About page', () => {
+describe('404 page', () => {
   test('renders', () => {
-    const { getByText } = render(<About />);
+    const { getByText } = render(<NotFound />);
     expect(getByText('anti/pattern')).toBeInTheDocument();
     expect(getByText('a blog by alessia bellisario')).toBeInTheDocument();
     expect(
-      getByText(/a software engineer based in new york city/i)
+      getByText(/you just hit a route that doesn't exist... the sadness./i)
     ).toBeInTheDocument();
   });
 });

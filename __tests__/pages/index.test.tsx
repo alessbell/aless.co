@@ -1,11 +1,12 @@
-import React from 'react';
+import * as React from 'react';
 import { render } from 'react-testing-library';
+import 'jest-dom/extend-expect';
 import { StaticQuery } from 'gatsby';
 import Homepage from '../../src/pages/index';
 
 jest.mock('gl-react-dom');
 beforeEach(() => {
-  StaticQuery.mockImplementation(({ render }) =>
+  (StaticQuery as jest.Mock).mockImplementation(({ render }) =>
     render({
       site: {
         siteMetadata: {
@@ -46,6 +47,7 @@ const posts = [
   {
     node: {
       frontmatter: {
+        title: 'Third post',
         date: 'January 3, 1980',
         spoiler: '3...',
       },
@@ -65,7 +67,7 @@ describe('Homepage', () => {
     expect(getByText('a blog by alessia bellisario')).toBeInTheDocument();
     expect(getAllByText(/post/i)).toHaveLength(3);
 
-    posts.forEach(({ node: { frontmatter, fields } }, i) => {
+    posts.forEach(({ node: { frontmatter, fields } }) => {
       expect(getByText(frontmatter.title || fields.slug)).toBeInTheDocument();
       expect(getByText(frontmatter.title || fields.slug)).toHaveAttribute(
         'href',

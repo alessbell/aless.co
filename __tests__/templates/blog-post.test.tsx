@@ -1,10 +1,6 @@
-import React from 'react';
+import * as React from 'react';
 import { render } from 'react-testing-library';
-import 'jest-dom/extend-expect';
-import { StaticQuery } from 'gatsby';
 import BlogPost from '../../src/templates/blog-post';
-
-jest.mock('gl-react-dom');
 
 const post = {
   code: {
@@ -24,6 +20,8 @@ const previous = {
   },
   frontmatter: {
     title: 'Some title 1',
+    spoiler: 'This is a spoiler',
+    date: 'Jan 5, 2020',
   },
 };
 
@@ -33,30 +31,15 @@ const next = {
   },
   frontmatter: {
     title: 'Some title 2',
+    spoiler: 'This is another spoiler',
+    date: 'Jan 6, 2020',
   },
 };
-
-beforeEach(() => {
-  StaticQuery.mockImplementation(({ render }) =>
-    render({
-      site: {
-        siteMetadata: {
-          title: `anti/pattern`,
-          repository: `https://github.com/alessbell/alessbell`,
-          commit: `master`,
-        },
-      },
-    })
-  );
-});
 
 describe('Blog post', () => {
   test('renders', () => {
     const { getByText } = render(
-      <BlogPost
-        data={{ mdx: post }}
-        pageContext={{ previous: previous, next: next }}
-      />
+      <BlogPost data={{ mdx: post }} pageContext={{ previous, next }} />
     );
     expect(getByText('anti/pattern')).toBeInTheDocument();
     expect(getByText(/a blog by alessia bellisario/i)).toBeInTheDocument();

@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { render } from 'react-testing-library';
-import 'jest-dom/extend-expect';
 import Footer from '../../src/components/footer';
 
 const REPOSITORY = `https://github.com/alessbell/alessbell`;

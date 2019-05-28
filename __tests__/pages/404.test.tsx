@@ -1,23 +1,6 @@
 import * as React from 'react';
 import { render } from 'react-testing-library';
-import 'jest-dom/extend-expect';
-import { StaticQuery } from 'gatsby';
 import NotFound from '../../src/pages/404';
-
-jest.mock('gl-react-dom');
-beforeEach(() => {
-  (StaticQuery as jest.Mock).mockImplementation(({ render }) =>
-    render({
-      site: {
-        siteMetadata: {
-          title: `anti/pattern`,
-          repository: `https://github.com/alessbell/alessbell`,
-          commit: `master`,
-        },
-      },
-    })
-  );
-});
 
 describe('404 page', () => {
   test('renders', () => {

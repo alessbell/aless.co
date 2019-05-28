@@ -12,8 +12,11 @@ module.exports = {
   globals: {
     __PATH_PREFIX__: ``,
   },
-  testMatch: ['**/*.test.js', '**/*.test.tsx'],
-  setupFilesAfterEnv: ['<rootDir>/__tests__/config/jest-setup-test-framework'],
+  moduleFileExtensions: ['ts', 'tsx', 'js', 'json', 'jsx'],
+  testMatch: ['**/*.test.(js|tsx|ts)'],
+  setupFilesAfterEnv: [
+    '<rootDir>/__tests__/config/jest-setup-test-framework.ts',
+  ],
   setupFiles: [`<rootDir>/loadershim.js`, `jest-canvas-mock`],
   collectCoverage: true,
   collectCoverageFrom: [

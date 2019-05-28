@@ -1,11 +1,11 @@
-import React from 'react';
+import * as React from 'react';
 import { render } from 'react-testing-library';
 import { StaticQuery } from 'gatsby';
 import About from '../../src/pages/about';
 
 jest.mock('gl-react-dom');
 beforeEach(() => {
-  StaticQuery.mockImplementation(({ render }) =>
+  (StaticQuery as jest.Mock).mockImplementation(({ render }) =>
     render({
       site: {
         siteMetadata: {

@@ -1,10 +1,10 @@
-import React from 'react';
+import * as React from 'react';
 import { render } from 'react-testing-library';
 import { StaticQuery } from 'gatsby';
 import SEO from '../../src/components/seo';
 
 beforeEach(() => {
-  StaticQuery.mockImplementationOnce(({ render }) =>
+  (StaticQuery as jest.Mock).mockImplementationOnce(({ render }) =>
     render({
       site: {
         siteMetadata: {

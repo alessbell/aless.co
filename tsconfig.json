@@ -10,5 +10,5 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["./src/**/*"]
+  "include": ["./src/**/*", "./__tests__/**/*"]
 }

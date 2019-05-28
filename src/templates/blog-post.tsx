@@ -1,10 +1,39 @@
-import React from 'react';
+import * as React from 'react';
 import { Link, graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-mdx';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 
-const BlogPostTemplate = ({
+interface FrontMatter {
+  title: string;
+  spoiler: string;
+  date: string;
+}
+
+interface Article {
+  fields: {
+    slug: string;
+  };
+  frontmatter: FrontMatter;
+}
+
+interface BlogPostData {
+  data: {
+    mdx: {
+      frontmatter: FrontMatter;
+      excerpt: string;
+      code: {
+        body: string;
+      };
+    };
+  };
+  pageContext: {
+    previous: Article;
+    next: Article;
+  };
+}
+
+const BlogPostTemplate: React.FunctionComponent<BlogPostData> = ({
   data: {
     mdx: { frontmatter, excerpt, code },
   },

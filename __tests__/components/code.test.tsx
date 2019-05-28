@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { render } from 'react-testing-library';
-import 'jest-dom/extend-expect';
 import Code from '../../src/components/code';
 
 describe('Code', () => {

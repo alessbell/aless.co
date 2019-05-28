@@ -1,6 +1,6 @@
 module.exports = {
   transform: {
-    '^.+\\.jsx?$': `<rootDir>/jest-preprocess.ts`,
+    '^.+\\.jsx?$': `<rootDir>/jest-preprocess.js`,
     '^.+\\.tsx?$': `ts-jest`,
   },
   moduleNameMapper: {

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { render } from 'react-testing-library';
+import { render } from '@testing-library/react';
 import Homepage from '../../src/pages/index';
 
 const posts = [
@@ -46,17 +46,17 @@ describe('Homepage', () => {
     const { getAllByText, getByText } = render(
       <Homepage data={{ allMdx: { edges: posts } }} />
     );
-    expect(getByText('anti/pattern')).toBeInTheDocument();
-    expect(getByText('a blog by alessia bellisario')).toBeInTheDocument();
+    getByText('anti/pattern');
+    getByText('a blog by alessia bellisario');
     expect(getAllByText(/post/i)).toHaveLength(3);
 
     posts.forEach(({ node: { frontmatter, fields } }) => {
-      expect(getByText(frontmatter.title || fields.slug)).toBeInTheDocument();
+      getByText(frontmatter.title || fields.slug);
       expect(getByText(frontmatter.title || fields.slug)).toHaveAttribute(
         'href',
         fields.slug
       );
-      expect(getByText(frontmatter.spoiler)).toBeInTheDocument();
+      getByText(frontmatter.spoiler);
     });
   });
 });

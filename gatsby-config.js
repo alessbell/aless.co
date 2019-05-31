@@ -30,12 +30,12 @@ const config = {
     {
       resolve: `gatsby-mdx`,
       options: {
-        extensions: ['.md'],
+        extensions: ['.mdx', '.md'],
         gatsbyRemarkPlugins: [
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 1050,
+              maxWidth: 1035,
               showCaptions: true,
               withWebp: true,
             },

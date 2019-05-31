@@ -30,13 +30,14 @@ const config = {
     {
       resolve: `gatsby-mdx`,
       options: {
-        extensions: ['.mdx', '.md'],
+        extensions: ['.md'],
         gatsbyRemarkPlugins: [
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 1035,
+              maxWidth: 650,
               showCaptions: true,
+              withWebp: true,
             },
           },
           {
@@ -123,7 +124,7 @@ const config = {
       },
     },
     `gatsby-plugin-sitemap`,
-    `gatsby-plugin-remove-serviceworker`,
+    `gatsby-plugin-offline`,
   ],
 };
 

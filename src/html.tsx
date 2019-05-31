@@ -1,12 +1,12 @@
 import * as React from 'react';
 
 interface HTMLProps {
-  htmlAttributes: object;
-  headComponents: [];
-  bodyAttributes: object;
-  preBodyComponents: [];
+  htmlAttributes: Pick<JSX.IntrinsicElements, 'html'>;
+  bodyAttributes: Pick<JSX.IntrinsicElements, 'body'>;
+  preBodyComponents: JSX.Element[];
+  headComponents: JSX.Element[];
+  postBodyComponents: JSX.Element[];
   body: string;
-  postBodyComponents: [];
 }
 
 const HTML: React.FunctionComponent<HTMLProps> = props => (

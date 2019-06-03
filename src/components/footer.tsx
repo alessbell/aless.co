@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Link } from 'gatsby';
 import { Space, FooterWrapper } from './styles';
 
 export interface AnchorProps extends React.HTMLAttributes<HTMLAnchorElement> {
@@ -30,14 +31,9 @@ const Anchor: React.FunctionComponent<AnchorProps> = ({
 
 const Footer: React.SFC<FooterProps> = ({ commit, repository }) => (
   <FooterWrapper>
-    <Anchor
-      link="https://twitter.com/alessbell"
-      target="_blank"
-      rel="noopener"
-      name="twitter"
-    />
+    <Link to="/about">about</Link>
 
-    <Space color="red">•</Space>
+    <Space color="orange">•</Space>
 
     <Anchor
       link="https://github.com/alessbell"
@@ -46,13 +42,27 @@ const Footer: React.SFC<FooterProps> = ({ commit, repository }) => (
       name="github"
     />
 
-    <Space color="orange">•</Space>
+    <Space color="red">•</Space>
 
-    <a href="/rss.xml">rss</a>
+    <Anchor
+      link="https://twitter.com/alessbell"
+      target="_blank"
+      rel="noopener"
+      name="twitter"
+    />
+
+    <Space color="green">•</Space>
+
+    <Anchor
+      link="https://www.dropbox.com/s/o5hwc6eivt2gk5x/resume.pdf?dl=0"
+      target="_blank"
+      rel="noopener"
+      name="resume"
+    />
 
     <Space color="pink">•</Space>
 
-    <a href="/about">about</a>
+    <a href="/rss.xml">rss</a>
 
     <div style={{ float: 'right' }}>
       deployed commit:{' '}

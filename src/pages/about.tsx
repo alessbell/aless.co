@@ -8,7 +8,7 @@ const AboutPage: React.FunctionComponent = () => (
       title="about"
       keywords={[`blog`, `rust`, `gatsby`, `javascript`, `react`]}
     />
-    <h2>About</h2>
+    <h2>about</h2>
     <p>
       Hi
       <span role="img" aria-label="waving hand">

@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@emotion/core": "10.0.10",
-    "@emotion/styled": "10.0.11",
+    "@emotion/styled": "10.0.12",
     "@mdx-js/mdx": "1.0.20",
     "@mdx-js/react": "1.0.20",
     "@mdx-js/tag": "0.20.3",
@@ -79,7 +79,7 @@
     "@types/react-dom": "16.8.4",
     "@types/react-helmet": "5.0.8",
     "babel-jest": "24.8.0",
-    "babel-plugin-emotion": "10.0.9",
+    "babel-plugin-emotion": "10.0.13",
     "babel-preset-flow": "6.23.0",
     "babel-preset-gatsby": "0.1.11",
     "chrome-launcher": "0.10.7",

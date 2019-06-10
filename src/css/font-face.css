@@ -12,3 +12,24 @@
   font-weight: bold;
   font-style: normal;
 }
+@font-face {
+  font-family: 'Untitled Sans';
+  src: url(../fonts/UntitledSansWeb-Regular.woff) format('woff'),
+    url(../fonts/UntitledSansWeb-Regular.woff2) format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Untitled Sans';
+  src: url(../fonts/UntitledSansWeb-Bold.woff) format('woff'),
+    url(../fonts/UntitledSansWeb-Bold.woff2) format('woff2');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Untitled Sans';
+  src: url(../fonts/UntitledSansWeb-RegularItalic.woff) format('woff'),
+    url(../fonts/UntitledSansWeb-RegularItalic.woff2) format('woff2');
+  font-weight: normal;
+  font-style: italic;
+}

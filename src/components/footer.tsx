@@ -29,7 +29,10 @@ const Anchor: React.FunctionComponent<AnchorProps> = ({
   </a>
 );
 
-const Footer: React.SFC<FooterProps> = ({ commit, repository }) => (
+const Footer: React.FunctionComponent<FooterProps> = ({
+  commit,
+  repository,
+}) => (
   <FooterWrapper>
     <Link to="/about">about</Link>
 

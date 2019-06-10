@@ -1,5 +1,6 @@
 @font-face {
   font-family: 'GT Pressura Mono Regular';
+  font-display: swap;
   src: url('../fonts/GT-Pressura-Mono-Regular.woff2') format('woff2'),
     url('../fonts/GT-Pressura-Mono-Regular.woff') format('woff');
   font-weight: normal;
@@ -7,6 +8,7 @@
 }
 @font-face {
   font-family: 'GT Pressura Mono Bold';
+  font-display: swap;
   src: url('../fonts/GT-Pressura-Mono-Bold.woff2') format('woff2'),
     url('../fonts/GT-Pressura-Mono-Bold.woff') format('woff');
   font-weight: bold;
@@ -14,6 +16,7 @@
 }
 @font-face {
   font-family: 'Untitled Sans';
+  font-display: fallback;
   src: url(../fonts/UntitledSansWeb-Regular.woff) format('woff'),
     url(../fonts/UntitledSansWeb-Regular.woff2) format('woff2');
   font-weight: normal;
@@ -21,6 +24,7 @@
 }
 @font-face {
   font-family: 'Untitled Sans';
+  font-display: fallback;
   src: url(../fonts/UntitledSansWeb-Bold.woff) format('woff'),
     url(../fonts/UntitledSansWeb-Bold.woff2) format('woff2');
   font-weight: bold;
@@ -28,6 +32,7 @@
 }
 @font-face {
   font-family: 'Untitled Sans';
+  font-display: fallback;
   src: url(../fonts/UntitledSansWeb-RegularItalic.woff) format('woff'),
     url(../fonts/UntitledSansWeb-RegularItalic.woff2) format('woff2');
   font-weight: normal;

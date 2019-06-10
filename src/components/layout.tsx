@@ -91,7 +91,7 @@ const Layout: React.FunctionComponent = ({ children }) => {
           li,
           footer,
           small {
-            font-family: 'Roboto', 'Helvetica', sans-serif;
+            font-family: 'Untitled Sans', 'Helvetica', sans-serif;
           }
           h1,
           h2,
@@ -141,6 +141,7 @@ const Layout: React.FunctionComponent = ({ children }) => {
           }
 
           p {
+            font-size: 18px;
             margin-top: 0.5rem;
           }
 

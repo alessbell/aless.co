@@ -1,4 +1,5 @@
 import * as React from 'react';
+import styled from '@emotion/styled';
 import { Link } from 'gatsby';
 import { Space, FooterWrapper } from './styles';
 
@@ -8,6 +9,12 @@ export interface AnchorProps extends React.HTMLAttributes<HTMLAnchorElement> {
   rel?: 'noopener';
   target?: '_blank';
 }
+
+const Commit = styled.div`
+  @media (min-width: 52em) {
+    float: right;
+  }
+`;
 
 export interface FooterProps {
   commit: string;
@@ -67,7 +74,7 @@ const Footer: React.FunctionComponent<FooterProps> = ({
 
     <a href="/rss.xml">rss</a>
 
-    <div style={{ float: 'right' }}>
+    <Commit>
       deployed commit:{' '}
       <code>
         <a
@@ -78,7 +85,7 @@ const Footer: React.FunctionComponent<FooterProps> = ({
           {commit.substring(0, 7)}
         </a>
       </code>
-    </div>
+    </Commit>
   </FooterWrapper>
 );
 

@@ -25,10 +25,18 @@
 @font-face {
   font-family: 'Untitled Sans';
   font-display: fallback;
-  src: url(../fonts/UntitledSansWeb-Bold.woff) format('woff'),
-    url(../fonts/UntitledSansWeb-Bold.woff2) format('woff2');
+  src: url(../fonts/UntitledSansWeb-Medium.woff) format('woff'),
+    url(../fonts/UntitledSansWeb-Medium.woff2) format('woff2');
   font-weight: bold;
   font-style: normal;
+}
+@font-face {
+  font-family: 'Untitled Sans';
+  font-display: fallback;
+  src: url(../fonts/UntitledSansWeb-MediumItalic.woff) format('woff'),
+    url(../fonts/UntitledSansWeb-MediumItalic.woff2) format('woff2');
+  font-weight: bold;
+  font-style: italic;
 }
 @font-face {
   font-family: 'Untitled Sans';

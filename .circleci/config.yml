@@ -40,4 +40,4 @@ jobs:
 
       # Upload test results
       - store_test_results:
-          path: coverage/clover.xml
+          path: coverage

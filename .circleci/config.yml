@@ -34,6 +34,6 @@ jobs:
 
       - run: npm run test
 
-      # upload coverage report
+      # Upload coverage report
       - codecov/upload:
           file: coverage/lcov.info

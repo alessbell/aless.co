@@ -37,7 +37,3 @@ jobs:
       # Upload coverage report
       - codecov/upload:
           file: coverage/lcov.info
-
-      # Upload test results
-      - store_test_results:
-          path: coverage

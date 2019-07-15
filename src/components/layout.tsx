@@ -140,13 +140,10 @@ const Layout: React.FunctionComponent = ({ children }) => {
             height: 1px;
           }
 
-          p {
+          p,
+          ul {
             font-size: 18px;
             margin-top: 0.5rem;
-          }
-
-          ul,
-          p {
             line-height: 1.5;
           }
 

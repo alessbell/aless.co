@@ -1,5 +1,4 @@
 import '@testing-library/jest-dom/extend-expect';
-import '@testing-library/react/cleanup-after-each';
 import { useStaticQuery } from 'gatsby';
 
 jest.mock('gl-react-dom');

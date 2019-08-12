@@ -1,4 +1,3 @@
-import '@testing-library/react/cleanup-after-each';
 import * as React from 'react';
 import { render } from '@testing-library/react';
 import BlogPost from '../../src/templates/blog-post';

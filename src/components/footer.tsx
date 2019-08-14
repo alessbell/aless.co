@@ -63,12 +63,7 @@ const Footer: React.FunctionComponent<FooterProps> = ({
 
     <Space color="green">•</Space>
 
-    <Anchor
-      link="https://www.dropbox.com/s/o5hwc6eivt2gk5x/resume.pdf?dl=0"
-      target="_blank"
-      rel="noopener"
-      name="resume"
-    />
+    <Anchor link="/resume.pdf" name="resume" />
 
     <Space color="pink">•</Space>
 

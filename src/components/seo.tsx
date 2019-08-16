@@ -76,44 +76,44 @@ const SEO: React.FunctionComponent<SEOProps> = ({
       titleTemplate={`%s | ${data.site.siteMetadata.title}`}
       meta={[
         {
-          content: metaDescription,
           name: `description`,
-        },
-        {
-          content: title,
-          property: `og:title`,
-        },
-        {
           content: metaDescription,
-          property: `og:description`,
         },
         {
-          content: `website`,
-          property: `og:type`,
-        },
-        {
-          content: data.site.siteMetadata.author,
-          name: `twitter:creator`,
-        },
-        {
+          property: `og:title`,
           content: title,
-          name: `twitter:title`,
         },
         {
-          content: ogImage,
-          name: `twitter:image`,
+          property: `og:description`,
+          content: metaDescription,
         },
         {
-          content: ogImage,
+          property: `og:type`,
+          content: `website`,
+        },
+        {
           name: `og:image`,
+          content: ogImage,
         },
         {
           name: `twitter:card`,
           content: `summary_large_image`,
         },
         {
-          content: metaDescription,
+          name: `twitter:creator`,
+          content: data.site.siteMetadata.author,
+        },
+        {
+          name: `twitter:title`,
+          content: title,
+        },
+        {
           name: `twitter:description`,
+          content: metaDescription,
+        },
+        {
+          name: `twitter:image`,
+          content: ogImage,
         },
       ].concat(
         keywords.length > 0

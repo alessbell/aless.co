@@ -13,5 +13,12 @@ beforeEach(() => {
         siteUrl: `https://aless.co`,
       },
     },
+    ogImageDefault: {
+      childImageSharp: {
+        fixed: {
+          src: 'https://aless.co/assets/og-image.png',
+        },
+      },
+    },
   }));
 });

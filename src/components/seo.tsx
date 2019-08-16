@@ -47,14 +47,14 @@ const SEO: React.FunctionComponent<SEOProps> = ({
           title
           description
           author
+          siteUrl
         }
       }
       ogImageDefault: file(absolutePath: { regex: "/assets/og-image/" }) {
-					childImageSharp {
-						fixed(height: 630, width: 1200) {
-							src
-						}
-					}
+        childImageSharp {
+          fixed(height: 630, width: 1200) {
+            src
+          }
         }
       }
     }

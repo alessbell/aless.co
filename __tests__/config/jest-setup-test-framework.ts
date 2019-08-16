@@ -10,6 +10,7 @@ beforeEach(() => {
         title: `anti/pattern`,
         repository: `https://github.com/alessbell/alessbell`,
         commit: `master`,
+        siteUrl: `https://aless.co`,
       },
     },
   }));

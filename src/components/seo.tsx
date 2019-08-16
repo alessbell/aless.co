@@ -92,10 +92,6 @@ const SEO: React.FunctionComponent<SEOProps> = ({
           property: `og:type`,
         },
         {
-          content: `summary`,
-          name: `twitter:card`,
-        },
-        {
           content: data.site.siteMetadata.author,
           name: `twitter:creator`,
         },

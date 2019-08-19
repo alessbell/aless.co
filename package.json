@@ -89,7 +89,7 @@
     "gatsby-plugin-tslint": "0.0.2",
     "identity-obj-proxy": "3.0.0",
     "jest": "24.9.0",
-    "jest-canvas-mock": "2.1.0",
+    "jest-canvas-mock": "2.1.1",
     "jest-emotion": "10.0.14",
     "lighthouse": "5.2.0",
     "prettier": "1.18.2",

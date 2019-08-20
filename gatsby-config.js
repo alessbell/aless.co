@@ -53,6 +53,13 @@ const config = {
           {
             resolve: `gatsby-remark-smartypants`,
           },
+          {
+            resolve: `gatsby-remark-twitter-cards`,
+            options: {
+              title: 'anti/pattern',
+              author: 'alessia bellisario',
+            },
+          },
         ],
       },
     },

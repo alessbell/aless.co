@@ -27,10 +27,10 @@ const previous = {
 
 const next = {
   fields: {
-    slug: '/some-slug-2',
+    slug: '/some-slug-3',
   },
   frontmatter: {
-    title: 'Some title 2',
+    title: 'Some title 3',
     spoiler: 'This is another spoiler',
     date: 'Jan 6, 2020',
   },
@@ -39,7 +39,14 @@ const next = {
 describe('Blog post', () => {
   test('renders', () => {
     const { getByText } = render(
-      <BlogPost data={{ mdx: post }} pageContext={{ previous, next }} />
+      <BlogPost
+        data={{
+          mdx: post,
+          site: { siteMetadata: { siteUrl: 'https://aless.co' } },
+        }}
+        pathContext={{ slug: '/some-slug-2/' }}
+        pageContext={{ previous, next }}
+      />
     );
     expect(getByText('anti/pattern')).toBeInTheDocument();
     expect(getByText(/a blog by alessia bellisario/i)).toBeInTheDocument();
@@ -47,8 +54,8 @@ describe('Blog post', () => {
     expect(getByText(/spoiler alert/i)).toBeInTheDocument();
     expect(getByText(/july 12, 1962/i)).toBeInTheDocument();
     expect(getByText(/some title 1/i)).toHaveAttribute('href', '/some-slug-1');
-    expect(getByText(/some title 2/i)).toHaveAttribute('href', '/some-slug-2');
+    expect(getByText(/some title 3/i)).toHaveAttribute('href', '/some-slug-3');
     expect(getByText(/some title 1/i)).toHaveAttribute('rel', 'prev');
-    expect(getByText(/some title 2/i)).toHaveAttribute('rel', 'next');
+    expect(getByText(/some title 3/i)).toHaveAttribute('rel', 'next');
   });
 });

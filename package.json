@@ -86,7 +86,7 @@
     "babel-preset-flow": "6.23.0",
     "babel-preset-gatsby": "0.2.11",
     "chrome-launcher": "0.11.2",
-    "flow-bin": "0.106.2",
+    "flow-bin": "0.106.3",
     "gatsby-plugin-tslint": "0.0.2",
     "identity-obj-proxy": "3.0.0",
     "jest": "24.9.0",

@@ -100,6 +100,6 @@
     "tslint-loader": "3.6.0",
     "tslint-plugin-prettier": "2.0.1",
     "tslint-react": "4.0.0",
-    "typescript": "3.6.2"
+    "typescript": "3.6.3"
   }
 }

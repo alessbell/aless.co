@@ -94,7 +94,7 @@
     "jest-emotion": "10.0.17",
     "lighthouse": "5.2.0",
     "prettier": "1.18.2",
-    "ts-jest": "24.0.2",
+    "ts-jest": "24.1.0",
     "tslint": "5.20.0",
     "tslint-config-prettier": "1.18.0",
     "tslint-loader": "3.6.0",

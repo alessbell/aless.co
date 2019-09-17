@@ -82,7 +82,7 @@
     "@types/react-dom": "16.9.0",
     "@types/react-helmet": "5.0.10",
     "babel-jest": "24.9.0",
-    "babel-plugin-emotion": "10.0.17",
+    "babel-plugin-emotion": "10.0.19",
     "babel-preset-flow": "6.23.0",
     "babel-preset-gatsby": "0.2.13",
     "chrome-launcher": "0.11.2",

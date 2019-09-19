@@ -63,10 +63,15 @@
     "build": "gatsby build",
     "dev": "gatsby develop",
     "serve": "gatsby serve -p 8000",
-    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\"",
+    "format": "prettier --trailing-comma es5 --single-quote --write \"src/**/*.tsx\"",
     "test": "jest --coverage",
     "type-check": "tsc --noEmit",
     "lint": "tslint --project ."
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint && npm run type-check && npm run format"
+    }
   },
   "devDependencies": {
     "@babel/plugin-transform-flow-strip-types": "7.4.4",
@@ -88,6 +93,7 @@
     "chrome-launcher": "0.11.2",
     "flow-bin": "0.108.0",
     "gatsby-plugin-tslint": "0.0.2",
+    "husky": "3.0.5",
     "identity-obj-proxy": "3.0.0",
     "jest": "24.9.0",
     "jest-canvas-mock": "2.1.1",

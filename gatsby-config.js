@@ -35,9 +35,14 @@ const config = {
     `gatsby-plugin-catch-links`,
     `gatsby-plugin-emotion`,
     {
-      resolve: `gatsby-mdx`,
+      resolve: `gatsby-plugin-mdx`,
       options: {
-        extensions: ['.md'],
+        extensions: ['.md', '.mdx'],
+        options: {
+          defaultLayouts: {
+            default: require.resolve('./src/templates/blog-post.tsx'),
+          },
+        },
         gatsbyRemarkPlugins: [
           {
             resolve: `gatsby-remark-images`,
@@ -45,6 +50,10 @@ const config = {
               maxWidth: 1050,
               showCaptions: true,
               withWebp: true,
+              tracedSVG: {
+                color: 'mediumspringgreen',
+                background: 'lightgoldenrodyellow',
+              },
             },
           },
           {

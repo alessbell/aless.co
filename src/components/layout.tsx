@@ -93,13 +93,12 @@ const Layout: React.FunctionComponent = ({ children }) => {
           small {
             font-family: 'Untitled Sans', 'Helvetica', sans-serif;
           }
-          h1,
-          h2,
           h3 {
             font-family: 'GT Pressura Mono Regular', monospace;
           }
           h1,
           h2 {
+            font-family: 'GT Pressura Mono Bold', monospace;
             margin-bottom: 1rem;
             font-size: 1.8rem;
             position: relative;
@@ -187,6 +186,12 @@ const Layout: React.FunctionComponent = ({ children }) => {
             color: var(--inlineCode-text);
             padding: 0.15em 0.2em 0.05em;
             white-space: normal;
+          }
+
+          .gatsby-resp-image-image {
+            position: absolute;
+            top: 0;
+            width: 100%;
           }
         `}
       />

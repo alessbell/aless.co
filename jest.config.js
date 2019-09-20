@@ -7,7 +7,7 @@ module.exports = {
     '.+\\.(css|styl|less|sass|scss)$': `identity-obj-proxy`,
   },
   testPathIgnorePatterns: [`node_modules`, `.cache`],
-  transformIgnorePatterns: [`node_modules/(?!(gatsby|gatsby-mdx)/)`],
+  transformIgnorePatterns: [`node_modules/(?!(gatsby|gatsby-plugin-mdx)/)`],
   globals: {
     __PATH_PREFIX__: ``,
   },

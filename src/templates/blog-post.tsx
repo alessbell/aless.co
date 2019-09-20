@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Link, graphql } from 'gatsby';
-import { MDXRenderer } from 'gatsby-mdx';
+import { MDXRenderer } from 'gatsby-plugin-mdx';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 
@@ -22,9 +22,7 @@ interface BlogPostData {
     mdx: {
       frontmatter: FrontMatter;
       excerpt: string;
-      code: {
-        body: string;
-      };
+      body?: string;
     };
     site: {
       siteMetadata: {
@@ -43,7 +41,7 @@ interface BlogPostData {
 
 const BlogPostTemplate: React.FunctionComponent<BlogPostData> = ({
   data: {
-    mdx: { frontmatter, excerpt, code },
+    mdx: { frontmatter, excerpt, body },
     site: {
       siteMetadata: { siteUrl },
     },
@@ -66,9 +64,8 @@ const BlogPostTemplate: React.FunctionComponent<BlogPostData> = ({
     >
       {frontmatter.date}
     </p>
-    <MDXRenderer>{code.body}</MDXRenderer>
+    {body && <MDXRenderer>{body}</MDXRenderer>}
     <hr />
-
     <ul
       style={{
         display: `flex`,
@@ -116,9 +113,7 @@ export const pageQuery = graphql`
         spoiler
         date(formatString: "MMMM D, YYYY")
       }
-      code {
-        body
-      }
+      body
     }
   }
 `;

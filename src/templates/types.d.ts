@@ -1,4 +1,4 @@
-declare module 'gatsby-mdx' {
+declare module 'gatsby-plugin-mdx' {
   interface MDXRendererProps {
     scope?: object;
     components?: any;

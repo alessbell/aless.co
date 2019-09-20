@@ -3,9 +3,6 @@ import { render } from '@testing-library/react';
 import BlogPost from '../../src/templates/blog-post';
 
 const post = {
-  code: {
-    body: 'this is some code being pretty printed',
-  },
   excerpt: 'Some excerpt',
   frontmatter: {
     title: 'Title A',

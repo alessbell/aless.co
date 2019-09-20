@@ -22,7 +22,7 @@ interface BlogPostData {
     mdx: {
       frontmatter: FrontMatter;
       excerpt: string;
-      body: string;
+      body?: string;
     };
     site: {
       siteMetadata: {
@@ -64,9 +64,8 @@ const BlogPostTemplate: React.FunctionComponent<BlogPostData> = ({
     >
       {frontmatter.date}
     </p>
-    <MDXRenderer>{body}</MDXRenderer>
+    {body && <MDXRenderer>{body}</MDXRenderer>}
     <hr />
-
     <ul
       style={{
         display: `flex`,

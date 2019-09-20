@@ -93,13 +93,12 @@ const Layout: React.FunctionComponent = ({ children }) => {
           small {
             font-family: 'Untitled Sans', 'Helvetica', sans-serif;
           }
-          h1,
-          h2,
           h3 {
             font-family: 'GT Pressura Mono Regular', monospace;
           }
           h1,
           h2 {
+            font-family: 'GT Pressura Mono Bold', monospace;
             margin-bottom: 1rem;
             font-size: 1.8rem;
             position: relative;

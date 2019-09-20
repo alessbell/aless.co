@@ -50,6 +50,10 @@ const config = {
               maxWidth: 1050,
               showCaptions: true,
               withWebp: true,
+              tracedSVG: {
+                color: 'mediumspringgreen',
+                background: 'lightgoldenrodyellow',
+              },
             },
           },
           {

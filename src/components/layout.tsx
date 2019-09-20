@@ -188,6 +188,12 @@ const Layout: React.FunctionComponent = ({ children }) => {
             padding: 0.15em 0.2em 0.05em;
             white-space: normal;
           }
+
+          .gatsby-resp-image-image {
+            position: absolute;
+            top: 0;
+            width: 100%;
+          }
         `}
       />
       <div style={{ position: 'relative' }}>

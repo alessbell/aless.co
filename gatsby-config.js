@@ -48,12 +48,13 @@ const config = {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 1050,
+              backgroundColor: '#fafafa',
               showCaptions: true,
-              withWebp: true,
-              tracedSVG: {
-                color: 'mediumspringgreen',
-                background: 'lightgoldenrodyellow',
-              },
+              // withWebp: true,
+              // tracedSVG: {
+              //   color: 'mediumspringgreen',
+              //   background: 'lightgoldenrodyellow',
+              // },
             },
           },
           {

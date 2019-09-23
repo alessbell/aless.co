@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import { BlogLink } from '../components/styles';
+import '../css/font-face.css';
 
 export interface Edge {
   node: {

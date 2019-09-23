@@ -39,11 +39,13 @@ const BlogIndex: React.FunctionComponent<BlogIndexProps> = ({
     {edges.map(({ node }) => {
       const title = node.frontmatter.title || node.fields.slug;
       return (
-        <div key={node.fields.slug} style={{ margin: '3rem 0' }}>
+        <div key={node.fields.slug} style={{ margin: '2.5rem 0' }}>
           <h3>
             <BlogLink to={node.fields.slug}>{title}</BlogLink>
           </h3>
-          <small>{node.frontmatter.date}</small>
+          <small>
+            <i>{node.frontmatter.date}</i>
+          </small>
           <p dangerouslySetInnerHTML={{ __html: node.frontmatter.spoiler }} />
         </div>
       );

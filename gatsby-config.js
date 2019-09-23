@@ -49,7 +49,7 @@ const config = {
             options: {
               maxWidth: 1050,
               showCaptions: true,
-              withWebp: true,
+              // withWebp: true,
               tracedSVG: {
                 color: 'mediumspringgreen',
                 background: 'lightgoldenrodyellow',
@@ -84,6 +84,12 @@ const config = {
         theme_color: '#525dce',
         display: 'standalone',
         icon: 'static/favicon-32x32.png',
+      },
+    },
+    {
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: `src/lib/typography`,
       },
     },
     {

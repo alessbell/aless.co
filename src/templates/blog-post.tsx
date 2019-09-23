@@ -56,7 +56,7 @@ const BlogPostTemplate: React.FunctionComponent<BlogPostData> = ({
       description={excerpt}
     />
     <h2>{frontmatter.title}</h2>
-    <h3 style={{ marginTop: 0, marginBottom: 0 }}>{frontmatter.spoiler}</h3>
+    <h3>{frontmatter.spoiler}</h3>
     <p
       style={{
         display: `block`,
@@ -70,6 +70,8 @@ const BlogPostTemplate: React.FunctionComponent<BlogPostData> = ({
       style={{
         display: `flex`,
         flexWrap: `wrap`,
+        marginLeft: `0`,
+        marginRight: `0`,
         justifyContent: `space-between`,
         listStyle: `none`,
         padding: 0,

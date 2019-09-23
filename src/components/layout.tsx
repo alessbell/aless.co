@@ -1,15 +1,7 @@
 import * as React from 'react';
 import { Global, css } from '@emotion/core';
 import { useStaticQuery, graphql } from 'gatsby';
-import {
-  H1,
-  Link,
-  LeftBar,
-  RightBar,
-  TopBar,
-  BottomBar,
-  BORDER_COLOR,
-} from './styles';
+import { H1, Link, LeftBar, RightBar, TopBar, BottomBar } from './styles';
 import Header from './header';
 import Footer from './footer';
 
@@ -59,51 +51,17 @@ const Layout: React.FunctionComponent = ({ children }) => {
       style={{
         marginLeft: `auto`,
         marginRight: `auto`,
-        maxWidth: '40rem',
+        maxWidth: '640px',
       }}
     >
       <Global
         styles={css`
           body {
-            --hr: hsla(0, 0%, 0%, 0.2);
-            --inlineCode-bg: rgba(255, 229, 100, 0.2);
-            --inlineCode-text: #1a1a1a;
             padding: 0 1.5rem;
             margin: 0;
           }
           h1,
-          h2,
-          h3,
-          h4,
-          h5,
-          h6 {
-            margin-top: 3rem;
-          }
-          h3 {
-            margin-bottom: 0.5rem;
-          }
-          h2,
-          h3,
-          h4,
-          h5,
-          h6,
-          p,
-          li,
-          footer,
-          small {
-            font-family: 'Untitled Sans', 'Helvetica', sans-serif;
-          }
-          h3 {
-            font-family: 'GT Pressura Mono Regular', monospace;
-          }
-          h1,
           h2 {
-            font-family: 'GT Pressura Mono Bold', monospace;
-            margin-bottom: 1rem;
-            font-size: 1.8rem;
-            position: relative;
-            color: ${BORDER_COLOR};
-            text-shadow: 5px 5px 1px rgba(0, 0, 0, 0.05);
             &::after {
               top: 0;
               width: 100%;
@@ -116,14 +74,12 @@ const Layout: React.FunctionComponent = ({ children }) => {
               transform: skew(-2deg) translateX(-20px);
             }
           }
-
           ::selection {
             background: #efb617; /* WebKit/Blink Browsers */
           }
           ::-moz-selection {
             background: #efb617; /* Gecko Browsers */
           }
-
           hr {
             box-sizing: content-box;
             margin-left: 0;
@@ -134,40 +90,13 @@ const Layout: React.FunctionComponent = ({ children }) => {
             padding-right: 0;
             padding-top: 0;
             margin-bottom: calc(1.75rem - 1px);
-            background: var(--hr);
+            background: hsla(0, 0%, 0%, 0.2);
             border: none;
             height: 1px;
           }
-
-          p,
-          ul {
-            font-size: 18px;
-            margin-top: 0.5rem;
-            line-height: 1.5;
-          }
-
           :not(pre) > code[class*='language-'],
-          pre[class*='language-'],
-          p,
-          ul {
+          pre[class*='language-'] {
             margin-bottom: 1.75rem;
-          }
-          a {
-            color: blue;
-            text-decoration: hotpink underline;
-            text-decoration-style: wavy;
-            text-underline-position: under;
-          }
-          a:hover {
-            color: black;
-            background-color: yellow;
-          }
-          figure {
-            margin: 0;
-          }
-          figcaption {
-            font-size: 0.85rem;
-            margin-top: 0.5rem;
           }
           blockquote {
             color: #525252;
@@ -177,17 +106,16 @@ const Layout: React.FunctionComponent = ({ children }) => {
             border-left: 6px solid blue;
             font-style: italic;
           }
-
           /* Inline code */
           code {
             line-height: 1.5;
             border-radius: 0.3em;
-            background: var(--inlineCode-bg);
-            color: var(--inlineCode-text);
+            background: rgba(255, 229, 100, 0.2);
+            color: #1a1a1a;
             padding: 0.15em 0.2em 0.05em;
             white-space: normal;
           }
-
+          /* Gatsby Image */
           .gatsby-resp-image-image {
             position: absolute;
             top: 0;
@@ -202,9 +130,7 @@ const Layout: React.FunctionComponent = ({ children }) => {
           </Link>
         </H1>
         {typeof document !== `undefined` && <Header />}
-        <h3 style={{ marginTop: '0', marginBottom: '3rem' }}>
-          a blog by alessia bellisario
-        </h3>
+        <h3>a blog by alessia bellisario</h3>
       </div>
       {children}
       <Footer

@@ -87,6 +87,12 @@ const config = {
       },
     },
     {
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: `src/lib/typography`,
+      },
+    },
+    {
       resolve: `gatsby-plugin-feed`,
       options: {
         query: `

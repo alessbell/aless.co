@@ -30,7 +30,7 @@ If you're still wondering about that maybe-fake-sounding term "ortholinear," her
 
 The company OLKB (**O**rtho**L**inear**K**ey**B**oards) sells Plancks in ready-to-build kits; for the most part, you can't get a Planck preassembled. I got mine on [Drop](https://drop.com/buy/planck-mechanical-keyboard) and it arrived in a handful of pieces: a PCB (Printed Circuit Board), a single steel plate with holes where the switches would be mounted, an alumninum case to house the finished product, a humble USB cable and a bag of keycaps.
 
-## Learn To Solder
+## Learn to Solder
 
 I knew I'd have to solder the switches to the board, something I'd never done before. (In the past I'd played around with little hardware projects but was always careful that no soldering was required.) After a bit of research, I picked up:
 

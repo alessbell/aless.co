@@ -47,14 +47,11 @@ export const FooterWrapper = styled.footer`
 `;
 export const H1 = styled.h1`
   font-size: 38px;
-  margin-top: 3rem;
-  margin-bottom: 0.5rem;
   position: relative;
   z-index: 100;
   mix-blend-mode: screen;
   background-color: white;
   color: black;
-
   a {
     &:hover {
       background-color: white;

@@ -18,16 +18,16 @@ const typography = new Typography({
   overrideStyles: () => ({
     'h1,h2': {
       color: BORDER_COLOR,
-      fontFamily: fonts.GTPressuraBold,
       fontSize: '1.75rem',
-      marginBottom: '0.5rem',
       position: 'relative',
       textShadow: '5px 5px 1px rgba(0, 0, 0, 0.05)',
     },
     h3: {
       marginTop: '0',
-      fontSize: '1.25rem',
-      marginBottom: '0.5rem',
+      fontSize: '1.15rem',
+    },
+    'h1,h2,h3': {
+      marginBottom: '0.25rem',
     },
     'h1,h2,h4,h5,h6': {
       marginTop: '2.5rem',
@@ -36,7 +36,6 @@ const typography = new Typography({
       marginBottom: '1.75rem',
     },
     strong: {
-      fontFamily: fonts.UntitledRegular,
       fontStyle: 'bold',
     },
     figure: {
@@ -54,6 +53,9 @@ const typography = new Typography({
     'a:hover': {
       color: 'black',
       backgroundColor: 'yellow',
+    },
+    footer: {
+      fontSize: '16px',
     },
   }),
 });

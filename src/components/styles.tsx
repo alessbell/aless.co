@@ -47,6 +47,7 @@ export const FooterWrapper = styled.footer`
 `;
 export const H1 = styled.h1`
   font-size: 38px;
+  margin-bottom: 0.2rem;
   position: relative;
   z-index: 100;
   mix-blend-mode: screen;

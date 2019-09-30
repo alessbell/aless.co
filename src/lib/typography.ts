@@ -21,13 +21,12 @@ const typography = new Typography({
       fontSize: '1.75rem',
       position: 'relative',
       textShadow: '5px 5px 1px rgba(0, 0, 0, 0.05)',
+      marginBottom: '0.5rem',
     },
     h3: {
       marginTop: '0',
-      fontSize: '1.15rem',
-    },
-    'h1,h2,h3': {
       marginBottom: '0.25rem',
+      fontSize: '1.15rem',
     },
     'h1,h2,h4,h5,h6': {
       marginTop: '2.5rem',

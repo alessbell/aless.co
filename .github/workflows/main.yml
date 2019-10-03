@@ -5,6 +5,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: ./testing
-        env:
-          MY_NAME: 'Alessia'
+      - uses: actions/checkout@v1
+      - name: On my_custom_webhook do ABC...
+        if: github.event.action == 'my_custom_webhook'
+        run: |
+          echo "Hello From my_custom_webhook...doing ABC"
+      - name: On my_custom_webhook do XYZ...
+        if: github.event.action == 'my_custom_webhook_2'
+        run: |
+          echo "Hello From my_custom_webhook_2...doing XYZ"

@@ -1,0 +1,11 @@
+name: Update resume
+on: repository_dispatch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - uses: ./testing
+        env:
+          MY_NAME: 'Alessia'

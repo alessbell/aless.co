@@ -1,5 +1,5 @@
 name: Update resume
-on: repository_dispatch
+on: [push, repository_dispatch]
 
 jobs:
   build:

@@ -1,4 +1,4 @@
-name: Update resume
+name: Test ping
 on: repository_dispatch
 
 jobs:

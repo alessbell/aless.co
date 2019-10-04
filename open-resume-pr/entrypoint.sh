@@ -10,7 +10,7 @@ main() {
   echo 'output of ls:' && ls
   echo 'output of git config:' && git config --list
   echo 'these are arguments set to the workflow' && echo ${*}
-  echo 'git push where?' && echo "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$INPUT_REPO.git"
+  echo 'git push where?' && echo "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git"
 
   # get latest release of alessbell/resume using GET /repos/:owner/:repo/releases/latest
   # see: https://developer.github.com/v3/repos/releases/#list-releases-for-a-repository
@@ -20,6 +20,7 @@ main() {
   touch newfile.js
 
   # git add and push to branch beginning with resume/
+  # https://github.com/pkgjs/gh-pages/blob/master/entrypoint.sh
   git config --global push.default current
   git config --global user.email "github+resumebot@bellisar.io"
   git config --global user.name "Resume Bot"
@@ -27,7 +28,7 @@ main() {
   git checkout -b resume/new-version
   git add .
   git commit -m "Trying something"
-  git push "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$INPUT_REPO.git" resume/new-version
+  git push "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git" resume/new-version
   cd -
 }
 

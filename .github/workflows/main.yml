@@ -12,7 +12,7 @@ jobs:
         if: github.event.action == 'update_resume'
         uses: ./commit-resume
         env:
-          BRANCH_NAME: resume/update
+          BRANCH: resume/update
           GITHUB_ACTOR: ${{ secrets.GITHUB_ACTOR }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_REPOSITORY: ${{ secrets.GITHUB_REPOSITORY }}

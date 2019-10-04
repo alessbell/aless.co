@@ -17,5 +17,5 @@ jobs:
         uses: vsoch/pull-request-action@1.0.1
         env:
           GITHUB_TOKEN: ${{ secrets.PA_TOKEN }}
-          BRANCH_PREFIX: update/
+          BRANCH_PREFIX: resume/
           PULL_REQUEST_BRANCH: master

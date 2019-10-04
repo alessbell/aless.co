@@ -73,10 +73,10 @@ main() {
   git config --global user.email "github@bellisar.io"
   git config --global user.name "Alessia Bellisario"
 
-  git checkout -b "${BRANCH_NAME}"
+  git checkout -b "${BRANCH}"
   git add .
   git commit -m "Updates resume to version 1.x" # TODO: add latest version num to commit message
-  git push "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git" "${BRANCH_NAME}"
+  git push "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git" "${BRANCH}"
 
   echo "Pull requests will go to ${PULL_REQUEST_BRANCH}"
 

@@ -17,6 +17,7 @@ main() {
   # GET https://api.github.com/repos/alessbell/resume/releases/latest
 
   # download resume.pdf and save in static/resume.pdf
+
   touch newfile1.js
 
   # git add and push to branch beginning with resume/

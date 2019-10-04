@@ -17,7 +17,7 @@ main() {
   # GET https://api.github.com/repos/alessbell/resume/releases/latest
 
   # download resume.pdf and save in static/resume.pdf
-  touch newfile2.js
+  touch newfile1.js
 
   # git add and push to branch beginning with resume/
   # https://github.com/pkgjs/gh-pages/blob/master/entrypoint.sh
@@ -25,10 +25,10 @@ main() {
   git config --global user.email "github+resumebot@bellisar.io"
   git config --global user.name "Resume Bot"
 
-  git checkout -b resume/new-version
+  git checkout -b "${BRANCH_NAME}"
   git add .
-  git commit -m "Trying something"
-  git push "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git" resume/new-version --force
+  git commit -m "Updates resume to version 1.x" # TODO: add latest version num to commit message
+  git push "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git" "${BRANCH_NAME}" --force
 }
 
 main

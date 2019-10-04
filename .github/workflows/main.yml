@@ -1,18 +1,18 @@
-name: Update resume in new PR
-# on: repository_dispatch
-on: push
+name: Fetch New Resume
+on: repository_dispatch
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        # if: github.event.action == 'update_resume'
+        if: github.event.action == 'update_resume'
         uses: actions/checkout@v1
       - name: Fetch New Resume and Push Branch
-        # if: github.event.action == 'update_resume'
+        if: github.event.action == 'update_resume'
         uses: ./commit-resume
         env:
+          BRANCH_NAME: resume/update
           GITHUB_ACTOR: ${{ secrets.GITHUB_ACTOR }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_REPOSITORY: ${{ secrets.GITHUB_REPOSITORY }}

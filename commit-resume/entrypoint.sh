@@ -92,24 +92,24 @@ main() {
 
   # If it's to the target branch, ignore it
   if [[ "${BRANCH}" == "${PULL_REQUEST_BRANCH}" ]]; then
-      echo "Target and current branch are identical (${BRANCH}), skipping."
+    echo "Target and current branch are identical (${BRANCH}), skipping."
   else
+    # Pull request body (optional)
+    if [ -z "${PULL_REQUEST_BODY}" ]; then
+        echo "No pull request body is set, will use default."
+        PULL_REQUEST_BODY="This is an automated pull request to update the container collection ${BRANCH}"
+    fi
+    echo "Pull request body is ${PULL_REQUEST_BODY}"
 
-  # Pull request body (optional)
-  if [ -z "${PULL_REQUEST_BODY}" ]; then
-      echo "No pull request body is set, will use default."
-      PULL_REQUEST_BODY="This is an automated pull request to update the container collection ${BRANCH}"
+    # Pull request title (optional)
+    if [ -z "${PULL_REQUEST_TITLE}" ]; then
+        echo "No pull request title is set, will use default."
+        PULL_REQUEST_TITLE="Update container ${BRANCH}"
+    fi
+    echo "Pull request title is ${PULL_REQUEST_TITLE}"
+
+    create_pull_request "${BRANCH}" "${PULL_REQUEST_BRANCH}" "${PULL_REQUEST_BODY}" "${PULL_REQUEST_TITLE}"
   fi
-  echo "Pull request body is ${PULL_REQUEST_BODY}"
-
-  # Pull request title (optional)
-  if [ -z "${PULL_REQUEST_TITLE}" ]; then
-      echo "No pull request title is set, will use default."
-      PULL_REQUEST_TITLE="Update container ${BRANCH}"
-  fi
-  echo "Pull request title is ${PULL_REQUEST_TITLE}"
-
-  create_pull_request "${BRANCH}" "${PULL_REQUEST_BRANCH}" "${PULL_REQUEST_BODY}" "${PULL_REQUEST_TITLE}"
 }
 
 

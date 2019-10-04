@@ -1,16 +1,19 @@
-name: Test ping
+name: Update resume in new PR
 on: repository_dispatch
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - name: On my_custom_webhook do ABC...
-        if: github.event.action == 'my_custom_webhook'
-        run: |
-          echo "Hello From my_custom_webhook...doing ABC"
-      - name: On my_custom_webhook do XYZ...
-        if: github.event.action == 'my_custom_webhook_2'
-        run: |
-          echo "Hello From my_custom_webhook_2...doing XYZ"
+      - name: Checkout
+        if: github.event.action == 'update_resume'
+        uses: actions/checkout@v1
+      - name: Fetch New Resume and Push Branch
+        if: github.event.action == 'update_resume'
+        uses: ./open-resume-pr
+      - name: Pull Request on Branch Push
+        uses: vsoch/pull-request-action@1.0.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.PA_TOKEN }}
+          BRANCH_PREFIX: update/
+          PULL_REQUEST_BRANCH: master

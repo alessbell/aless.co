@@ -1,5 +1,8 @@
-name: Update Resume on Push
-on: push
+name: Open Resume PR
+on:
+  push:
+    branches:
+      - 'resume/**'
 
 jobs:
   build:
@@ -11,6 +14,5 @@ jobs:
         uses: vsoch/pull-request-action@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH_PREFIX: resume/
           PULL_REQUEST_BRANCH: master
           PULL_REQUEST_TITLE: Updates Resume

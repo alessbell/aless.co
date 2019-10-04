@@ -36,15 +36,15 @@ create_pull_request() {
 
     # Option 1: The pull request is already open
     if [[ "${PR}" == "${SOURCE}" ]]; then
-        echo "Pull request from ${SOURCE} to ${TARGET} is already open!"
+      echo "Pull request from ${SOURCE} to ${TARGET} is already open!"
 
     # Option 2: Open a new pull request
     else
-        # Post the pull request
-        DATA="{\"title\":${TITLE}, \"body\":${BODY}, \"base\":${TARGET}, \"head\":${SOURCE}, \"draft\":${DRAFT}}"
-        echo "curl --user ${GITHUB_ACTOR} -X POST --data ${DATA} ${PULLS_URL}"
-        curl -sSL -H "${AUTH_HEADER}" -H "${HEADER}" --user "${GITHUB_ACTOR}" -X POST --data "${DATA}" ${PULLS_URL}
-        echo $?
+      # Post the pull request
+      DATA="{\"title\":${TITLE}, \"body\":${BODY}, \"base\":${TARGET}, \"head\":${SOURCE}, \"draft\":${DRAFT}}"
+      echo "curl --user ${GITHUB_ACTOR} -X POST --data ${DATA} ${PULLS_URL}"
+      curl -sSL -H "${AUTH_HEADER}" -H "${HEADER}" --user "${GITHUB_ACTOR}" -X POST --data "${DATA}" ${PULLS_URL}
+      echo $?
     fi
 }
 
@@ -78,10 +78,6 @@ main() {
   git commit -m "Updates resume to version 1.x" # TODO: add latest version num to commit message
   git push "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git" "${BRANCH_NAME}"
 
-
-  if [ -z "${PULL_REQUEST_BRANCH}" ]; then
-      PULL_REQUEST_BRANCH=master
-  fi
   echo "Pull requests will go to ${PULL_REQUEST_BRANCH}"
 
   # Get the name of the action that was triggered
@@ -94,20 +90,6 @@ main() {
   if [[ "${BRANCH}" == "${PULL_REQUEST_BRANCH}" ]]; then
     echo "Target and current branch are identical (${BRANCH}), skipping."
   else
-    # Pull request body (optional)
-    if [ -z "${PULL_REQUEST_BODY}" ]; then
-        echo "No pull request body is set, will use default."
-        PULL_REQUEST_BODY="This is an automated pull request to update the container collection ${BRANCH}"
-    fi
-    echo "Pull request body is ${PULL_REQUEST_BODY}"
-
-    # Pull request title (optional)
-    if [ -z "${PULL_REQUEST_TITLE}" ]; then
-        echo "No pull request title is set, will use default."
-        PULL_REQUEST_TITLE="Update container ${BRANCH}"
-    fi
-    echo "Pull request title is ${PULL_REQUEST_TITLE}"
-
     create_pull_request "${BRANCH}" "${PULL_REQUEST_BRANCH}" "${PULL_REQUEST_BODY}" "${PULL_REQUEST_TITLE}"
   fi
 }

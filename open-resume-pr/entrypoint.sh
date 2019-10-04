@@ -17,7 +17,7 @@ main() {
   # GET https://api.github.com/repos/alessbell/resume/releases/latest
 
   # download resume.pdf and save in static/resume.pdf
-  touch newfile.js
+  touch newfile2.js
 
   # git add and push to branch beginning with resume/
   # https://github.com/pkgjs/gh-pages/blob/master/entrypoint.sh
@@ -28,8 +28,7 @@ main() {
   git checkout -b resume/new-version
   git add .
   git commit -m "Trying something"
-  git push "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git" resume/new-version
-  cd -
+  git push "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git" resume/new-version --force
 }
 
 main

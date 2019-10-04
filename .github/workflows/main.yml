@@ -18,8 +18,9 @@ jobs:
           GITHUB_REPOSITORY: ${{ secrets.GITHUB_REPOSITORY }}
       - name: Pull Request on Branch Push
         # if: github.event.action == 'update_resume'
-        uses: vsoch/pull-request-action@1.0.1
+        uses: vsoch/pull-request-action@master
         env:
-          GITHUB_TOKEN: ${{ secrets.PA_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH_PREFIX: resume/
           PULL_REQUEST_BRANCH: master
+          PULL_REQUEST_TITLE: Updates Resume

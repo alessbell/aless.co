@@ -12,6 +12,10 @@ jobs:
       - name: Fetch New Resume and Push Branch
         # if: github.event.action == 'update_resume'
         uses: ./open-resume-pr
+        env:
+          GITHUB_ACTOR: ${{ secrets.GITHUB_ACTOR }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ secrets.GITHUB_REPOSITORY }}
       - name: Pull Request on Branch Push
         # if: github.event.action == 'update_resume'
         uses: vsoch/pull-request-action@1.0.1

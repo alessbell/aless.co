@@ -10,6 +10,7 @@ main() {
   echo 'output of ls:' && ls
   echo 'output of git config:' && git config --list
   echo 'these are arguments set to the workflow' && echo ${*}
+  echo 'git push where?' && echo "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$INPUT_REPO.git"
 
   # get latest release of alessbell/resume using GET /repos/:owner/:repo/releases/latest
   # see: https://developer.github.com/v3/repos/releases/#list-releases-for-a-repository
@@ -26,7 +27,8 @@ main() {
   git checkout -b resume/new-version
   git add .
   git commit -m "Trying something"
-  git push -u
+  git push "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$INPUT_REPO.git" resume/new-version
+  cd -
 }
 
 main

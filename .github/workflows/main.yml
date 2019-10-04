@@ -1,16 +1,18 @@
-name: Test ping
+name: Fetch New Resume
 on: repository_dispatch
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - name: On my_custom_webhook do ABC...
-        if: github.event.action == 'my_custom_webhook'
-        run: |
-          echo "Hello From my_custom_webhook...doing ABC"
-      - name: On my_custom_webhook do XYZ...
-        if: github.event.action == 'my_custom_webhook_2'
-        run: |
-          echo "Hello From my_custom_webhook_2...doing XYZ"
+      - name: Checkout
+        if: github.event.action == 'update_resume'
+        uses: actions/checkout@v1
+      - name: Fetch New Resume and Push Branch
+        if: github.event.action == 'update_resume'
+        uses: ./commit-resume
+        env:
+          BRANCH_NAME: resume/update
+          GITHUB_ACTOR: ${{ secrets.GITHUB_ACTOR }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ secrets.GITHUB_REPOSITORY }}

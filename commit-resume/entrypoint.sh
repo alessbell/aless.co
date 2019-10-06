@@ -76,7 +76,7 @@ main() {
   git checkout -b "${BRANCH}"
   git add .
   git commit -m "Updates resume to version 1.x" # TODO: add latest version num to commit message
-  git push "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git" "${BRANCH}"
+  git push "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git" "${BRANCH}" --force
 
   echo "Pull requests will go to ${PULL_REQUEST_BRANCH}"
 

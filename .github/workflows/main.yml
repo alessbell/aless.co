@@ -1,5 +1,6 @@
 name: Fetch New Resume
-on: repository_dispatch
+# on: repository_dispatch
+on: push
 
 jobs:
   build:

@@ -43,7 +43,12 @@ create_pull_request() {
       # Post the pull request
       DATA="{\"title\":${TITLE}, \"body\":${BODY}, \"base\":${TARGET}, \"head\":${SOURCE}, \"draft\":${DRAFT}}"
       echo "curl --user ${GITHUB_ACTOR} -X POST --data ${DATA} ${PULLS_URL}"
-      curl -sSL -H "${AUTH_HEADER}" -H "${HEADER}" --user "${GITHUB_ACTOR}" -X POST --data "${DATA}" ${PULLS_URL}
+
+      curl -XPOST -H "${HEADER}"
+      -H "Authorization: token ${GITHUB_TOKEN}" \
+      "${PULLS_URL}" \
+      --data "${DATA}"
+      # curl -sSL -H "${AUTH_HEADER}" -H "${HEADER}" --user "${GITHUB_ACTOR}" -X POST --data "${DATA}" ${PULLS_URL}
       echo $?
     fi
 }

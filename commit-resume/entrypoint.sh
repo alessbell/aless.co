@@ -44,7 +44,7 @@ create_pull_request() {
       DATA="{\"title\":${TITLE}, \"body\":${BODY}, \"base\":${TARGET}, \"head\":${SOURCE}, \"draft\":${DRAFT}}"
       echo "curl --user ${GITHUB_ACTOR} -X POST --data ${DATA} ${PULLS_URL}"
 
-      curl -XPOST -H "${HEADER}"
+      curl -XPOST -H "${HEADER}" \
       -H "Authorization: token ${GITHUB_TOKEN}" \
       "${PULLS_URL}" \
       --data "${DATA}"

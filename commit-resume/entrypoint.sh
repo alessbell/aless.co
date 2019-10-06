@@ -97,7 +97,7 @@ main() {
   if [[ "${BRANCH}" == "${PULL_REQUEST_BRANCH}" ]]; then
     echo "Target and current branch are identical (${BRANCH}), skipping."
   else
-    create_pull_request "${BRANCH}" "${PULL_REQUEST_BRANCH}" "${PULL_REQUEST_BODY}" "${PULL_REQUEST_TITLE}"
+    create_pull_request "${BRANCH}" "${PULL_REQUEST_BRANCH}" "${PULL_REQUEST_BODY}" "Update resume to ${VERSION}"
   fi
 }
 

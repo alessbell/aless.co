@@ -19,4 +19,4 @@ jobs:
           GITHUB_REPOSITORY: ${{ secrets.GITHUB_REPOSITORY }}
           PULL_REQUEST_BODY: test
           PULL_REQUEST_TITLE: Resume
-          PULL_REQUEST_BRANCH: master
+          PULL_REQUEST_BRANCH: main

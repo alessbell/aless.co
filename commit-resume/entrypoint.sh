@@ -42,8 +42,11 @@ create_pull_request() {
     else
       # Post the pull request
       DATA="{\"title\":${TITLE}, \"body\":${BODY}, \"base\":${TARGET}, \"head\":${SOURCE}, \"draft\":${DRAFT}}"
-      echo "curl --user ${GITHUB_ACTOR} -X POST --data ${DATA} ${PULLS_URL}"
-      curl -sSL -H "${AUTH_HEADER}" -H "${HEADER}" --user "${GITHUB_ACTOR}" -X POST --data "${DATA}" ${PULLS_URL}
+
+      curl -XPOST -H "${HEADER}" \
+      -H "Authorization: token ${GITHUB_TOKEN}" \
+      "${PULLS_URL}" \
+      --data "${DATA}"
       echo $?
     fi
 }
@@ -61,11 +64,15 @@ main() {
 
   # get latest release of alessbell/resume using GET /repos/:owner/:repo/releases/latest
   # see: https://developer.github.com/v3/repos/releases/#list-releases-for-a-repository
-  # GET https://api.github.com/repos/alessbell/resume/releases/latest
+  RELEASES_URL=https://api.github.com/repos/alessbell/resume/releases/latest
+
+  RES=$(curl -sSL -H "${AUTH_HEADER}" -H "${HEADER}" --user "${GITHUB_ACTOR}" -X GET ${RELEASES_URL})
+  VERSION=$(echo "${RES}" | jq --raw-output '.tag_name')
+  PDF_URL="https://github.com/alessbell/resume/releases/download/${VERSION}/resume.pdf"
+  echo "PDF URL: ${PDF_URL}"
 
   # download resume.pdf and save in static/resume.pdf
-
-  touch newfile1.js
+  curl -L0 "${PDF_URL}" --output ./static/resume.pdf
 
   # git add and push to branch beginning with resume/
   # https://github.com/pkgjs/gh-pages/blob/master/entrypoint.sh
@@ -73,9 +80,10 @@ main() {
   git config --global user.email "github@bellisar.io"
   git config --global user.name "Alessia Bellisario"
 
+  BRANCH="${BRANCH}/${VERSION}"
   git checkout -b "${BRANCH}"
   git add .
-  git commit -m "Updates resume to version 1.x" # TODO: add latest version num to commit message
+  git commit -m "Update resume to version ${VERSION}"
   git push "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git" "${BRANCH}" --force
 
   echo "Pull requests will go to ${PULL_REQUEST_BRANCH}"
@@ -90,7 +98,7 @@ main() {
   if [[ "${BRANCH}" == "${PULL_REQUEST_BRANCH}" ]]; then
     echo "Target and current branch are identical (${BRANCH}), skipping."
   else
-    create_pull_request "${BRANCH}" "${PULL_REQUEST_BRANCH}" "${PULL_REQUEST_BODY}" "${PULL_REQUEST_TITLE}"
+    create_pull_request "${BRANCH}" "${PULL_REQUEST_BRANCH}" "${PULL_REQUEST_BODY}" "Update resume to ${VERSION}"
   fi
 }
 

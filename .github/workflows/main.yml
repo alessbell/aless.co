@@ -12,10 +12,9 @@ jobs:
         if: github.event.action == 'update_resume'
         uses: ./commit-resume
         env:
-          BRANCH: resume/update
+          BRANCH: resume-bot
           GITHUB_ACTOR: ${{ secrets.GITHUB_ACTOR }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_REPOSITORY: ${{ secrets.GITHUB_REPOSITORY }}
-          PULL_REQUEST_BODY: test
-          PULL_REQUEST_TITLE: Resume
-          PULL_REQUEST_BRANCH: master
+          PULL_REQUEST_BODY: Updates resume
+          PULL_REQUEST_BRANCH: main

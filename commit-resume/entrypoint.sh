@@ -65,11 +65,15 @@ main() {
 
   # get latest release of alessbell/resume using GET /repos/:owner/:repo/releases/latest
   # see: https://developer.github.com/v3/repos/releases/#list-releases-for-a-repository
-  # GET https://api.github.com/repos/alessbell/resume/releases/latest
+  RELEASES_URL=https://api.github.com/repos/alessbell/resume/releases/latest
+
+  RES=$(curl -sSL -H "${AUTH_HEADER}" -H "${HEADER}" --user "${GITHUB_ACTOR}" -X GET ${RELEASES_URL})
+  VERSION=$(echo "${RES}" | jq --raw-output '.[] | .tag_name')
+  PDF_URL="https://github.com/alessbell/resume/releases/download/${VERSION}/resume.pdf"
+  echo "PDF URL: ${PDF_URL}"
 
   # download resume.pdf and save in static/resume.pdf
-
-  touch newfile1.js
+  curl -L0 PDF_URL --output ./static/resume2.pdf
 
   # git add and push to branch beginning with resume/
   # https://github.com/pkgjs/gh-pages/blob/master/entrypoint.sh

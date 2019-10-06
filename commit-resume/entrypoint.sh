@@ -80,7 +80,7 @@ main() {
   git config --global user.email "github@bellisar.io"
   git config --global user.name "Alessia Bellisario"
 
-  BRANCH="${BRANCH}-${VERSION}"
+  BRANCH="${BRANCH}/${VERSION}"
   git checkout -b "${BRANCH}"
   git add .
   git commit -m "Update resume to version ${VERSION}"

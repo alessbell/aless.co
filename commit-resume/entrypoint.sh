@@ -80,7 +80,8 @@ main() {
   git config --global user.email "github@bellisar.io"
   git config --global user.name "Alessia Bellisario"
 
-  git checkout -b "${BRANCH}-${VERSION}"
+  BRANCH="${BRANCH}-${VERSION}"
+  git checkout -b "${BRANCH}"
   git add .
   git commit -m "Update resume to version ${VERSION}"
   git push "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git" "${BRANCH}" --force

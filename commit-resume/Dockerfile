@@ -6,6 +6,8 @@ LABEL "com.github.actions.icon"="activity"
 LABEL "com.github.actions.color"="yellow"
 
 RUN apk --update add --no-cache \
+  jq \
+  wget \
   bash \
   nodejs \
   nodejs-npm \

@@ -7,10 +7,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        if: github.event.action == 'update_resume'
+        # if: github.event.action == 'update_resume'
         uses: actions/checkout@v1
       - name: Fetch New Resume and Push Branch
-        if: github.event.action == 'update_resume'
+        # if: github.event.action == 'update_resume'
         uses: ./commit-resume
         env:
           BRANCH: resume/update

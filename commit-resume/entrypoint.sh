@@ -48,7 +48,6 @@ create_pull_request() {
       -H "Authorization: token ${GITHUB_TOKEN}" \
       "${PULLS_URL}" \
       --data "${DATA}"
-      # curl -sSL -H "${AUTH_HEADER}" -H "${HEADER}" --user "${GITHUB_ACTOR}" -X POST --data "${DATA}" ${PULLS_URL}
       echo $?
     fi
 }

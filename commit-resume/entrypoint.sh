@@ -73,7 +73,7 @@ main() {
   echo "PDF URL: ${PDF_URL}"
 
   # download resume.pdf and save in static/resume.pdf
-  curl -L0 PDF_URL --output ./static/resume2.pdf
+  curl "${PDF_URL}" --output ./static/resume2.pdf
 
   # git add and push to branch beginning with resume/
   # https://github.com/pkgjs/gh-pages/blob/master/entrypoint.sh

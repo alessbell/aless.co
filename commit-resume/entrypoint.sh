@@ -42,7 +42,6 @@ create_pull_request() {
     else
       # Post the pull request
       DATA="{\"title\":${TITLE}, \"body\":${BODY}, \"base\":${TARGET}, \"head\":${SOURCE}, \"draft\":${DRAFT}}"
-      echo "curl --user ${GITHUB_ACTOR} -X POST --data ${DATA} ${PULLS_URL}"
 
       curl -XPOST -H "${HEADER}" \
       -H "Authorization: token ${GITHUB_TOKEN}" \
@@ -73,7 +72,7 @@ main() {
   echo "PDF URL: ${PDF_URL}"
 
   # download resume.pdf and save in static/resume.pdf
-  curl "${PDF_URL}" --output ./static/resume2.pdf
+  curl "${PDF_URL}" --output ./static/resume.pdf
 
   # git add and push to branch beginning with resume/
   # https://github.com/pkgjs/gh-pages/blob/master/entrypoint.sh
@@ -81,9 +80,9 @@ main() {
   git config --global user.email "github@bellisar.io"
   git config --global user.name "Alessia Bellisario"
 
-  git checkout -b "${BRANCH}"
+  git checkout -b "${BRANCH}-${VERSION}"
   git add .
-  git commit -m "Updates resume to version 1.x" # TODO: add latest version num to commit message
+  git commit -m "Update resume to version ${VERSION}"
   git push "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git" "${BRANCH}" --force
 
   echo "Pull requests will go to ${PULL_REQUEST_BRANCH}"

@@ -49,11 +49,17 @@ const config = {
             options: {
               maxWidth: 1050,
               showCaptions: true,
-              // withWebp: true,
+              withWebp: true,
               tracedSVG: {
                 color: 'mediumspringgreen',
                 background: 'lightgoldenrodyellow',
               },
+            },
+          },
+          {
+            resolve: `gatsby-remark-autolink-headers`,
+            options: {
+              className: `autolink-header`,
             },
           },
           {

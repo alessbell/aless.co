@@ -1,7 +1,6 @@
 import * as React from 'react';
 import Highlight, { defaultProps, Language } from 'prism-react-renderer';
 import Theme from 'prism-react-renderer/themes/nightOwl';
-import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
 
 export interface CodeProps {
   live?: boolean;
@@ -11,32 +10,10 @@ export interface CodeProps {
 
 const Code: React.FunctionComponent<
   CodeProps & React.HTMLAttributes<HTMLDivElement>
-> = ({ children, className, live, render }) => {
+> = ({ children, className }) => {
   const language = (className
     ? className.replace(/language-/, '')
     : 'javascript') as Language;
-
-  if (live) {
-    return (
-      <div style={{ backgroundColor: 'black' }}>
-        <LiveProvider code={children.trim()}>
-          <LivePreview />
-          <LiveEditor />
-          <LiveError />
-        </LiveProvider>
-      </div>
-    );
-  }
-
-  if (render) {
-    return (
-      <div>
-        <LiveProvider code={children}>
-          <LivePreview />
-        </LiveProvider>
-      </div>
-    );
-  }
 
   return (
     <Highlight

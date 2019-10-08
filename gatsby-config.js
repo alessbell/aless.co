@@ -32,6 +32,13 @@ const config = {
     },
     `gatsby-plugin-tslint`,
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-react-helmet-canonical-urls`,
+      options: {
+        siteUrl: `https://aless.co`,
+        noTrailingSlash: true,
+      },
+    },
     `gatsby-plugin-catch-links`,
     `gatsby-plugin-emotion`,
     {

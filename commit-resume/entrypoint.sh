@@ -78,7 +78,6 @@ main() {
   # BRANCH=$(jq --raw-output .ref "${GITHUB_EVENT_PATH}");
   BRANCH=$(echo "${BRANCH/refs\/heads\//}")
   echo "Found branch $BRANCH"
-  # BRANCH=
 
   # If it's to the target branch, ignore it
   if [[ "${BRANCH}" == "${PULL_REQUEST_BRANCH}" ]]; then
@@ -88,9 +87,4 @@ main() {
   fi
 }
 
-
-echo "==========================================================================
-START: Running Pull Request on Branch Update Action!";
 main;
-echo "==========================================================================
-END: Finished"

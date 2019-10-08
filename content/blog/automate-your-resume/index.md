@@ -2,13 +2,14 @@
 title: 'Resume as Code'
 date: '2019-10-07T19:09:59.546Z'
 spoiler: 'Build a Resume with LaTeX + GitHub Actions'
+keywords: ['GitHub Actions', 'LaTeX', 'automation', 'resume', 'bash']
 ---
 
 I avoid brand new tech until I have an itch to scratch: a small, self-contained problem that seems it might lend itself nicely to \$someTool. I'm usually unsure I'll be able to achieve what I have in mind. But _maybe..._
 
 This time, the problem was something that had annoyed me for as long as I'd been employed: resumes. Not the fact of them, or even writing them, necessarily. Just **managing different versions**.
 
-I was swimming in Dropbox folders with dozens of poorly-labelled files saved in various formats; I needed to maintain multiple documents to preserve different iterations, and export PDFs for distribution. Version control was a nightmare.
+I was swimming in Dropbox folders with dozens of files saved in various formats; I needed to maintain multiple documents to preserve different iterations, and export PDFs for distribution. Version control was a nightmare.
 
 ## LaTeX and git to the Rescue
 
@@ -121,4 +122,12 @@ PDF_URL="https://github.com/alessbell/resume/releases/download/${VERSION}/resume
 curl -L0 "${PDF_URL}" --output ./static/resume.pdf
 ```
 
-Once I had the file downloaded, I'd just need to commit it and open a PR.
+Once I had the file downloaded, I'd just need to commit it and open a PR. This time, I'd try to use a pre-existing action with a bit less luck: I wasn't able to integrate [`vsoch/pull-request-action`](https://github.com/marketplace/actions/pull-request-on-branch-push) directly (I'll be the first to say it could have been user error: when I'm out of my comfort zone, I need to be able to tinker with the source), but reading its source taught me a lot about how to write a similar action that would work for my case.
+
+I wound up with [~90 lines of bash](https://github.com/alessbell/alessbell/blob/main/commit-resume/entrypoint.sh) and successfully used [`jq`](https://stedolan.github.io/jq/) for the first time. There was plenty of trial and error along the way, but once I plugged it all together, it Just Worked <3
+
+---
+
+Writing bash and yaml isn't part of my day job, but it was a lot of fun once I got started; tinkering with GitHub Actions provided the perfect excuse to learn something new while scratching an itch.
+
+Is there a workflow you're thinking about automating? I'd be curious to hear about it -- you can ping me on twitter at [@alessbell](https://twitter.com/alessbell) or email me at [web[at]bellisar.io](mailto:web@bellisar.io).

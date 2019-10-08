@@ -8,6 +8,7 @@ const post = {
     title: 'Title A',
     spoiler: 'Spoiler alert',
     date: 'July 12, 1962',
+    keywords: ['rust', 'javascript'],
   },
 };
 
@@ -19,6 +20,7 @@ const previous = {
     title: 'Some title 1',
     spoiler: 'This is a spoiler',
     date: 'Jan 5, 2020',
+    keywords: ['keyboards', 'cats'],
   },
 };
 
@@ -30,6 +32,7 @@ const next = {
     title: 'Some title 3',
     spoiler: 'This is another spoiler',
     date: 'Jan 6, 2020',
+    keywords: ['roller blades', 'ABBA'],
   },
 };
 

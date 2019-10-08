@@ -74,12 +74,6 @@ const Layout: React.FunctionComponent = ({ children }) => {
               transform: skew(-2deg) translateX(-20px);
             }
           }
-          ::selection {
-            background: #efb617; /* WebKit/Blink Browsers */
-          }
-          ::-moz-selection {
-            background: #efb617; /* Gecko Browsers */
-          }
           hr {
             box-sizing: content-box;
             margin-left: 0;
@@ -93,6 +87,24 @@ const Layout: React.FunctionComponent = ({ children }) => {
             background: hsla(0, 0%, 0%, 0.2);
             border: none;
             height: 1px;
+          }
+          .autolink-header {
+            margin-right: 0.5rem;
+            margin-left: 0;
+            @media (min-width: 52em) {
+              margin-left: -1.5rem;
+            }
+            > svg {
+              fill: blue;
+            }
+            &:hover {
+              background: white;
+            }
+          }
+          .prism-code {
+            overflow-x: scroll;
+            line-height: unset;
+            padding: 15px 20px !important;
           }
           :not(pre) > code[class*='language-'],
           pre[class*='language-'] {
@@ -109,11 +121,14 @@ const Layout: React.FunctionComponent = ({ children }) => {
           /* Inline code */
           code {
             line-height: 1.5;
-            border-radius: 0.3em;
+            border-radius: 0.3rem;
             background: rgba(255, 229, 100, 0.2);
             color: #1a1a1a;
+            font-size: inherit;
+            font-weight: inherit;
             padding: 0.15em 0.2em 0.05em;
             white-space: normal;
+            text-shadow: none;
           }
           /* Gatsby Image */
           .gatsby-resp-image-image {

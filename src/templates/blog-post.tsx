@@ -8,6 +8,7 @@ interface FrontMatter {
   title: string;
   spoiler: string;
   date: string;
+  keywords: string[];
 }
 
 interface Article {
@@ -54,6 +55,7 @@ const BlogPostTemplate: React.FunctionComponent<BlogPostData> = ({
       ogImageProp={slug ? `${siteUrl}${slug}twitter-card.jpg` : undefined}
       title={frontmatter.title}
       description={excerpt}
+      keywords={frontmatter.keywords.length > 0 ? frontmatter.keywords : []}
     />
     <h2>{frontmatter.title}</h2>
     <h3>{frontmatter.spoiler}</h3>
@@ -113,6 +115,7 @@ export const pageQuery = graphql`
       frontmatter {
         title
         spoiler
+        keywords
         date(formatString: "MMMM D, YYYY")
       }
       body

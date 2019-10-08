@@ -32,6 +32,12 @@ const config = {
     },
     `gatsby-plugin-tslint`,
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-react-helmet-canonical-urls`,
+      options: {
+        siteUrl: `https://aless.co`,
+      },
+    },
     `gatsby-plugin-catch-links`,
     `gatsby-plugin-emotion`,
     {
@@ -49,11 +55,17 @@ const config = {
             options: {
               maxWidth: 1050,
               showCaptions: true,
-              // withWebp: true,
+              withWebp: true,
               tracedSVG: {
                 color: 'mediumspringgreen',
                 background: 'lightgoldenrodyellow',
               },
+            },
+          },
+          {
+            resolve: `gatsby-remark-autolink-headers`,
+            options: {
+              className: `autolink-header`,
             },
           },
           {

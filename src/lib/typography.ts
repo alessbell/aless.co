@@ -32,8 +32,8 @@ const typography = new Typography({
     'h1,h2,h4,h5,h6': {
       marginTop: '2.5rem',
     },
-    'p,ul': {
-      marginBottom: '1.75rem',
+    'p,ul,ol': {
+      marginBottom: '1.5rem',
     },
     strong: {
       fontStyle: 'bold',
@@ -53,9 +53,13 @@ const typography = new Typography({
     'a:hover': {
       color: 'black',
       backgroundColor: 'yellow',
+      borderRadius: '0.3rem',
     },
     footer: {
       fontSize: '16px',
+    },
+    'pre,code': {
+      fontFamily: `${fonts.GTPressuraRegular}, monospace`,
     },
   }),
 });

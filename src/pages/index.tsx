@@ -43,10 +43,13 @@ const BlogIndex: React.FunctionComponent<BlogIndexProps> = ({
           <h3>
             <BlogLink to={node.fields.slug}>{title}</BlogLink>
           </h3>
+          <p
+            style={{ marginBottom: 0 }}
+            dangerouslySetInnerHTML={{ __html: node.frontmatter.spoiler }}
+          />
           <small>
             <i>{node.frontmatter.date}</i>
           </small>
-          <p dangerouslySetInnerHTML={{ __html: node.frontmatter.spoiler }} />
         </div>
       );
     })}

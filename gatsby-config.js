@@ -36,7 +36,6 @@ const config = {
       resolve: `gatsby-plugin-react-helmet-canonical-urls`,
       options: {
         siteUrl: `https://aless.co`,
-        noTrailingSlash: true,
       },
     },
     `gatsby-plugin-catch-links`,

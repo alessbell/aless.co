@@ -53,7 +53,7 @@ const config = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 1050,
+              maxWidth: 640,
               showCaptions: true,
               withWebp: true,
               tracedSVG: {
@@ -68,17 +68,19 @@ const config = {
               className: `autolink-header`,
             },
           },
-          {
-            resolve: `gatsby-remark-copy-linked-files`,
-          },
-          {
-            resolve: `gatsby-remark-smartypants`,
-          },
+          `gatsby-remark-copy-linked-files`,
+          `gatsby-remark-smartypants`,
           {
             resolve: `gatsby-remark-twitter-cards`,
             options: {
-              title: 'anti/pattern',
-              author: 'alessia bellisario',
+              title: `anti/pattern`,
+              author: `alessia bellisario`,
+            },
+          },
+          {
+            resolve: `gatsby-remark-external-links`,
+            options: {
+              target: `_blank`,
             },
           },
         ],

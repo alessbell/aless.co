@@ -1,4 +1,5 @@
 import * as React from 'react';
+import './css/font-face.css';
 
 interface HTMLProps {
   htmlAttributes: object;

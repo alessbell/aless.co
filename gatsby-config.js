@@ -3,7 +3,7 @@ const config = {
     title: `anti/pattern`,
     author: `Alessia Bellisario`,
     siteUrl: `https://aless.co`,
-    description: `Alessia Bellisario is a software engineer working on the web in New York City`,
+    description: `Alessia Bellisario is a software engineer in NYC writing about code, keyboards and drawing machines`,
     repository: `https://github.com/alessbell/alessbell`,
     commit: process.env.COMMIT_REF || `master`,
   },
@@ -53,7 +53,7 @@ const config = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 1050,
+              maxWidth: 640,
               showCaptions: true,
               withWebp: true,
               tracedSVG: {
@@ -68,17 +68,19 @@ const config = {
               className: `autolink-header`,
             },
           },
-          {
-            resolve: `gatsby-remark-copy-linked-files`,
-          },
-          {
-            resolve: `gatsby-remark-smartypants`,
-          },
+          `gatsby-remark-copy-linked-files`,
+          `gatsby-remark-smartypants`,
           {
             resolve: `gatsby-remark-twitter-cards`,
             options: {
-              title: 'anti/pattern',
-              author: 'alessia bellisario',
+              title: `anti/pattern`,
+              author: `alessia bellisario`,
+            },
+          },
+          {
+            resolve: `gatsby-remark-external-links`,
+            options: {
+              target: `_blank`,
             },
           },
         ],

@@ -61,6 +61,7 @@ const SEO: React.FunctionComponent<SEOProps> = ({
   `);
 
   const metaDescription = description || data.site.siteMetadata.description;
+  const author = data.site.siteMetadata.author;
   const ogImage =
     ogImageProp ||
     data.site.siteMetadata.siteUrl.concat(
@@ -96,12 +97,21 @@ const SEO: React.FunctionComponent<SEOProps> = ({
           content: ogImage,
         },
         {
+          name: `image`,
+          property: `og:image`,
+          content: ogImage,
+        },
+        {
+          name: `author`,
+          content: author,
+        },
+        {
           name: `twitter:card`,
           content: `summary_large_image`,
         },
         {
           name: `twitter:creator`,
-          content: data.site.siteMetadata.author,
+          content: author,
         },
         {
           name: `twitter:title`,

@@ -3,7 +3,7 @@ const config = {
     title: `anti/pattern`,
     author: `Alessia Bellisario`,
     siteUrl: `https://aless.co`,
-    description: `Alessia Bellisario is a software engineer working on the web in New York City`,
+    description: `Alessia Bellisario is a software engineer in NYC writing about code, keyboards and drawing machines`,
     repository: `https://github.com/alessbell/alessbell`,
     commit: process.env.COMMIT_REF || `master`,
   },

@@ -32,8 +32,15 @@ const BlogIndex: React.FunctionComponent<BlogIndexProps> = ({
 }) => (
   <Layout>
     <SEO
-      title="a blog by alessia bellisario"
-      keywords={[`blog`, `rust`, `gatsby`, `javascript`, `react`]}
+      title="A Blog by Alessia Bellisario"
+      keywords={[
+        `blog`,
+        `rust`,
+        `gatsby`,
+        `javascript`,
+        `react`,
+        `mechanical keyboards`,
+      ]}
     />
     {edges.map(({ node }) => {
       const title = node.frontmatter.title || node.fields.slug;

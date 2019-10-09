@@ -97,7 +97,7 @@
     "husky": "3.0.8",
     "identity-obj-proxy": "3.0.0",
     "jest": "24.9.0",
-    "jest-canvas-mock": "2.1.1",
+    "jest-canvas-mock": "2.1.2",
     "jest-emotion": "10.0.17",
     "prettier": "1.18.2",
     "ts-jest": "24.1.0",

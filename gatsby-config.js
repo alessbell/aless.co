@@ -18,6 +18,13 @@ const config = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        path: `${__dirname}/content/years-in-review`,
+        name: `years-in-review`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         path: `${__dirname}/content/assets`,
         name: `assets`,
       },
@@ -55,11 +62,6 @@ const config = {
             options: {
               maxWidth: 2000,
               showCaptions: true,
-              withWebp: true,
-              tracedSVG: {
-                color: 'mediumspringgreen',
-                background: 'lightgoldenrodyellow',
-              },
             },
           },
           {
@@ -150,7 +152,10 @@ const config = {
             },
             query: `
             {
-                allMdx(limit: 1000, sort: { fields: [frontmatter___date], order: DESC }) {
+                allMdx(
+                  filter: { fileAbsolutePath: { regex: "//content/blog//" } }
+                  sort: { fields: [frontmatter___date], order: DESC }
+                ) {
                   edges {
                     node {
                       html

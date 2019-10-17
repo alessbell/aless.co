@@ -8,7 +8,7 @@ interface FrontMatter {
   title: string;
   spoiler: string;
   date: string;
-  keywords: string[];
+  keywords?: string[];
 }
 
 interface Article {
@@ -55,7 +55,7 @@ const BlogPostTemplate: React.FC<BlogPostData> = ({
       ogImageProp={slug ? `${siteUrl}${slug}twitter-card.jpg` : undefined}
       title={frontmatter.title}
       description={excerpt}
-      keywords={frontmatter.keywords.length > 0 ? frontmatter.keywords : []}
+      keywords={frontmatter.keywords ? frontmatter.keywords : []}
     />
     <h2>{frontmatter.title}</h2>
     <h3>{frontmatter.spoiler}</h3>

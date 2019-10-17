@@ -1,0 +1,37 @@
+---
+title: '2019: A Year In Review'
+---
+
+![Taking a hike around the "Grand Canyon of the Pacific" in Waimea Canyon State Park, Kaua'i (Feb '19).](carlAless1.jpg)
+
+2019 was a year of 3 weddings, 2 gifted wedding eggs (congrats Robin & Mark!), 1 new cat friend and 9 states visited (excluding home state NY that's RI, MA, HI, VA, MD, PA, CA, CT and NJ, always NJ.)
+
+If you've found your way here, take a minute and join us for a whip around the last 12 months.
+
+### Carla
+
+Since being admitted to the CJA (Criminal Justice Act) panel for federal indigent defense in January, Carla's practice has been growing apace. While running her own business and keeping one of the busiest schedules of anyone I know, she nevertheless manages to Citi bike to midtown most days and care for not one but two small creatures (in addition to me).
+
+Carla continues to earn the title of "Neighbourhood Pied Piper of Adorable Animals": most everyone knows Peter Carlos, the good-natured chicken who walked into Carla's life three years ago and never left. 2019 in turn brought us Ghost, a young cat with white fur and a little grey cap.
+
+![](ghost.jpg)
+
+Carla's friend Andrew, a person with far too much idle time on his hands, lovingly built Ghost a cat ladder up to our second story apartment so Ghost could begin to get acquainted with his new home. The ladder was a hit and, so far, it seems he likes what he's found at the top.
+
+Finally, an affable web developer offered to make Carla a new website; in June the new and improved [carlasandersonlaw.com](https://carlasandersonlaw.com) came online.
+
+### The Bellisarios
+
+**Erica** and **Santino** were thrilled to have their 3 kids along for the ride in Rome this July, in addition to the 60-odd other kids they were legally responsible for. **Luca**, ever the peacemaker and overall agreeable Bellisario, had no trouble making new friends in Italy despite the language barrier.
+
+An older gentleman living near our hotel would see Luca on his way to the subway and wave him over for some help navigating Rome's precarious streets. They'd walk together for a few blocks until the man would gratefully wave Luca off, having arrived at his destination. In Italy as in life, few words, a smile and many wild gestures can go a long way.
+
+![](luca1.jpg)
+
+In the spring, Luca graduated with a bachelors degree with high distinction from U of T--no small feat says the woman who did a victory lap and still barely got out alive--and began grad school in the fall, also at U of T.
+
+**Martina**, my big sister in every meaningful way except birth order, wrapped up a stint at a top communications firm in Toronto and began her legal studies. As someone who still bears the battle scars from kitchen table "debates" with Martina over the years, I cannot wait to see the havoc she will wreak in the professional world.
+
+For my part, I had the amazing opportunity to join the [Recurse Center](https://recurse.com) in April for a mini batch, which is to say I spent a week among likeminded nerds learning a new programming language called Rust which I used to, well, draw a bunch of circles.
+
+![](circles2.png)

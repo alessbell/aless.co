@@ -74,7 +74,9 @@ const config = {
             resolve: `gatsby-remark-twitter-cards`,
             options: {
               title: `anti/pattern`,
-              author: `alessia bellisario`,
+              author: `Alessia Bellisario`,
+              fontColor: `#0000FF`,
+              background: require.resolve('./content/assets/base.png'),
             },
           },
           {

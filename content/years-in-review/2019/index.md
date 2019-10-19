@@ -35,3 +35,11 @@ In the spring, Luca graduated with a bachelors degree with high distinction from
 For my part, I had the amazing opportunity to join the [Recurse Center](https://recurse.com) in April for a mini batch, which is to say I spent a week among likeminded nerds learning a new programming language called Rust which I used to, well, draw a bunch of circles.
 
 ![](circles2.png)
+
+Blah blah blah generative art, etc.
+
+![](ericaCarl1.jpg)
+
+Yada yada
+
+![](theNonnas.jpg)

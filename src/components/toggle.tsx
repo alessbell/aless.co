@@ -1,16 +1,10 @@
 import * as React from 'react';
 import Toggle from 'react-toggle';
-import '../css/Toggle.css';
+import { ThemeContext } from './layout';
+import '../css/toggle.css';
 
 const Header: React.FunctionComponent = () => {
-  const [theme, setTheme] = React.useState(null);
-  React.useEffect(() => {
-    // Update the document title using the browser API
-    setTheme((window as any).__theme);
-  });
-  (window as any).__onThemeChange = () => {
-    setTheme((window as any).__theme);
-  };
+  const theme = React.useContext(ThemeContext);
   return (
     <div>
       <Toggle

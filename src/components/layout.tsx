@@ -3,6 +3,7 @@ import { Global, css } from '@emotion/core';
 import { useStaticQuery, graphql } from 'gatsby';
 import { H1, Link, LeftBar, RightBar, TopBar, BottomBar } from './styles';
 import Header from './header';
+import Toggle from './toggle';
 import Footer from './footer';
 
 interface LayoutData {
@@ -59,6 +60,31 @@ const Layout: React.FunctionComponent = ({ children }) => {
           body {
             padding: 0 1.5rem;
             margin: 0;
+            background-color: var(--bg);
+            transition: 'color 0.2s ease-out, background 0.2s ease-out';
+          }
+          body.light {
+            --bg: #ffffff;
+            --header: var(--pink);
+            --textNormal: #222;
+            --textTitle: #222;
+            --textLink: #d23669;
+            --hr: hsla(0, 0%, 0%, 0.2);
+            --inlineCode-bg: rgba(255, 229, 100, 0.2);
+            --inlineCode-text: #1a1a1a;
+          }
+
+          body.dark {
+            -webkit-font-smoothing: antialiased;
+
+            --bg: #282c35;
+            --header: #ffffff;
+            --textNormal: rgba(255, 255, 255, 0.88);
+            --textTitle: #ffffff;
+            --textLink: var(--pink);
+            --hr: hsla(0, 0%, 100%, 0.2);
+            --inlineCode-bg: hsl(222, 14%, 25%);
+            --inlineCode-text: #e6e6e6;
           }
           h1,
           h2 {
@@ -98,7 +124,7 @@ const Layout: React.FunctionComponent = ({ children }) => {
               fill: blue;
             }
             &:hover {
-              background: white;
+              background: var(--bg);
             }
           }
           .prism-code {
@@ -147,15 +173,16 @@ const Layout: React.FunctionComponent = ({ children }) => {
           }
         `}
       />
-      <div style={{ position: 'relative' }}>
+      <header style={{ position: 'relative' }}>
         <H1>
           <Link id="title" to={`/`}>
             {data.site.siteMetadata.title}
           </Link>
         </H1>
         {typeof document !== `undefined` && <Header />}
+        <Toggle />
         <h3>a blog by alessia bellisario</h3>
-      </div>
+      </header>
       {children}
       <Footer
         commit={data.site.siteMetadata.commit}

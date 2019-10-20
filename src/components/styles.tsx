@@ -50,11 +50,11 @@ export const H1 = styled.h1`
   position: relative;
   z-index: 100;
   mix-blend-mode: screen;
-  background-color: white;
+  background-color: var(--bg);
   color: black;
   a {
     &:hover {
-      background-color: white;
+      background-color: var(--bg);
     }
   }
 `;

@@ -21,13 +21,15 @@ export const ThemeContext = React.createContext('light');
 const Layout: React.FunctionComponent = ({ children }) => {
   const [theme, setTheme] = React.useState('light');
 
-  (window as any).__onThemeChange = () => {
-    setTheme((window as any).__theme);
-  };
+  if (typeof document !== `undefined`) {
+    (window as any).__onThemeChange = () => {
+      setTheme((window as any).__theme);
+    };
 
-  React.useEffect(() => {
-    setTheme((window as any).__theme);
-  });
+    React.useEffect(() => {
+      setTheme((window as any).__theme);
+    });
+  }
 
   React.useEffect(() => {
     const headings = document.querySelectorAll('h1');

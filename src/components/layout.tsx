@@ -130,6 +130,15 @@ const Layout: React.FunctionComponent = ({ children }) => {
             white-space: normal;
             text-shadow: none;
           }
+          /* unset yellow code highlighting in vscode block */
+          .vscode-highlight > code {
+            border-radius: none;
+            line-height: unset;
+            background: unset;
+            padding: unset;
+            color: unset;
+            white-space: unset;
+          }
           /* Gatsby Image */
           .gatsby-resp-image-image {
             position: absolute;

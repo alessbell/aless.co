@@ -85,6 +85,18 @@ const config = {
               target: `_blank`,
             },
           },
+          {
+            resolve: `gatsby-remark-vscode`,
+            options: {
+              colorTheme: `Night Owl`,
+              extensions: [
+                {
+                  identifier: `sdras.night-owl`,
+                  version: `1.1.3`,
+                },
+              ],
+            },
+          },
         ],
       },
     },

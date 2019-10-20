@@ -97,7 +97,7 @@ main
 
 There were two small caveats here. **First**, because this POST request is being dispatched for a repository other than the one from the action's execution context, I needed a [personal access token](https://help.github.com/en/articles/creating-a-personal-access-token-for-the-command-line) with `repository` scope set as a [secret on the repository](https://help.github.com/en/articles/virtual-environments-for-github-actions#creating-and-using-secrets-encrypted-variables). I stored my secret as `PA_TOKEN` and passed it in the way I had the others:
 
-```yml
+```yaml
 - name: Pings repo
   uses: ./ping-repo
   env:

@@ -18,6 +18,9 @@ interface LayoutData {
 
 const Layout: React.FunctionComponent = ({ children }) => {
   React.useEffect(() => {
+    if ((window as any).__theme === 'dark') {
+      return;
+    }
     const headings = document.querySelectorAll('h1');
     let styles = ``;
     headings.forEach(heading => {
@@ -65,40 +68,50 @@ const Layout: React.FunctionComponent = ({ children }) => {
           }
           body.light {
             --bg: #ffffff;
-            --header: var(--pink);
+            --blue: blue;
+            --codeBg: rgba(255, 229, 100, 0.2);
+            --hoverBg: #ffffff;
+            --headerText: black;
+            --mixBlendMode: screen;
             --textNormal: #222;
             --textTitle: #222;
             --textLink: #d23669;
-            --hr: hsla(0, 0%, 0%, 0.2);
-            --inlineCode-bg: rgba(255, 229, 100, 0.2);
-            --inlineCode-text: #1a1a1a;
+            h1,
+            h2 {
+              &::after {
+                top: 0;
+                width: 100%;
+                z-index: -1;
+                left: 18px;
+                color: #f8a51a;
+                text-shadow: none;
+                font-style: italic;
+                position: absolute;
+                transform: skew(-2deg) translateX(-20px);
+              }
+            }
+
+            h1 {
+              a {
+                &:hover {
+                  background-color: var(--hoverBg);
+                }
+              }
+            }
           }
 
           body.dark {
             -webkit-font-smoothing: antialiased;
 
-            --bg: #282c35;
-            --header: #ffffff;
+            --bg: #090a0b;
+            --blue: #6f6fbd;
+            --codeBg: rgba(170, 170, 170, 0.2);
+            --hoverBg: inherit;
+            --headerText: #ffffff;
+            --mixBlendMode: darken;
             --textNormal: rgba(255, 255, 255, 0.88);
             --textTitle: #ffffff;
             --textLink: var(--pink);
-            --hr: hsla(0, 0%, 100%, 0.2);
-            --inlineCode-bg: hsl(222, 14%, 25%);
-            --inlineCode-text: #e6e6e6;
-          }
-          h1,
-          h2 {
-            &::after {
-              top: 0;
-              width: 100%;
-              z-index: -1;
-              left: 18px;
-              color: #f8a51a;
-              text-shadow: none;
-              font-style: italic;
-              position: absolute;
-              transform: skew(-2deg) translateX(-20px);
-            }
           }
           hr {
             box-sizing: content-box;
@@ -121,7 +134,7 @@ const Layout: React.FunctionComponent = ({ children }) => {
               margin-left: -1.5rem;
             }
             > svg {
-              fill: blue;
+              fill: var(--blue);
             }
             &:hover {
               background: var(--bg);
@@ -141,15 +154,15 @@ const Layout: React.FunctionComponent = ({ children }) => {
             margin-left: 0;
             font-size: 1.1rem;
             padding-left: 1rem;
-            border-left: 6px solid blue;
+            border-left: 6px solid var(--blue);
             font-style: italic;
           }
           /* Inline code */
           code {
             line-height: 1.5;
             border-radius: 0.3rem;
-            background: rgba(255, 229, 100, 0.2);
-            color: #1a1a1a;
+            background: var(--codeBg);
+            color: inherit;
             font-size: inherit;
             font-weight: inherit;
             padding: 0.15em 0.2em 0.05em;
@@ -179,6 +192,9 @@ const Layout: React.FunctionComponent = ({ children }) => {
             {data.site.siteMetadata.title}
           </Link>
         </H1>
+        {/* <H1 style={{ position: 'absolute', top: 0, margin: 0 }}>
+          {data.site.siteMetadata.title}
+        </H1> */}
         {typeof document !== `undefined` && <Header />}
         <Toggle />
         <h3>a blog by alessia bellisario</h3>

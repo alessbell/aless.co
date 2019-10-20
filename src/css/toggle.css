@@ -35,14 +35,14 @@
   height: 24px;
   padding: 0;
   border-radius: 30px;
-  background-color: hsl(222, 14%, 7%);
+  background-color: hsl(220, 6.2%, 28.4%);
   transition: all 0.2s ease;
 }
 
 .react-toggle-track-check {
   position: absolute;
   width: 17px;
-  height: 17px;
+  height: 1px;
   left: 5px;
   top: 0px;
   bottom: 0px;
@@ -61,7 +61,7 @@
 .react-toggle-track-x {
   position: absolute;
   width: 17px;
-  height: 17px;
+  height: 1px;
   right: 5px;
   top: 0px;
   bottom: 0px;
@@ -95,9 +95,9 @@
 }
 
 .react-toggle--focus .react-toggle-thumb {
-  box-shadow: 0px 0px 2px 3px rgb(255, 167, 196);
+  box-shadow: 0px 0px 2px 3px red;
 }
 
 .react-toggle:active .react-toggle-thumb {
-  box-shadow: 0px 0px 5px 5px rgb(255, 167, 196);
+  box-shadow: 0px 0px 5px 5px red;
 }

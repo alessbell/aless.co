@@ -26,6 +26,9 @@ const typography = new Typography({
       marginTop: '0',
       fontSize: '1.15rem',
     },
+    'div,h3,h4,h5,h6,small,figcaption,strong,p,ul,ol': {
+      color: 'var(--textNormal)',
+    },
     'h1,h2,h3': {
       marginBottom: '0.25rem',
     },
@@ -46,7 +49,7 @@ const typography = new Typography({
       marginTop: '0.5rem',
     },
     a: {
-      color: 'blue',
+      color: 'var(--blue)',
       textDecoration: 'hotpink underline wavy',
       textUnderlinePosition: 'under',
     },
@@ -54,6 +57,9 @@ const typography = new Typography({
       color: 'black',
       backgroundColor: 'yellow',
       borderRadius: '0.3rem',
+    },
+    'h1 > a:hover': {
+      backgroundColor: 'white',
     },
     footer: {
       fontSize: '16px',

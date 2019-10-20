@@ -10,7 +10,7 @@ export interface AnchorProps extends React.HTMLAttributes<HTMLAnchorElement> {
   target?: '_blank';
 }
 
-const Commit = styled.div`
+const Commit = styled.p`
   @media (min-width: 52em) {
     float: right;
   }

@@ -20,7 +20,7 @@ const typography = new Typography({
       color: BORDER_COLOR,
       fontSize: '1.75rem',
       position: 'relative',
-      textShadow: '5px 5px 1px rgba(0, 0, 0, 0.05)',
+      textShadow: 'var(--textShadow)',
     },
     h3: {
       marginTop: '0',

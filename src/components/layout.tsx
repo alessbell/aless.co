@@ -70,6 +70,7 @@ const Layout: React.FunctionComponent = ({ children }) => {
           marginLeft: `auto`,
           marginRight: `auto`,
           maxWidth: '640px',
+          minHeight: '100vh',
         }}
       >
         <Global
@@ -81,6 +82,7 @@ const Layout: React.FunctionComponent = ({ children }) => {
             }
             body.light {
               --bg: #ffffff;
+              --textShadow: 5px 5px 1px rgba(0, 0, 0, 0.08);
               --hr: hsla(0, 0%, 0%, 0.2);
               --blue: blue;
               --codeBg: rgba(255, 229, 100, 0.2);
@@ -120,6 +122,7 @@ const Layout: React.FunctionComponent = ({ children }) => {
               -webkit-font-smoothing: antialiased;
 
               --bg: #2d2d2d;
+              --textShadow: 5px 5px 1px rgba(0, 0, 0, 0.2);
               --blue: #a3a3ff;
               --hr: hsla(0, 0%, 100%, 0.2);
               --codeBg: rgba(170, 170, 170, 0.2);

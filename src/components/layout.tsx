@@ -19,7 +19,7 @@ interface LayoutData {
 export const ThemeContext = React.createContext('light');
 
 const Layout: React.FunctionComponent = ({ children }) => {
-  const [theme, setTheme] = React.useState('light');
+  const [theme, setTheme] = React.useState('null');
 
   if (typeof document !== `undefined`) {
     (window as any).__onThemeChange = () => {
@@ -70,11 +70,13 @@ const Layout: React.FunctionComponent = ({ children }) => {
           marginLeft: `auto`,
           marginRight: `auto`,
           maxWidth: '640px',
-          minHeight: '100vh',
         }}
       >
         <Global
           styles={css`
+            html {
+              background-color: var(--bg);
+            }
             body {
               padding: 0 1.5rem;
               margin: 0;
@@ -210,7 +212,7 @@ const Layout: React.FunctionComponent = ({ children }) => {
             </Link>
           </H1>
           {typeof document !== `undefined` && <Header />}
-          <Toggle />
+          {theme !== 'null' && <Toggle />}
           <h3>a blog by alessia bellisario</h3>
         </header>
         {children}

@@ -70,13 +70,12 @@ const Layout: React.FunctionComponent = ({ children }) => {
           marginLeft: `auto`,
           marginRight: `auto`,
           maxWidth: '640px',
+          minHeight: '100vh',
+          backgroundColor: 'var(--bg)',
         }}
       >
         <Global
           styles={css`
-            html {
-              background-color: var(--bg);
-            }
             body {
               padding: 0 1.5rem;
               margin: 0;

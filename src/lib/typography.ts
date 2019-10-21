@@ -51,6 +51,7 @@ const typography = new Typography({
     a: {
       color: 'var(--blue)',
       textDecoration: 'hotpink underline wavy',
+      WebkitTextDecoration: 'hotpink underline wavy',
       textUnderlinePosition: 'under',
     },
     'a:hover': {

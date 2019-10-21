@@ -48,15 +48,10 @@ export const FooterWrapper = styled.footer`
 export const H1 = styled.h1`
   font-size: 38px;
   position: relative;
-  z-index: 100;
-  mix-blend-mode: screen;
-  background-color: white;
-  color: black;
-  a {
-    &:hover {
-      background-color: white;
-    }
-  }
+  z-index: 1;
+  mix-blend-mode: var(--mixBlendMode);
+  background-color: var(--bg);
+  color: var(--headerText);
 `;
 export const Link = styled(BaseLink)`
   box-shadow: none;

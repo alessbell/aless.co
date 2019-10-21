@@ -20,16 +20,19 @@ const typography = new Typography({
       color: BORDER_COLOR,
       fontSize: '1.75rem',
       position: 'relative',
-      textShadow: '5px 5px 1px rgba(0, 0, 0, 0.05)',
+      textShadow: 'var(--textShadow)',
     },
     h3: {
       marginTop: '0',
       fontSize: '1.15rem',
     },
+    'div,h3,h4,h5,h6,small,figcaption,strong,p,ul,ol': {
+      color: 'var(--textNormal)',
+    },
     'h1,h2,h3': {
       marginBottom: '0.25rem',
     },
-    'h1,h2,h4,h5,h6': {
+    'h2,h4,h5,h6': {
       marginTop: '2.5rem',
     },
     'p,ul,ol': {
@@ -46,8 +49,9 @@ const typography = new Typography({
       marginTop: '0.5rem',
     },
     a: {
-      color: 'blue',
+      color: 'var(--blue)',
       textDecoration: 'hotpink underline wavy',
+      WebkitTextDecoration: 'hotpink underline wavy',
       textUnderlinePosition: 'under',
     },
     'a:hover': {

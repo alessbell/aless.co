@@ -1,3 +1,4 @@
+declare module '*.png';
 declare module 'gatsby-plugin-mdx' {
   interface MDXRendererProps {
     scope?: object;

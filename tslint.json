@@ -8,6 +8,6 @@
     "import-name": false,
     "interface-name": [true, "never-prefix"],
     "object-literal-sort-keys": false,
-    "no-submodule-imports": [true, "prism-react-renderer"]
+    "no-submodule-imports": [true]
   }
 }

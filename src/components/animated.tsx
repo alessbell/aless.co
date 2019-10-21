@@ -32,7 +32,7 @@ const AnimatedColorWave: React.FunctionComponent = () => {
     };
   });
 
-  return <ColorWave blue={0.5 + 0.5 * Math.cos(time / 3000)} />;
+  return <ColorWave blue={Math.cos(time / 3000)} />;
 };
 
 export default AnimatedColorWave;

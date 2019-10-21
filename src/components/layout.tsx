@@ -199,7 +199,7 @@ const Layout: React.FunctionComponent = ({ children }) => {
             transition: 'color 1s ease-out, background 1s ease-out';
           `}
         />
-        <div style={{ paddingTop: '2.5rem', paddingBottom: '2.5rem' }}>
+        <div style={{ paddingTop: '2.5rem' }}>
           <header style={{ position: 'relative' }}>
             <H1>
               <Link id="title" to={`/`}>

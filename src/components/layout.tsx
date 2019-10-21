@@ -97,7 +97,7 @@ const Layout: React.FunctionComponent = ({ children }) => {
               -webkit-font-smoothing: antialiased;
 
               --bg: #272727;
-              --textShadow: 5px 5px 1px rgba(0, 0, 0, 0.2);
+              --textShadow: 5px 5px 1px rgba(0, 0, 0, 0.15);
               --blue: #a3a3ff;
               --hr: hsla(0, 0%, 100%, 0.2);
               --codeBg: rgba(170, 170, 170, 0.2);

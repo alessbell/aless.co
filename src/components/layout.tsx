@@ -43,6 +43,7 @@ const Layout: React.FunctionComponent = ({ children }) => {
       }
       styles += `.${random}:after { content: '${
         theme === 'light' ? text : ''
+        // text
       }';}`;
     });
 
@@ -71,7 +72,6 @@ const Layout: React.FunctionComponent = ({ children }) => {
           marginRight: `auto`,
           maxWidth: '640px',
           minHeight: '100vh',
-          backgroundColor: 'var(--bg)',
         }}
       >
         <Global
@@ -87,36 +87,12 @@ const Layout: React.FunctionComponent = ({ children }) => {
               --hr: hsla(0, 0%, 0%, 0.2);
               --blue: blue;
               --codeBg: rgba(255, 229, 100, 0.2);
-              --hoverBg: #ffffff;
+              --hoverBg: var(--bg);
               --headerText: black;
-              --mixBlendMode: screen;
-              --mixBlendMode2: unset;
+              --mixBlendMode: lighten;
+              --mixBlendMode2: multiply;
+              --titleSkewColor: #ffc461;
               --textNormal: #222;
-              --textTitle: #222;
-              --textLink: #d23669;
-
-              h1,
-              h2 {
-                &::after {
-                  top: 0;
-                  width: 100%;
-                  z-index: -1;
-                  left: 18px;
-                  color: #f8a51a;
-                  text-shadow: none;
-                  font-style: italic;
-                  position: absolute;
-                  transform: skew(-2deg) translateX(-20px);
-                }
-              }
-
-              h1 {
-                a {
-                  &:hover {
-                    background-color: var(--hoverBg);
-                  }
-                }
-              }
             }
 
             body.dark {
@@ -127,13 +103,34 @@ const Layout: React.FunctionComponent = ({ children }) => {
               --blue: #a3a3ff;
               --hr: hsla(0, 0%, 100%, 0.2);
               --codeBg: rgba(170, 170, 170, 0.2);
-              --hoverBg: inherit;
+              --hoverBg: var(--bg);
               --headerText: #ffffff;
               --mixBlendMode: darken;
               --mixBlendMode2: screen;
+              --titleSkewColor: #f8a51a2e;
               --textNormal: rgba(255, 255, 255, 0.88);
-              --textTitle: #ffffff;
-              --textLink: var(--pink);
+            }
+            h1,
+            h2 {
+              &::after {
+                top: 0;
+                width: 100%;
+                z-index: -1;
+                left: 18px;
+                color: var(--titleSkewColor);
+                text-shadow: none;
+                font-style: italic;
+                position: absolute;
+                transform: skew(-2deg) translateX(-20px);
+              }
+            }
+            h1 {
+              a {
+                &:hover {
+                  background-color: var(--hoverBg);
+                  color: inherit;
+                }
+              }
             }
             hr {
               box-sizing: content-box;

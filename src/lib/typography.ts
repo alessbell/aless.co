@@ -59,9 +59,6 @@ const typography = new Typography({
       backgroundColor: 'yellow',
       borderRadius: '0.3rem',
     },
-    'h1 > a:hover': {
-      backgroundColor: 'white',
-    },
     footer: {
       fontSize: '16px',
     },

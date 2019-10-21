@@ -9,8 +9,8 @@ const Header: React.FunctionComponent = () => {
     <div>
       <Toggle
         icons={{
-          checked: <span>🌚</span>,
-          unchecked: <span>💡</span>,
+          checked: <span>✨</span>,
+          unchecked: <span>😎</span>,
         }}
         checked={theme === 'dark'}
         onChange={e =>

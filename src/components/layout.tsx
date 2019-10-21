@@ -68,7 +68,6 @@ const Layout: React.FunctionComponent = ({ children }) => {
           marginLeft: `auto`,
           marginRight: `auto`,
           maxWidth: '640px',
-          minHeight: '100vh',
           backgroundColor: 'var(--bg)',
         }}
       >

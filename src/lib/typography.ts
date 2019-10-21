@@ -32,7 +32,7 @@ const typography = new Typography({
     'h1,h2,h3': {
       marginBottom: '0.25rem',
     },
-    'h1,h2,h4,h5,h6': {
+    'h2,h4,h5,h6': {
       marginTop: '2.5rem',
     },
     'p,ul,ol': {

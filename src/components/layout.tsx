@@ -41,10 +41,7 @@ const Layout: React.FunctionComponent = ({ children }) => {
       if (heading.innerText) {
         text = heading.innerText.replace(`'`, `\\'`).replace(`\n`, '\\A ');
       }
-      styles += `.${random}:after { content: '${
-        theme === 'light' ? text : ''
-        // text
-      }';}`;
+      styles += `.${random}:after { content: '${text}';}`;
     });
 
     const style = document.createElement('style');
@@ -72,6 +69,7 @@ const Layout: React.FunctionComponent = ({ children }) => {
           marginRight: `auto`,
           maxWidth: '640px',
           minHeight: '100vh',
+          backgroundColor: 'var(--bg)',
         }}
       >
         <Global
@@ -98,7 +96,7 @@ const Layout: React.FunctionComponent = ({ children }) => {
             body.dark {
               -webkit-font-smoothing: antialiased;
 
-              --bg: #2d2d2d;
+              --bg: #272727;
               --textShadow: 5px 5px 1px rgba(0, 0, 0, 0.2);
               --blue: #a3a3ff;
               --hr: hsla(0, 0%, 100%, 0.2);
@@ -201,21 +199,23 @@ const Layout: React.FunctionComponent = ({ children }) => {
             transition: 'color 1s ease-out, background 1s ease-out';
           `}
         />
-        <header style={{ position: 'relative' }}>
-          <H1>
-            <Link id="title" to={`/`}>
-              {data.site.siteMetadata.title}
-            </Link>
-          </H1>
-          {typeof document !== `undefined` && <Header />}
-          {theme !== 'null' && <Toggle />}
-          <h3>a blog by alessia bellisario</h3>
-        </header>
-        {children}
-        <Footer
-          commit={data.site.siteMetadata.commit}
-          repository={data.site.siteMetadata.repository}
-        />
+        <div style={{ paddingTop: '2.5rem' }}>
+          <header style={{ position: 'relative' }}>
+            <H1>
+              <Link id="title" to={`/`}>
+                {data.site.siteMetadata.title}
+              </Link>
+            </H1>
+            {typeof document !== `undefined` && <Header />}
+            {theme !== 'null' && <Toggle />}
+            <h3>a blog by alessia bellisario</h3>
+          </header>
+          {children}
+          <Footer
+            commit={data.site.siteMetadata.commit}
+            repository={data.site.siteMetadata.repository}
+          />
+        </div>
         <TopBar />
         <BottomBar />
         <LeftBar />

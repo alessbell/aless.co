@@ -1,15 +1,15 @@
 import * as React from 'react';
-import Toggle from 'react-toggle';
+import ToggleBase from './toggleBase';
 import { ThemeContext } from './layout';
 import sunglasses from '../../content/assets/sunglasses.png';
 import sparkles from '../../content/assets/sparkles.png';
 import '../css/toggle.css';
 
-const Header: React.FunctionComponent = () => {
+const Toggle: React.FunctionComponent = () => {
   const theme = React.useContext(ThemeContext);
   return (
     <div>
-      <Toggle
+      <ToggleBase
         icons={{
           checked: (
             <img
@@ -31,7 +31,7 @@ const Header: React.FunctionComponent = () => {
           ),
         }}
         checked={theme === 'dark'}
-        onChange={e =>
+        onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
           (window as any).__setPreferredTheme(
             e.target.checked ? 'dark' : 'light'
           )
@@ -41,4 +41,4 @@ const Header: React.FunctionComponent = () => {
   );
 };
 
-export default Header;
+export default Toggle;

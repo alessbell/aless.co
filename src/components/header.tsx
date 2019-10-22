@@ -9,6 +9,28 @@ const shaders = [<AnimatedColorWave key={0} />, <OtherColorWave key={1} />];
 
 const Header: React.FunctionComponent = () => {
   const [shader, setShader] = React.useState(0);
+
+  if (typeof document !== `undefined`) {
+    (window as any).__onShaderChange = () => {
+      setShader(parseInt((window as any).__shader, 10));
+    };
+
+    React.useEffect(() => {
+      setShader(parseInt((window as any).__shader, 10));
+    });
+  }
+
+  const randomize = () => Math.floor(Math.random() * shaders.length);
+
+  const getRadomShader = () => {
+    const lastRandom = shader;
+    let random = randomize();
+    while (random === lastRandom) {
+      random = randomize();
+    }
+    return random;
+  };
+
   // to do: don't let shader repeat on random shuffle
   return (
     <>
@@ -21,7 +43,7 @@ const Header: React.FunctionComponent = () => {
       </div>
       <button
         style={{ float: 'right' }}
-        onClick={() => setShader(Math.floor(Math.random() * shaders.length))}
+        onClick={() => (window as any).__setPreferredShader(getRadomShader())}
       >
         <span>♻️</span>
       </button>

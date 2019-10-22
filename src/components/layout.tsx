@@ -22,9 +22,7 @@ const Layout: React.FunctionComponent = ({ children }) => {
   const [theme, setTheme] = React.useState('null');
 
   if (typeof document !== `undefined`) {
-    (window as any).__onThemeChange = () => {
-      setTheme((window as any).__theme);
-    };
+    (window as any).__onThemeChange = () => setTheme((window as any).__theme);
 
     React.useEffect(() => {
       setTheme((window as any).__theme);

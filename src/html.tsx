@@ -48,6 +48,25 @@ const HTML: React.FunctionComponent<HTMLProps> = props => (
                 });
                 setTheme(preferredTheme || (darkQuery.matches ? 'dark' : 'light'));
               })();
+              (function() {
+                window.__onShaderChange = function() {};
+                function setShader(newShader) {
+                  window.__shader = newShader;
+                  preferredShader = newShader;
+                  window.__onShaderChange(newShader);
+                }
+                var preferredShader;
+                try {
+                  preferredShader = localStorage.getItem('shader');
+                } catch (err) {}
+                window.__setPreferredShader = function(newShader) {
+                  setShader(newShader);
+                  try {
+                    localStorage.setItem('shader', newShader);
+                  } catch (err) {}
+                }
+                setShader(preferredShader || '0');
+              })();
             `,
         }}
       />

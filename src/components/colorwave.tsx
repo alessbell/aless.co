@@ -11,10 +11,7 @@ const shaders = Shaders.create({
       gl_FragColor = vec4(uv.x, uv.y, blue, 1.0);
     }`,
   },
-});
-
-const shaders2 = Shaders.create({
-  gradients: {
+  redGradient: {
     frag: GLSL`
     precision highp float;
     varying vec2 uv;
@@ -37,7 +34,7 @@ const shaders2 = Shaders.create({
   },
 });
 
-export interface ColorWaveProps {
+interface ColorWaveProps {
   blue: number;
 }
 
@@ -47,9 +44,9 @@ const ColorWave: React.FunctionComponent<ColorWaveProps> = ({ blue }) => (
 
 export default ColorWave;
 
-export const OtherColorWave: React.FunctionComponent<{}> = () => (
+export const OtherColorWave: React.FunctionComponent = () => (
   <Node
-    shader={shaders2 && shaders2.gradients}
+    shader={shaders && shaders.redGradient}
     uniforms={{
       colors: [
         [Math.cos(0.002), Math.sin(0.002), 0.2, 1],

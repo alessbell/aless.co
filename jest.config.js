@@ -1,6 +1,6 @@
 module.exports = {
   transform: {
-    '^.+\\.jsx?$': `<rootDir>/jest-preprocess.js`,
+    '^.+\\.jsx?$': `<rootDir>/jest-preprocess.ts`,
     '^.+\\.tsx?$': `ts-jest`,
   },
   moduleNameMapper: {
@@ -13,11 +13,11 @@ module.exports = {
     __PATH_PREFIX__: ``,
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'json', 'jsx'],
-  testMatch: ['**/*.test.(js|tsx|ts)'],
+  testMatch: ['**/*.test.(tsx|ts)'],
   setupFilesAfterEnv: [
     '<rootDir>/__tests__/config/jest-setup-test-framework.ts',
   ],
-  setupFiles: [`<rootDir>/loadershim.js`, `jest-canvas-mock`],
+  setupFiles: [`<rootDir>/loadershim.ts`, `jest-canvas-mock`],
   collectCoverage: true,
   collectCoverageFrom: [
     'src/components/**/*',

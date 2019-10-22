@@ -179,14 +179,4 @@ const config = {
   ],
 };
 
-if (process.env.CONTEXT === 'production') {
-  const googleAnalyticsConfig = {
-    resolve: `gatsby-plugin-google-analytics`,
-    options: {
-      trackingId: `UA-31075901-1`,
-    },
-  };
-  config.plugins.push(googleAnalyticsConfig);
-}
-
 module.exports = config;

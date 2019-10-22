@@ -33,6 +33,9 @@ const AboutPage: React.FunctionComponent = () => (
       include Rust and graphics—and building mechanical keyboards, a hobby I'm
       relatively new to. You can reach me at web [at] bellisar.io.
     </p>
+    <p>
+      Finally, this site collects no data or analytics <code>{'<3'}</code>
+    </p>
   </Layout>
 );
 

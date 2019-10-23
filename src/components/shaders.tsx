@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Shaders, Node, GLSL } from 'gl-react';
-import useTimer from './useTimer';
+import useTimer from '../lib/useTimer';
 
 const m = 0.3;
 const interval = 2000;

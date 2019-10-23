@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 import * as React from 'react';
 import { Surface } from 'gl-react-dom';
 import Shaders from './shaders';

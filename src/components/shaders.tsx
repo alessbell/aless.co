@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Shaders, Node, GLSL } from 'gl-react';
+import { Shaders, Node, GLSL as glsl } from 'gl-react';
 import useTimer from '../lib/useTimer';
 
 const m = 0.3;
@@ -7,7 +7,7 @@ const interval = 2000;
 
 const shaders = Shaders.create({
   redWave: {
-    frag: GLSL`
+    frag: glsl`
     precision highp float;
     varying vec2 uv;
     uniform float red;
@@ -16,7 +16,7 @@ const shaders = Shaders.create({
     }`,
   },
   greenWave: {
-    frag: GLSL`
+    frag: glsl`
     precision highp float;
     varying vec2 uv;
     uniform float green;
@@ -25,7 +25,7 @@ const shaders = Shaders.create({
     }`,
   },
   blueWave: {
-    frag: GLSL`
+    frag: glsl`
     precision highp float;
     varying vec2 uv;
     uniform float blue;

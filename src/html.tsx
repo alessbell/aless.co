@@ -9,7 +9,7 @@ interface HTMLProps {
   postBodyComponents: [];
 }
 
-const HTML: React.FunctionComponent<HTMLProps> = props => (
+const HTML: React.FC<HTMLProps> = props => (
   <html {...props.htmlAttributes}>
     <head>
       <meta charSet="utf-8" />

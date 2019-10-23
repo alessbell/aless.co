@@ -2,7 +2,7 @@ import * as React from 'react';
 import SEO from '../components/seo';
 import Layout from '../components/layout';
 
-const AboutPage: React.FunctionComponent = () => (
+const AboutPage: React.FC = () => (
   <Layout>
     <SEO
       title="about"

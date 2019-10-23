@@ -21,7 +21,7 @@ export interface FooterProps {
   repository: string;
 }
 
-const Anchor: React.FunctionComponent<AnchorProps> = ({
+const Anchor: React.FC<AnchorProps> = ({
   link,
   name,
   rel,
@@ -36,10 +36,7 @@ const Anchor: React.FunctionComponent<AnchorProps> = ({
   </a>
 );
 
-const Footer: React.FunctionComponent<FooterProps> = ({
-  commit,
-  repository,
-}) => (
+const Footer: React.FC<FooterProps> = ({ commit, repository }) => (
   <FooterWrapper>
     <Link to="/about">about</Link>
 

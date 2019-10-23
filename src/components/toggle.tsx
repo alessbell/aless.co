@@ -5,7 +5,7 @@ import sunglasses from '../../content/assets/sunglasses.png';
 import sparkles from '../../content/assets/sparkles.png';
 import '../css/toggle.css';
 
-const Toggle: React.FunctionComponent = () => {
+const Toggle: React.FC = () => {
   const theme = React.useContext(ThemeContext);
   return (
     <div>

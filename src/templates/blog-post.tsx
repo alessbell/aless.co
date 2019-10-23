@@ -40,7 +40,7 @@ interface BlogPostData {
   };
 }
 
-const BlogPostTemplate: React.FunctionComponent<BlogPostData> = ({
+const BlogPostTemplate: React.FC<BlogPostData> = ({
   data: {
     mdx: { frontmatter, excerpt, body },
     site: {

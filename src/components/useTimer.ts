@@ -1,15 +1,15 @@
 import * as React from 'react';
 import * as raf from 'raf';
-import ColorWave from './colorwave';
 
-let r: number;
 let startTime: number;
+let r: number;
 let lastTime: number;
-const interval = 1000 / 60;
+let time: number = 0;
+let tick: number = 0;
 
-const AnimatedColorWave: React.FunctionComponent = () => {
-  const [time, setTime] = React.useState(0);
-  const [tick, setTick] = React.useState(0);
+function useTimer() {
+  const interval = 1000 / 60;
+  const [unusedTime, setTime] = React.useState(0);
 
   const loop = (t: number) => {
     r = raf(loop);
@@ -19,7 +19,8 @@ const AnimatedColorWave: React.FunctionComponent = () => {
     if (t - lastTime > interval) {
       lastTime = t;
       setTime(t - startTime);
-      setTick(tick + 1);
+      time = t - startTime;
+      tick = tick + 1;
     }
   };
   lastTime = -interval;
@@ -32,7 +33,7 @@ const AnimatedColorWave: React.FunctionComponent = () => {
     };
   });
 
-  return <ColorWave blue={Math.cos(time / 3000)} />;
-};
+  return time;
+}
 
-export default AnimatedColorWave;
+export default useTimer;

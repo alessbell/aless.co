@@ -25,7 +25,7 @@ export interface BlogIndexProps {
   };
 }
 
-const BlogIndex: React.FunctionComponent<BlogIndexProps> = ({
+const BlogIndex: React.FC<BlogIndexProps> = ({
   data: {
     allMdx: { edges },
   },

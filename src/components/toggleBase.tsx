@@ -1,5 +1,12 @@
 import * as React from 'react';
 
+/*
+ * Copyright (c) 2015 instructure-react
+ * Forked from https://github.com/aaronshaf/react-toggle/
+ * + applied https://github.com/aaronshaf/react-toggle/pull/90
+ * + rewritten in TypeScript by Alessia Bellisario
+ **/
+
 // Copyright 2015-present Drifty Co.
 // http://drifty.com/
 // from: https://github.com/driftyco/ionic/blob/master/src/util/dom.ts
@@ -67,7 +74,7 @@ export default class Toggle extends React.PureComponent<
     };
   }
 
-  public componentWillReceiveProps(nextProps: ToggleProps) {
+  public UNSAFE_componentWillReceiveProps(nextProps: ToggleProps) {
     if ('checked' in nextProps) {
       this.setState({ checked: !!nextProps.checked });
       this.previouslyChecked = !!nextProps.checked;

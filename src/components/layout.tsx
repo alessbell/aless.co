@@ -18,36 +18,16 @@ interface LayoutData {
 
 export const ThemeContext = React.createContext('light');
 
-const Layout: React.FunctionComponent = ({ children }) => {
+const Layout: React.FC = ({ children }) => {
   const [theme, setTheme] = React.useState('null');
 
   if (typeof document !== `undefined`) {
-    (window as any).__onThemeChange = () => {
-      setTheme((window as any).__theme);
-    };
+    (window as any).__onThemeChange = () => setTheme((window as any).__theme);
 
     React.useEffect(() => {
       setTheme((window as any).__theme);
     });
   }
-
-  React.useEffect(() => {
-    const headings = document.querySelectorAll('h1');
-    let styles = ``;
-    headings.forEach(heading => {
-      const random = `x${Math.floor(Math.random() * 16777215).toString(16)}`;
-      heading.classList.add(random);
-      let text = '';
-      if (heading.innerText) {
-        text = heading.innerText.replace(`'`, `\\'`).replace(`\n`, '\\A ');
-      }
-      styles += `.${random}:after { content: '${text}';}`;
-    });
-
-    const style = document.createElement('style');
-    style.textContent = styles;
-    document.body.appendChild(style);
-  }, [theme]);
 
   const data: LayoutData = useStaticQuery(graphql`
     query LayoutQuery {
@@ -95,7 +75,6 @@ const Layout: React.FunctionComponent = ({ children }) => {
 
             body.dark {
               -webkit-font-smoothing: antialiased;
-
               --bg: #272727;
               --textShadow: 5px 5px 1px rgba(0, 0, 0, 0.15);
               --blue: #a4a4fd;

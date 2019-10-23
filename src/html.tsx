@@ -9,7 +9,7 @@ interface HTMLProps {
   postBodyComponents: [];
 }
 
-const HTML: React.FunctionComponent<HTMLProps> = props => (
+const HTML: React.FC<HTMLProps> = props => (
   <html {...props.htmlAttributes}>
     <head>
       <meta charSet="utf-8" />
@@ -47,6 +47,25 @@ const HTML: React.FunctionComponent<HTMLProps> = props => (
                   window.__setPreferredTheme(e.matches ? 'dark' : 'light')
                 });
                 setTheme(preferredTheme || (darkQuery.matches ? 'dark' : 'light'));
+              })();
+              (function() {
+                window.__onShaderChange = function() {};
+                function setShader(newShader) {
+                  window.__shader = newShader;
+                  preferredShader = newShader;
+                  window.__onShaderChange(newShader);
+                }
+                var preferredShader;
+                try {
+                  preferredShader = localStorage.getItem('shader');
+                } catch (err) {}
+                window.__setPreferredShader = function(newShader) {
+                  setShader(newShader);
+                  try {
+                    localStorage.setItem('shader', newShader);
+                  } catch (err) {}
+                }
+                setShader(preferredShader || '0');
               })();
             `,
         }}

@@ -8,7 +8,7 @@ declare module 'gatsby-plugin-mdx' {
 }
 
 declare namespace jest {
-  interface Matchers<R> {
+  interface Matchers<R, T> {
     toHaveAttribute: (attr: string, value?: string) => R;
     toHaveTextContent: (htmlElement: string) => R;
     toHaveClass: (className: string) => R;

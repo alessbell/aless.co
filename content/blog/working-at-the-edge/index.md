@@ -2,7 +2,7 @@
 title: Working at the Edge
 date: '2019-02-18T19:09:59.546Z'
 spoiler: Rust and Other Things
-keywords: ['Recurse Center', 'programming', 'Rust', 'The Rust Book']
+keywords: ['programming']
 ---
 
 At the beginning of January, I found out that I'll be attending the Recurse Center in April for a one week "mini" batch. I can't remember exactly when I first heard about RC, but it was years ago and I'm convinced it was through Julia Evans' [excellent blog](https://jvns.ca/).

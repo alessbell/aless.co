@@ -14,6 +14,7 @@ interface LayoutData {
       repository: string;
     };
   };
+  allMdx: { group: [{ tag: string }] };
 }
 
 export const ThemeContext = React.createContext('light');
@@ -36,6 +37,11 @@ const Layout: React.FC = ({ children }) => {
           title
           commit
           repository
+        }
+      }
+      allMdx {
+        group(field: frontmatter___keywords) {
+          tag: fieldValue
         }
       }
     }
@@ -189,6 +195,11 @@ const Layout: React.FC = ({ children }) => {
             {theme !== 'null' && <Toggle />}
             <h3>a blog by alessia bellisario</h3>
           </header>
+          <ul>
+            {data.allMdx.group.map((t, idx) => (
+              <li key={idx}>{t.tag}</li>
+            ))}
+          </ul>
           {children}
           <Footer
             commit={data.site.siteMetadata.commit}

@@ -1,5 +1,6 @@
 ---
 title: '2019: A Year In Review'
+keywords: ['year in review']
 ---
 
 ![Taking a hike around the "Grand Canyon of the Pacific" in Waimea Canyon State Park, Kaua'i (Feb '19).](carlAless1.jpg)

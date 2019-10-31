@@ -77,7 +77,7 @@
   },
   "devDependencies": {
     "@hot-loader/react-dom": "16.10.2",
-    "@testing-library/jest-dom": "4.2.0",
+    "@testing-library/jest-dom": "4.2.2",
     "@testing-library/react": "9.3.1",
     "@types/gl-react": "3.15.2",
     "@types/gl-react-dom": "3.15.3",

@@ -10,6 +10,7 @@ export interface Edge {
       title: string;
       spoiler: string;
       date: string;
+      keywords: string;
     };
     fields: {
       slug: string;
@@ -80,6 +81,7 @@ export const pageQuery = graphql`
             date(formatString: "MMMM D, YYYY")
             spoiler
             title
+            keywords
           }
         }
       }

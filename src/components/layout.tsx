@@ -197,7 +197,9 @@ const Layout: React.FC = ({ children }) => {
           </header>
           <ul>
             {data.allMdx.group.map((t, idx) => (
-              <li key={idx}>{t.tag}</li>
+              <Link key={idx} to={`/?${t.tag}`}>
+                {t.tag}
+              </Link>
             ))}
           </ul>
           {children}

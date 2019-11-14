@@ -18,13 +18,6 @@ const config = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/content/years-in-review`,
-        name: `years-in-review`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
         path: `${__dirname}/content/assets`,
         name: `assets`,
       },
@@ -153,7 +146,6 @@ const config = {
             query: `
             {
                 allMdx(
-                  filter: { fileAbsolutePath: { regex: "//content/blog//" } }
                   sort: { fields: [frontmatter___date], order: DESC }
                 ) {
                   edges {

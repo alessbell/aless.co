@@ -30,27 +30,7 @@ exports.createPages = ({ graphql, actions }) => {
   return graphql(
     `
       query {
-        blog: allMdx(
-          filter: { fileAbsolutePath: { regex: "//content/blog//" } }
-          sort: { fields: [frontmatter___date], order: DESC }
-        ) {
-          edges {
-            node {
-              id
-              fields {
-                slug
-              }
-              frontmatter {
-                title
-              }
-              body
-            }
-          }
-        }
-        yearsInReview: allMdx(
-          filter: { fileAbsolutePath: { regex: "//content/years-in-review//" } }
-          sort: { fields: [frontmatter___date], order: DESC }
-        ) {
+        blog: allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
           edges {
             node {
               id
@@ -74,30 +54,11 @@ exports.createPages = ({ graphql, actions }) => {
     // Create blog posts pages.
     const { data } = result;
     const posts = data.blog.edges;
-    const yearsInReview = data.yearsInReview.edges;
 
     posts.forEach((post, index) => {
       const previous =
         index === posts.length - 1 ? null : posts[index + 1].node;
       const next = index === 0 ? null : posts[index - 1].node;
-
-      createPage({
-        path: post.node.fields.slug,
-        component: blogPost,
-        context: {
-          slug: post.node.fields.slug,
-          previous,
-          next,
-        },
-      });
-    });
-
-    yearsInReview.forEach((post, index) => {
-      const previous =
-        index === yearsInReview.length - 1
-          ? null
-          : yearsInReview[index + 1].node;
-      const next = index === 0 ? null : yearsInReview[index - 1].node;
 
       createPage({
         path: post.node.fields.slug,

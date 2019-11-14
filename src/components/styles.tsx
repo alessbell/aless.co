@@ -61,3 +61,8 @@ export const Link = styled(BaseLink)`
 export const BlogLink = styled(BaseLink)`
   line-height: 1.85rem;
 `;
+export const Tag = styled.code`
+  background-color: #1aabff33;
+  font-size: 0.75rem;
+  line-height: initial;
+`;

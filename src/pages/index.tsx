@@ -2,6 +2,7 @@ import * as React from 'react';
 import { graphql, Link } from 'gatsby';
 import { parse } from 'query-string';
 import slugify from 'slugify';
+import FlipMove from 'react-flip-move';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import { Tag, BlogLink } from '../components/styles';
@@ -17,6 +18,7 @@ export interface Edge {
     fields: {
       slug: string;
     };
+    id: string;
   };
 }
 
@@ -83,44 +85,50 @@ const BlogIndex: React.FC<BlogIndexProps> = ({
       {keywords.map((t, idx) => {
         return <TagLink key={idx} tag={t} tags={tags} />;
       })}
-      {edges
-        .filter(({ node }) => {
-          if (tags.length === 0) {
-            return true;
-          }
-          let contains = false;
-          node.frontmatter.keywords.forEach(keyword => {
-            if (tags.includes(slugify(keyword))) {
-              contains = true;
+      <FlipMove
+        maintainContainerHeight={true}
+        enterAnimation="fade"
+        leaveAnimation="fade"
+      >
+        {edges
+          .filter(({ node }) => {
+            if (tags.length === 0) {
+              return true;
             }
-          });
-          return contains;
-        })
-        .map(({ node: { frontmatter, fields } }) => {
-          const title = frontmatter.title || fields.slug;
-          return (
-            <div key={fields.slug} style={{ margin: '2.5rem 0' }}>
-              <h3>
-                <BlogLink to={fields.slug}>{title}</BlogLink>
-              </h3>
-              <p style={{ marginBottom: 0 }}>{frontmatter.spoiler}</p>
-              <div
-                style={{
-                  display: 'flex',
-                  flexDirection: 'row',
-                  lineHeight: 'initial',
-                }}
-              >
-                <small style={{ marginRight: '0.6rem', fontSize: '0.9rem' }}>
-                  <i>{frontmatter.date}</i>
-                </small>
-                {frontmatter.keywords.map((keyword, i) => (
-                  <Tag key={i}>{keyword}</Tag>
-                ))}
+            let contains = false;
+            node.frontmatter.keywords.forEach(keyword => {
+              if (tags.includes(slugify(keyword))) {
+                contains = true;
+              }
+            });
+            return contains;
+          })
+          .map(({ node: { frontmatter, fields, id } }) => {
+            const title = frontmatter.title || fields.slug;
+            return (
+              <div key={id} style={{ margin: '2.5rem 0' }}>
+                <h3>
+                  <BlogLink to={fields.slug}>{title}</BlogLink>
+                </h3>
+                <p style={{ marginBottom: 0 }}>{frontmatter.spoiler}</p>
+                <div
+                  style={{
+                    display: 'flex',
+                    flexDirection: 'row',
+                    lineHeight: 'initial',
+                  }}
+                >
+                  <small style={{ marginRight: '0.6rem', fontSize: '0.9rem' }}>
+                    <i>{frontmatter.date}</i>
+                  </small>
+                  {frontmatter.keywords.map((keyword, i) => (
+                    <Tag key={i}>{keyword}</Tag>
+                  ))}
+                </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+      </FlipMove>
     </Layout>
   );
 };
@@ -142,6 +150,7 @@ export const pageQuery = graphql`
             title
             keywords
           }
+          id
         }
       }
       group(field: frontmatter___keywords) {

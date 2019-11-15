@@ -1,5 +1,5 @@
 ---
-title: '2019: A Year in Review'
+title: '2019: Year in Review'
 date: '2019-12-01T19:09:59.546Z'
 # spoiler: 'A Year in Review'
 keywords: ['year in review']
@@ -43,7 +43,7 @@ For my part, I had the amazing opportunity to join the [Recurse Center](https://
 
 ![](circles.png)
 
-I learned some other things, too, like how to [build a split keyboard](), [how to use a machine to draw on eggs](), of all things, and how to something.
+I learned some other things, too, like how to [build a split keyboard](https://twitter.com/alessbell/status/1122223104451928064), [how to use a machine to draw on eggs](https://twitter.com/alessbell/status/1155525840882536451), of all things, and how to something.
 
 ---
 
@@ -51,4 +51,4 @@ As the year and decade wind down, I am grateful for the chance to spend time wit
 
 ![Try to get a word in edgewise, I dare you.](theNonnas.jpg)
 
-![Try to get a word in edgewise, I dare you.](carl1.jpg)
+![BYO Snorkel](carl1.jpg)

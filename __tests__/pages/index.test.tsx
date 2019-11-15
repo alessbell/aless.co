@@ -14,6 +14,7 @@ const posts = [
       fields: {
         slug: '/first-post',
       },
+      id: '123',
     },
   },
   {
@@ -27,6 +28,7 @@ const posts = [
       fields: {
         slug: '/second-post',
       },
+      id: '456',
     },
   },
   {
@@ -40,6 +42,7 @@ const posts = [
       fields: {
         slug: '/third-post',
       },
+      id: '789',
     },
   },
 ];

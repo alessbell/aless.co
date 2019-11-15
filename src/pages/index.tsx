@@ -111,7 +111,7 @@ const BlogIndex: React.FC<BlogIndexProps> = ({
                   lineHeight: 'initial',
                 }}
               >
-                <small style={{ marginRight: '0.5rem' }}>
+                <small style={{ marginRight: '0.6rem', fontSize: '0.9rem' }}>
                   <i>{frontmatter.date}</i>
                 </small>
                 {frontmatter.keywords.map((keyword, i) => (

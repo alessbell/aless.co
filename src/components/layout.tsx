@@ -180,13 +180,22 @@ const Layout: React.FC = ({ children }) => {
         />
         <div style={{ paddingTop: '2.5rem', paddingBottom: '2.5rem' }}>
           <header style={{ position: 'relative' }}>
-            <H1>
-              <Link id="title" to={`/`}>
-                {data.site.siteMetadata.title}
-              </Link>
-            </H1>
-            {typeof document !== `undefined` && <Header />}
-            {theme !== 'null' && <Toggle />}
+            <div
+              style={{
+                display: 'flex',
+                flexDirection: 'row',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+              }}
+            >
+              <H1>
+                <Link id="title" to={`/`}>
+                  {data.site.siteMetadata.title}
+                </Link>
+              </H1>
+              {typeof document !== `undefined` && <Header />}
+              {theme !== 'null' && <Toggle />}
+            </div>
             <h3>a blog by alessia bellisario</h3>
           </header>
           {children}

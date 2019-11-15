@@ -49,6 +49,7 @@ export const H1 = styled.h1`
   font-size: 38px;
   position: relative;
   z-index: 1;
+  width: 400px;
   mix-blend-mode: var(--mixBlendMode);
   background-color: var(--bg);
   color: var(--headerText);

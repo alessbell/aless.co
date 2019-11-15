@@ -82,6 +82,7 @@ const BlogIndex: React.FC<BlogIndexProps> = ({
           ...keywords,
         ]}
       />
+      <small>filter by tag: </small>
       {keywords.map((t, idx) => {
         return <TagLink key={idx} tag={t} tags={tags} />;
       })}

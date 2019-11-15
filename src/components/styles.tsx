@@ -61,8 +61,23 @@ export const Link = styled(BaseLink)`
 export const BlogLink = styled(BaseLink)`
   line-height: 1.85rem;
 `;
-export const Tag = styled.code`
-  background-color: #1aabff33;
+export const Tag = styled.code<{ active?: boolean; link?: boolean }>`
+  background-color: ${({ active }) => (active ? '#141e8475' : '#1aabff33')};
   font-size: 0.75rem;
   line-height: initial;
+  margin-right: 0.5rem;
+  white-space: nowrap;
+
+  &:hover {
+    background-color: ${({ link }) => (link ? '#141e8475' : '#1aabff33')};
+  }
+
+  a {
+    color: ${({ active }) => (active ? 'yellow' : 'var(--blue)')};
+    text-decoration: none;
+
+    &:hover {
+      background-color: initial;
+    }
+  }
 `;

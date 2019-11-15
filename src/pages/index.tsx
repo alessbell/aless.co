@@ -36,7 +36,7 @@ const TagLink: React.FC<{ tag: string; tags: string[] }> = ({ tag, tags }) => {
     ? `${tags.length > 1 ? tags.filter(t => t !== slug).join(',') : ``}`
     : `${tags.length > 0 ? [...tags, slug].join(',') : slug}`;
   return (
-    <Tag>
+    <Tag active={active} link={true}>
       <Link to={qs.length > 0 ? `/?tags=${qs}` : `/`}>{tag}</Link>
     </Tag>
   );
@@ -49,7 +49,11 @@ const BlogIndex: React.FC<BlogIndexProps> = ({
 }) => {
   const keywords = group.map(item => item.tag);
   const [tags, setTags] = React.useState<string[]>([]);
-  const { search } = location;
+  let search = '';
+
+  if (typeof location !== 'undefined') {
+    search = location.search;
+  }
 
   React.useEffect(() => {
     if (search === '') {
@@ -67,16 +71,8 @@ const BlogIndex: React.FC<BlogIndexProps> = ({
     <Layout>
       <SEO
         title="A Blog by Alessia Bellisario"
-        keywords={[
-          `blog`,
-          `rust`,
-          `gatsby`,
-          `javascript`,
-          `react`,
-          ...keywords,
-        ]}
+        keywords={[`blog`, `rust`, `gatsby`, `javascript`, `react`, ...keywords]}
       />
-      <code>filter by tag:</code>
       {keywords.map((t, idx) => {
         return <TagLink key={idx} tag={t} tags={tags} />;
       })}
@@ -108,7 +104,7 @@ const BlogIndex: React.FC<BlogIndexProps> = ({
                   lineHeight: 'initial',
                 }}
               >
-                <small style={{ marginRight: '1rem' }}>
+                <small style={{ marginRight: '0.5rem' }}>
                   <i>{frontmatter.date}</i>
                 </small>
                 {frontmatter.keywords.map((keyword, i) => (

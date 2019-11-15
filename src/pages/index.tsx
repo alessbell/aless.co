@@ -71,7 +71,14 @@ const BlogIndex: React.FC<BlogIndexProps> = ({
     <Layout>
       <SEO
         title="A Blog by Alessia Bellisario"
-        keywords={[`blog`, `rust`, `gatsby`, `javascript`, `react`, ...keywords]}
+        keywords={[
+          `blog`,
+          `rust`,
+          `gatsby`,
+          `javascript`,
+          `react`,
+          ...keywords,
+        ]}
       />
       {keywords.map((t, idx) => {
         return <TagLink key={idx} tag={t} tags={tags} />;

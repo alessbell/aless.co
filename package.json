@@ -82,7 +82,7 @@
     "@types/gl-react": "3.15.2",
     "@types/gl-react-dom": "3.15.3",
     "@types/jest": "24.0.23",
-    "@types/node": "12.12.9",
+    "@types/node": "12.12.11",
     "@types/raf": "3.4.0",
     "@types/react": "16.9.11",
     "@types/react-dom": "16.9.4",

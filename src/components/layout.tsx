@@ -87,6 +87,11 @@ const Layout: React.FC = ({ children }) => {
               --titleSkewColor: #f8a51a2e;
               --textNormal: rgba(255, 255, 255, 0.88);
             }
+            details,
+            summary {
+              display: revert;
+              cursor: pointer;
+            }
             h1,
             h2 {
               &::after {
@@ -101,14 +106,7 @@ const Layout: React.FC = ({ children }) => {
                 transform: skew(-2deg) translateX(-20px);
               }
             }
-            h1 {
-              a {
-                &:hover {
-                  background-color: var(--hoverBg);
-                  color: inherit;
-                }
-              }
-            }
+
             hr {
               box-sizing: content-box;
               margin-left: 0;
@@ -174,6 +172,23 @@ const Layout: React.FC = ({ children }) => {
               position: absolute;
               top: 0;
               width: 100%;
+            }
+
+            @media (hover: hover) {
+              a:hover {
+                color: black;
+                background-color: yellow;
+                border-radius: 0.3rem;
+              }
+
+              h1 {
+                a {
+                  &:hover {
+                    background-color: var(--hoverBg);
+                    color: inherit;
+                  }
+                }
+              }
             }
             transition: 'color 1s ease-out, background 1s ease-out';
           `}

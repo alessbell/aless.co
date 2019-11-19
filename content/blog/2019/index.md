@@ -1,6 +1,7 @@
 ---
 title: '2019: Year in Review'
 date: '2019-12-01T19:09:59.546Z'
+draft: true
 # spoiler: 'A Year in Review'
 keywords: ['year in review']
 ---

@@ -31,7 +31,8 @@ const AboutPage: React.FC = () => (
     <p>
       I'm using this space to write about programming—my current interests
       include Rust and graphics—and building mechanical keyboards, a hobby I'm
-      relatively new to. You can reach me at web [at] bellisar.io.
+      relatively new to. You can reach me at{' '}
+      <a href="mailto:web@bellisar.io">web[at]bellisar.io</a>.
     </p>
     <p>
       Finally, this site collects no data or analytics <code>{'<3'}</code>

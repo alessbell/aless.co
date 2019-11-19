@@ -64,9 +64,11 @@ export const BlogLink = styled(BaseLink)`
 `;
 export const Tag = styled.code<{ active?: boolean; link?: boolean }>`
   background-color: ${({ active }) => (active ? '#141e8475' : '#1aabff33')};
-  font-size: 16px;
-  line-height: initial;
+  font-size: 0.8rem;
+  height: fit-content;
   margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  line-height: initial;
   white-space: nowrap;
 
   color: ${({ active }) => (active ? 'yellow' : 'var(--blue)')};
@@ -77,10 +79,8 @@ export const Tag = styled.code<{ active?: boolean; link?: boolean }>`
       background-color: ${({ link }) => (link ? '#141e8475' : '#1aabff33')};
     }
 
-    a {
-      &:hover {
-        background-color: initial;
-      }
+    a:hover {
+      background-color: initial;
     }
   }
 

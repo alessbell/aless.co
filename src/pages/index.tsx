@@ -44,6 +44,8 @@ const TagLink: React.FC<{ tag: string; tags: string[] }> = ({ tag, tags }) => {
   );
 };
 
+let search = '';
+
 const BlogIndex: React.FC<BlogIndexProps> = ({
   data: {
     allMdx: { edges, group },
@@ -51,7 +53,6 @@ const BlogIndex: React.FC<BlogIndexProps> = ({
 }) => {
   const keywords = group.map(item => item.tag);
   const [tags, setTags] = React.useState<string[]>([]);
-  let search = '';
 
   if (typeof location !== 'undefined') {
     search = location.search;
@@ -82,12 +83,20 @@ const BlogIndex: React.FC<BlogIndexProps> = ({
           ...keywords,
         ]}
       />
-      <div style={{ margin: '1.5rem 0 2.5rem 0' }}>
-        <small>filter by tag: </small>
-        {keywords.map((t, idx) => {
-          return <TagLink key={idx} tag={t} tags={tags} />;
-        })}
-      </div>
+      <details open={true} style={{ margin: '1.5rem 0', fontSize: '0.9rem' }}>
+        <summary>filter by tag</summary>
+        <div
+          style={{
+            margin: '0.25rem 0',
+            display: 'flex',
+            flexWrap: 'wrap',
+          }}
+        >
+          {keywords.map((t, idx) => {
+            return <TagLink key={idx} tag={t} tags={tags} />;
+          })}
+        </div>
+      </details>
       <FlipMove
         maintainContainerHeight={true}
         enterAnimation="fade"
@@ -113,7 +122,7 @@ const BlogIndex: React.FC<BlogIndexProps> = ({
                 <h3>
                   <BlogLink to={fields.slug}>{title}</BlogLink>
                 </h3>
-                <p style={{ marginBottom: 0 }}>{frontmatter.spoiler}</p>
+                <p style={{ marginBottom: '5px' }}>{frontmatter.spoiler}</p>
                 <div
                   style={{
                     display: 'flex',
@@ -140,7 +149,10 @@ export default BlogIndex;
 
 export const pageQuery = graphql`
   query {
-    allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMdx(
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: { frontmatter: { draft: { ne: true } } }
+    ) {
       edges {
         node {
           excerpt

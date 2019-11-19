@@ -30,7 +30,7 @@ const typography = new Typography({
       color: 'var(--textNormal)',
     },
     'h1,h2,h3': {
-      marginBottom: '0.25rem',
+      marginBottom: '0.2rem',
     },
     'h2,h4,h5,h6': {
       marginTop: '2.5rem',
@@ -53,11 +53,6 @@ const typography = new Typography({
       textDecoration: 'hotpink underline wavy',
       WebkitTextDecoration: 'hotpink underline wavy',
       textUnderlinePosition: 'under',
-    },
-    'a:hover': {
-      color: 'black',
-      backgroundColor: 'yellow',
-      borderRadius: '0.3rem',
     },
     footer: {
       fontSize: '16px',

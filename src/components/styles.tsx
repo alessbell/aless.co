@@ -71,16 +71,20 @@ export const Tag = styled.code<{ active?: boolean; link?: boolean }>`
   transition: background-color 200ms;
   color: ${({ active }) => (active ? 'yellow' : 'var(--blue)')};
 
-  &:hover {
-    background-color: ${({ link }) => (link ? '#141e8475' : '#1aabff33')};
+  @media (hover: hover) {
+    &:hover {
+      background-color: ${({ link }) => (link ? '#141e8475' : '#1aabff33')};
+    }
+
+    a {
+      &:hover {
+        background-color: initial;
+      }
+    }
   }
 
   a {
     text-decoration: none;
     color: ${({ active }) => (active ? 'yellow' : 'var(--blue)')};
-
-    &:hover {
-      background-color: initial;
-    }
   }
 `;

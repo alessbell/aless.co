@@ -82,10 +82,12 @@ const BlogIndex: React.FC<BlogIndexProps> = ({
           ...keywords,
         ]}
       />
-      <small>filter by tag: </small>
-      {keywords.map((t, idx) => {
-        return <TagLink key={idx} tag={t} tags={tags} />;
-      })}
+      <div style={{ margin: '1.5rem 0 2.5rem 0' }}>
+        <small>filter by tag: </small>
+        {keywords.map((t, idx) => {
+          return <TagLink key={idx} tag={t} tags={tags} />;
+        })}
+      </div>
       <FlipMove
         maintainContainerHeight={true}
         enterAnimation="fade"
@@ -107,7 +109,7 @@ const BlogIndex: React.FC<BlogIndexProps> = ({
           .map(({ node: { frontmatter, fields, id } }) => {
             const title = frontmatter.title || fields.slug;
             return (
-              <div key={id} style={{ margin: '2.5rem 0' }}>
+              <div key={id} style={{ margin: '0 0 2.5rem 0' }}>
                 <h3>
                   <BlogLink to={fields.slug}>{title}</BlogLink>
                 </h3>

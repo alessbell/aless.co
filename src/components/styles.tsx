@@ -64,14 +64,15 @@ export const BlogLink = styled(BaseLink)`
 `;
 export const Tag = styled.code<{ active?: boolean; link?: boolean }>`
   background-color: ${({ active }) => (active ? '#141e8475' : '#1aabff33')};
-  font-size: 0.8rem;
+  font-size: 16px;
   line-height: initial;
   margin-right: 0.5rem;
   white-space: nowrap;
-  transition: background-color 200ms;
+
   color: ${({ active }) => (active ? 'yellow' : 'var(--blue)')};
 
   @media (hover: hover) {
+    transition: background-color 200ms;
     &:hover {
       background-color: ${({ link }) => (link ? '#141e8475' : '#1aabff33')};
     }

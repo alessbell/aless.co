@@ -3,8 +3,11 @@ import Layout from '../components/layout';
 
 const NotFoundPage: React.FC = () => (
   <Layout>
-    <h1>NOT FOUND</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+    <h2>not found :(</h2>
+    <p>
+      Oops, there's nothing here... head back to the <a href="/">blog index</a>{' '}
+      and try again.
+    </p>
   </Layout>
 );
 

@@ -2,7 +2,7 @@
 title: 'Resume as Code'
 date: '2019-10-08T19:09:59.546Z'
 spoiler: 'Building a Resume with LaTeX + GitHub Actions'
-keywords: ['GitHub Actions', 'LaTeX', 'automation', 'resume', 'bash']
+keywords: ['programming']
 ---
 
 I avoid brand new tech until I have an itch to scratch: a small, self-contained problem that seems it might lend itself nicely to \$someTool. I'm usually unsure I'll be able to achieve what I have in mind. But _maybe..._

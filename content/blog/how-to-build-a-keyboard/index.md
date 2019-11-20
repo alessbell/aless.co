@@ -2,7 +2,7 @@
 title: 'How to Build a Keyboard, Part 1'
 date: '2019-05-27T19:09:59.546Z'
 spoiler: 'Learn to Solder'
-keywords: ['mechanical keyboards', 'Planck', 'OLKB', 'DIY', 'Levinson']
+keywords: ['mechanical keyboards']
 ---
 
 A few years ago, a friend and coworker came in to work one day with a mechanical keyboard under his arm. If memory serves, it was a standard 87-key layout with Cherry MX Blue switches, but all anyone noticed were the keycaps.

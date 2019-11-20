@@ -23,9 +23,9 @@ function useTimer() {
       tick = tick + 1;
     }
   };
-  lastTime = -interval;
 
   React.useEffect(() => {
+    lastTime = -interval;
     r = raf(loop);
 
     return function cleanup() {

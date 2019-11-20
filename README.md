@@ -19,3 +19,5 @@ A blog by me built with:
 - [MDX](https://github.com/mdx-js/mdx)
 - [Netlify](https://netlify.com)
 - [React Testing Library](https://github.com/kentcdodds/react-testing-library)
+
+For testing locally on mobile devices, run `npm run dev -- --host 0.0.0.0`.

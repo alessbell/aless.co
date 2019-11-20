@@ -29,10 +29,10 @@ exports.createPages = ({ graphql, actions }) => {
   const blogPost = path.resolve(`./src/templates/blog-post.tsx`);
   return graphql(
     `
-      {
-        allMdx(
+      query {
+        blog: allMdx(
           sort: { fields: [frontmatter___date], order: DESC }
-          limit: 1000
+          filter: { frontmatter: { draft: { ne: true } } }
         ) {
           edges {
             node {
@@ -55,7 +55,8 @@ exports.createPages = ({ graphql, actions }) => {
     }
 
     // Create blog posts pages.
-    const posts = result.data.allMdx.edges;
+    const { data } = result;
+    const posts = data.blog.edges;
 
     posts.forEach((post, index) => {
       const previous =

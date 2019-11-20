@@ -64,6 +64,9 @@ const Layout: React.FC = ({ children }) => {
               --textShadow: 5px 5px 1px rgba(0, 0, 0, 0.08);
               --hr: hsla(0, 0%, 0%, 0.2);
               --blue: blue;
+              --activeTagText: blue;
+              --activeTagBg: #ff69b42e;
+              --inactiveTagBg: #1aabff33;
               --codeBg: rgba(255, 229, 100, 0.2);
               --hoverBg: var(--bg);
               --headerText: black;
@@ -78,6 +81,9 @@ const Layout: React.FC = ({ children }) => {
               --bg: #272727;
               --textShadow: 5px 5px 1px rgba(0, 0, 0, 0.15);
               --blue: #a4a4fd;
+              --activeTagText: yellow;
+              --activeTagBg: #141e8475;
+              --inactiveTagBg: #1aabff33;
               --hr: hsla(0, 0%, 100%, 0.2);
               --codeBg: rgba(170, 170, 170, 0.2);
               --hoverBg: var(--bg);
@@ -86,6 +92,11 @@ const Layout: React.FC = ({ children }) => {
               --mixBlendMode2: screen;
               --titleSkewColor: #f8a51a2e;
               --textNormal: rgba(255, 255, 255, 0.88);
+            }
+            details,
+            summary {
+              display: revert;
+              cursor: pointer;
             }
             h1,
             h2 {
@@ -101,14 +112,7 @@ const Layout: React.FC = ({ children }) => {
                 transform: skew(-2deg) translateX(-20px);
               }
             }
-            h1 {
-              a {
-                &:hover {
-                  background-color: var(--hoverBg);
-                  color: inherit;
-                }
-              }
-            }
+
             hr {
               box-sizing: content-box;
               margin-left: 0;
@@ -175,18 +179,44 @@ const Layout: React.FC = ({ children }) => {
               top: 0;
               width: 100%;
             }
+
+            @media (hover: hover) {
+              a:hover {
+                color: black;
+                background-color: yellow;
+                border-radius: 0.3rem;
+              }
+
+              h1 {
+                a {
+                  &:hover {
+                    background-color: var(--hoverBg);
+                    color: inherit;
+                  }
+                }
+              }
+            }
             transition: 'color 1s ease-out, background 1s ease-out';
           `}
         />
         <div style={{ paddingTop: '2.5rem', paddingBottom: '2.5rem' }}>
           <header style={{ position: 'relative' }}>
-            <H1>
-              <Link id="title" to={`/`}>
-                {data.site.siteMetadata.title}
-              </Link>
-            </H1>
-            {typeof document !== `undefined` && <Header />}
-            {theme !== 'null' && <Toggle />}
+            <div
+              style={{
+                display: 'flex',
+                flexDirection: 'row',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+              }}
+            >
+              <H1>
+                <Link id="title" to={`/`}>
+                  {data.site.siteMetadata.title}
+                </Link>
+              </H1>
+              {typeof document !== `undefined` && <Header />}
+              {theme !== 'null' && <Toggle />}
+            </div>
             <h3>a blog by alessia bellisario</h3>
           </header>
           {children}

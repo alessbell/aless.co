@@ -55,11 +55,6 @@ const config = {
             options: {
               maxWidth: 2000,
               showCaptions: true,
-              withWebp: true,
-              tracedSVG: {
-                color: 'mediumspringgreen',
-                background: 'lightgoldenrodyellow',
-              },
             },
           },
           {
@@ -150,7 +145,10 @@ const config = {
             },
             query: `
             {
-                allMdx(limit: 1000, sort: { fields: [frontmatter___date], order: DESC }) {
+                allMdx(
+                  sort: { fields: [frontmatter___date], order: DESC }
+                  filter: { frontmatter: { draft: { ne: true } } }
+                ) {
                   edges {
                     node {
                       html

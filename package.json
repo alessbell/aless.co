@@ -67,6 +67,7 @@
   "scripts": {
     "build": "gatsby build",
     "dev": "gatsby develop",
+    "mobiledev": "gatsby develop --host 0.0.0.0",
     "serve": "gatsby serve -p 8000",
     "format": "prettier --trailing-comma es5 --single-quote --write \"src/**/*.tsx\"",
     "test": "jest --coverage",

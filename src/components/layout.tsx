@@ -64,6 +64,9 @@ const Layout: React.FC = ({ children }) => {
               --textShadow: 5px 5px 1px rgba(0, 0, 0, 0.08);
               --hr: hsla(0, 0%, 0%, 0.2);
               --blue: blue;
+              --activeTagText: blue;
+              --activeTagBg: #ff69b42e;
+              --inactiveTagBg: #1aabff33;
               --codeBg: rgba(255, 229, 100, 0.2);
               --hoverBg: var(--bg);
               --headerText: black;
@@ -78,6 +81,9 @@ const Layout: React.FC = ({ children }) => {
               --bg: #272727;
               --textShadow: 5px 5px 1px rgba(0, 0, 0, 0.15);
               --blue: #a4a4fd;
+              --activeTagText: yellow;
+              --activeTagBg: #141e8475;
+              --inactiveTagBg: #1aabff33;
               --hr: hsla(0, 0%, 100%, 0.2);
               --codeBg: rgba(170, 170, 170, 0.2);
               --hoverBg: var(--bg);

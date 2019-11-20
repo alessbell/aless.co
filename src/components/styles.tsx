@@ -63,7 +63,8 @@ export const BlogLink = styled(BaseLink)`
   line-height: 1.85rem;
 `;
 export const Tag = styled.code<{ active?: boolean; link?: boolean }>`
-  background-color: ${({ active }) => (active ? '#141e8475' : '#1aabff33')};
+  background-color: ${({ active }) =>
+    active ? 'var(--activeTagBg)' : 'var(--inactiveTagBg)'};
   font-size: 0.8rem;
   height: fit-content;
   margin-right: 0.5rem;
@@ -71,12 +72,14 @@ export const Tag = styled.code<{ active?: boolean; link?: boolean }>`
   line-height: initial;
   white-space: nowrap;
 
-  color: ${({ active }) => (active ? 'yellow' : 'var(--blue)')};
+  box-shadow: ${({ active }) => active && '0px 0px 1px 1px hotpink'};
+  color: ${({ active }) => (active ? 'var(--activeTagText)' : 'var(--blue)')};
 
   @media (hover: hover) {
     transition: background-color 200ms;
     &:hover {
-      background-color: ${({ link }) => (link ? '#141e8475' : '#1aabff33')};
+      background-color: ${({ link }) =>
+        link ? 'var(--activeTagBg)' : 'var(--inactiveTagBg)'};
     }
 
     a:hover {
@@ -86,6 +89,6 @@ export const Tag = styled.code<{ active?: boolean; link?: boolean }>`
 
   a {
     text-decoration: none;
-    color: ${({ active }) => (active ? 'yellow' : 'var(--blue)')};
+    color: ${({ active }) => (active ? 'var(--activeTagText)' : 'var(--blue)')};
   }
 `;

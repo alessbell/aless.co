@@ -1,9 +1,8 @@
 ---
 title: '2019: Year in Review'
 date: '2019-12-01T19:09:59.546Z'
-draft: true
-# spoiler: 'A Year in Review'
-keywords: ['year in review']
+draft: false
+keywords: ['annual review']
 ---
 
 ![Taking a hike around the "Grand Canyon of the Pacific" in Waimea Canyon State Park, Kaua'i (Feb '19).](carlAless1.jpg)
@@ -26,7 +25,7 @@ Finally, an affable web developer offered to make Carla a new website; in June t
 
 ### The Bellisarios
 
-**Erica** and **Santino** were thrilled to have their 3 kids along for the ride in Rome this July, in addition to the 60-odd other kids they were legally responsible for.
+**Erica** and **Santino** were thrilled to have their three kids along for the ride in Rome this July, in addition to the sixty-odd other kids they were legally responsible for.
 
 ![Carla and Erica taking in the sights—and spritzes—at the Spanish Steps.](ericaCarl1.jpg)
 
@@ -40,11 +39,11 @@ In the spring, Luca graduated with a bachelors degree with high distinction from
 
 **Martina**, my big sister in every meaningful way except birth order, wrapped up a stint at a top communications firm in Toronto and began her legal studies. As someone who still bears the battle scars from kitchen table "debates" with Martina over the years, I cannot wait to see the havoc she will wreak in the professional world.
 
-For my part, I had the amazing opportunity to join the [Recurse Center](https://recurse.com) in April for a mini batch, which is to say I spent a week among likeminded computer geeks learning a new programming language called Rust which I used to, well, draw a bunch of circles.
+For my part, I had the amazing opportunity to join the [Recurse Center](https://recurse.com) in April for a mini batch, which is to say I spent a week among likeminded programmers learning a new language called Rust. I compiled my Rust to Wasm in order to do some neat interactive stuff in the DOM. In other words, I [drew a bunch of moving circles on a web page](https://happy-faces.glitch.me).
 
 ![](circles.png)
 
-I learned some other things, too, like how to [build a split keyboard](https://twitter.com/alessbell/status/1122223104451928064), [how to use a machine to draw on eggs](https://twitter.com/alessbell/status/1155525840882536451), of all things, and how to something.
+I learned some other things this year, too, like how to [build a split keyboard](https://twitter.com/alessbell/status/1122223104451928064), [how to use a machine to draw on eggs](https://twitter.com/alessbell/status/1155525840882536451), of all things, and how to something.
 
 ---
 

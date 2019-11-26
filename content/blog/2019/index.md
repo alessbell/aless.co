@@ -27,13 +27,13 @@ Finally, an affable web developer offered to make Carla a new website; in June t
 
 ## The Bellisarios
 
-**Erica** and **Santino** were excited to have their three kids along for the ride in Rome this July, in addition to the sixty-odd other kids they were legally responsible for.
+**Erica** and **Santino** were thrilled to have their three kids along for the ride in Rome this July, in addition to the sixty-odd other kids they were legally responsible for.
 
 ![Carla and Erica taking in the sights—and spritzes—at the Spanish Steps. (July '19).](ericaCarl1.jpg)
 
 Younger brother **Luca**, ever the peacemaker and overall agreeable Bellisario, had no trouble making new friends in Italy despite the language barrier.
 
-An older gentleman living near our hotel would see Luca on his way to the subway and wave him over for some help navigating Rome's precarious streets. They'd walk together for several blocks until the man would appreciatively wave Luca off, having arrived at his destination. In Italy as in life, few words, a smile and many wild gestures can go a long way.
+An older gentleman living near our hotel would see Luca on his way to the subway and wave him over for some help navigating Rome's precarious streets. They'd walk together for several blocks until the man would wave Luca off, having arrived at his destination. In Italy as in life, few words, a smile and many wild gestures can go a long way.
 
 ![](luca1.jpg)
 
@@ -43,17 +43,17 @@ In the spring, Luca graduated with a bachelors degree with high distinction from
 
 ![](giacomo.jpg)
 
-On January 21, **Jessica and Anthony** welcomed baby **Giacomo** into the Bellisario and Farrugia broods. Giacomo is implausibly chill for an infant, setting the bar nice and high for Bellisario babies to come. His arrival, complete with mini Lowry jersey, almost certainly spurred the Raptors to their uncharactistic championship. We thank Giacomo for all he has done in his first eleven months with us.
+On January 21, **Jessica and Anthony** welcomed beautiful baby **Giacomo**. He is implausibly chill for an infant, setting the bar nice and high for Bellisario babies to come. His arrival, complete with mini Lowry jersey, almost certainly spurred the Raptors to their uncharactistic championship. We thank Giacomo for all he has done in his first eleven months with us.
 
 For my part, I had the amazing opportunity to join the [Recurse Center](https://recurse.com) in April for a mini batch, which is to say I spent a week in downtown Brooklyn among likeminded programmers exploring a language called Rust. I compiled my Rust to Wasm in order to do some neat interactive stuff with the DOM. _In other words_, I [drew a bunch of moving circles on a web page](https://happy-faces.glitch.me).
 
-![A few of the mostly functional, hackable vintage computers at the Recurse Center. (April '19).](recurse.jpg)
+![A few of the amazing (and functional!) vintage computers at the Recurse Center. (April '19).](recurse.jpg)
 
 I learned a few other useful things this year, too, like how to [build a "split" keyboard](https://twitter.com/alessbell/status/1122223104451928064), how to [use a robotic arm called EggBot to programmatically draw on small spherical and egg-shaped objects](https://twitter.com/alessbell/status/1155525840882536451) (namely eggs, see: Peter Carlos) and how to make holiday cards using a solution to the [travelling salesman problem](https://en.wikipedia.org/wiki/Travelling_salesman_problem).
 
 ![](TSP.jpg)
 
-As the year and decade wind down, I'm thrilled at the prospect of all the uninterrupted time with loved ones this season affords... especially when those loved ones include three wise, wonderful grandparents who relentlessly pressure me to move home to Toronto ❤️
+As the year and decade wind down, I'm eagerly anticipating all the time with loved ones this season affords... especially when those loved ones include three wise, wonderful grandparents who relentlessly pressure me to move home to Toronto ❤️
 
 ![Two of three grandparents I miss terribly in NYC, Carmina and Maria, with sister Martina. Not pictured: Aldo "The Boss" Troiani.](theNonnas.jpg)
 

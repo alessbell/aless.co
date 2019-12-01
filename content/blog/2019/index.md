@@ -7,7 +7,7 @@ keywords: ['year in review']
 
 ![Taking a hike around the "Grand Canyon of the Pacific" in Waimea Canyon State Park, Kaua'i (Feb '19).](carlAless1.jpg)
 
-2019 was a year of 4 weddings (the fourth and final thanks to an elopement we unwittingly crashed, congrats John & Sara!), 2 gifted wedding eggs (congrats Robin & Mark!), 1 new baby cousin (technically first cousin once removed, congrats Jess & Anth!), 1 adopted cat and 9 states visited (excluding home state NY that's RI, MA, HI, VA, MD, PA, CA, CT and NJ).
+2019 was a year of 4 weddings (the fourth and final thanks to an elopement we unwittingly crashed, congrats John & Sara!), 2 gifted wedding eggs (congrats Robin & Mark!), 2 new baby cousins (congrats Jess & Anth and Christina & Zach!), 1 adopted cat and 9 states visited (excluding home state NY that's RI, MA, HI, VA, MD, PA, CA, CT and NJ).
 
 A friend [inspired](https://www.alxmnn.com/) me to write up a few things that happened this year. If you've found your way here, take a minute and join us for a whip around the last 12 months.
 

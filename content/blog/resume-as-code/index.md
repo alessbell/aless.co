@@ -2,6 +2,7 @@
 title: 'Resume as Code'
 date: '2019-10-08T19:09:59.546Z'
 spoiler: 'Building a Resume with LaTeX + GitHub Actions'
+draft: false
 keywords: ['programming']
 ---
 

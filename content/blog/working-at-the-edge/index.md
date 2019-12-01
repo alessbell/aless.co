@@ -2,6 +2,7 @@
 title: Working at the Edge
 date: '2019-02-18T19:09:59.546Z'
 spoiler: Rust and Other Things
+draft: false
 keywords: ['programming']
 ---
 

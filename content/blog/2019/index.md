@@ -43,7 +43,7 @@ In the spring, Luca graduated with a bachelors degree with high distinction from
 
 ![](giacomo.jpg)
 
-On January 21, **Jessica and Anthony** welcomed beautiful baby **Giacomo**. He is implausibly chill for an infant, setting the bar nice and high for Bellisario babies to come. His arrival, complete with mini Lowry jersey, almost certainly spurred the Raptors to their uncharactistic championship. We thank Giacomo for all he has done in his first eleven months with us.
+On January 21, **Jessica and Anthony** welcomed beautiful baby **Giacomo**. He is implausibly chill for an infant, setting the bar nice and high for Bellisario babies to come. His arrival, complete with mini Lowry jersey, almost certainly spurred the Raptors to their uncharacteristic championship. We thank Giacomo for all he has done in his first eleven months with us.
 
 For my part, I had the amazing opportunity to join the [Recurse Center](https://recurse.com) in April for a mini batch, which is to say I spent a week in downtown Brooklyn among likeminded programmers exploring a language called Rust. I compiled my Rust to Wasm in order to do some neat interactive stuff with the DOM. _In other words_, I [drew a bunch of moving circles on a web page](https://happy-faces.glitch.me).
 

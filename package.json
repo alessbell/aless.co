@@ -41,7 +41,7 @@
     "gatsby-source-filesystem": "2.1.43",
     "gatsby-transformer-remark": "2.6.45",
     "gatsby-transformer-sharp": "2.3.9",
-    "gl-react": "4.0.0",
+    "gl-react": "4.0.1",
     "gl-react-dom": "4.0.0",
     "query-string": "6.9.0",
     "raf": "3.4.1",

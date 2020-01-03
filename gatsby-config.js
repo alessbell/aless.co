@@ -69,9 +69,12 @@ const config = {
             resolve: `gatsby-remark-twitter-cards`,
             options: {
               title: `anti/pattern`,
+              titleFontSize: 110,
               author: `Alessia Bellisario`,
-              fontColor: `#0000FF`,
               background: require.resolve('./content/assets/base.png'),
+              fontFile: require.resolve(
+                './src/fonts/GT-Pressura-Mono-Bold.ttf'
+              ),
             },
           },
           {

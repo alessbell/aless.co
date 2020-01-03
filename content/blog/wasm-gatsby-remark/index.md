@@ -2,6 +2,7 @@
 title: Wasm / Gatsby / Remark
 date: '2019-08-21T19:09:59.546Z'
 spoiler: Stuff and things
+keywords: ['programming', 'rust']
 ---
 
 ## Bullet points on post I'm going to write

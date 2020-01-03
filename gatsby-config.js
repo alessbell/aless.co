@@ -71,7 +71,6 @@ const config = {
               title: `anti/pattern`,
               titleFontSize: 110,
               author: `Alessia Bellisario`,
-              fontColor: `#272727`,
               background: require.resolve('./content/assets/base.png'),
               fontFile: require.resolve(
                 './src/fonts/GT-Pressura-Mono-Bold.ttf'

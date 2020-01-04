@@ -6,7 +6,7 @@ describe('About page', () => {
   test('renders', () => {
     const { getByText } = render(<About />);
     getByText('anti/pattern');
-    getByText('a blog by alessia bellisario');
+    getByText('A blog by Alessia Bellisario');
     getByText(/a software engineer based in new york city/i);
   });
 });

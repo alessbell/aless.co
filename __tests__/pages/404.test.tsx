@@ -6,7 +6,7 @@ describe('404 page', () => {
   test('renders', () => {
     const { getByText } = render(<NotFound />);
     getByText('anti/pattern');
-    getByText('a blog by alessia bellisario');
+    getByText('A blog by Alessia Bellisario');
     getByText(/oops, there's nothing here.../i);
   });
 });

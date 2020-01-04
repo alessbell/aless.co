@@ -64,7 +64,7 @@ describe('Homepage', () => {
       />
     );
     getByText('anti/pattern');
-    getByText('a blog by alessia bellisario');
+    getByText('A blog by Alessia Bellisario');
     expect(getAllByText(/post/i)).toHaveLength(3);
 
     posts.forEach(({ node: { frontmatter, fields } }) => {

@@ -49,7 +49,7 @@ describe('Blog post', () => {
       />
     );
     expect(getByText('anti/pattern')).toBeInTheDocument();
-    expect(getByText(/a blog by alessia bellisario/i)).toBeInTheDocument();
+    expect(getByText(/A blog by Alessia Bellisario/i)).toBeInTheDocument();
     expect(getByText(/title a/i)).toBeInTheDocument();
     expect(getByText(/spoiler alert/i)).toBeInTheDocument();
     expect(getByText(/july 12, 1962/i)).toBeInTheDocument();

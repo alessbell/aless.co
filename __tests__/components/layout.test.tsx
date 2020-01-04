@@ -9,6 +9,6 @@ describe('Layout', () => {
         <h1>test content</h1>
       </Layout>
     );
-    getByText('a blog by alessia bellisario');
+    getByText('A blog by Alessia Bellisario');
   });
 });

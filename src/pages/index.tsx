@@ -73,7 +73,7 @@ const BlogIndex: React.FC<BlogIndexProps> = ({
   return (
     <Layout>
       <SEO
-        title="A Blog by Alessia Bellisario"
+        title="A blog by Alessia Bellisario"
         keywords={[
           `blog`,
           `rust`,

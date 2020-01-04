@@ -8,7 +8,7 @@ const AboutPage: React.FC = () => (
       title="about"
       keywords={[`blog`, `rust`, `gatsby`, `javascript`, `react`]}
     />
-    <h2>about</h2>
+    <h2>About</h2>
     <p>
       Hi
       <span role="img" aria-label="waving hand">
@@ -34,7 +34,7 @@ const AboutPage: React.FC = () => (
       relatively new to. You can reach me at{' '}
       <a href="mailto:web@bellisar.io">web[at]bellisar.io</a>.
     </p>
-    <p>
+    <p style={{ marginBottom: '2.5rem' }}>
       Finally, this site collects no data or analytics <code>{'<3'}</code>
     </p>
   </Layout>

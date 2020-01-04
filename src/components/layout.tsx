@@ -218,7 +218,7 @@ const Layout: React.FC = ({ children }) => {
               {typeof document !== `undefined` && <Header />}
               {theme !== 'null' && <Toggle />}
             </div>
-            <h3>a blog by alessia bellisario</h3>
+            <h3>A blog by Alessia Bellisario</h3>
           </header>
           {children}
           <Footer

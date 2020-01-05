@@ -23,6 +23,7 @@ const typography = new Typography({
       textShadow: 'var(--textShadow)',
     },
     h3: {
+      fontFamily: `${fonts.GTPressuraRegular}, monospace`,
       marginTop: '0',
       fontSize: '1.15rem',
     },

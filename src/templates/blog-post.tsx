@@ -3,12 +3,13 @@ import { Link, graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
+import { Tag } from '../components/styles';
 
 interface FrontMatter {
   title: string;
   spoiler: string;
   date: string;
-  keywords?: string[];
+  keywords: string[];
 }
 
 interface Article {
@@ -59,13 +60,21 @@ const BlogPostTemplate: React.FC<BlogPostData> = ({
     />
     <h2>{frontmatter.title}</h2>
     <h3>{frontmatter.spoiler}</h3>
-    <p
+    <div
       style={{
-        display: `block`,
+        display: 'flex',
+        flexDirection: 'row',
+        lineHeight: 'initial',
+        marginBottom: '1.5rem',
       }}
     >
-      {frontmatter.date}
-    </p>
+      <small style={{ marginRight: '0.6rem', fontSize: '0.9rem' }}>
+        <i>{frontmatter.date}</i>
+      </small>
+      {frontmatter.keywords.map((keyword, i) => (
+        <Tag key={i}>{keyword}</Tag>
+      ))}
+    </div>
     {body && <MDXRenderer>{body}</MDXRenderer>}
     <hr />
     <ul

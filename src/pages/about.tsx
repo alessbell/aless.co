@@ -5,7 +5,7 @@ import Layout from '../components/layout';
 const AboutPage: React.FC = () => (
   <Layout>
     <SEO
-      title="about"
+      title="About"
       keywords={[`blog`, `rust`, `gatsby`, `javascript`, `react`]}
     />
     <h2>About</h2>
@@ -14,7 +14,7 @@ const AboutPage: React.FC = () => (
       <span role="img" aria-label="waving hand">
         👋
       </span>
-      {'  '}
+      {'   '}
       I'm Alessia Bellisario, a software engineer based in New York City.
     </p>
     <p>
@@ -22,19 +22,22 @@ const AboutPage: React.FC = () => (
       <a href="https://breather.com" target="_blank" rel="noopener noreferrer">
         Breather
       </a>{' '}
-      as a Senior Front End Developer, and in April 2019 I spent a week at the{' '}
+      as a Senior Front End Developer. I'm also an alumna of the{' '}
       <a href="https://recurse.com/" target="_blank" rel="noopener noreferrer">
         Recurse Center
-      </a>{' '}
-      as a member of the mini 3 2019 batch.
+      </a>
+      , and I'm always open to chatting about RC with anyone who's considering
+      applying (just shoot me a note at the email below).
     </p>
     <p>
       I'm using this space to write about programming—my current interests
-      include Rust and graphics—and building mechanical keyboards, a hobby I'm
-      relatively new to. You can reach me at{' '}
+      include Rust and graphics—and building mechanical keyboards.
+    </p>
+    <p>
+      If any of this is of interest to you, say hi! You can reach me at{' '}
       <a href="mailto:web@bellisar.io">web[at]bellisar.io</a>.
     </p>
-    <p style={{ marginBottom: '2.5rem' }}>
+    <p style={{ marginBottom: '1.5rem' }}>
       Finally, this site collects no data or analytics <code>{'<3'}</code>
     </p>
   </Layout>

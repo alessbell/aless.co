@@ -44,7 +44,9 @@ const TagLink: React.FC<{ tag: string; tags: string[] }> = ({ tag, tags }) => {
   );
 };
 
+// persist the state of the search/toggle
 let search = '';
+let detailsToggleState: boolean | null = null;
 
 const BlogIndex: React.FC<BlogIndexProps> = ({
   data: {
@@ -53,6 +55,13 @@ const BlogIndex: React.FC<BlogIndexProps> = ({
 }) => {
   const keywords = group.map(item => item.tag);
   const [tags, setTags] = React.useState<string[]>([]);
+  const [detailsToggle, setDetailsToggle] = React.useState<boolean | null>(
+    detailsToggleState !== null ? detailsToggleState : true
+  );
+
+  React.useEffect(() => {
+    detailsToggleState = detailsToggle;
+  });
 
   if (typeof location !== 'undefined') {
     search = location.search;
@@ -83,8 +92,13 @@ const BlogIndex: React.FC<BlogIndexProps> = ({
           ...keywords,
         ]}
       />
-      <details open={true} style={{ margin: '1.5rem 0', fontSize: '0.9rem' }}>
-        <summary>filter by tag</summary>
+      <details
+        open={!!detailsToggleState}
+        style={{ margin: '1.5rem 0', fontSize: '0.9rem' }}
+      >
+        <summary onClick={() => setDetailsToggle(!detailsToggle)}>
+          filter by tag
+        </summary>
         <div
           style={{
             margin: '0.25rem 0',
@@ -118,7 +132,7 @@ const BlogIndex: React.FC<BlogIndexProps> = ({
           .map(({ node: { frontmatter, fields, id } }) => {
             const title = frontmatter.title || fields.slug;
             return (
-              <div key={id} style={{ margin: '0 0 2.5rem 0' }}>
+              <div key={id} style={{ margin: '1.5rem 0' }}>
                 <h3>
                   <BlogLink to={fields.slug}>{title}</BlogLink>
                 </h3>

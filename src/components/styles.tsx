@@ -39,7 +39,7 @@ export const Space = styled.span`
 export const FooterWrapper = styled.footer`
   display: block;
   padding: 0;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
 
   a {
     text-decoration: none;

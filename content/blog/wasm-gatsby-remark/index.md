@@ -1,21 +1,33 @@
 ---
 title: Open Graph Images with Rust + Wasm
-date: '2020-01-04T19:09:59.546Z'
+date: '2020-01-05T19:09:59.546Z'
 spoiler: Rust + Wasm + Node.js = 🦀🕸🎉
 keywords: ['programming']
 ---
 
-![My first proof of concept: generating Open Graph images for Twitter cards with Rust and WebAssembly](./demo2.png)
-
 > **Law of the Instrument**: "I suppose it is tempting, if the only tool you have is a hammer, to treat everything as if it were a nail." - Abraham Maslow, 1966
 
-I began learning Rust almost a year ago. I was inspired to pick up The Rust Book after I found myself in the audience of [a talk](/working-at-the-edge) on [`wasm-bindgen`](https://rustwasm.github.io/docs/wasm-bindgen/) and realized I could build things with Rust that were relevant to me, a person who builds for the web. At the Recurse Center in April 2019, I used `wasm-bindgen` to build an interactive web app with Rust + Wasm + JS for making generative art that morphs as it tracks the user's cursor and had my first taste of what was possible with WebAssembly.
+![My first proof of concept: generating Open Graph images for Twitter cards with Rust and WebAssembly](./demo2.png)
+
+I began learning Rust almost a year ago. I was inspired to pick up The Rust Book after I found myself in the audience of [a talk](/working-at-the-edge) on [`wasm-bindgen`](https://rustwasm.github.io/docs/wasm-bindgen/) and discovered I could build things with Rust that were relevant to me, a person who builds for the web. At the Recurse Center in April of last year, I used `wasm-bindgen` to build an interactive web app with Rust + Wasm + JS for making generative art that morphs as it tracks a cursor. In other words, I had my first taste of what's possible with WebAssembly.
 
 ## The Problem
 
-This post is the tale of solving a seemingly trivial problem: I wanted to generate some JPGs for my Gatsby blog posts' Open Graph images. This would involve **taking each post's metadata** and **creating images containing some text (title, author, site name) at build time**. Crucially, I wanted to use a custom font, but if I couldn't, at the very least I wanted something monospace (for the personal `#brand`).
+This is the tale of solving a seemingly trivial problem: I wanted to generate some JPGs for my Gatsby blog posts' Open Graph images that appear when a post is shared in most social apps. This would involve **taking each post's metadata** and **creating images containing some text (title, author, site name) at build time**.
 
-I had some interesting constraints that led me toward Rust and WebAssembly; I was also holding a Rust-and-Wasm-shaped hammer. In the end, I wrote two bespoke pieces of code that did exactly what I wanted, and generalized them enough to release two packages: [`wasm-twitter-card`](https://www.npmjs.com/package/wasm-twitter-card) wherein I use `wasm-bindgen` to write idiomatic Rust that handles text layout and automatically maps to an idiomatic JS function signature, and [`gatsby-remark-twitter-cards`](https://www.npmjs.com/package/gatsby-remark-twitter-cards), a small plugin that takes blog post metadata, passes it to my Wasm lib, and generates and saves the resulting images.
+I wanted to **use a custom font**, but if that wasn't possible, at the very least I wanted a monospace font (for the personal `#brand`). I couldn't find an existing solution that met either of these requirements, so I set out to build my own.
+
+Some interesting constraints led me toward Rust and WebAssembly, but I was also holding a Rust-and-Wasm-shaped hammer. In the end, I wrote two packages to accomplish my goal: [`wasm-twitter-card`](https://www.npmjs.com/package/wasm-twitter-card) wherein I use `wasm-bindgen` to write idiomatic Rust that handles text layout and automatically maps to a generated idiomatic JS function I can call from [`gatsby-remark-twitter-cards`](https://www.npmjs.com/package/gatsby-remark-twitter-cards), a small plugin that takes blog post metadata, passes it to my Wasm lib, and generates and saves the resulting images. Ta da✨
+
+![The Open Graph image for this post, using the same font and background gradient as aless.co's main header 😄](./wasm-twitter-card.png)
+
+Let's take a closer look.
+
+## Why Wasm?
+
+---
+
+asdad
 
 ---
 
@@ -85,12 +97,6 @@ What did I learn:
 
 - fonts are pretty incredible: there is plenty of complexity when it comes to laying out/rendering text... just as Raph Levien
 - Rust is a vast language that introduces new concepts for many developers (ownership model of memory management), and that's great. You don't need to understand every Rust API to start writing it, just start with the parts you need and get building.
-
-```rust
-pub fn generate_text(title: &str, author: &str, title_font_size: i32, rgb: (i32, i32, i32)) -> Vec<u8> {
-  const SUBTITLE_FONT_SIZE: f32 = 60.0;
-}
-```
 
 ```bash
 error[E0277]: the trait bound `(i32, i32, i32): wasm_bindgen::convert::traits::FromWasmAbi` is not satisfied

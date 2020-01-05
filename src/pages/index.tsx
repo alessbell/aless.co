@@ -94,7 +94,7 @@ const BlogIndex: React.FC<BlogIndexProps> = ({
       />
       <details
         open={!!detailsToggleState}
-        style={{ margin: '1.5rem 0', fontSize: '0.9rem' }}
+        style={{ margin: '2rem 0', fontSize: '0.9rem' }}
       >
         <summary onClick={() => setDetailsToggle(!detailsToggle)}>
           filter by tag

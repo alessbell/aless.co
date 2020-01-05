@@ -26,8 +26,8 @@ const AboutPage: React.FC = () => (
       <a href="https://recurse.com/" target="_blank" rel="noopener noreferrer">
         Recurse Center
       </a>
-      . I'm always happy to chat about RC with anyone considering applying (just
-      shoot me a note at the email below).
+      . I'm always happy to chat about RC with anyone considering applying, just
+      shoot me a note at the email below.
     </p>
     <p>
       I'm using this space to write about programming—my current interests

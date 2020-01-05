@@ -145,6 +145,7 @@ const Layout: React.FC = ({ children }) => {
               margin-bottom: 1.75rem;
             }
             blockquote {
+              margin: 1.5rem 0;
               color: #525252;
               margin-left: 0;
               font-size: 1.1rem;

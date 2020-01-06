@@ -69,7 +69,7 @@ const config = {
             resolve: `gatsby-remark-twitter-cards`,
             options: {
               title: `anti/pattern`,
-              titleFontSize: 110,
+              titleFontSize: 105,
               author: `Alessia Bellisario`,
               background: require.resolve('./content/assets/base.png'),
               fontFile: require.resolve(

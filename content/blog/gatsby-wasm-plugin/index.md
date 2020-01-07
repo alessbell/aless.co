@@ -129,11 +129,11 @@ There were a few bumps along the road, mainly falling into the category of missi
 
 ![The image on the left is supposed to say "2019", while the image on the right is missing glyphs "d", "q" and "w"](./glitches.png)
 
-After some head scratching, I chalked it up to a bug in `fonterator` and moved to `rusttype` as my underlying text rendering crate (I would also realize I needed something like `glyph_brush_layout` to handle layout/text wrapping.) I still don't know exactly what the issue with `fonterator` was, but I received the following thoughtful comment from the folks at the font editor FontForge via Twitter:
+After some head scratching, I chalked it up to a bug in `fonterator` and moved to `rusttype` as my underlying text rendering crate which fixed things (I would also realize I needed something like `glyph_brush_layout` to handle layout/text wrapping.) I still don't know exactly what the issue with `fonterator` was, but I received the following thoughtful comment from the folks at the font editor FontForge via Twitter:
 
 > I would check the directionality of the glyphs in your image. I noticed that "b" and "p" are OK, yet "d" and "q" are not. I think the problem is that splines which should be clockwise are counter, and those which should be counter are clockwise. Try e.g. "Correct Direction".
 
-I still lack the context to appreciate what this means, but I'd love to dig in and try to find the fix. If anyone wants to pair on this, LMK!
+I still lack some context here, but I'd love to dig in and try to find the fix. If anyone has any ideas, let me know :)
 
 ## Conclusion
 

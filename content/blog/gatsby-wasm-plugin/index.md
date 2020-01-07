@@ -121,7 +121,7 @@ I no longer needed to use bitmap fonts, but `jimp` was the perfect library to st
 
 ![The resulting image for this post, using the same typeface and gradient that appear elsewhere on this website 😍](./wasm-twitter-card.png)
 
-Once I saw the result, I was glad I had ventured down this particular rabbit hole :)
+Once I saw the result, I was glad I had ventured down this particular rabbit hole!
 
 ## Missing Glyphs
 
@@ -133,7 +133,7 @@ After some head scratching, I chalked it up to a bug in `fonterator` and moved t
 
 > I would check the directionality of the glyphs in your image. I noticed that "b" and "p" are OK, yet "d" and "q" are not. I think the problem is that splines which should be clockwise are counter, and those which should be counter are clockwise. Try e.g. "Correct Direction".
 
-I still lack some context here, but I'd love to dig in and try to find the fix. If anyone has any ideas, let me know :)
+I still lack some context here, but I'd love to dig in and try to find the fix. If anyone has any ideas, let me know!
 
 ## Conclusion
 

@@ -141,6 +141,6 @@ This was a fun and unexpected introduction to solving a real world problem with 
 
 A few takeaways:
 
-- The partially self-imposed constraints made this more fun! A native dependency-free solution was in the cards after all.
+- The partially self-imposed constraints made this more fun! A native dependency-free solution was in the cards after all thanks to WebAssembly.
 - The complexity involved in rendering text to screens is humbling once you scratch the surface. It's too often and too easily taken for granted.
 - Rust is a vast language that has introduced me to many new concepts, chief among them the ownership model of memory management. There is a dauntingly long list of language features I have yet to master (lifetimes! [turbofish!](https://turbo.fish/) 😉), but I don't need to master them all to start writing Rust. I can start with the parts I need, and go from there.

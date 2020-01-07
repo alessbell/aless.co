@@ -123,7 +123,7 @@ I no longer needed to use bitmap fonts, but `jimp` was the perfect library to st
 
 Once I saw the result, I was glad I had ventured down this particular rabbit hole :)
 
-## Trial and Error
+## Missing Glyphs
 
 There were a few bumps along the road, mainly falling into the category of missing or incorrectly rendered glyphs:
 
@@ -139,7 +139,7 @@ I still lack the context to appreciate what this means, but I'd love to dig in a
 
 This was a fun and unexpected introduction to solving a real world problem with emerging tech I remain fascinated by.
 
-A few takeaways/reminders:
+A few takeaways:
 
 - The partially self-imposed constraints made this more fun! A native dependency-free solution was in the cards after all.
 - The complexity involved in rendering text to screens is humbling once you scratch the surface. It's too often and too easily taken for granted.

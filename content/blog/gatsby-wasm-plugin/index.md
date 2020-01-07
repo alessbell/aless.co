@@ -137,7 +137,7 @@ I still lack the context to appreciate what this means, but I'd love to dig in a
 
 ## Conclusion
 
-This was a fun and unexpected introduction to solving a real world problem with emerging tech that I remain fascinated by.
+This was a fun and unexpected introduction to solving a real world problem with emerging tech I remain fascinated by.
 
 A few takeaways/reminders:
 

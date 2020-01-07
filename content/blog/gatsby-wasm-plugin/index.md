@@ -1,5 +1,5 @@
 ---
-title: Bulding a Gatsby Plugin with Rust + Wasm
+title: Building a Gatsby Plugin with Rust + Wasm
 date: '2020-01-06T19:09:59.546Z'
 spoiler: Rust + WebAssembly + Node.js = 🦀🕸💚
 keywords: ['programming']
@@ -119,7 +119,7 @@ module.exports = ({ markdownNode }, config) => {
 
 I no longer needed to use bitmap fonts, but `jimp` was the perfect library to stitch everything together. I was amazed at how easy it was: I **initialized a Jimp image for the card background** from the user-provided image (or created one consisting of a solid color), then called my Wasm function and **read the text as a buffer of pixel data into a second Jimp image**. Finally, I'd **composite the latter over the former**, a one-liner with `jimp`, save the final image and voilà.
 
-![The resulting image for this post, using the same typeface and gradient that appear elsewhere on this website 😍](./wasm-twitter-card.png)
+![The resulting image for this post, using the same typeface and gradient that appear elsewhere on this website 😍](./twitter-card.png)
 
 Once I saw the result, I was glad I had ventured down this particular rabbit hole!
 

@@ -69,7 +69,7 @@ const config = {
             resolve: `gatsby-remark-twitter-cards`,
             options: {
               title: `anti/pattern`,
-              titleFontSize: 110,
+              titleFontSize: 105,
               author: `Alessia Bellisario`,
               background: require.resolve('./content/assets/base.png'),
               fontFile: require.resolve(
@@ -103,8 +103,8 @@ const config = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `anti/pattern: a blog by alessia bellisario`,
-        short_name: `alessia's blog`,
+        name: `anti/pattern: A blog by Alessia Bellisario`,
+        short_name: `Alessia's Blog`,
         start_url: '/',
         background_color: '#fff',
         theme_color: '#525dce',
@@ -170,7 +170,7 @@ const config = {
               }
           `,
             output: '/rss.xml',
-            title: 'anti/pattern: a blog by alessia bellisario',
+            title: 'anti/pattern: A blog by Alessia Bellisario',
           },
         ],
       },

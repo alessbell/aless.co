@@ -9,7 +9,7 @@ export const fonts = {
 };
 
 const typography = new Typography({
-  baseFontSize: '18px',
+  baseFontSize: '16px',
   baseLineHeight: 1.55,
   headerLineHeight: 1.4,
   headerFontFamily: [fonts.GTPressuraBold, 'monospace'],
@@ -23,14 +23,19 @@ const typography = new Typography({
       textShadow: 'var(--textShadow)',
     },
     h3: {
+      fontFamily: `${fonts.GTPressuraRegular}, monospace`,
+      fontWeight: '400',
       marginTop: '0',
       fontSize: '1.15rem',
     },
     'div,h3,h4,h5,h6,small,figcaption,strong,p,ul,ol': {
       color: 'var(--textNormal)',
     },
-    'h1,h2,h3': {
-      marginBottom: '0.2rem',
+    'h1,h3': {
+      marginBottom: '0.25rem',
+    },
+    h2: {
+      marginBottom: '0.5rem',
     },
     'h2,h4,h5,h6': {
       marginTop: '2.5rem',

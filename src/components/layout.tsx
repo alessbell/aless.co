@@ -145,6 +145,7 @@ const Layout: React.FC = ({ children }) => {
               margin-bottom: 1.75rem;
             }
             blockquote {
+              margin: 1.5rem 0;
               color: #525252;
               margin-left: 0;
               font-size: 1.1rem;
@@ -218,7 +219,7 @@ const Layout: React.FC = ({ children }) => {
               {typeof document !== `undefined` && <Header />}
               {theme !== 'null' && <Toggle />}
             </div>
-            <h3>a blog by alessia bellisario</h3>
+            <h3>A blog by Alessia Bellisario</h3>
           </header>
           {children}
           <Footer

@@ -8,6 +8,7 @@ const config = {
     commit: process.env.COMMIT_REF || `master`,
   },
   plugins: [
+    `@pauliescanlon/gatsby-mdx-embed`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {

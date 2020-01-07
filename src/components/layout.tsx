@@ -152,6 +152,11 @@ const Layout: React.FC = ({ children }) => {
               padding-left: 1rem;
               border-left: 6px solid var(--blue);
               font-style: italic;
+              margin-left: -1.11rem;
+
+              @media (min-width: 44em) {
+                margin-left: -1.35rem;
+              }
             }
             /* Inline code */
             code {
@@ -166,6 +171,15 @@ const Layout: React.FC = ({ children }) => {
               text-shadow: none;
             }
             /* unset yellow code highlighting in vscode block */
+            .night-owl {
+              margin-left: -1.3125rem;
+              margin-right: -1.3125rem;
+              border-radius: 0 !important;
+
+              @media (min-width: 44em) {
+                border-radius: 8px !important;
+              }
+            }
             .vscode-highlight > code {
               border-radius: none;
               line-height: unset;

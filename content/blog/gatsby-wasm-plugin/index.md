@@ -86,11 +86,11 @@ pub fn generate_text(
 
 ### Publishing Wasm
 
-Once you're done writing your Rust, publishing your Wasm couldn't be easier: the CLI `wasm-pack` generates the Wasm module, all the JS glue, TypeScript types _and_ publishes to the npm registry 🤘 I blinked and had published [`wasm-twitter-card`](github.com/alessbell/wasm-twitter-card/).
+Once you're done writing your Rust, publishing your Wasm couldn't be easier: the CLI `wasm-pack` generates the Wasm module, all the JS glue, TypeScript types _and_ publishes to the npm registry 🤘 I blinked and had published [`wasm-twitter-card`](https://github.com/alessbell/wasm-twitter-card/).
 
 ## Putting It All Together
 
-I could then require my Wasm module and call `generate_text` like any regular JS function. This is the meat of my Gatsby plugin [`gatsby-remark-twitter-cards`](github.com/alessbell/gatsby-remark-twitter-cards): it uses `fs.readFileSync` to read a TTF font to a buffer passed to our Wasm code.
+I could then require my Wasm module and call `generate_text` like any regular JS function. This is the meat of my Gatsby plugin [`gatsby-remark-twitter-cards`](https://github.com/alessbell/gatsby-remark-twitter-cards): it uses `fs.readFileSync` to read a TTF font to a buffer passed to our Wasm code.
 
 ```js
 const Jimp = require('jimp');

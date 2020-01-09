@@ -13,9 +13,6 @@ const config = {
       options: {
         trackingUrl: 'analytics.aless.co',
         siteId: 'KACHI',
-        whitelistHostnames: [
-          'aless.co'
-        ]
       },
     },
     `@pauliescanlon/gatsby-mdx-embed`,
@@ -187,7 +184,7 @@ const config = {
       },
     },
     `gatsby-plugin-sitemap`,
-    `gatsby-plugin-offline`,
+    `gatsby-plugin-remove-serviceworker`,
   ],
 };
 

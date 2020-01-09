@@ -36,7 +36,28 @@ const AboutPage: React.FC = () => (
       <a href="mailto:web@bellisar.io">web[at]bellisar.io</a>.
     </p>
     <p style={{ marginBottom: '1.5rem' }}>
-      Finally, this site collects no data or analytics <code>{'<3'}</code>
+      <del>
+        Finally, this site collects no data or analytics <code>{'<3'}</code>
+      </del>{' '}
+      In January 2020, I decided to{' '}
+      <a
+        href="https://www.kn8.lt/blog/hosting-your-own-analytics-with-fathom/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        host my own instance
+      </a>{' '}
+      of{' '}
+      <a
+        href="https://usefathom.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Fathom
+      </a>
+      , a simple, GDPR compliant open source analytics platform for tracking
+      basic metrics about my site without collecting any personal or invasive
+      data.
     </p>
   </Layout>
 );

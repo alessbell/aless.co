@@ -8,6 +8,16 @@ const config = {
     commit: process.env.COMMIT_REF || `master`,
   },
   plugins: [
+    {
+      resolve: 'gatsby-plugin-fathom',
+      options: {
+        trackingUrl: 'analytics.aless.co',
+        siteId: 'KACHI',
+        whitelistHostnames: [
+          'aless.co'
+        ]
+      },
+    },
     `@pauliescanlon/gatsby-mdx-embed`,
     {
       resolve: `gatsby-source-filesystem`,

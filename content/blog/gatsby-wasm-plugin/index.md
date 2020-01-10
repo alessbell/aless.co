@@ -11,9 +11,9 @@ keywords: ['programming']
 
 ## The Problem
 
-Back in August, I was looking to generate some [Open Graph](https://ogp.me/) images for blog posts I was publishing to this very Gatsby site (as in the photos that appear when one of my posts is shared in most social apps.) The idea is simple: **take each post's metadata** and **create images containing some text** (title, author, site name) at build time.
+Back in August, I was looking to generate some [Open Graph](https://ogp.me/) images for blog posts I was publishing to this very Gatsby site (as in the photos that appear when one of my posts is shared in most social apps). The idea is simple: **take each post's metadata** and **create images containing some text** (title, author, site name) at build time.
 
-I had some requirements in mind: I wanted to supply a **custom font**, and if that wasn't possible, at least use a **monospace font** (for the personal `#brand`.) A custom background image would be a bonus.
+I had some requirements in mind: I wanted to supply a **custom font**, and if that wasn't possible, at least use a **monospace font** (for the personal `#brand`). A custom background image would be a bonus.
 
 I couldn't find an existing solution that met these requirements, so I set out to build my own. Some interesting constraints led me to Rust and WebAssembly, though I also admittedly found myself holding a Rust-and-Wasm-shaped hammer after working with both technologies to build an interactive web app at [RC](https://recurse.com).
 
@@ -21,13 +21,13 @@ I couldn't find an existing solution that met these requirements, so I set out t
 
 The prior art for Open Graph image generator plugins in the Gatsby space consists mainly of `gatsby-remark-social-cards`. I came across some [other](https://github.com/sw-yx/swyxdotio/tree/master/screenshot-plugin) [approaches](https://lannonbr.com/blog/2019-11-10-og-images/) that involve writing bespoke code to achieve more complex layouts by rendering some HTML on the server and using Puppeteer to take screenshots, but these felt too heavy-handed for my use case.
 
-After taking a look through the README, `gatsby-remark-social-cards` fit all my criteria **except for the font** (it only supports DejaVuSansCondensed.) This is for a purely practical reason: the main library for image processing in Node.js _with zero native dependencies_ is [`jimp`](https://www.npmjs.com/package/jimp). And `jimp` only supports **bitmap fonts**.
+After taking a look through the README, `gatsby-remark-social-cards` fit all my criteria **except for the font** (it only supports DejaVuSansCondensed). This is for a purely practical reason: the main library for image processing in Node.js _with zero native dependencies_ is [`jimp`](https://www.npmjs.com/package/jimp). And `jimp` only supports **bitmap fonts**.
 
 ## Bitmap Fonts
 
 ![](./bitmap-font.jpg)
 
-Bitmap fonts are comprised of a matrix of pixels, so they can't be scaled or styled like vector/"scalable" fonts (think TTF/OTF.) In practice, this means a standalone font file is needed for every combination of font size, color and weight. Indeed, the plugin I was examining had a `/fonts` folder containing **twenty different `.fnt` files** for a single typeface styled twenty different ways 😲
+Bitmap fonts are comprised of a matrix of pixels, so they can't be scaled or styled like vector/"scalable" fonts (think TTF/OTF). In practice, this means a standalone font file is needed for every combination of font size, color and weight. Indeed, the plugin I was examining had a `/fonts` folder containing **twenty different `.fnt` files** for a single typeface styled twenty different ways 😲
 
 ### Aside: Netlify Build Image
 
@@ -129,7 +129,7 @@ There were a few bumps along the road, mainly falling into the category of missi
 
 ![The image on the left is supposed to say "2019", while the image on the right is missing glyphs "d", "q" and "w"](./glitches.png)
 
-After some head scratching, I chalked it up to a bug in `fonterator` and moved to `rusttype` as my underlying text rendering crate which fixed things (I would also realize I needed something like `glyph_brush_layout` to handle layout/text wrapping.) I still don't know exactly what the issue with `fonterator` was, but I received the following thoughtful comment from the folks at the font editor FontForge via Twitter:
+After some head scratching, I chalked it up to a bug in `fonterator` and moved to `rusttype` as my underlying text rendering crate which fixed things (I would also realize I needed something like `glyph_brush_layout` to handle layout/text wrapping). I still don't know exactly what the issue with `fonterator` was, but I received the following thoughtful comment from the folks at the font editor FontForge via Twitter:
 
 > I would check the directionality of the glyphs in your image. I noticed that "b" and "p" are OK, yet "d" and "q" are not. I think the problem is that splines which should be clockwise are counter, and those which should be counter are clockwise. Try e.g. "Correct Direction".
 

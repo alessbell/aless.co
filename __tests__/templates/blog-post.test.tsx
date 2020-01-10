@@ -1,6 +1,12 @@
 import * as React from 'react';
 import { render } from '@testing-library/react';
+import { useStaticQuery } from 'gatsby';
+import { metadataMock } from '../../__mocks__/metadata-mock';
 import BlogPost from '../../src/templates/blog-post';
+
+beforeEach(() => {
+  (useStaticQuery as jest.Mock).mockImplementation(() => metadataMock);
+});
 
 const post = {
   excerpt: 'Some excerpt',

@@ -17,17 +17,17 @@ interface KeyboardPictureData {
   };
 }
 
-const NotFoundPage: React.FC = () => {
+const UsesPage: React.FC = () => {
   const data: KeyboardPictureData = useStaticQuery(graphql`
     query keyboardQuery {
-      keyboard: file(absolutePath: { regex: "/assets/keyboard/" }) {
+      keyboard: file(absolutePath: { regex: "/assets/keyboard2/" }) {
         childImageSharp {
           fluid(maxWidth: 640) {
             ...GatsbyImageSharpFluid
           }
         }
       }
-      desk: file(absolutePath: { regex: "/assets/desk/" }) {
+      desk: file(absolutePath: { regex: "/assets/desk3/" }) {
         childImageSharp {
           fluid(maxWidth: 640) {
             ...GatsbyImageSharpFluid
@@ -36,13 +36,14 @@ const NotFoundPage: React.FC = () => {
       }
     }
   `);
+
   return (
     <Layout>
       <SEO
-        title="My Setup"
+        title="Things I Use"
         keywords={[`setup`, `gear`, `mechanical keyboards`]}
       />
-      <h2>Stuff</h2>
+      <h2>Things I Use</h2>
       <p>
         I thought I'd write down a few trinkets and more useful tools I'm a fan
         of and use in my day-to-day.
@@ -51,17 +52,59 @@ const NotFoundPage: React.FC = () => {
       <p>
         At work I use a <b>late 2016 15" MacBook Pro</b> with Intel Core i7
         processor and a 250GB SSD running Catalina. The keyboard went pretty
-        quickly, so I usually travel with one of my compact ortholinear boards.
+        quickly, so I usually travel with one of my more compact keyboards.
       </p>
       <p>
-        For my personal machine, I'm using a 2018 Pixelbook running Crostini on
-        the beta channel which allows me to install Linux apps. To be honest,
-        it's been pretty underwhelming and often downright painful: running a
-        beta OS is not for the faint of heart. I'll probably swap this for a
-        ThinkPad running Linux soon.
+        For my personal machine, I use a <b>2018 Pixelbook</b> running Crostini
+        on the dev channel which allows me to install Linux apps. To be honest,
+        it's been pretty underwhelming and often downright painful: running an
+        OS in beta is not for the faint of heart. Pros: it's super light, the
+        battery is great and the touchscreen is interesting, though I use it far
+        less than I thought I would. I'll probably swap it for a ThinkPad soon.
       </p>
       <p>
         <Img fluid={data.desk.childImageSharp.fluid} />
+      </p>
+      <p>
+        I use a Jarvis motorized sit/stand desk with{' '}
+        <a
+          href="https://www.amazon.com/gp/product/B00V3TO9EK/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Topo foam mat
+        </a>{' '}
+        when standing and a{' '}
+        <a
+          href="https://drop.com/buy/56882"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Massdrop Flex Task Chair
+        </a>{' '}
+        when sitting. I have a Sonos speaker, this{' '}
+        <a
+          href="https://www.amazon.com/Updated-Version-Vertical-OMOTON-Adjustable/dp/B078W3QSZY"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          OMOTON double laptop stand
+        </a>{' '}
+        and this <a>CalDigit Thunderbolt 3 Dock</a> to connect all my
+        peripherals (two monitors,{' '}
+        <a
+          href="https://www.amazon.com/gp/product/B07K95WFWM/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          webcam
+        </a>
+        , keyboards, drawing machines, phones, etc.) to my MacBook with a single
+        Thunderbolt cable (unfortunately it doesn't work with the Pixelbook
+        because Thunderbolt... boo).
+      </p>
+      <p>
+        <Img fluid={data.keyboard.childImageSharp.fluid} />
       </p>
       <p>
         What to write about this quirky little keyboard? I built it (them?) in{' '}
@@ -101,48 +144,6 @@ const NotFoundPage: React.FC = () => {
         endeared it to me more. It's a <i>lot</i> of fun to use.
       </p>
       <p>
-        <Img fluid={data.keyboard.childImageSharp.fluid} />
-      </p>
-
-      <p>
-        I use a Jarvis motorized sit/stand desk with{' '}
-        <a
-          href="https://www.amazon.com/gp/product/B00V3TO9EK/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Topo foam mat
-        </a>{' '}
-        when standing and a{' '}
-        <a
-          href="https://drop.com/buy/56882"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Massdrop Flex Task Chair
-        </a>
-        . I have a Sonos speaker, this{' '}
-        <a
-          href="https://www.amazon.com/Updated-Version-Vertical-OMOTON-Adjustable/dp/B078W3QSZY"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          OMOTON double laptop stand
-        </a>{' '}
-        and this <a>CalDigit Thunderbolt 3 Dock</a> to connect all my
-        peripherals (two monitors,{' '}
-        <a
-          href="https://www.amazon.com/gp/product/B07K95WFWM/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          webcam
-        </a>
-        , keyboards, drawing machines, phones, etc.) to my MacBook with a single
-        Thunderbolt cable (unfortunately it doesn't work with the Pixelbook
-        because Thunderbolt... boo).
-      </p>
-      <p>
         For monitors, I use an{' '}
         <a
           href="https://www.amazon.com/gp/product/B078GVTD9N/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1"
@@ -177,7 +178,8 @@ const NotFoundPage: React.FC = () => {
         </a>{' '}
         on the back, which I swear by.
       </p>
-      <h3>Software</h3>
+      <h3>Software, Drawing Machines, The Works...</h3>
+      <p>To be continued!</p>
       {/* <ul>
         <li>Hardware and desk</li>
         <ul>
@@ -212,4 +214,4 @@ const NotFoundPage: React.FC = () => {
   );
 };
 
-export default NotFoundPage;
+export default UsesPage;

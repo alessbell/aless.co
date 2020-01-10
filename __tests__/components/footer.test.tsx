@@ -1,8 +1,14 @@
 import * as React from 'react';
+import { useStaticQuery } from 'gatsby';
 import { render } from '@testing-library/react';
+import { metadataMock } from '../../__mocks__/metadata-mock';
 import Footer from '../../src/components/footer';
 
 const REPOSITORY = `https://github.com/alessbell/alessbell`;
+
+beforeEach(() => {
+  (useStaticQuery as jest.Mock).mockImplementation(() => metadataMock);
+});
 
 describe('Footer', () => {
   test('renders', () => {

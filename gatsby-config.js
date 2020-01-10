@@ -9,10 +9,10 @@ const config = {
   },
   plugins: [
     {
-      resolve: 'gatsby-plugin-fathom',
+      resolve: `gatsby-plugin-fathom`,
       options: {
-        trackingUrl: 'analytics.aless.co',
-        siteId: 'KACHI',
+        trackingUrl: `analytics.aless.co`,
+        siteId: `KACHI`,
       },
     },
     `@pauliescanlon/gatsby-mdx-embed`,
@@ -30,6 +30,8 @@ const config = {
         name: `assets`,
       },
     },
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-typescript`,
       options: {
@@ -106,8 +108,6 @@ const config = {
         ],
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

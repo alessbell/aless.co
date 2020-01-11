@@ -90,8 +90,15 @@ const UsesPage: React.FC = () => {
         >
           OMOTON double laptop stand
         </a>{' '}
-        and this <a>CalDigit Thunderbolt 3 Dock</a> to connect all my
-        peripherals (two monitors,{' '}
+        and this{' '}
+        <a
+          href="https://www.amazon.com/gp/product/B07CZPV8DF/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          CalDigit Thunderbolt 3 Dock
+        </a>{' '}
+        to connect all my peripherals (two monitors,{' '}
         <a
           href="https://www.amazon.com/gp/product/B07K95WFWM/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1"
           target="_blank"
@@ -100,8 +107,15 @@ const UsesPage: React.FC = () => {
           webcam
         </a>
         , keyboards, drawing machines, phones, etc.) to my MacBook with a single
-        Thunderbolt cable (unfortunately it doesn't work with the Pixelbook
-        because Thunderbolt... boo).
+        Thunderbolt cable. I use the{' '}
+        <a
+          href="https://www.amazon.com/gp/product/B071YZJ1G1/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Logitech MX Master 2S Wireless Mouse
+        </a>{' '}
+        and don't think I'll ever use another mouse again.
       </p>
       <p>
         <Img fluid={data.keyboard.childImageSharp.fluid} />
@@ -180,36 +194,6 @@ const UsesPage: React.FC = () => {
       </p>
       <h3>Software, Drawing Machines, The Works...</h3>
       <p>To be continued!</p>
-      {/* <ul>
-        <li>Hardware and desk</li>
-        <ul>
-          <li>
-            <a href="#macbook">MacBook Pro</a>
-          </li>
-          <li>Pixelbook</li>
-          <li>Monitors</li>
-          <li>Sonos</li>
-          <li>Jarvis Motorized standing desk (and matt)</li>
-          <li>Custom keyboard</li>
-          drawing bachinesd
-        </ul>
-        <li>Software</li>
-        <ul>
-          <li>VSCode</li>
-          <li>iTerm</li>
-          <li>Operator Mono</li>
-          <li>Theme</li>
-          <li>Zsh</li>
-          <li>Alfred</li>
-        </ul>
-        <li>Personal Gear and Stuff</li>
-        <ul>
-          <li>Camera</li>
-          <li>bag</li>
-        </ul>
-      </ul>
-      <hr />
-      <h3 id="macbook">MacBook Pro</h3> */}
     </Layout>
   );
 };

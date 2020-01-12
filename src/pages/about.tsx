@@ -87,29 +87,27 @@ const AboutPage: React.FC = () => {
         the course of my life and work.
       </p>
       <hr />
-      <div style={{ fontSize: '14px' }}>
-        <p style={{ marginBottom: '1.5rem' }}>
-          <i>A note on tracking:</i> In January 2020, I decided to{' '}
-          <a
-            href="https://www.kn8.lt/blog/hosting-your-own-analytics-with-fathom/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            host my own instance
-          </a>{' '}
-          of{' '}
-          <a
-            href="https://usefathom.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Fathom
-          </a>
-          , a GDPR-compliant open source analytics platform for tracking basic
-          metrics about this site without collecting any personal or invasive
-          data. I prefer not to hand any company all your data and mine.
-        </p>
-      </div>
+      <p style={{ marginBottom: '1.5rem', fontSize: '14px' }}>
+        <i>A note on tracking:</i> In January 2020, I decided to{' '}
+        <a
+          href="https://www.kn8.lt/blog/hosting-your-own-analytics-with-fathom/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          host my own instance
+        </a>{' '}
+        of{' '}
+        <a
+          href="https://usefathom.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Fathom
+        </a>
+        , a GDPR-compliant open source analytics platform for tracking basic
+        metrics about this site without collecting any personal or invasive
+        data.
+      </p>
     </Layout>
   );
 };

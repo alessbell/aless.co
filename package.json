@@ -13,8 +13,8 @@
   "dependencies": {
     "@emotion/core": "10.0.27",
     "@emotion/styled": "10.0.27",
-    "@mdx-js/mdx": "1.5.3",
-    "@mdx-js/react": "1.5.3",
+    "@mdx-js/mdx": "1.5.4",
+    "@mdx-js/react": "1.5.4",
     "@pauliescanlon/gatsby-mdx-embed": "0.0.10",
     "change-case": "4.1.1",
     "emotion": "10.0.27",

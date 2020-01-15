@@ -27,7 +27,7 @@ const UsesPage: React.FC = () => {
           }
         }
       }
-      desk: file(absolutePath: { regex: "/assets/desk3/" }) {
+      desk: file(absolutePath: { regex: "/assets/desk.JPG/" }) {
         childImageSharp {
           fluid(maxWidth: 640) {
             ...GatsbyImageSharpFluid

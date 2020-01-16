@@ -46,7 +46,7 @@
     "gatsby-transformer-sharp": "2.3.12",
     "gl-react": "4.0.1",
     "gl-react-dom": "4.0.1",
-    "query-string": "6.9.0",
+    "query-string": "6.10.0",
     "raf": "3.4.1",
     "react": "16.12.0",
     "react-dom": "16.12.0",

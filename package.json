@@ -99,7 +99,7 @@
     "babel-jest": "24.9.0",
     "babel-plugin-emotion": "10.0.27",
     "babel-preset-gatsby": "0.2.27",
-    "flow-bin": "0.116.0",
+    "flow-bin": "0.116.1",
     "gatsby-plugin-tslint": "0.0.2",
     "husky": "4.0.10",
     "identity-obj-proxy": "3.0.0",

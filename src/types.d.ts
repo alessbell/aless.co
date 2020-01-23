@@ -7,16 +7,6 @@ declare module 'gatsby-plugin-mdx' {
   export class MDXRenderer extends React.Component<MDXRendererProps> {}
 }
 
-declare namespace jest {
-  interface Matchers<R, T> {
-    toHaveAttribute: (attr: string, value?: string) => R;
-    toHaveTextContent: (htmlElement: string) => R;
-    toHaveClass: (className: string) => R;
-    toBeInTheDocument: () => R;
-    toBeInTheDOM: () => R;
-  }
-}
-
 declare module '@mdx-js/react' {
   import * as React from 'react';
   type ComponentType =

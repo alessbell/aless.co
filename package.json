@@ -101,7 +101,7 @@
     "babel-preset-gatsby": "0.2.27",
     "flow-bin": "0.116.1",
     "gatsby-plugin-tslint": "0.0.2",
-    "husky": "4.2.0",
+    "husky": "4.2.1",
     "identity-obj-proxy": "3.0.0",
     "jest": "25.1.0",
     "jest-canvas-mock": "2.2.0",

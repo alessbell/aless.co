@@ -95,15 +95,6 @@ const config = {
           },
           {
             resolve: `gatsby-remark-vscode`,
-            options: {
-              colorTheme: `Night Owl`,
-              extensions: [
-                {
-                  identifier: `sdras.night-owl`,
-                  version: `1.1.3`,
-                },
-              ],
-            },
           },
         ],
       },
@@ -189,7 +180,7 @@ const config = {
         ],
       },
     },
-    `gatsby-plugin-sitemap`
+    `gatsby-plugin-sitemap`,
   ],
 };
 

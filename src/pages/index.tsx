@@ -26,7 +26,7 @@ export interface BlogIndexProps {
   data: {
     allMdx: {
       edges: Edge[];
-      group: Array<{ tag: string }>;
+      group: { tag: string }[];
     };
   };
 }

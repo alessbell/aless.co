@@ -171,7 +171,7 @@ const Layout: React.FC = ({ children }) => {
               text-shadow: none;
             }
             /* unset yellow code highlighting in vscode block */
-            .night-owl {
+            .grvsc-container {
               margin-left: -1.3125rem;
               margin-right: -1.3125rem;
               border-radius: 0 !important;
@@ -180,7 +180,7 @@ const Layout: React.FC = ({ children }) => {
                 border-radius: 8px !important;
               }
             }
-            .vscode-highlight > code {
+            .grvsc-container > code {
               border-radius: none;
               line-height: unset;
               background: unset;

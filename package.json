@@ -40,7 +40,7 @@
     "gatsby-remark-images": "3.1.44",
     "gatsby-remark-smartypants": "2.1.21",
     "gatsby-remark-twitter-cards": "0.2.0",
-    "gatsby-remark-vscode": "1.4.0",
+    "gatsby-remark-vscode": "2.0.1",
     "gatsby-source-filesystem": "2.1.48",
     "gatsby-transformer-remark": "2.6.50",
     "gatsby-transformer-sharp": "2.3.14",
@@ -108,11 +108,11 @@
     "jest-emotion": "10.0.27",
     "prettier": "1.19.1",
     "ts-jest": "25.2.0",
-    "tslint": "5.20.1",
+    "tslint": "6.0.0",
     "tslint-config-prettier": "1.18.0",
     "tslint-loader": "3.6.0",
     "tslint-plugin-prettier": "2.1.0",
-    "tslint-react": "4.1.0",
+    "tslint-react": "4.2.0",
     "typescript": "3.7.5"
   }
 }

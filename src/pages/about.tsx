@@ -41,7 +41,7 @@ const AboutPage: React.FC = () => {
         ]}
       />
       <h2>
-        Hey
+        Hi there{' '}
         <span role="img" aria-label="waving hand">
           👋
         </span>

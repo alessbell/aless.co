@@ -11,7 +11,7 @@ This is my attempt to remedy the situation, having recently joined the wonderful
 
 ## Bootcamp or Self-Study?
 
-The answer is secret option C: both.
+My answer is secret option C: both.
 
 Throughout my undergraduate degree in philosophy and political science I found myself taking on freelance web design/dev jobs out of sheer enjoyment. The Jessica Hische-ism “procrastiwork” always felt apt: making things on the internet was the work I did when I should have been doing other work. First for my dad's small business and later for freelance clients or politicians I was working for, I would mostly build WordPress sites with themes I could hack in a fairly limited way, or use a no-code site builder like Apple's old [iWeb](https://en.wikipedia.org/wiki/IWeb) (RIP).
 

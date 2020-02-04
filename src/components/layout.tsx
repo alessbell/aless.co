@@ -196,6 +196,11 @@ const Layout: React.FC = ({ children }) => {
               height: 100%;
             }
 
+            .youtube-mdx-embed,
+            .twitter-tweet-mdx-embed {
+              margin-bottom: 1.5rem;
+            }
+
             @media (hover: hover) {
               a:hover {
                 color: black;

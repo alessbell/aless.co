@@ -11,7 +11,7 @@
     "url": "https://github.com/alessbell/alessbell.git"
   },
   "dependencies": {
-    "@emotion/core": "10.0.27",
+    "@emotion/core": "10.0.28",
     "@emotion/styled": "10.0.27",
     "@mdx-js/mdx": "1.5.7",
     "@mdx-js/react": "1.5.7",
@@ -97,7 +97,7 @@
     "@types/react-toggle": "4.0.2",
     "@types/typography": "0.16.3",
     "babel-jest": "25.1.0",
-    "babel-plugin-emotion": "10.0.27",
+    "babel-plugin-emotion": "10.0.28",
     "babel-preset-gatsby": "0.2.29",
     "flow-bin": "0.119.1",
     "gatsby-plugin-tslint": "0.0.2",

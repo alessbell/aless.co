@@ -30,6 +30,14 @@ const config = {
         name: `assets`,
       },
     },
+    {
+      resolve: `gatsby-source-goodreads`,
+      options: {
+        developerKey: process.env.GOODREADS_KEY,
+        goodReadsUserId: `108030826`,
+        userShelf: `currently-reading`,
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -141,7 +149,7 @@ const config = {
         feeds: [
           {
             serialize: ({ query: { site, allMdx } }) => {
-              return allMdx.edges.map(edge => {
+              return allMdx.edges.map((edge) => {
                 return Object.assign({}, edge.node.frontmatter, {
                   description: edge.node.excerpt,
                   date: edge.node.frontmatter.date,

@@ -4,11 +4,21 @@ import Img, { FixedObject } from 'gatsby-image';
 import SEO from '../components/seo';
 import Layout from '../components/layout';
 
+interface Book {
+  book: {
+    link: string;
+    title: string;
+  };
+}
+
 interface ProfilePictureData {
   profilePicture: {
     childImageSharp: {
       fixed: FixedObject;
     };
+  };
+  goodreadsShelf: {
+    reviews: Book[];
   };
 }
 
@@ -24,8 +34,17 @@ const AboutPage: React.FC = () => {
           }
         }
       }
+      goodreadsShelf {
+        reviews {
+          book {
+            link
+            title
+          }
+        }
+      }
     }
   `);
+  const { book } = data.goodreadsShelf.reviews[0];
   return (
     <Layout>
       <SEO
@@ -55,7 +74,12 @@ const AboutPage: React.FC = () => {
           }}
           fixed={data.profilePicture.childImageSharp.fixed}
         />
-        I'm Alessia Bellisario, a software engineer based in NYC.
+        I'm Alessia Bellisario, a software engineer based in NYC. I'm currently
+        reading{' '}
+        <a href={book.link} target="_blank" rel="noopener noreferrer">
+          {book.title}
+        </a>
+        .
       </p>
       <p>
         I work at{' '}

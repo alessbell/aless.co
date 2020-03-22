@@ -42,6 +42,7 @@
     "gatsby-remark-twitter-cards": "0.2.0",
     "gatsby-remark-vscode": "2.0.3",
     "gatsby-source-filesystem": "2.2.1",
+    "gatsby-source-goodreads": "0.2.0",
     "gatsby-transformer-remark": "2.7.0",
     "gatsby-transformer-sharp": "2.4.1",
     "gl-react": "4.0.1",

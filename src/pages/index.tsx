@@ -35,7 +35,7 @@ const TagLink: React.FC<{ tag: string; tags: string[] }> = ({ tag, tags }) => {
   const slug = slugify(tag);
   const active = tags.includes(slug);
   const qs = active
-    ? `${tags.length > 1 ? tags.filter(t => t !== slug).join(',') : ``}`
+    ? `${tags.length > 1 ? tags.filter((t) => t !== slug).join(',') : ``}`
     : `${tags.length > 0 ? [...tags, slug].join(',') : slug}`;
   return (
     <Tag active={active} link={true}>
@@ -53,7 +53,7 @@ const BlogIndex: React.FC<BlogIndexProps> = ({
     allMdx: { edges, group },
   },
 }) => {
-  const keywords = group.map(item => item.tag);
+  const keywords = group.map((item) => item.tag);
   const [tags, setTags] = React.useState<string[]>([]);
   const [detailsToggle, setDetailsToggle] = React.useState<boolean | null>(
     detailsToggleState !== null ? detailsToggleState : true
@@ -122,7 +122,7 @@ const BlogIndex: React.FC<BlogIndexProps> = ({
               return true;
             }
             let contains = false;
-            node.frontmatter.keywords.forEach(keyword => {
+            node.frontmatter.keywords.forEach((keyword) => {
               if (tags.includes(slugify(keyword))) {
                 contains = true;
               }

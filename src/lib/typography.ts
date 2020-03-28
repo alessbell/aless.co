@@ -65,6 +65,12 @@ const typography = new Typography({
     'pre,code': {
       fontFamily: `${fonts.GTPressuraRegular}, monospace`,
     },
+    'th:first-child, td:first-child': {
+      paddingLeft: '1rem',
+    },
+    'th:last-child, td:last-child': {
+      paddingRight: '1rem',
+    },
   }),
 });
 

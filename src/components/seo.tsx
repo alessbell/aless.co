@@ -33,7 +33,7 @@ interface SEOData {
   };
 }
 
-const SEO: React.FC<SEOProps> = ({
+const SEO: React.FunctionComponent<SEOProps> = ({
   description,
   ogImageProp,
   lang = 'en',

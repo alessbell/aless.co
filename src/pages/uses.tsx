@@ -17,7 +17,7 @@ interface KeyboardPictureData {
   };
 }
 
-const UsesPage: React.FC = () => {
+const UsesPage: React.FunctionComponent = () => {
   const data: KeyboardPictureData = useStaticQuery(graphql`
     query keyboardQuery {
       keyboard: file(absolutePath: { regex: "/assets/keyboard2/" }) {

@@ -4,8 +4,8 @@ import * as raf from 'raf';
 let startTime: number;
 let r: number;
 let lastTime: number;
-let time: number = 0;
-let tick: number = 0;
+let time = 0;
+let tick = 0;
 
 function useTimer() {
   const interval = 1000 / 60;

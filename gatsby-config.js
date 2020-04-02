@@ -48,7 +48,6 @@ const config = {
         allExtensions: true, // defaults to false
       },
     },
-    `gatsby-plugin-tslint`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-react-helmet-canonical-urls`,

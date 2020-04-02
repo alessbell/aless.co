@@ -73,14 +73,13 @@
     "dev": "gatsby develop",
     "mobiledev": "gatsby develop --host 0.0.0.0",
     "serve": "gatsby serve -p 8000",
-    "format": "prettier --write \"src/**/*.tsx\"",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\"",
     "test": "jest --coverage",
-    "type-check": "tsc --noEmit",
-    "lint": "tslint --project ."
+    "lint": "eslint --ignore-path .gitignore . --ext ts --ext tsx --ext js --ext jsx"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint && npm run type-check && npm run format"
+      "pre-commit": "npm run lint"
     }
   },
   "devDependencies": {
@@ -97,11 +96,17 @@
     "@types/react-helmet": "5.0.15",
     "@types/react-toggle": "4.0.2",
     "@types/typography": "0.16.3",
+    "@typescript-eslint/eslint-plugin": "2.26.0",
+    "@typescript-eslint/parser": "2.26.0",
     "babel-jest": "25.2.6",
     "babel-plugin-emotion": "10.0.29",
     "babel-preset-gatsby": "0.3.1",
+    "eslint": "6.8.0",
+    "eslint-config-prettier": "6.10.1",
+    "eslint-plugin-jest": "23.8.2",
+    "eslint-plugin-prettier": "3.1.2",
+    "eslint-plugin-react": "7.19.0",
     "flow-bin": "0.121.0",
-    "gatsby-plugin-tslint": "0.0.2",
     "husky": "4.2.3",
     "identity-obj-proxy": "3.0.0",
     "jest": "25.2.6",
@@ -109,11 +114,6 @@
     "jest-emotion": "10.0.32",
     "prettier": "2.0.2",
     "ts-jest": "25.3.0",
-    "tslint": "6.1.1",
-    "tslint-config-prettier": "1.18.0",
-    "tslint-loader": "3.6.0",
-    "tslint-plugin-prettier": "2.3.0",
-    "tslint-react": "4.2.0",
     "typescript": "3.8.3"
   }
 }

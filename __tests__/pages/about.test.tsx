@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useStaticQuery } from 'gatsby';
-import { metadataMock } from '../../__mocks__/metadata-mock';
+import { metadataMock } from '../config/metadata-mock';
 import { render } from '@testing-library/react';
 import About from '../../src/pages/about';
 

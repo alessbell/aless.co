@@ -45,22 +45,23 @@ const UsesPage: React.FC = () => {
       />
       <h2>Things I Use</h2>
       <p>
-        I thought I'd write down a few trinkets and more useful tools I'm a fan
-        of and use in my day-to-day.
+        I thought I{"'"}d write down a few trinkets and more useful tools I{"'"}
+        m a fan of and use in my day-to-day.
       </p>
       <h3>Hardware and Desk</h3>
       <p>
-        At work I use a <b>late 2016 15" MacBook Pro</b> with Intel Core i7
+        At work I use a <b>late 2016 15{`"`} MacBook Pro</b> with Intel Core i7
         processor and a 250GB SSD running Catalina. The keyboard went pretty
         quickly, so I usually travel with one of my more compact keyboards.
       </p>
       <p>
         For my personal machine, I use a <b>2018 Pixelbook</b> running Crostini
         on the dev channel which allows me to install Linux apps. To be honest,
-        it's been pretty underwhelming and often downright painful: running an
-        OS in beta is not for the faint of heart. Pros: it's super light, the
-        battery is great and the touchscreen is interesting, though I use it far
-        less than I thought I would. I'll probably swap it for a ThinkPad soon.
+        it{"'"}s been pretty underwhelming and often downright painful: running
+        an OS in beta is not for the faint of heart. Pros: it{"'"}s super light,
+        the battery is great and the touchscreen is interesting, though I use it
+        far less than I thought I would. I{"'"}ll probably swap it for a
+        ThinkPad soon.
       </p>
       <p>
         <Img fluid={data.desk.childImageSharp.fluid} />
@@ -115,7 +116,7 @@ const UsesPage: React.FC = () => {
         >
           Logitech MX Master 2S Wireless Mouse
         </a>{' '}
-        and don't think I'll ever use another mouse again.
+        and don{"'"}t think I{"'"}ll ever use another mouse again.
       </p>
       <p>
         <Img fluid={data.keyboard.childImageSharp.fluid} />
@@ -129,7 +130,7 @@ const UsesPage: React.FC = () => {
         >
           April 2019
         </a>
-        . It's a <b>Levinson split ortholinear keyboard</b> with{' '}
+        . It{"'"}s a <b>Levinson split ortholinear keyboard</b> with{' '}
         <a
           href="https://input.club/the-comparative-guide-to-mechanical-switches/tactile/halo-true/"
           target="_blank"
@@ -154,8 +155,8 @@ const UsesPage: React.FC = () => {
           keeb.io
         </a>
         ; while building it, I made a mistake early on so the plate on the left
-        half doesn't match the right (stainless vs. acrylic). This has only
-        endeared it to me more. It's a <i>lot</i> of fun to use.
+        half doesn{"'"}t match the right (stainless vs. acrylic). This has only
+        endeared it to me more. It{"'"}s a <i>lot</i> of fun to use.
       </p>
       <p>
         For monitors, I use an{' '}
@@ -164,7 +165,7 @@ const UsesPage: React.FC = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          LG 27" 4K
+          LG 27{`"`} 4K
         </a>{' '}
         monitor and a{' '}
         <a
@@ -172,9 +173,9 @@ const UsesPage: React.FC = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Dell 24" Ultra HD 4K
+          Dell 24{`"`} Ultra HD 4K
         </a>
-        . They're rigged to the desk with a{' '}
+        . They{"'"}re rigged to the desk with a{' '}
         <a
           href="https://www.amazon.com/gp/product/B00MIBN71I/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1"
           target="_blank"

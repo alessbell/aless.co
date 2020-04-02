@@ -74,8 +74,8 @@ const AboutPage: React.FC = () => {
           }}
           fixed={data.profilePicture.childImageSharp.fixed}
         />
-        I'm Alessia Bellisario, a software engineer based in NYC. I'm currently
-        reading{' '}
+        I{`'`}m Alessia Bellisario, a software engineer based in NYC. I{`'`}m
+        currently reading{' '}
         <a href={book.link} target="_blank" rel="noopener noreferrer">
           {book.title}
         </a>
@@ -90,7 +90,7 @@ const AboutPage: React.FC = () => {
         >
           Breather
         </a>{' '}
-        as a Senior Front End Developer. I'm also an alumna of the{' '}
+        as a Senior Front End Developer. I{`'`}m also an alumna of the{' '}
         <a
           href="https://recurse.com/"
           target="_blank"
@@ -98,17 +98,19 @@ const AboutPage: React.FC = () => {
         >
           Recurse Center
         </a>
-        . I'm always happy to chat about RC with anyone considering applying.
+        . I{`'`}m always happy to chat about RC with anyone considering
+        applying.
       </p>
       <p>
-        I'm using this space to write about programming—my current interests
+        I{`'`}m using this space to write about programming—my current interests
         include Rust and graphics—and building mechanical keyboards. If any of
         this is of interest to you, say hi! You can reach me at{' '}
         <a href="mailto:web@bellisar.io">web[at]bellisar.io</a>.
       </p>
       <p>
-        Finally, here's a list of <a href="/uses">tools and doodads I use</a> in
-        the course of my life and work.
+        Finally, here{`'`}s a list of{' '}
+        <a href="/uses">tools and doodads I use</a> in the course of my life and
+        work.
       </p>
       <hr />
       <p style={{ marginBottom: '1.5rem', fontSize: '14px' }}>

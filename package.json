@@ -76,7 +76,7 @@
     "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\"",
     "type-check": "tsc --noEmit",
     "test": "jest --coverage",
-    "lint": "eslint 'src/**/*.{js,ts,tsx}' --quiet"
+    "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}' --quiet"
   },
   "husky": {
     "hooks": {

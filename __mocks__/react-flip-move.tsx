@@ -1,4 +1,6 @@
 import React = require('react');
 
-const ReactFlipMoveMock: React.FC = ({ children }) => <>{children}</>;
+const ReactFlipMoveMock: React.FunctionComponent = ({ children }) => (
+  <>{children}</>
+);
 export default ReactFlipMoveMock;

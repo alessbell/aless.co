@@ -1,52 +1,32 @@
-/* istanbul ignore file */
 import * as React from 'react';
+import styled from '@emotion/styled';
 import { Surface } from 'gl-react-dom';
 import Shaders from './shaders';
 
-const mixBlendMode = { mixBlendMode: `var(--mixBlendMode2)` } as any;
 const shaders = Object.values(Shaders).map((S, idx) => <S key={idx} />);
 
-const Header: React.FC = () => {
-  const [shader, setShader] = React.useState(0);
+const Wrapper = styled.div`
+  position: absolute;
+  top: 0;
+  mix-blend-mode: var(--mixBlendMode2);
+`;
 
-  if (typeof document !== `undefined`) {
-    (window as any).__onShaderChange = () => {
-      setShader(parseInt((window as any).__shader, 10));
-    };
+const InnerWrapper = styled.span`
+  position: absolute;
+  top: 0;
+  mix-blend-mode: var(--mixBlendMode2);
+`;
 
-    React.useEffect(() => {
-      setShader(parseInt((window as any).__shader, 10));
-    });
-  }
-
-  // const randomize = () => Math.floor(Math.random() * shaders.length);
-
-  // const getRadomShader = () => {
-  //   const lastRandom = shader;
-  //   let random = randomize();
-  //   while (random === lastRandom) {
-  //     random = randomize();
-  //   }
-  //   return random;
-  // };
-
+const Header: React.FunctionComponent = () => {
   return (
     <>
-      <div style={{ position: 'absolute', top: '0', ...mixBlendMode }}>
-        <span style={{ position: 'absolute', top: '0', ...mixBlendMode }}>
+      <Wrapper>
+        <InnerWrapper>
           <Surface width={253} height={47}>
-            {shaders[shader]}
+            {shaders[0]}
           </Surface>
-        </span>
-      </div>
-      {/* <button
-        style={{
-          float: 'right',
-        }}
-        onClick={() => (window as any).__setPreferredShader(getRadomShader())}
-      >
-        <span>♻️</span>
-      </button> */}
+        </InnerWrapper>
+      </Wrapper>
     </>
   );
 };

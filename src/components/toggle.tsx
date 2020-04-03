@@ -5,7 +5,13 @@ import sunglasses from '../../content/assets/sunglasses.png';
 import sparkles from '../../content/assets/sparkles.png';
 import '../css/toggle.css';
 
-const Toggle: React.FC = () => {
+declare global {
+  interface Window {
+    __setPreferredTheme: (theme: 'dark' | 'light') => void;
+  }
+}
+
+const Toggle: React.FunctionComponent = () => {
   const theme = React.useContext(ThemeContext);
   return (
     <div>
@@ -32,9 +38,7 @@ const Toggle: React.FC = () => {
         }}
         checked={theme === 'dark'}
         onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-          (window as any).__setPreferredTheme(
-            e.target.checked ? 'dark' : 'light'
-          )
+          window.__setPreferredTheme(e.target.checked ? 'dark' : 'light')
         }
       />
     </div>

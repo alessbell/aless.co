@@ -31,7 +31,10 @@ export interface BlogIndexProps {
   };
 }
 
-const TagLink: React.FC<{ tag: string; tags: string[] }> = ({ tag, tags }) => {
+const TagLink: React.FunctionComponent<{ tag: string; tags: string[] }> = ({
+  tag,
+  tags,
+}) => {
   const slug = slugify(tag);
   const active = tags.includes(slug);
   const qs = active
@@ -48,7 +51,7 @@ const TagLink: React.FC<{ tag: string; tags: string[] }> = ({ tag, tags }) => {
 let search = '';
 let detailsToggleState: boolean | null = null;
 
-const BlogIndex: React.FC<BlogIndexProps> = ({
+const BlogIndex: React.FunctionComponent<BlogIndexProps> = ({
   data: {
     allMdx: { edges, group },
   },

@@ -1,3 +1,23 @@
+let goodreadsConfig;
+
+try {
+  // Load the Contentful config from the .contentful.json
+  goodreadsConfig = require('./.goodreads');
+} catch (_) {
+  // empty
+}
+
+// Overwrite the Goodreads config with environment variables if they exist
+goodreadsConfig = {
+  developerKey: process.env.GOODREADS_KEY || goodreadsConfig.developerKey,
+};
+
+const { developerKey } = goodreadsConfig;
+
+if (!developerKey) {
+  throw new Error('Goodreads developerKey needs to be provided.');
+}
+
 const config = {
   siteMetadata: {
     title: `anti/pattern`,
@@ -33,21 +53,14 @@ const config = {
     {
       resolve: `gatsby-source-goodreads`,
       options: {
-        developerKey: process.env.GOODREADS_KEY,
+        developerKey,
         goodReadsUserId: `108030826`,
         userShelf: `currently-reading`,
       },
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    {
-      resolve: `gatsby-plugin-typescript`,
-      options: {
-        isTSX: true, // defaults to false
-        jsxPragma: `jsx`, // defaults to "React"
-        allExtensions: true, // defaults to false
-      },
-    },
+    `gatsby-plugin-typescript`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-react-helmet-canonical-urls`,

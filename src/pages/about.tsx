@@ -17,12 +17,12 @@ interface ProfilePictureData {
       fixed: FixedObject;
     };
   };
-  goodreadsShelf: {
+  goodreadsShelf?: {
     reviews: Book[];
   };
 }
 
-const AboutPage: React.FC = () => {
+const AboutPage: React.FunctionComponent = () => {
   const data: ProfilePictureData = useStaticQuery(graphql`
     query ProfilePictureQuery {
       profilePicture: file(
@@ -44,7 +44,7 @@ const AboutPage: React.FC = () => {
       }
     }
   `);
-  const { book } = data.goodreadsShelf.reviews[0];
+  const shelf = data.goodreadsShelf;
   return (
     <Layout>
       <SEO
@@ -74,17 +74,26 @@ const AboutPage: React.FC = () => {
           }}
           fixed={data.profilePicture.childImageSharp.fixed}
         />
-        I{`'`}m Alessia Bellisario, a software engineer based in NYC. I{`'`}m
-        currently reading{' '}
-        <a href={book.link} target="_blank" rel="noopener noreferrer">
-          {book.title}
-        </a>
-        .
+        I{`'`}m Alessia Bellisario, a software engineer based in NYC.
+        {shelf && (
+          <span>
+            {' '}
+            I{`'`}m currently reading{' '}
+            <a
+              href={shelf.reviews[0].book.link}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {shelf.reviews[0].book.title}
+            </a>
+            .
+          </span>
+        )}
       </p>
       <p>
         I work at{' '}
         <a
-          href="https://breather.com"
+          href="https://www.breather.com"
           target="_blank"
           rel="noopener noreferrer"
         >

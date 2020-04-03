@@ -16,16 +16,23 @@ interface LayoutData {
   };
 }
 
+declare global {
+  interface Window {
+    __onThemeChange: () => void;
+    __theme: string;
+  }
+}
+
 export const ThemeContext = React.createContext('light');
 
-const Layout: React.FC = ({ children }) => {
+const Layout: React.FunctionComponent = ({ children }) => {
   const [theme, setTheme] = React.useState('null');
 
   if (typeof document !== `undefined`) {
-    (window as any).__onThemeChange = () => setTheme((window as any).__theme);
+    window.__onThemeChange = () => setTheme(window.__theme);
 
     React.useEffect(() => {
-      setTheme((window as any).__theme);
+      setTheme(window.__theme);
     });
   }
 

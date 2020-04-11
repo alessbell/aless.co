@@ -5,21 +5,21 @@ import Layout from '../components/layout';
 import SEO from '../components/seo';
 import { Tag } from '../components/styles';
 
-interface FrontMatter {
+type FrontMatter = {
   title: string;
   spoiler: string;
   date: string;
   keywords: string[];
-}
+};
 
-interface Article {
+type Article = {
   fields: {
     slug: string;
   };
   frontmatter: FrontMatter;
-}
+};
 
-interface BlogPostData {
+type BlogPostData = {
   data: {
     mdx: {
       frontmatter: FrontMatter;
@@ -39,7 +39,7 @@ interface BlogPostData {
   pathContext: {
     slug?: string;
   };
-}
+};
 
 const BlogPostTemplate: React.FunctionComponent<BlogPostData> = ({
   data: {

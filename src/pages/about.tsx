@@ -4,15 +4,20 @@ import Img, { FixedObject } from 'gatsby-image';
 import SEO from '../components/seo';
 import Layout from '../components/layout';
 
-interface Book {
+type Book = {
   book: {
     link: string;
     title: string;
   };
-}
+};
 
-interface ProfilePictureData {
+type ProfilePictureData = {
   profilePicture: {
+    childImageSharp: {
+      fixed: FixedObject;
+    };
+  };
+  ogImage: {
     childImageSharp: {
       fixed: FixedObject;
     };
@@ -20,10 +25,14 @@ interface ProfilePictureData {
   goodreadsShelf?: {
     reviews: Book[];
   };
-}
+};
 
 const AboutPage: React.FunctionComponent = () => {
-  const data: ProfilePictureData = useStaticQuery(graphql`
+  const {
+    profilePicture,
+    ogImage,
+    goodreadsShelf,
+  }: ProfilePictureData = useStaticQuery(graphql`
     query ProfilePictureQuery {
       profilePicture: file(
         absolutePath: { regex: "/assets/alessiabellisario/" }
@@ -31,6 +40,13 @@ const AboutPage: React.FunctionComponent = () => {
         childImageSharp {
           fixed(height: 150, width: 150) {
             ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      ogImage: file(absolutePath: { regex: "/assets/about-twitter-card/" }) {
+        childImageSharp {
+          fixed(height: 630, width: 1200) {
+            src
           }
         }
       }
@@ -44,10 +60,10 @@ const AboutPage: React.FunctionComponent = () => {
       }
     }
   `);
-  const shelf = data.goodreadsShelf;
   return (
     <Layout>
       <SEO
+        ogImageProp={ogImage.childImageSharp.fixed.src}
         title="About"
         keywords={[
           `blog`,
@@ -72,19 +88,19 @@ const AboutPage: React.FunctionComponent = () => {
             marginRight: '1.5rem',
             marginTop: '0.25rem',
           }}
-          fixed={data.profilePicture.childImageSharp.fixed}
+          fixed={profilePicture.childImageSharp.fixed}
         />
         I{`'`}m Alessia Bellisario, a software engineer based in NYC.
-        {shelf && (
+        {goodreadsShelf && (
           <span>
             {' '}
             I{`'`}m currently reading{' '}
             <a
-              href={shelf.reviews[0].book.link}
+              href={goodreadsShelf.reviews[0].book.link}
               target="_blank"
               rel="noopener noreferrer"
             >
-              {shelf.reviews[0].book.title}
+              {goodreadsShelf.reviews[0].book.title}
             </a>
             .
           </span>

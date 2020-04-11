@@ -24,6 +24,17 @@ beforeEach(() => {
         },
       },
     },
+    ogImage: {
+      childImageSharp: {
+        fixed: {
+          base64: 'data:image/jpeg;base64,/9j/2wB/2wBDA/w/8/==',
+          width: 150,
+          height: 150,
+          src: '/static/12345/5b62b/alessiabellisario.jpg',
+          srcSet: '/static/12345/5b62b/alessiabellisario.jpg',
+        },
+      },
+    },
     goodreadsShelf: {
       reviews: [{ book }],
     },

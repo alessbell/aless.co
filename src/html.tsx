@@ -1,13 +1,13 @@
 import * as React from 'react';
 
-interface HTMLProps {
+type HTMLProps = {
   htmlAttributes: object;
   headComponents: [];
   bodyAttributes: object;
   preBodyComponents: [];
   body: string;
   postBodyComponents: [];
-}
+};
 
 const HTML: React.FunctionComponent<HTMLProps> = (props) => (
   <html {...props.htmlAttributes}>

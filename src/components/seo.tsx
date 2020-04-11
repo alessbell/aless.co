@@ -1,8 +1,9 @@
 import * as React from 'react';
 import { Helmet } from 'react-helmet';
+import { FixedObject } from 'gatsby-image';
 import { useStaticQuery, graphql } from 'gatsby';
 
-export interface SEOProps {
+export type SEOProps = {
   /** Description text */
   description?: string;
   /** Link for Og Image */
@@ -13,9 +14,9 @@ export interface SEOProps {
   keywords?: string[];
   /** Document title */
   title: string;
-}
+};
 
-interface SEOData {
+type SEOData = {
   site: {
     siteMetadata: {
       title: string;
@@ -26,12 +27,10 @@ interface SEOData {
   };
   ogImageDefault: {
     childImageSharp: {
-      fixed: {
-        src: string;
-      };
+      fixed: FixedObject;
     };
   };
-}
+};
 
 const SEO: React.FunctionComponent<SEOProps> = ({
   description,

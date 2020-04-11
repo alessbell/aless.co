@@ -31,17 +31,17 @@ const typography = new Typography({
     'div,h3,h4,h5,h6,small,figcaption,strong,p,ul,ol': {
       color: 'var(--textNormal)',
     },
-    'h1,h3': {
-      marginBottom: '0.25rem',
-    },
-    h2: {
+    'h1,h2,h3': {
       marginBottom: '0.5rem',
     },
     'h2,h4,h5,h6': {
       marginTop: '2.5rem',
     },
     'p,ul,ol': {
-      marginBottom: '1.5rem',
+      marginBottom: '1.25rem',
+    },
+    ul: {
+      listStyleType: 'circle',
     },
     strong: {
       fontStyle: 'bold',

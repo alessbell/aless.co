@@ -6,7 +6,7 @@ import Header from './header';
 import Toggle from './toggle';
 import Footer from './footer';
 
-interface LayoutData {
+type LayoutData = {
   site: {
     siteMetadata: {
       title: string;
@@ -14,7 +14,7 @@ interface LayoutData {
       repository: string;
     };
   };
-}
+};
 
 declare global {
   interface Window {

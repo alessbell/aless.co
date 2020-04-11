@@ -1,10 +1,10 @@
 declare module '*.png';
 declare module 'gatsby-plugin-mdx' {
   import * as React from 'react';
-  interface MDXRendererProps {
+  type MDXRendererProps = {
     scope?: object;
     components?: any;
-  }
+  };
   export class MDXRenderer extends React.Component<MDXRendererProps> {}
 }
 
@@ -38,9 +38,9 @@ declare module '@mdx-js/react' {
   export type Components = {
     [key in ComponentType]?: React.ComponentType<{ children: React.ReactNode }>;
   };
-  export interface MDXProviderProps {
+  export type MDXProviderProps = {
     children: React.ReactNode;
     components: Components;
-  }
+  };
   export class MDXProvider extends React.Component<MDXProviderProps> {}
 }

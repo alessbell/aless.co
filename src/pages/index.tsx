@@ -7,7 +7,7 @@ import Layout from '../components/layout';
 import SEO from '../components/seo';
 import { Tag, BlogLink } from '../components/styles';
 
-export interface Edge {
+export type Edge = {
   node: {
     frontmatter: {
       title: string;
@@ -20,16 +20,16 @@ export interface Edge {
     };
     id: string;
   };
-}
+};
 
-export interface BlogIndexProps {
+export type BlogIndexProps = {
   data: {
     allMdx: {
       edges: Edge[];
       group: { tag: string }[];
     };
   };
-}
+};
 
 const TagLink: React.FunctionComponent<{ tag: string; tags: string[] }> = ({
   tag,

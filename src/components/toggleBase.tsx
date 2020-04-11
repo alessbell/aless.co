@@ -28,7 +28,7 @@ function pointerCoord(
   return { x: 0, y: 0 };
 }
 
-interface ToggleProps {
+type ToggleProps = {
   checked: boolean;
   icons: { checked: JSX.Element; unchecked: JSX.Element };
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
@@ -38,12 +38,12 @@ interface ToggleProps {
   onFocus?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   className?: string;
   disabled?: boolean;
-}
+};
 
-interface ToggleState {
+type ToggleState = {
   checked: boolean;
   hasFocus: boolean;
-}
+};
 
 export default class Toggle extends React.PureComponent<
   ToggleProps,

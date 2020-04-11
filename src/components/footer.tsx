@@ -16,10 +16,10 @@ const Commit = styled.p`
   }
 `;
 
-export interface FooterProps {
+export type FooterProps = {
   commit: string;
   repository: string;
-}
+};
 
 const Anchor: React.FunctionComponent<AnchorProps> = ({
   link,

@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import Img, { FluidObject } from 'gatsby-image';
+import Img, { FluidObject, FixedObject } from 'gatsby-image';
 import SEO from '../components/seo';
 import Layout from '../components/layout';
 
-interface KeyboardPictureData {
+type KeyboardPictureData = {
   keyboard: {
     childImageSharp: {
       fluid: FluidObject;
@@ -15,12 +15,27 @@ interface KeyboardPictureData {
       fluid: FluidObject;
     };
   };
-}
+  vscode: {
+    childImageSharp: {
+      fluid: FluidObject;
+    };
+  };
+  ogImage: {
+    childImageSharp: {
+      fixed: FixedObject;
+    };
+  };
+};
 
 const UsesPage: React.FunctionComponent = () => {
-  const data: KeyboardPictureData = useStaticQuery(graphql`
+  const {
+    desk,
+    vscode,
+    keyboard,
+    ogImage,
+  }: KeyboardPictureData = useStaticQuery(graphql`
     query keyboardQuery {
-      keyboard: file(absolutePath: { regex: "/assets/keyboard2/" }) {
+      keyboard: file(absolutePath: { regex: "/assets/keyboard/" }) {
         childImageSharp {
           fluid(maxWidth: 640) {
             ...GatsbyImageSharpFluid
@@ -34,40 +49,64 @@ const UsesPage: React.FunctionComponent = () => {
           }
         }
       }
+      vscode: file(absolutePath: { regex: "/assets/vscode/" }) {
+        childImageSharp {
+          fluid(maxWidth: 640) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      ogImage: file(
+        absolutePath: { regex: "/assets/things-i-use-twitter-card/" }
+      ) {
+        childImageSharp {
+          fixed(height: 630, width: 1200) {
+            src
+          }
+        }
+      }
     }
   `);
+
+  console.log(ogImage);
 
   return (
     <Layout>
       <SEO
+        ogImageProp={ogImage.childImageSharp.fixed.src}
         title="Things I Use"
         keywords={[`setup`, `gear`, `mechanical keyboards`]}
       />
       <h2>Things I Use</h2>
       <p>
         I thought I{"'"}d write down a few trinkets and more useful tools I{"'"}
-        m a fan of and use in my day-to-day.
+        m a fan of and use in my day-to-day. 🌻
       </p>
-      <h3>Hardware and Desk</h3>
+      <h3>🖥 Hardware and Desk 🖨</h3>
       <p>
-        At work I use a <b>late 2016 15{`"`} MacBook Pro</b> with Intel Core i7
-        processor and a 250GB SSD running Catalina. The keyboard went pretty
+        At work I use a <b>late 2016 15{`"`} MacBook Pro</b> with an Intel Core
+        i7 processor and 250GB SSD running Catalina. The keyboard went pretty
         quickly, so I usually travel with one of my more compact keyboards.
       </p>
       <p>
-        For my personal machine, I use a <b>2018 Pixelbook</b> running Crostini
-        on the dev channel which allows me to install Linux apps. To be honest,
-        it{"'"}s been pretty underwhelming and often downright painful: running
-        an OS in beta is not for the faint of heart. Pros: it{"'"}s super light,
-        the battery is great and the touchscreen is interesting, though I use it
-        far less than I thought I would. I{"'"}ll probably swap it for a
-        ThinkPad soon.
+        For my personal machine, I use a refurbished silver{' '}
+        <b>late 2019 16{`"`} MacBook Pro</b> with a 2.3GHz 8-core Intel Core i9
+        processor and 1TB SSD. The keyboard is sturdy, a welcome change from the
+        late 2016 model.
       </p>
       <p>
-        <Img fluid={data.desk.childImageSharp.fluid} />
+        <Img fluid={desk.childImageSharp.fluid} />
       </p>
       <p>
-        I use a Jarvis motorized sit/stand desk with{' '}
+        I use a{' '}
+        <a
+          href="https://www.fully.com/standing-desks/jarvis.html"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Jarvis
+        </a>{' '}
+        motorized sit/stand desk with{' '}
         <a
           href="https://www.amazon.com/gp/product/B00V3TO9EK/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1"
           target="_blank"
@@ -83,7 +122,7 @@ const UsesPage: React.FunctionComponent = () => {
         >
           Massdrop Flex Task Chair
         </a>{' '}
-        when sitting. I have a Sonos speaker, this{' '}
+        when sitting. I use this{' '}
         <a
           href="https://www.amazon.com/Updated-Version-Vertical-OMOTON-Adjustable/dp/B078W3QSZY"
           target="_blank"
@@ -91,7 +130,7 @@ const UsesPage: React.FunctionComponent = () => {
         >
           OMOTON double laptop stand
         </a>{' '}
-        and this{' '}
+        and a{' '}
         <a
           href="https://www.amazon.com/gp/product/B07CZPV8DF/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1"
           target="_blank"
@@ -105,7 +144,7 @@ const UsesPage: React.FunctionComponent = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          webcam
+          Logitech C920S HD Pro Webcam
         </a>
         , keyboards, drawing machines, phones, etc.) to my MacBook with a single
         Thunderbolt cable. I use the{' '}
@@ -119,10 +158,22 @@ const UsesPage: React.FunctionComponent = () => {
         and don{"'"}t think I{"'"}ll ever use another mouse again.
       </p>
       <p>
-        <Img fluid={data.keyboard.childImageSharp.fluid} />
+        Finally, I use a{' '}
+        <a
+          href="https://www.amazon.com/gp/product/B00L5I8RII/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          US Art Supply green self-healing cutting mat
+        </a>
+        . It{`'`}s taken its fair share of scuffs with the soldering I do, and
+        has kept the desk in reasonably good shape.
       </p>
       <p>
-        What to write about this quirky little keyboard? I built it (them?) in{' '}
+        <Img fluid={keyboard.childImageSharp.fluid} />
+      </p>
+      <p>
+        What to write about this quirky little keyboard? I built it in{' '}
         <a
           href="https://twitter.com/alessbell/status/1122223104451928064"
           target="_blank"
@@ -159,7 +210,7 @@ const UsesPage: React.FunctionComponent = () => {
         endeared it to me more. It{"'"}s a <i>lot</i> of fun to use.
       </p>
       <p>
-        For monitors, I use an{' '}
+        My lancscape monitor is an{' '}
         <a
           href="https://www.amazon.com/gp/product/B078GVTD9N/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1"
           target="_blank"
@@ -167,7 +218,7 @@ const UsesPage: React.FunctionComponent = () => {
         >
           LG 27{`"`} 4K
         </a>{' '}
-        monitor and a{' '}
+        and the other is a{' '}
         <a
           href="https://www.amazon.com/gp/product/B00PC9HFNY/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1"
           target="_blank"
@@ -175,13 +226,13 @@ const UsesPage: React.FunctionComponent = () => {
         >
           Dell 24{`"`} Ultra HD 4K
         </a>
-        . They{"'"}re rigged to the desk with a{' '}
+        . They{"'"}re rigged to the desk with an{' '}
         <a
           href="https://www.amazon.com/gp/product/B00MIBN71I/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1"
           target="_blank"
           rel="noopener noreferrer"
         >
-          dual monitor stand
+          Amazon dual monitor stand
         </a>{' '}
         and both have{' '}
         <a
@@ -193,8 +244,97 @@ const UsesPage: React.FunctionComponent = () => {
         </a>{' '}
         on the back, which I swear by.
       </p>
-      <h3>Software, Drawing Machines, The Works...</h3>
-      <p>To be continued!</p>
+      <h3>💾 Software 🌸</h3>
+      <p>
+        I spend most of my (computer-)days in a few apps, both native Mac + web:
+      </p>
+      <ul>
+        <li>
+          <a
+            href="https://code.visualstudio.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Microsoft{`'`}s Visual Studio Code
+          </a>
+          : I use Sarah Drasner{`'`}s{' '}
+          <a
+            href="https://github.com/sdras/night-owl-vscode-theme"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Night Owl
+          </a>{' '}
+          theme, combined with{' '}
+          <a
+            href="https://www.typography.com/fonts/operator/styles"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Operator Mono
+          </a>{' '}
+          from Hoefler&Co. My editor settings are in this{' '}
+          <a
+            href="https://gist.github.com/alessbell/448846c679de7134cf0b67e28e553e25#file-settings-json"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            public gist
+          </a>
+          .
+          <Img fluid={vscode.childImageSharp.fluid} />
+        </li>
+        <li>
+          <a
+            href="https://www.iterm2.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            iTerm 2
+          </a>{' '}
+          +{' '}
+          <a
+            href="https://fishshell.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            fish shell
+          </a>{' '}
+          💗🐟
+        </li>
+        <li>
+          <a
+            href="https://www.mozilla.org/en-US/firefox/channel/desktop/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Firefox Nightly 🦊
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.fastmail.com/signup/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Fastmail 💌
+          </a>
+        </li>
+        <li>
+          <a href="https://insomnia.rest/">Insomnia</a>, a REST client for MacOS
+        </li>
+        <li>
+          <a
+            href="https://kapeli.com/dash"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Dash
+          </a>
+          , a Mac app that gives you offline access to 200+ API documentation
+          sets
+        </li>
+      </ul>
     </Layout>
   );
 };

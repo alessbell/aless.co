@@ -24,14 +24,14 @@ beforeEach(() => {
     vscode: {
       childImageSharp: {
         fluid: {
-          src: '/static/12345/5b62b/desk.jpg',
+          src: '/static/12345/5b62b/vscode.jpg',
         },
       },
     },
     ogImage: {
       childImageSharp: {
         fixed: {
-          src: '/static/12345/5b62b/desk.jpg',
+          src: '/static/12345/5b62b/ogimage.jpg',
         },
       },
     },

@@ -10,7 +10,5 @@
     "noFallthroughCasesInSwitch": true,
     "allowSyntheticDefaultImports": true
   },
-  "include": ["./src/**/*"],
-  "exclude": ["node_modules", "public", ".cache"],
-  "esModuleInterop": false,
+  "include": ["./src/**/*"]
 }

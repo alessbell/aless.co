@@ -34,11 +34,9 @@ const AboutPage: React.FunctionComponent = () => {
     goodreadsShelf,
   }: ProfilePictureData = useStaticQuery(graphql`
     query ProfilePictureQuery {
-      profilePicture: file(
-        absolutePath: { regex: "/assets/alessiabellisario/" }
-      ) {
+      profilePicture: file(absolutePath: { regex: "/assets/headshot/" }) {
         childImageSharp {
-          fixed(height: 150, width: 150) {
+          fixed(height: 200, width: 200) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -76,7 +74,7 @@ const AboutPage: React.FunctionComponent = () => {
         ]}
       />
       <h2>
-        Hi there{' '}
+        Hey there{' '}
         <span role="img" aria-label="waving hand">
           👋
         </span>
@@ -107,15 +105,12 @@ const AboutPage: React.FunctionComponent = () => {
         )}
       </p>
       <p>
-        I work at{' '}
-        <a
-          href="https://www.breather.com"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Breather
+        {/* I work on the{' '}
+        <a href="https://venmo.com/" target="_blank" rel="noopener noreferrer">
+          Venmo
         </a>{' '}
-        as a Senior Front End Developer. I{`'`}m also an alumna of the{' '}
+        team at PayPal as a Senior Front End Engineer. */}
+        I{`'`}m an alumna of the{' '}
         <a
           href="https://recurse.com/"
           target="_blank"

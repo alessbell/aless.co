@@ -89,7 +89,7 @@ const Layout: React.FunctionComponent = ({ children }) => {
               -webkit-font-smoothing: antialiased;
               --bg: #272727;
               --textShadow: 5px 5px 1px rgba(0, 0, 0, 0.15);
-              --blue: #a4a4fd;
+              --blue: #ababff;
               --activeTagText: yellow;
               --activeTagBg: #141e8475;
               --inactiveTagBg: #1aabff33;
@@ -102,7 +102,7 @@ const Layout: React.FunctionComponent = ({ children }) => {
               --titleSkewColor: #f8a51a2e;
               --textNormal: rgba(255, 255, 255, 0.88);
               --vsCodeBoxShadowPink: #ff000042;
-              --vsCodeBoxShadowBlue: blue;
+              --vsCodeBoxShadowBlue: #004cff59;
             }
             details,
             summary {
@@ -186,7 +186,7 @@ const Layout: React.FunctionComponent = ({ children }) => {
               margin-left: -1.3125rem;
               margin-right: -1.3125rem;
               border-radius: 0 !important;
-              box-shadow: 1px 0 10px var(--vsCodeBoxShadowBlue),
+              box-shadow: 1px 0 15px var(--vsCodeBoxShadowBlue),
                 1px 0 4px var(--vsCodeBoxShadowPink),
                 -1px 0 4px var(--vsCodeBoxShadowPink),
                 1px 0 4px var(--vsCodeBoxShadowPink),
@@ -217,6 +217,10 @@ const Layout: React.FunctionComponent = ({ children }) => {
             .youtube-mdx-embed,
             .twitter-tweet-mdx-embed {
               margin-bottom: 1.5rem;
+            }
+
+            .post-content > h3 {
+              color: var(--blue);
             }
 
             @media (hover: hover) {

@@ -81,6 +81,8 @@ const Layout: React.FunctionComponent = ({ children }) => {
               --mixBlendMode2: multiply;
               --titleSkewColor: #ffc461;
               --textNormal: #222;
+              --vsCodeBoxShadowPink: #8599001c;
+              --vsCodeBoxShadowBlue: #268bd242;
             }
 
             body.dark {
@@ -99,6 +101,8 @@ const Layout: React.FunctionComponent = ({ children }) => {
               --mixBlendMode2: screen;
               --titleSkewColor: #f8a51a2e;
               --textNormal: rgba(255, 255, 255, 0.88);
+              --vsCodeBoxShadowPink: #ff000042;
+              --vsCodeBoxShadowBlue: blue;
             }
             details,
             summary {
@@ -182,6 +186,13 @@ const Layout: React.FunctionComponent = ({ children }) => {
               margin-left: -1.3125rem;
               margin-right: -1.3125rem;
               border-radius: 0 !important;
+              box-shadow: 1px 0 10px var(--vsCodeBoxShadowBlue),
+                1px 0 4px var(--vsCodeBoxShadowPink),
+                -1px 0 4px var(--vsCodeBoxShadowPink),
+                1px 0 4px var(--vsCodeBoxShadowPink),
+                -1px 0 4px var(--vsCodeBoxShadowPink), 1px 0 4px #fff,
+                -1px 0 4px var(--vsCodeBoxShadowPink),
+                1px 0 4px var(--vsCodeBoxShadowPink);
 
               @media (min-width: 44em) {
                 border-radius: 8px !important;

@@ -53,7 +53,7 @@ The next step was to annotate my Rust function with `#[wasm_bindgen]`, compile m
 
 Not so fast:
 
-```
+```rust
 Error: operation not supported on wasm yet
 ```
 

@@ -40,3 +40,17 @@
   font-weight: normal;
   font-style: italic;
 }
+@font-face {
+  font-family: 'League Mono';
+  src: url(../fonts/LeagueMono-Regular.woff) format('woff'),
+    url(../fonts/LeagueMono-Regular.woff2) format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'League Mono';
+  src: url(../fonts/LeagueMono-Bold.woff) format('woff'),
+    url(../fonts/LeagueMono-Bold.woff2) format('woff2');
+  font-weight: bold;
+  font-style: normal;
+}

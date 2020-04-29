@@ -115,6 +115,22 @@ const config = {
           },
           {
             resolve: `gatsby-remark-vscode`,
+            options: {
+              theme: {
+                default: 'Gloom',
+                parentSelector: {
+                  '.dark': 'Gloom',
+                  '.light': 'Solarized Light',
+                },
+                media: [
+                  {
+                    match: '(prefers-color-scheme: dark)',
+                    theme: 'Gloom',
+                  },
+                ],
+              },
+              extensions: ['gloom'],
+            },
           },
         ],
       },

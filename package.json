@@ -46,6 +46,7 @@
     "gatsby-transformer-sharp": "2.4.7",
     "gl-react": "4.0.1",
     "gl-react-dom": "4.0.1",
+    "gloom": "github:agirton/gloom",
     "query-string": "6.12.1",
     "raf": "3.4.1",
     "react": "16.13.1",

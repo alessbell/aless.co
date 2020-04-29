@@ -55,15 +55,15 @@ const typography = new Typography({
     },
     a: {
       color: 'var(--blue)',
-      textDecoration: 'hotpink underline wavy',
-      WebkitTextDecoration: 'hotpink underline wavy',
+      textDecoration: '#FF6F9F underline wavy',
+      WebkitTextDecoration: '#FF6F9F underline wavy',
       textUnderlinePosition: 'under',
     },
     footer: {
       fontSize: '16px',
     },
     'pre,code': {
-      fontFamily: `${fonts.GTPressuraRegular}, monospace`,
+      fontFamily: `League Mono, monospace`,
     },
     'th:first-child, td:first-child': {
       paddingLeft: '1rem',

@@ -6,6 +6,7 @@ export const fonts = {
   GTPressuraRegular: 'GT Pressura Mono Regular',
   GTPressuraBold: 'GT Pressura Mono Bold',
   UntitledRegular: 'Untitled Sans',
+  code: 'League Mono',
 };
 
 const typography = new Typography({
@@ -55,21 +56,24 @@ const typography = new Typography({
     },
     a: {
       color: 'var(--blue)',
-      textDecoration: 'hotpink underline wavy',
-      WebkitTextDecoration: 'hotpink underline wavy',
+      textDecoration: '#FF7EDB underline wavy',
+      WebkitTextDecoration: '#FF7EDB underline wavy',
       textUnderlinePosition: 'under',
     },
     footer: {
       fontSize: '16px',
     },
     'pre,code': {
-      fontFamily: `${fonts.GTPressuraRegular}, monospace`,
+      fontFamily: `${fonts.code}, monospace`,
     },
     'th:first-child, td:first-child': {
       paddingLeft: '1rem',
     },
     'th:last-child, td:last-child': {
       paddingRight: '1rem',
+    },
+    '.gatsby-code-title': {
+      fontFamily: `${fonts.code}, monospace`,
     },
   }),
 });

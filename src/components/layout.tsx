@@ -81,13 +81,16 @@ const Layout: React.FunctionComponent = ({ children }) => {
               --mixBlendMode2: multiply;
               --titleSkewColor: #ffc461;
               --textNormal: #222;
+              --vsCodeBoxShadowColor1: #00189914;
+              --vsCodeBoxShadowColor2: #0098dd47;
+              --codeTitleBg: hsl(220, 7.5%, 15.7%);
             }
 
             body.dark {
               -webkit-font-smoothing: antialiased;
               --bg: #272727;
               --textShadow: 5px 5px 1px rgba(0, 0, 0, 0.15);
-              --blue: #a4a4fd;
+              --blue: #ababff;
               --activeTagText: yellow;
               --activeTagBg: #141e8475;
               --inactiveTagBg: #1aabff33;
@@ -99,6 +102,9 @@ const Layout: React.FunctionComponent = ({ children }) => {
               --mixBlendMode2: screen;
               --titleSkewColor: #f8a51a2e;
               --textNormal: rgba(255, 255, 255, 0.88);
+              --vsCodeBoxShadowColor1: #ff000042;
+              --vsCodeBoxShadowColor2: #004cff59;
+              --codeTitleBg: black;
             }
             details,
             summary {
@@ -182,11 +188,25 @@ const Layout: React.FunctionComponent = ({ children }) => {
               margin-left: -1.3125rem;
               margin-right: -1.3125rem;
               border-radius: 0 !important;
+              box-shadow: 1px 0 10px var(--vsCodeBoxShadowColor2),
+                1px 0 3px var(--vsCodeBoxShadowColor1),
+                -1px 0 3px var(--vsCodeBoxShadowColor1),
+                1px 0 3px var(--vsCodeBoxShadowColor1),
+                -1px 0 3px var(--vsCodeBoxShadowColor1), 1px 0 3px #fff,
+                -1px 0 3px var(--vsCodeBoxShadowColor1),
+                1px 0 3px var(--vsCodeBoxShadowColor1);
 
               @media (min-width: 44em) {
                 border-radius: 8px !important;
               }
             }
+            .gatsby-code-title + .grvsc-container {
+              @media (min-width: 44em) {
+                border-top-right-radius: 0 !important;
+                border-top-left-radius: 0 !important;
+              }
+            }
+
             .grvsc-container > code {
               border-radius: none;
               line-height: unset;
@@ -208,6 +228,10 @@ const Layout: React.FunctionComponent = ({ children }) => {
               margin-bottom: 1.5rem;
             }
 
+            .post-content > h3 {
+              color: var(--blue);
+            }
+
             @media (hover: hover) {
               a:hover {
                 color: black;
@@ -225,6 +249,44 @@ const Layout: React.FunctionComponent = ({ children }) => {
               }
             }
             transition: 'color 1s ease-out, background 1s ease-out';
+
+            .gatsby-code-title {
+              font-size: 0.85rem;
+              padding-top: var(
+                --grvsc-padding-top,
+                var(--grvsc-padding-v, 0.75rem)
+              );
+              padding-bottom: var(
+                --grvsc-padding-bottom,
+                var(--grvsc-padding-v, 0.75rem)
+              );
+              padding-left: var(
+                --grvsc-padding-left,
+                var(--grvsc-padding-h, 1.5rem)
+              );
+              padding-right: var(
+                --grvsc-padding-right,
+                var(--grvsc-padding-h, 1.5rem)
+              );
+              margin-left: -1.3125rem;
+              margin-right: -1.3125rem;
+
+              background-color: var(--codeTitleBg);
+              color: white;
+              z-index: 0;
+              box-shadow: 1px 0 10px var(--vsCodeBoxShadowColor2),
+                1px 0 3px var(--vsCodeBoxShadowColor1),
+                -1px 0 3px var(--vsCodeBoxShadowColor1),
+                1px 0 3px var(--vsCodeBoxShadowColor1),
+                -1px 0 3px var(--vsCodeBoxShadowColor1), 1px 0 3px #fff,
+                -1px 0 3px var(--vsCodeBoxShadowColor1),
+                1px 0 3px var(--vsCodeBoxShadowColor1);
+
+              @media (min-width: 44em) {
+                border-top-left-radius: 8px;
+                border-top-right-radius: 8px;
+              }
+            }
           `}
         />
         <div style={{ paddingTop: '2.5rem', paddingBottom: '2.5rem' }}>

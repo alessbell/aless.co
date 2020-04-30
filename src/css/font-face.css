@@ -4,6 +4,7 @@
     url('../fonts/GT-Pressura-Mono-Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: 'GT Pressura Mono Bold';
@@ -11,6 +12,7 @@
     url('../fonts/GT-Pressura-Mono-Bold.woff') format('woff');
   font-weight: bold;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: 'Untitled Sans';
@@ -18,6 +20,7 @@
     url(../fonts/UntitledSansWeb-Regular.woff2) format('woff2');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: 'Untitled Sans';
@@ -25,6 +28,7 @@
     url(../fonts/UntitledSansWeb-Medium.woff2) format('woff2');
   font-weight: bold;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: 'Untitled Sans';
@@ -32,6 +36,7 @@
     url(../fonts/UntitledSansWeb-MediumItalic.woff2) format('woff2');
   font-weight: bold;
   font-style: italic;
+  font-display: swap;
 }
 @font-face {
   font-family: 'Untitled Sans';
@@ -39,4 +44,21 @@
     url(../fonts/UntitledSansWeb-RegularItalic.woff2) format('woff2');
   font-weight: normal;
   font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'League Mono';
+  src: url(../fonts/LeagueMono-Regular.woff) format('woff'),
+    url(../fonts/LeagueMono-Regular.woff2) format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'League Mono';
+  src: url(../fonts/LeagueMono-Bold.woff) format('woff'),
+    url(../fonts/LeagueMono-Bold.woff2) format('woff2');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
 }

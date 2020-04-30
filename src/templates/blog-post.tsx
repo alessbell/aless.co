@@ -75,7 +75,11 @@ const BlogPostTemplate: React.FunctionComponent<BlogPostData> = ({
         <Tag key={i}>{keyword}</Tag>
       ))}
     </div>
-    {body && <MDXRenderer>{body}</MDXRenderer>}
+    {body && (
+      <div className="post-content">
+        <MDXRenderer>{body}</MDXRenderer>
+      </div>
+    )}
     <hr />
     <ul
       style={{

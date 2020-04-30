@@ -113,8 +113,25 @@ const config = {
               target: `_blank`,
             },
           },
+          `gatsby-remark-code-titles`,
           {
             resolve: `gatsby-remark-vscode`,
+            options: {
+              theme: {
+                default: `Synthwave '84`,
+                parentSelector: {
+                  '.dark': `Synthwave '84`,
+                  '.light': `Bluloco Light`,
+                },
+                media: [
+                  {
+                    match: '(prefers-color-scheme: dark)',
+                    theme: `Synthwave '84`,
+                  },
+                ],
+              },
+              extensions: [`synthwave-vscode`, `theme-bluloco-light`],
+            },
           },
         ],
       },

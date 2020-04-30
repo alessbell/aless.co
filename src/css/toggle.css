@@ -35,7 +35,7 @@
   height: 24px;
   padding: 0;
   border-radius: 30px;
-  background-color: hsl(220, 6.2%, 28.4%);
+  background-color: var(--codeTitleBg);
   transition: all 0.2s ease;
 }
 

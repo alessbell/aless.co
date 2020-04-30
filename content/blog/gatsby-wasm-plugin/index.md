@@ -67,7 +67,7 @@ The Rust and WebAssembly book has a helpful section on how to add Wasm support t
 
 Since I can't perform I/O from my Rust-generated Wasm, I'd have to pass in the font as a `Uint8Array` and return a `Uint8Array` buffer of rendered text. The Rust API I settled on looks like this:
 
-```rust
+```rust:title=src/lib.rs
 #[wasm_bindgen]
 pub fn generate_text(
     title: &str,

@@ -44,9 +44,9 @@ I figured automating the release part would be easy—_surely there's already an
 
 Delightfully, both steps turned out to be trivial to implement. I found off-the-shelf actions for both: [`xu-cheng/latex-action`](https://github.com/xu-cheng/latex-action) for compiling my LaTeX to PDF and [`softprops/action-gh-release`](https://github.com/softprops/action-gh-release) for creating the GitHub release with the compiled PDF from the previous step attached as an asset.
 
-My first `.github/workflows/main.yml` looked like this:
+My first workflow looked like this:
 
-```yaml
+```yaml:title=.github/workflows/main.yml
 name: Publish new release of resume
 on:
   push:
@@ -82,9 +82,8 @@ Luckily, such an event exists: [`repository_dispatch`](https://developer.github.
 
 This is the [whole bash script](https://github.com/alessbell/resume/blob/master/ping-repo/entrypoint.sh) from `alessbell/resume/ping-repo`:
 
-```bash
+```bash:title=entrypoint.sh
 #!/bin/bash
-
 main() {
   curl -XPOST -H "Accept: application/vnd.github.everest-preview+json" \
   -H "Content-Type: application/json" \
@@ -98,7 +97,7 @@ main
 
 There were two small caveats here. **First**, because this POST request is being dispatched for a repository other than the one from the action's execution context, I needed a [personal access token](https://help.github.com/en/articles/creating-a-personal-access-token-for-the-command-line) with `repository` scope set as a [secret on the repository](https://help.github.com/en/articles/virtual-environments-for-github-actions#creating-and-using-secrets-encrypted-variables). I stored my secret as `PA_TOKEN` and passed it in the way I had the others:
 
-```yaml
+```yaml:title=.github/workflows/main.yml
 - name: Pings repo
   uses: ./ping-repo
   env:
@@ -112,7 +111,7 @@ There were two small caveats here. **First**, because this POST request is being
 
 This final step felt like a stretch goal, but it proved to be just enough work for a train ride from Rhode Island to NYC. The first part involves fetching the latest version of `alessbell/resume`, and GitHub's API has a dedicated endpoint for retrieving information about a repository's latest release:
 
-```bash
+```bash:title=alessbell/commit-resume/entrypoint.sh
 RELEASES_URL=https://api.github.com/repos/alessbell/resume/releases/latest
 
 RES=$(curl -sSL -H "${AUTH_HEADER}" -H "${HEADER}" --user "${GITHUB_ACTOR}" -X GET ${RELEASES_URL})

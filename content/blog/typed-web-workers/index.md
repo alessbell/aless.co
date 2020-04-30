@@ -31,9 +31,7 @@ I was working on a Gatsby site and a quick search revealed, indeed, **there's a 
 
 The plugin [docs](https://github.com/universse/gatsby-plugin-workerize-loader#gatsby-plugin-workerize-loader) demonstrate how to write a worker file with the expected suffix `.worker.js` in which you export your async function(s):
 
-```javascript
-// computeData.worker.js
-
+```js:title=computeData.worker.js
 export async function generateSeries(data) {
   const series = [];
   for (const [key, value] of Object.entries(data)) {
@@ -45,9 +43,7 @@ export async function generateSeries(data) {
 
 Then, in another file—something the docs refer to as a "source file"—you can import and instantiate the Web Worker. (They only work in the browser, so in a Gatsby project you have to check that the window object is defined.)
 
-```typescript
-// computeDataWorker.ts
-
+```ts:title=computeDataWorker.ts
 import DataWorker from './computeData.worker.js';
 const dataWorker = typeof window === 'object' && new DataWorker();
 export default dataWorker;
@@ -61,9 +57,7 @@ At this point, I knew I'd have to add some types for the functions my worker is 
 
 Put it all together and you've got:
 
-```typescript
-// computeData.worker.d.ts
-
+```ts:title=computeData.worker.d.ts
 declare class ComputeDataWebWorker extends Worker {
   constructor();
 

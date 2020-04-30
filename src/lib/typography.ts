@@ -6,6 +6,7 @@ export const fonts = {
   GTPressuraRegular: 'GT Pressura Mono Regular',
   GTPressuraBold: 'GT Pressura Mono Bold',
   UntitledRegular: 'Untitled Sans',
+  code: 'League Mono',
 };
 
 const typography = new Typography({
@@ -63,7 +64,7 @@ const typography = new Typography({
       fontSize: '16px',
     },
     'pre,code': {
-      fontFamily: `League Mono, monospace`,
+      fontFamily: `${fonts.code}, monospace`,
     },
     'th:first-child, td:first-child': {
       paddingLeft: '1rem',

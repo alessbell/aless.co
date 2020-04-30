@@ -114,6 +114,12 @@ const config = {
             },
           },
           {
+            resolve: `gatsby-remark-code-titles`,
+            options: {
+              className: `gatsby-code-title`,
+            },
+          },
+          {
             resolve: `gatsby-remark-vscode`,
             options: {
               theme: {

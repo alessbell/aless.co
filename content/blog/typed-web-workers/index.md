@@ -1,6 +1,6 @@
 ---
 title: Typed Web Workers
-date: '2020-04-30T19:09:59.546Z'
+date: '2020-04-30T15:29:51.546Z'
 spoiler: Declaring TypeScript types for Web Workers in a Gatsby app
 keywords: ['programming']
 ---

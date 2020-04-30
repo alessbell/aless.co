@@ -72,6 +72,9 @@ const typography = new Typography({
     'th:last-child, td:last-child': {
       paddingRight: '1rem',
     },
+    '.gatsby-code-title': {
+      fontFamily: `${fonts.code}, monospace`,
+    },
   }),
 });
 

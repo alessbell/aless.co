@@ -2,7 +2,6 @@ import * as React from 'react';
 import { Global, css } from '@emotion/core';
 import { useStaticQuery, graphql } from 'gatsby';
 import { H1, Link, LeftBar, RightBar, TopBar, BottomBar } from './styles';
-import { fonts } from '../lib/typography';
 import Header from './header';
 import Toggle from './toggle';
 import Footer from './footer';
@@ -271,7 +270,6 @@ const Layout: React.FunctionComponent = ({ children }) => {
               );
               margin-left: -1.3125rem;
               margin-right: -1.3125rem;
-              font-family: ${fonts.code}, monospace;
 
               background-color: var(--codeTitleBg);
               color: white;
@@ -284,8 +282,10 @@ const Layout: React.FunctionComponent = ({ children }) => {
                 -1px 0 3px var(--vsCodeBoxShadowColor1),
                 1px 0 3px var(--vsCodeBoxShadowColor1);
 
-              border-top-left-radius: 8px;
-              border-top-right-radius: 8px;
+              @media (min-width: 44em) {
+                border-top-left-radius: 8px;
+                border-top-right-radius: 8px;
+              }
             }
           `}
         />

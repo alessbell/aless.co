@@ -113,12 +113,7 @@ const config = {
               target: `_blank`,
             },
           },
-          {
-            resolve: `gatsby-remark-code-titles`,
-            options: {
-              className: `gatsby-code-title`,
-            },
-          },
+          `gatsby-remark-code-titles`,
           {
             resolve: `gatsby-remark-vscode`,
             options: {

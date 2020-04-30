@@ -1,8 +1,8 @@
 import styled from '@emotion/styled';
 import { Link as BaseLink } from 'gatsby';
 
-const BORDER_WIDTH = '6px';
-export const BORDER_COLOR = '#ff2121';
+const BORDER_WIDTH = '5px';
+export const BORDER_COLOR = '#FE4450';
 
 const BaseBar = styled.div`
   background: ${BORDER_COLOR};
@@ -73,7 +73,7 @@ export const Tag = styled.code<{ active?: boolean; link?: boolean }>`
   line-height: initial;
   white-space: nowrap;
 
-  box-shadow: ${({ active }) => active && '0px 0px 1px 1px hotpink'};
+  box-shadow: ${({ active }) => active && '0px 0px 1px 1px #FF7EDB'};
   color: ${({ active }) => (active ? 'var(--activeTagText)' : 'var(--blue)')};
 
   @media (hover: hover) {

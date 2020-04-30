@@ -55,8 +55,8 @@ const typography = new Typography({
     },
     a: {
       color: 'var(--blue)',
-      textDecoration: '#FF6F9F underline wavy',
-      WebkitTextDecoration: '#FF6F9F underline wavy',
+      textDecoration: '#FF7EDB underline wavy',
+      WebkitTextDecoration: '#FF7EDB underline wavy',
       textUnderlinePosition: 'under',
     },
     footer: {

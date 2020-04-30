@@ -110,7 +110,7 @@ const AboutPage: React.FunctionComponent = () => {
           Venmo
         </a>{' '}
         team at PayPal as a Senior Front End Engineer. */}
-        I{`'`}m an alumna of the{' '}
+        In April 2019 I attended the{' '}
         <a
           href="https://recurse.com/"
           target="_blank"

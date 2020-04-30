@@ -117,19 +117,19 @@ const config = {
             resolve: `gatsby-remark-vscode`,
             options: {
               theme: {
-                default: 'Gloom',
+                default: `Synthwave '84`,
                 parentSelector: {
-                  '.dark': 'Gloom',
-                  '.light': 'Solarized Light',
+                  '.dark': `Synthwave '84`,
+                  '.light': `Bluloco Light`,
                 },
                 media: [
                   {
                     match: '(prefers-color-scheme: dark)',
-                    theme: 'Gloom',
+                    theme: `Synthwave '84`,
                   },
                 ],
               },
-              extensions: ['gloom'],
+              extensions: [`synthwave-vscode`, `theme-bluloco-light`],
             },
           },
         ],

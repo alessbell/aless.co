@@ -68,7 +68,7 @@ declare class ComputeDataWebWorker extends Worker {
   constructor();
 
   generateSeries(data: {
-    [x: string]: number;
+    [key: string]: number;
   }): Promise<{ name: AnalysisYears; data: number[] }[]>;
 
   sumDailyTotals(

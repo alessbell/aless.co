@@ -117,8 +117,8 @@ const AboutPage: React.FunctionComponent = () => {
           rel="noopener noreferrer"
         >
           Recurse Center
-        </a>
-        . I{`'`}m always happy to chat about RC with anyone considering
+        </a>{' '}
+        - I{`'`}m always happy to chat about RC with anyone considering
         applying.
       </p>
       <p>

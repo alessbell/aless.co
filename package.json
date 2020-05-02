@@ -3,7 +3,7 @@
   "description": "alessia bellisario's blog",
   "version": "1.0.0",
   "engines": {
-    "node": "13.13"
+    "node": "13.14"
   },
   "author": "Alessia Bellisario <github@bellisar.io>",
   "repository": {

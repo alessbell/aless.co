@@ -105,12 +105,12 @@ const AboutPage: React.FunctionComponent = () => {
         )}
       </p>
       <p>
-        {/* I work on the{' '}
+        I work on the{' '}
         <a href="https://venmo.com/" target="_blank" rel="noopener noreferrer">
           Venmo
         </a>{' '}
-        team at PayPal as a Senior Front End Engineer. */}
-        In April 2019 I attended the{' '}
+        team at PayPal as a Senior Front End Engineer. In April 2019 I attended
+        the{' '}
         <a
           href="https://recurse.com/"
           target="_blank"

@@ -1,5 +1,4 @@
 module.exports = {
-  roots: ['<rootDir>'],
   transform: {
     '^.+\\.jsx?$': `<rootDir>/jest-preprocess.ts`,
     '^.+\\.tsx?$': `ts-jest`,

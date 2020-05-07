@@ -68,8 +68,6 @@ const UsesPage: React.FunctionComponent = () => {
     }
   `);
 
-  console.log(ogImage);
-
   return (
     <Layout>
       <SEO

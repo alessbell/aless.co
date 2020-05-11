@@ -16,22 +16,14 @@ beforeEach(() => {
     profilePicture: {
       childImageSharp: {
         fixed: {
-          base64: 'data:image/jpeg;base64,/9j/2wB/2wBDA/w/8/==',
-          width: 150,
-          height: 150,
           src: '/static/12345/5b62b/headshot.jpeg',
-          srcSet: '/static/12345/5b62b/headshot.jpeg',
         },
       },
     },
     ogImage: {
       childImageSharp: {
         fixed: {
-          base64: 'data:image/jpeg;base64,/9j/2wB/2wBDA/w/8/==',
-          width: 150,
-          height: 150,
           src: '/static/12345/5b62b/headshot.jpeg',
-          srcSet: '/static/12345/5b62b/headshot.jpeg',
         },
       },
     },

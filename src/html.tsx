@@ -1,16 +1,21 @@
 import * as React from 'react';
 
 type HTMLProps = {
-  htmlAttributes: object;
+  htmlAttributes: React.AllHTMLAttributes<HTMLElement>;
   headComponents: [];
-  bodyAttributes: object;
   preBodyComponents: [];
   body: string;
   postBodyComponents: [];
 };
 
-const HTML: React.FunctionComponent<HTMLProps> = (props) => (
-  <html {...props.htmlAttributes}>
+const HTML: React.FunctionComponent<HTMLProps> = ({
+  htmlAttributes,
+  headComponents,
+  preBodyComponents,
+  body,
+  postBodyComponents,
+}) => (
+  <html {...htmlAttributes}>
     <head>
       <meta charSet="utf-8" />
       <meta httpEquiv="x-ua-compatible" content="ie=edge" />
@@ -18,9 +23,9 @@ const HTML: React.FunctionComponent<HTMLProps> = (props) => (
         name="viewport"
         content="width=device-width, initial-scale=1, shrink-to-fit=no"
       />
-      {props.headComponents}
+      {headComponents}
     </head>
-    <body {...props.bodyAttributes} className="light">
+    <body className="light">
       <script
         dangerouslySetInnerHTML={{
           __html: `
@@ -70,13 +75,13 @@ const HTML: React.FunctionComponent<HTMLProps> = (props) => (
             `,
         }}
       />
-      {props.preBodyComponents}
+      {preBodyComponents}
       <div
         key={`body`}
         id="___gatsby"
-        dangerouslySetInnerHTML={{ __html: props.body }}
+        dangerouslySetInnerHTML={{ __html: body }}
       />
-      {props.postBodyComponents}
+      {postBodyComponents}
     </body>
   </html>
 );

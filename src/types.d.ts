@@ -2,8 +2,7 @@ declare module '*.png';
 declare module 'gatsby-plugin-mdx' {
   import * as React from 'react';
   type MDXRendererProps = {
-    scope?: object;
-    components?: any;
+    components?: React.Component;
   };
   export class MDXRenderer extends React.Component<MDXRendererProps> {}
 }

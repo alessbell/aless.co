@@ -69,6 +69,8 @@ const Footer: React.FunctionComponent<FooterProps> = ({
 
     <a href="/rss.xml">rss</a>
 
+    <div className="rc-scout" />
+
     <Commit>
       deployed commit:{' '}
       <code>

@@ -8,27 +8,49 @@ type HTMLProps = {
   postBodyComponents: [];
 };
 
+function createTrackingSnippet() {
+  const token = 'f905436a5b667f3b2e97ce0a0fbc33e2';
+  const type = 'logo_and_text';
+
+  return `
+    ;(function(w, d) {
+
+    if (!w._rcs) {
+      w._rcs = {token: '${token}', type: '${type}'};
+    }
+
+    var s = d.createElement('script');
+    s.async = true;
+    s.src = 'https://d29xw0ra2h4o4u.cloudfront.net/assets/scout-a161fd9d3fd8243a4bc05c4ca4b9fe66bc5c115f778d70cf59b5090c9c1626ba.js';
+    d.body.appendChild(s);
+
+    })(window, document);
+  `;
+}
+
 const HTML: React.FunctionComponent<HTMLProps> = ({
   htmlAttributes,
   headComponents,
   preBodyComponents,
   body,
   postBodyComponents,
-}) => (
-  <html {...htmlAttributes}>
-    <head>
-      <meta charSet="utf-8" />
-      <meta httpEquiv="x-ua-compatible" content="ie=edge" />
-      <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1, shrink-to-fit=no"
-      />
-      {headComponents}
-    </head>
-    <body className="light">
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `
+}) => {
+  const html = createTrackingSnippet();
+  return (
+    <html {...htmlAttributes}>
+      <head>
+        <meta charSet="utf-8" />
+        <meta httpEquiv="x-ua-compatible" content="ie=edge" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+        {headComponents}
+      </head>
+      <body className="light">
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
               (function() {
                 window.__onThemeChange = function() {};
                 function setTheme(newTheme) {
@@ -73,17 +95,22 @@ const HTML: React.FunctionComponent<HTMLProps> = ({
                 setShader(preferredShader || '0');
               })();
             `,
-        }}
-      />
-      {preBodyComponents}
-      <div
-        key={`body`}
-        id="___gatsby"
-        dangerouslySetInnerHTML={{ __html: body }}
-      />
-      {postBodyComponents}
-    </body>
-  </html>
-);
+          }}
+        />
+        {preBodyComponents}
+        <div
+          key={`body`}
+          id="___gatsby"
+          dangerouslySetInnerHTML={{ __html: body }}
+        />
+        {postBodyComponents}
+        <script
+          key="gatsby-plugin-recurse-scout"
+          dangerouslySetInnerHTML={{ __html: html }}
+        />
+      </body>
+    </html>
+  );
+};
 
 export default HTML;

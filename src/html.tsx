@@ -8,26 +8,6 @@ type HTMLProps = {
   postBodyComponents: [];
 };
 
-function createTrackingSnippet() {
-  const token = 'f905436a5b667f3b2e97ce0a0fbc33e2';
-  const type = 'logo_and_text';
-
-  return `
-    ;(function(w, d) {
-
-    if (!w._rcs) {
-      w._rcs = {token: '${token}', type: '${type}'};
-    }
-
-    var s = d.createElement('script');
-    s.async = true;
-    s.src = 'https://d29xw0ra2h4o4u.cloudfront.net/assets/scout-a161fd9d3fd8243a4bc05c4ca4b9fe66bc5c115f778d70cf59b5090c9c1626ba.js';
-    d.body.appendChild(s);
-
-    })(window, document);
-  `;
-}
-
 const HTML: React.FunctionComponent<HTMLProps> = ({
   htmlAttributes,
   headComponents,
@@ -35,7 +15,6 @@ const HTML: React.FunctionComponent<HTMLProps> = ({
   body,
   postBodyComponents,
 }) => {
-  const html = createTrackingSnippet();
   return (
     <html {...htmlAttributes}>
       <head>
@@ -105,9 +84,10 @@ const HTML: React.FunctionComponent<HTMLProps> = ({
         />
         {postBodyComponents}
         <script
-          key="gatsby-plugin-recurse-scout"
-          dangerouslySetInnerHTML={{ __html: html }}
-        />
+          async
+          defer
+          src="https://www.recurse-scout.com/loader.js?t=f905436a5b667f3b2e97ce0a0fbc33e2"
+        ></script>
       </body>
     </html>
   );

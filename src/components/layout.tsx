@@ -20,6 +20,11 @@ declare global {
   interface Window {
     __onThemeChange: () => void;
     __theme: string;
+    _rcs?: {
+      inst?: {
+        render: () => void;
+      };
+    };
   }
 }
 

@@ -155,12 +155,6 @@ const config = {
       },
     },
     {
-      resolve: `gatsby-plugin-offline`,
-      options: {
-        precachePages: [`/about/`, `/uses/`],
-      },
-    },
-    {
       resolve: `gatsby-plugin-feed`,
       options: {
         query: `
@@ -218,6 +212,7 @@ const config = {
       },
     },
     `gatsby-plugin-sitemap`,
+    `gatsby-plugin-remove-serviceworker`,
   ],
 };
 

@@ -14,21 +14,22 @@ const HTML: React.FunctionComponent<HTMLProps> = ({
   preBodyComponents,
   body,
   postBodyComponents,
-}) => (
-  <html {...htmlAttributes}>
-    <head>
-      <meta charSet="utf-8" />
-      <meta httpEquiv="x-ua-compatible" content="ie=edge" />
-      <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1, shrink-to-fit=no"
-      />
-      {headComponents}
-    </head>
-    <body className="light">
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `
+}) => {
+  return (
+    <html {...htmlAttributes}>
+      <head>
+        <meta charSet="utf-8" />
+        <meta httpEquiv="x-ua-compatible" content="ie=edge" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+        {headComponents}
+      </head>
+      <body className="light">
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
               (function() {
                 window.__onThemeChange = function() {};
                 function setTheme(newTheme) {
@@ -73,17 +74,23 @@ const HTML: React.FunctionComponent<HTMLProps> = ({
                 setShader(preferredShader || '0');
               })();
             `,
-        }}
-      />
-      {preBodyComponents}
-      <div
-        key={`body`}
-        id="___gatsby"
-        dangerouslySetInnerHTML={{ __html: body }}
-      />
-      {postBodyComponents}
-    </body>
-  </html>
-);
+          }}
+        />
+        {preBodyComponents}
+        <div
+          key={`body`}
+          id="___gatsby"
+          dangerouslySetInnerHTML={{ __html: body }}
+        />
+        {postBodyComponents}
+        <script
+          async
+          defer
+          src="https://www.recurse-scout.com/loader.js?t=f905436a5b667f3b2e97ce0a0fbc33e2"
+        ></script>
+      </body>
+    </html>
+  );
+};
 
 export default HTML;

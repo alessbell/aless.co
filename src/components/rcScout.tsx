@@ -1,8 +1,17 @@
 import * as React from 'react';
 
+let initialRender = false;
+
 const RCScout: React.FunctionComponent = () => {
   React.useEffect(() => {
-    if (window._rcs && window._rcs.inst) {
+    initialRender = true;
+    return () => {
+      initialRender = false;
+    };
+  }, []);
+
+  React.useEffect(() => {
+    if (initialRender && window._rcs && window._rcs.inst) {
       window._rcs.inst.render();
     }
   });

@@ -10,7 +10,7 @@ module.exports = {
   testPathIgnorePatterns: [`node_modules`, `.cache`],
   transformIgnorePatterns: [`node_modules/(?!(gatsby|gatsby-plugin-mdx)/)`],
   globals: {
-    __PATH_PREFIX__: ``,
+    __BASE_PATH__: ``,
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'json', 'jsx'],
   testMatch: ['**/*.test.(tsx|ts)'],

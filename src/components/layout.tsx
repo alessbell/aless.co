@@ -23,6 +23,7 @@ declare global {
     _rcs?: {
       inst?: {
         render: () => void;
+        cssRendered: boolean;
       };
     };
   }

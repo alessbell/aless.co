@@ -53,7 +53,7 @@
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-flip-move": "3.0.4",
-    "react-helmet": "6.0.0",
+    "react-helmet": "6.1.0",
     "react-typography": "0.16.19",
     "slugify": "1.4.0",
     "synthwave-vscode": "github:robb0wen/synthwave-vscode",

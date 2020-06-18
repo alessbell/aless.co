@@ -2,7 +2,6 @@
   "extends": ["config:base"],
   "timezone": "America/New_York",
   "schedule": "every weekend",
-  "ignoreDeps": ["gatsby"],
   "packageRules": [
     {
       "depTypeList": ["devDependencies"],

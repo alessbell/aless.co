@@ -28,13 +28,6 @@ const config = {
     commit: process.env.COMMIT_REF || `master`,
   },
   plugins: [
-    {
-      resolve: `gatsby-plugin-fathom`,
-      options: {
-        trackingUrl: `analytics.aless.co`,
-        siteId: `KACHI`,
-      },
-    },
     `@pauliescanlon/gatsby-mdx-embed`,
     {
       resolve: `gatsby-source-filesystem`,

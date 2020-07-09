@@ -15,7 +15,7 @@ RUN apk --update add --no-cache \
   openssh \
   curl
 
-LABEL "repository"="http://github.com/alessbell/alessbell"
+LABEL "repository"="http://github.com/alessbell/aless.co"
 LABEL "homepage"="http://github.com/actions"
 LABEL "maintainer"="Alessia Bellisario <github@bellisar.io>"
 

@@ -24,7 +24,7 @@ Having a resume managed in GitHub was a _very_ welcome change, but there were st
 
 1. **Draft a new release via GitHub UI.** Tag my commit and begin manually creating the release.
 2. **Manually compile `resume.tex` and upload the PDF as a release asset.** GitHub automatically includes the source code in both zip and tarball formats, but I wanted to include a compiled `resume.pdf`, too. I'd run `pdflatex` locally and drag and drop the file, again via GitHub UI.
-3. **Update the copy of `resume.pdf` in Gatsby's `/static` folder.** I'd take my new PDF and drag and drop it into my local copy of the [codebase for this website](https://github.com/alessbell/alessbell/), since I want [aless.co/resume.pdf](https://aless.co/resume.pdf) to always display the latest version. Then I'd manually commit it and open a PR.
+3. **Update the copy of `resume.pdf` in Gatsby's `/static` folder.** I'd take my new PDF and drag and drop it into my local copy of the [codebase for this website](https://github.com/alessbell/aless.co/), since I want [aless.co/resume.pdf](https://aless.co/resume.pdf) to always display the latest version. Then I'd manually commit it and open a PR.
 
 Once I'd isolated the steps that were candidates for automation, I sketched out the ideal workflow: first, automating releases in `alessbell/resume`, then somehow pinging another repository when a new release was published (?), and finally, the other repository (this blog) would download `resume.pdf` from the latest release, commit it and open a PR... _maybe?_
 
@@ -34,7 +34,7 @@ I had no idea how feasible this all was, still knowing little to nothing about t
 
 tl;dr my ideal workflow was possible, so I built it 🐙💜
 
-If you'd like to browse the code, steps 1 and 2 are achieved by the [main workflow in `alessbell/resume`](https://github.com/alessbell/resume/blob/master/.github/workflows/main.yml). Step 3 is handled by actions in this blog's repository, namely [`/commit-resume`](https://github.com/alessbell/alessbell/blob/main/commit-resume/entrypoint.sh). For a walk-through of the code, keep reading 😎
+If you'd like to browse the code, steps 1 and 2 are achieved by the [main workflow in `alessbell/resume`](https://github.com/alessbell/resume/blob/master/.github/workflows/main.yml). Step 3 is handled by actions in this blog's repository, namely [`/commit-resume`](https://github.com/alessbell/aless.co/blob/main/commit-resume/entrypoint.sh). For a walk-through of the code, keep reading 😎
 
 ![The first PR created by my GitHub action: updating a PDF with the one it downloaded from the latest automated release in another repository ✨](./resume-pr-1.png)
 
@@ -102,7 +102,7 @@ There were two small caveats here. **First**, because this POST request is being
   uses: ./ping-repo
   env:
     GITHUB_TOKEN: ${{ secrets.PA_TOKEN }}
-    REPO: alessbell/alessbell
+    REPO: alessbell/aless.co
 ```
 
 **Second**, certain events, e.g. `push` will run on any branch unless the scope is narrowed by specifying a certain branch or tag. When I was testing this `repository_dispatch` event, however, nothing was happening despite having pushed a workflow to a branch in my blog's repository listening for this exact dispatch event. It wasn't until I pushed the blog's workflow config to master that I saw it spring to life, activated by my Postman request to the `/dispatches` endpoint.
@@ -124,7 +124,7 @@ curl -L0 "${PDF_URL}" --output ./static/resume.pdf
 
 Once I had the file downloaded, I'd just need to commit it and open a PR. This time, I'd try to use a pre-existing action with a bit less luck: I wasn't able to integrate [`vsoch/pull-request-action`](https://github.com/marketplace/actions/pull-request-on-branch-push) directly (I'll be the first to say it could have been user error -- when I'm out of my comfort zone, I need to be able to tinker with the code), but reading its source taught me a lot about how to write a similar action that would work for my case.
 
-I wound up with [~90 lines of bash](https://github.com/alessbell/alessbell/blob/main/commit-resume/entrypoint.sh) and successfully used [`jq`](https://stedolan.github.io/jq/) to process JSON for the first time. There was plenty of trial and error along the way, but once I plugged it all together, it Just Worked <3
+I wound up with [~90 lines of bash](https://github.com/alessbell/aless.co/blob/main/commit-resume/entrypoint.sh) and successfully used [`jq`](https://stedolan.github.io/jq/) to process JSON for the first time. There was plenty of trial and error along the way, but once I plugged it all together, it Just Worked <3
 
 ---
 

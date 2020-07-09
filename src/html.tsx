@@ -83,11 +83,6 @@ const HTML: React.FunctionComponent<HTMLProps> = ({
           dangerouslySetInnerHTML={{ __html: body }}
         />
         {postBodyComponents}
-        <script
-          async
-          defer
-          src="https://www.recurse-scout.com/loader.js?t=f905436a5b667f3b2e97ce0a0fbc33e2"
-        ></script>
       </body>
     </html>
   );

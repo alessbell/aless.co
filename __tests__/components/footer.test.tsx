@@ -4,7 +4,7 @@ import { render } from '@testing-library/react';
 import { metadataMock } from '../config/metadata-mock';
 import Footer from '../../src/components/footer';
 
-const REPOSITORY = `https://github.com/alessbell/alessbell`;
+const REPOSITORY = `https://github.com/alessbell/aless.co`;
 
 beforeEach(() => {
   (useStaticQuery as jest.Mock).mockImplementation(() => metadataMock);

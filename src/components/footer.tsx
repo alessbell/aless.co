@@ -2,7 +2,6 @@ import * as React from 'react';
 import styled from '@emotion/styled';
 import { Link } from 'gatsby';
 import { Space, FooterWrapper } from './styles';
-import RCScout from './rcScout';
 
 export interface AnchorProps extends React.HTMLAttributes<HTMLAnchorElement> {
   link: string;
@@ -82,7 +81,6 @@ const Footer: React.FunctionComponent<FooterProps> = ({
         </a>
       </code>
     </Commit>
-    <RCScout />
   </FooterWrapper>
 );
 

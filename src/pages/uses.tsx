@@ -52,7 +52,7 @@ const UsesPage: React.FunctionComponent = () => {
       vscode: file(absolutePath: { regex: "/assets/vscode/" }) {
         childImageSharp {
           fluid(maxWidth: 640) {
-            ...GatsbyImageSharpFluid
+            ...GatsbyImageSharpFluid_noBase64
           }
         }
       }
@@ -82,15 +82,9 @@ const UsesPage: React.FunctionComponent = () => {
       </p>
       <h3>🖥 Hardware and Desk 🖨</h3>
       <p>
-        At work I use a <b>late 2016 15{`"`} MacBook Pro</b> with an Intel Core
-        i7 processor and 250GB SSD running Catalina. The keyboard went pretty
-        quickly, so I usually travel with one of my more compact keyboards.
-      </p>
-      <p>
-        For my personal machine, I use a refurbished silver{' '}
-        <b>late 2019 16{`"`} MacBook Pro</b> with a 2.3GHz 8-core Intel Core i9
-        processor and 1TB SSD. The keyboard is sturdy, a welcome change from the
-        late 2016 model.
+        For personal and work machines, I use{' '}
+        <b>late 2019 16{`"`} MacBook Pros</b> with 2.3GHz 8-core Intel Core i9
+        processors and 1TB SSDs.
       </p>
       <p>
         <Img fluid={desk.childImageSharp.fluid} />

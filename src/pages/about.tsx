@@ -34,7 +34,7 @@ const AboutPage: React.FunctionComponent = () => {
     goodreadsShelf,
   }: ProfilePictureData = useStaticQuery(graphql`
     query ProfilePictureQuery {
-      profilePicture: file(absolutePath: { regex: "/assets/headshot/" }) {
+      profilePicture: file(absolutePath: { regex: "/assets/selfie/" }) {
         childImageSharp {
           fixed(height: 200, width: 200) {
             ...GatsbyImageSharpFixed
@@ -109,8 +109,7 @@ const AboutPage: React.FunctionComponent = () => {
         <a href="https://venmo.com/" target="_blank" rel="noopener noreferrer">
           Venmo
         </a>{' '}
-        team at PayPal as a Senior Front End Engineer. In April 2019 I attended
-        the{' '}
+        team at PayPal as a senior engineer. In April 2019 I attended the{' '}
         <a
           href="https://recurse.com/"
           target="_blank"

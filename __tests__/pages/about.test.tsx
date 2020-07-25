@@ -16,14 +16,14 @@ beforeEach(() => {
     profilePicture: {
       childImageSharp: {
         fixed: {
-          src: '/static/12345/5b62b/headshot.jpeg',
+          src: '/static/12345/5b62b/selfie.jpg',
         },
       },
     },
     ogImage: {
       childImageSharp: {
         fixed: {
-          src: '/static/12345/5b62b/headshot.jpeg',
+          src: '/static/12345/5b62b/selfie.jpg',
         },
       },
     },

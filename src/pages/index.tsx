@@ -49,7 +49,7 @@ const TagLink: React.FunctionComponent<{ tag: string; tags: string[] }> = ({
 
 // persist the state of the search/toggle
 let search = '';
-let detailsToggleState: boolean | null = null;
+let detailsToggleState = true;
 
 const BlogIndex: React.FunctionComponent<BlogIndexProps> = ({
   data: {
@@ -58,9 +58,7 @@ const BlogIndex: React.FunctionComponent<BlogIndexProps> = ({
 }) => {
   const keywords = group.map((item) => item.tag);
   const [tags, setTags] = React.useState<string[]>([]);
-  const [detailsToggle, setDetailsToggle] = React.useState<boolean | null>(
-    detailsToggleState !== null ? detailsToggleState : true
-  );
+  const [detailsToggle, setDetailsToggle] = React.useState(detailsToggleState);
 
   React.useEffect(() => {
     detailsToggleState = detailsToggle;
@@ -96,7 +94,7 @@ const BlogIndex: React.FunctionComponent<BlogIndexProps> = ({
         ]}
       />
       <details
-        open={!!detailsToggleState}
+        open={detailsToggle}
         style={{ margin: '2rem 0', fontSize: '0.9rem' }}
       >
         <summary onClick={() => setDetailsToggle(!detailsToggle)}>
@@ -148,7 +146,7 @@ const BlogIndex: React.FunctionComponent<BlogIndexProps> = ({
                   }}
                 >
                   <small style={{ marginRight: '0.6rem', fontSize: '0.9rem' }}>
-                    <i>{frontmatter.date}</i>
+                    {frontmatter.date}
                   </small>
                   {frontmatter.keywords.map((keyword, i) => (
                     <Tag key={i}>{keyword}</Tag>

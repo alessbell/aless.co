@@ -69,7 +69,7 @@ const BlogPostTemplate: React.FunctionComponent<BlogPostData> = ({
       }}
     >
       <small style={{ marginRight: '0.6rem', fontSize: '0.9rem' }}>
-        <i>{frontmatter.date}</i>
+        {frontmatter.date}
       </small>
       {frontmatter.keywords.map((keyword, i) => (
         <Tag key={i}>{keyword}</Tag>

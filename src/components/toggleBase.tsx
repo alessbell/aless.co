@@ -75,14 +75,14 @@ export default class Toggle extends React.PureComponent<
     };
   }
 
-  public UNSAFE_componentWillReceiveProps(nextProps: ToggleProps) {
+  public UNSAFE_componentWillReceiveProps(nextProps: ToggleProps): void {
     if ('checked' in nextProps) {
       this.setState({ checked: !!nextProps.checked });
       this.previouslyChecked = !!nextProps.checked;
     }
   }
 
-  public handleClick = (event: React.MouseEvent<HTMLInputElement>) => {
+  public handleClick = (event: React.MouseEvent<HTMLInputElement>): void => {
     const checkbox = this.input;
     this.previouslyChecked = checkbox ? checkbox.checked : false;
     if (checkbox && event.target !== checkbox && !this.moved) {
@@ -92,17 +92,23 @@ export default class Toggle extends React.PureComponent<
       return;
     }
 
-    this.setState({ checked: checkbox ? checkbox.checked : false });
+    this.setState({
+      checked: checkbox ? checkbox.checked : false,
+    });
   };
 
-  public handleTouchStart = (event: React.TouchEvent<HTMLInputElement>) => {
+  public handleTouchStart = (
+    event: React.TouchEvent<HTMLInputElement>
+  ): void => {
     this.startX = pointerCoord(event).x;
     this.touchStarted = true;
     this.hadFocusAtTouchStart = this.state.hasFocus;
     this.setState({ hasFocus: true });
   };
 
-  public handleTouchMove = (event: React.TouchEvent<HTMLInputElement>) => {
+  public handleTouchMove = (
+    event: React.TouchEvent<HTMLInputElement>
+  ): void => {
     if (!this.touchStarted) {
       return;
     }
@@ -120,7 +126,7 @@ export default class Toggle extends React.PureComponent<
     }
   };
 
-  public handleTouchEnd = (event: React.TouchEvent<HTMLInputElement>) => {
+  public handleTouchEnd = (event: React.TouchEvent<HTMLInputElement>): void => {
     if (!this.touchMoved) {
       return;
     }
@@ -142,7 +148,7 @@ export default class Toggle extends React.PureComponent<
     }
   };
 
-  public handleTouchCancel = () => {
+  public handleTouchCancel = (): void => {
     if (this.startX != null) {
       this.touchStarted = false;
       this.startX = null;
@@ -154,7 +160,7 @@ export default class Toggle extends React.PureComponent<
     }
   };
 
-  public handleFocus = (event: React.ChangeEvent<HTMLInputElement>) => {
+  public handleFocus = (event: React.ChangeEvent<HTMLInputElement>): void => {
     const { onFocus } = this.props;
 
     if (onFocus) {
@@ -165,7 +171,7 @@ export default class Toggle extends React.PureComponent<
     this.setState({ hasFocus: true });
   };
 
-  public handleBlur = (event: React.ChangeEvent<HTMLInputElement>) => {
+  public handleBlur = (event: React.ChangeEvent<HTMLInputElement>): void => {
     const { onBlur } = this.props;
 
     if (onBlur) {
@@ -176,7 +182,7 @@ export default class Toggle extends React.PureComponent<
     this.setState({ hasFocus: false });
   };
 
-  public getIcon = (type: 'checked' | 'unchecked') => {
+  public getIcon = (type: 'checked' | 'unchecked'): JSX.Element | null => {
     const { icons } = this.props;
     if (!icons) {
       return null;
@@ -184,7 +190,7 @@ export default class Toggle extends React.PureComponent<
     return icons[type];
   };
 
-  public render() {
+  public render(): JSX.Element {
     const { className, icons, ...inputProps } = this.props;
     const classes =
       'react-toggle' +

@@ -7,9 +7,9 @@ let lastTime: number;
 let time = 0;
 let tick = 0;
 
-function useTimer() {
+function useTimer(): number {
   const interval = 1000 / 60;
-  const [unusedTime, setTime] = React.useState(0);
+  const [, setTime] = React.useState(0);
 
   const loop = (t: number) => {
     r = raf(loop);

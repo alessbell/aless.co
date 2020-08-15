@@ -15,7 +15,7 @@
     "@emotion/styled": "10.0.27",
     "@mdx-js/mdx": "1.6.16",
     "@mdx-js/react": "1.6.16",
-    "@pauliescanlon/gatsby-mdx-embed": "0.0.23",
+    "@pauliescanlon/gatsby-mdx-embed": "0.0.27",
     "change-case": "4.1.1",
     "emotion": "10.0.27",
     "emotion-server": "10.0.27",

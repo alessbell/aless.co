@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useStaticQuery } from 'gatsby';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { metadataMock } from '../config/metadata-mock';
 import Footer from '../../src/components/footer';
 
@@ -12,17 +12,15 @@ beforeEach(() => {
 
 describe('Footer', () => {
   test('renders', () => {
-    const { getByText } = render(
-      <Footer commit="master" repository={REPOSITORY} />
-    );
-    expect(getByText(/twitter/)).toHaveAttribute(
+    render(<Footer commit="master" repository={REPOSITORY} />);
+    expect(screen.getByText(/twitter/)).toHaveAttribute(
       'href',
       'https://twitter.com/alessbell'
     );
-    expect(getByText(/github/)).toHaveAttribute(
+    expect(screen.getByText(/github/)).toHaveAttribute(
       'href',
       'https://github.com/alessbell'
     );
-    expect(getByText(/about/)).toHaveAttribute('href', '/about');
+    expect(screen.getByText(/about/)).toHaveAttribute('href', '/about');
   });
 });

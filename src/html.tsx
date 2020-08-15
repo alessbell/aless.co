@@ -8,13 +8,13 @@ type HTMLProps = {
   postBodyComponents: [];
 };
 
-const HTML: React.FunctionComponent<HTMLProps> = ({
+const HTML = ({
   htmlAttributes,
   headComponents,
   preBodyComponents,
   body,
   postBodyComponents,
-}) => {
+}: HTMLProps): JSX.Element => {
   return (
     <html {...htmlAttributes}>
       <head>

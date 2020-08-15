@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useStaticQuery } from 'gatsby';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import SEO from '../../src/components/seo';
 import { metadataMock } from '../config/metadata-mock';
 
@@ -10,7 +10,7 @@ beforeEach(() => {
 
 describe('SEO', () => {
   test('renders', () => {
-    const { getByText } = render(
+    render(
       <>
         <SEO
           title="about"
@@ -19,6 +19,6 @@ describe('SEO', () => {
         <h1>some text</h1>
       </>
     );
-    getByText('some text');
+    expect(screen.getByText('some text')).toBeInTheDocument();
   });
 });

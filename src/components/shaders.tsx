@@ -35,7 +35,7 @@ const shaders = Shaders.create({
   },
 });
 
-const RedWave: React.FunctionComponent = () => {
+const RedWave = () => {
   const time = useTimer();
   return (
     <Node
@@ -45,7 +45,7 @@ const RedWave: React.FunctionComponent = () => {
   );
 };
 
-const GreenWave: React.FunctionComponent = () => {
+const GreenWave = () => {
   const time = useTimer();
   return (
     <Node
@@ -55,7 +55,7 @@ const GreenWave: React.FunctionComponent = () => {
   );
 };
 
-const BlueWave: React.FunctionComponent = () => {
+const BlueWave = () => {
   const time = useTimer();
   return (
     <Node

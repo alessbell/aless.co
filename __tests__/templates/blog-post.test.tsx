@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { useStaticQuery } from 'gatsby';
 import { metadataMock } from '../config/metadata-mock';
 import BlogPost from '../../src/templates/blog-post';
@@ -44,7 +44,7 @@ const next = {
 
 describe('Blog post', () => {
   test('renders', () => {
-    const { getByText } = render(
+    render(
       <BlogPost
         data={{
           mdx: post,
@@ -54,14 +54,22 @@ describe('Blog post', () => {
         pageContext={{ previous, next }}
       />
     );
-    expect(getByText('anti/pattern')).toBeInTheDocument();
-    expect(getByText(/A blog by Alessia Bellisario/i)).toBeInTheDocument();
-    expect(getByText(/title a/i)).toBeInTheDocument();
-    expect(getByText(/spoiler alert/i)).toBeInTheDocument();
-    expect(getByText(/july 12, 1962/i)).toBeInTheDocument();
-    expect(getByText(/some title 1/i)).toHaveAttribute('href', '/some-slug-1');
-    expect(getByText(/some title 3/i)).toHaveAttribute('href', '/some-slug-3');
-    expect(getByText(/some title 1/i)).toHaveAttribute('rel', 'prev');
-    expect(getByText(/some title 3/i)).toHaveAttribute('rel', 'next');
+    expect(screen.getByText('anti/pattern')).toBeInTheDocument();
+    expect(
+      screen.getByText(/A blog by Alessia Bellisario/i)
+    ).toBeInTheDocument();
+    expect(screen.getByText(/title a/i)).toBeInTheDocument();
+    expect(screen.getByText(/spoiler alert/i)).toBeInTheDocument();
+    expect(screen.getByText(/july 12, 1962/i)).toBeInTheDocument();
+    expect(screen.getByText(/some title 1/i)).toHaveAttribute(
+      'href',
+      '/some-slug-1'
+    );
+    expect(screen.getByText(/some title 3/i)).toHaveAttribute(
+      'href',
+      '/some-slug-3'
+    );
+    expect(screen.getByText(/some title 1/i)).toHaveAttribute('rel', 'prev');
+    expect(screen.getByText(/some title 3/i)).toHaveAttribute('rel', 'next');
   });
 });

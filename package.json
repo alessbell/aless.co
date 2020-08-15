@@ -78,8 +78,9 @@
     "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\"",
     "type-check": "tsc --noEmit",
     "test": "jest --coverage",
+    "test:clear-cache": "rm -rf $(npx jest --showConfig | jq '.configs[0].cacheDirectory')",
     "clean": "gatsby clean",
-    "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'"
+    "lint": "eslint '{src,__tests__}/**/*.{js,jsx,ts,tsx}'"
   },
   "husky": {
     "hooks": {

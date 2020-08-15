@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { useStaticQuery } from 'gatsby';
 import Uses from '../../src/pages/uses';
 import { metadataMock } from '../config/metadata-mock';
@@ -40,8 +40,10 @@ beforeEach(() => {
 
 describe('Uses page', () => {
   test('renders', () => {
-    const { getByText } = render(<Uses />);
-    getByText('anti/pattern');
-    getByText('A blog by Alessia Bellisario');
+    render(<Uses />);
+    expect(screen.getByText('anti/pattern')).toBeInTheDocument();
+    expect(
+      screen.getByText('A blog by Alessia Bellisario')
+    ).toBeInTheDocument();
   });
 });

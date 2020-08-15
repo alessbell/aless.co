@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useStaticQuery } from 'gatsby';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import Layout from '../../src/components/layout';
 import { metadataMock } from '../config/metadata-mock';
 
@@ -10,11 +10,13 @@ beforeEach(() => {
 
 describe('Layout', () => {
   test('renders', () => {
-    const { getByText } = render(
+    render(
       <Layout>
         <h1>test content</h1>
       </Layout>
     );
-    getByText('A blog by Alessia Bellisario');
+    expect(
+      screen.getByText('A blog by Alessia Bellisario')
+    ).toBeInTheDocument();
   });
 });

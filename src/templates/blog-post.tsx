@@ -41,7 +41,7 @@ type BlogPostData = {
   };
 };
 
-const BlogPostTemplate: React.FunctionComponent<BlogPostData> = ({
+const BlogPostTemplate = ({
   data: {
     mdx: { frontmatter, excerpt, body },
     site: {
@@ -50,7 +50,7 @@ const BlogPostTemplate: React.FunctionComponent<BlogPostData> = ({
   },
   pageContext: { previous, next },
   pathContext: { slug },
-}) => (
+}: BlogPostData): JSX.Element => (
   <Layout>
     <SEO
       ogImageProp={slug ? `${siteUrl}${slug}twitter-card.jpg` : undefined}

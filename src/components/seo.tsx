@@ -32,13 +32,13 @@ type SEOData = {
   };
 };
 
-const SEO: React.FunctionComponent<SEOProps> = ({
+const SEO = ({
   description,
   ogImageProp,
   lang = 'en',
   keywords = [],
   title,
-}) => {
+}: SEOProps): JSX.Element => {
   const data: SEOData = useStaticQuery(graphql`
     query DefaultSEOQuery {
       site {

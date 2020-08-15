@@ -7,7 +7,7 @@ export interface AnchorProps extends React.HTMLAttributes<HTMLAnchorElement> {
   link: string;
   name: string;
   rel?: 'noopener';
-  target?: '_blank';
+  target?: '_blank' | '_self';
 }
 
 const Commit = styled.div`
@@ -21,12 +21,7 @@ export type FooterProps = {
   repository: string;
 };
 
-const Anchor: React.FunctionComponent<AnchorProps> = ({
-  link,
-  name,
-  rel,
-  target = '_self',
-}) => (
+const Anchor = ({ link, name, rel, target = '_self' }: AnchorProps) => (
   <a
     href={link}
     target={target}
@@ -36,10 +31,7 @@ const Anchor: React.FunctionComponent<AnchorProps> = ({
   </a>
 );
 
-const Footer: React.FunctionComponent<FooterProps> = ({
-  commit,
-  repository,
-}) => (
+const Footer = ({ commit, repository }: FooterProps): JSX.Element => (
   <FooterWrapper>
     <Link to="/about">about</Link>
 

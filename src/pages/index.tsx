@@ -31,10 +31,7 @@ export type BlogIndexProps = {
   };
 };
 
-const TagLink: React.FunctionComponent<{ tag: string; tags: string[] }> = ({
-  tag,
-  tags,
-}) => {
+const TagLink = ({ tag, tags }: { tag: string; tags: string[] }) => {
   const slug = slugify(tag);
   const active = tags.includes(slug);
   const qs = active
@@ -51,11 +48,11 @@ const TagLink: React.FunctionComponent<{ tag: string; tags: string[] }> = ({
 let search = '';
 let detailsToggleState = true;
 
-const BlogIndex: React.FunctionComponent<BlogIndexProps> = ({
+const BlogIndex = ({
   data: {
     allMdx: { edges, group },
   },
-}) => {
+}: BlogIndexProps): JSX.Element => {
   const keywords = group.map((item) => item.tag);
   const [tags, setTags] = React.useState<string[]>([]);
   const [detailsToggle, setDetailsToggle] = React.useState(detailsToggleState);

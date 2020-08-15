@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Layout from '../components/layout';
 
-const NotFoundPage: React.FunctionComponent = () => (
+const NotFoundPage = (): JSX.Element => (
   <Layout>
     <h2>Not found :(</h2>
     <p>

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useStaticQuery } from 'gatsby';
 import { metadataMock } from '../config/metadata-mock';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import About from '../../src/pages/about';
 
 const book = {
@@ -35,10 +35,14 @@ beforeEach(() => {
 
 describe('About page', () => {
   test('renders', () => {
-    const { getByText } = render(<About />);
-    getByText('anti/pattern');
-    getByText('A blog by Alessia Bellisario');
-    getByText(/a software engineer based in nyc/i);
-    expect(getByText(book.title)).toHaveAttribute('href', book.link);
+    render(<About />);
+    expect(screen.getByText('anti/pattern')).toBeInTheDocument();
+    expect(
+      screen.getByText('A blog by Alessia Bellisario')
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(/a software engineer based in nyc/i)
+    ).toBeInTheDocument();
+    expect(screen.getByText(book.title)).toHaveAttribute('href', book.link);
   });
 });

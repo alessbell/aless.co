@@ -31,7 +31,13 @@ module.exports = {
   rules: {
     'react/prop-types': 'off', // Disable prop-types as we use TypeScript for type checking
     '@typescript-eslint/no-explicit-any': 2,
-    'jest/expect-expect': 'off',
+    'testing-library/no-debug': 'error',
+    'testing-library/no-render-in-setup': 'error',
+    'testing-library/no-wait-for-empty-callback': 'error',
+    'testing-library/prefer-wait-for': 'error',
+    'testing-library/prefer-explicit-assert': 'error',
+    'testing-library/prefer-presence-queries': 'error',
+    'testing-library/prefer-screen-queries': 'error',
   },
   overrides: [
     // Override some TypeScript rules just for .js files

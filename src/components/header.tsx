@@ -17,9 +17,9 @@ const InnerWrapper = styled.span`
   mix-blend-mode: var(--mixBlendMode2);
 `;
 
-const Header: React.FunctionComponent = () => {
+const Header = (): JSX.Element => {
   return (
-    <>
+    <div data-testid="header-wrapper">
       <Wrapper>
         <InnerWrapper>
           <Surface width={253} height={47}>
@@ -27,7 +27,7 @@ const Header: React.FunctionComponent = () => {
           </Surface>
         </InnerWrapper>
       </Wrapper>
-    </>
+    </div>
   );
 };
 

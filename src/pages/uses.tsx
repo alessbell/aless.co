@@ -27,7 +27,7 @@ type KeyboardPictureData = {
   };
 };
 
-const UsesPage: React.FunctionComponent = () => {
+const UsesPage = (): JSX.Element => {
   const {
     desk,
     vscode,

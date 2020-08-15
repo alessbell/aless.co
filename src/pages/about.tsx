@@ -27,7 +27,7 @@ type ProfilePictureData = {
   };
 };
 
-const AboutPage: React.FunctionComponent = () => {
+const AboutPage = (): JSX.Element => {
   const {
     profilePicture,
     ogImage,

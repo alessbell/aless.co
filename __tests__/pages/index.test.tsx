@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { useStaticQuery } from 'gatsby';
 import { metadataMock } from '../config/metadata-mock';
 import Homepage from '../../src/pages/index';
@@ -55,7 +55,7 @@ const posts = [
 
 describe('Homepage', () => {
   test('renders post list and previews', () => {
-    const { getAllByText, getByText } = render(
+    render(
       <Homepage
         data={{
           allMdx: {
@@ -69,17 +69,20 @@ describe('Homepage', () => {
         }}
       />
     );
-    getByText('anti/pattern');
-    getByText('A blog by Alessia Bellisario');
-    expect(getAllByText(/post/i)).toHaveLength(3);
+    expect(screen.getByText('anti/pattern')).toBeInTheDocument();
+    expect(
+      screen.getByText('A blog by Alessia Bellisario')
+    ).toBeInTheDocument();
+    expect(screen.getAllByText(/post/i)).toHaveLength(3);
 
     posts.forEach(({ node: { frontmatter, fields } }) => {
-      getByText(frontmatter.title || fields.slug);
-      expect(getByText(frontmatter.title || fields.slug)).toHaveAttribute(
-        'href',
-        fields.slug
-      );
-      getByText(frontmatter.spoiler);
+      expect(
+        screen.getByText(frontmatter.title || fields.slug)
+      ).toBeInTheDocument();
+      expect(
+        screen.getByText(frontmatter.title || fields.slug)
+      ).toHaveAttribute('href', fields.slug);
+      expect(screen.getByText(frontmatter.spoiler)).toBeInTheDocument();
     });
   });
 });

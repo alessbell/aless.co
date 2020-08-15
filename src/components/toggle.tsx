@@ -11,7 +11,7 @@ declare global {
   }
 }
 
-const Toggle: React.FunctionComponent = () => {
+const Toggle = (): JSX.Element => {
   const theme = React.useContext(ThemeContext);
   return (
     <div>

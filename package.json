@@ -115,7 +115,7 @@
     "flow-bin": "0.132.0",
     "husky": "4.2.5",
     "identity-obj-proxy": "3.0.0",
-    "jest": "26.4.1",
+    "jest": "26.4.2",
     "jest-canvas-mock": "2.2.0",
     "jest-emotion": "10.0.32",
     "prettier": "2.0.5",

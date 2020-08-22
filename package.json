@@ -120,6 +120,6 @@
     "jest-emotion": "10.0.32",
     "prettier": "2.0.5",
     "ts-jest": "26.2.0",
-    "typescript": "3.9.7"
+    "typescript": "4.0.2"
   }
 }

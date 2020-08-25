@@ -1,5 +1,5 @@
 ---
-title: Building a Gatsby Plugin with Rust + Wasm
+title: Building a Gatsby Plugin with Wasm
 date: '2020-01-06T19:09:59.546Z'
 spoiler: Rust + WebAssembly + Node.js = 🦀🕸💚
 keywords: ['programming']

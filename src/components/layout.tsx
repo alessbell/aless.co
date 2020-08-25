@@ -171,11 +171,7 @@ const Layout: React.FunctionComponent = ({ children }) => {
               padding-left: 1rem;
               border-left: 6px solid var(--blue);
               font-style: italic;
-              margin-left: -1.11rem;
-
-              @media (min-width: 44em) {
-                margin-left: -1.35rem;
-              }
+              margin-left: -1.2rem;
             }
             /* Inline code */
             code {
@@ -255,9 +251,7 @@ const Layout: React.FunctionComponent = ({ children }) => {
               }
             }
             transition: 'color 1s ease-out, background 1s ease-out';
-
             .gatsby-code-title {
-              font-size: 0.85rem;
               padding-top: var(
                 --grvsc-padding-top,
                 var(--grvsc-padding-v, 0.75rem)

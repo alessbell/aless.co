@@ -10,7 +10,7 @@ export const fonts = {
 };
 
 const typography = new Typography({
-  baseFontSize: '16px',
+  baseFontSize: '19px',
   baseLineHeight: 1.55,
   headerLineHeight: 1.4,
   headerFontFamily: [fonts.GTPressuraBold, 'monospace'],
@@ -64,6 +64,7 @@ const typography = new Typography({
       fontSize: '16px',
     },
     'pre,code': {
+      fontSize: '0.9rem',
       fontFamily: `${fonts.code}, monospace`,
     },
     'th:first-child, td:first-child': {
@@ -73,6 +74,7 @@ const typography = new Typography({
       paddingRight: '1rem',
     },
     '.gatsby-code-title': {
+      fontSize: '0.9rem',
       fontFamily: `${fonts.code}, monospace`,
     },
   }),

@@ -1,7 +1,7 @@
 ---
 title: Typed Web Workers
 date: '2020-04-30T15:29:51.546Z'
-spoiler: Getting Started with Web Workers in a TypeScript Gatsby Site
+spoiler: Getting Started with Web Workers in a TS Project
 keywords: ['programming']
 ---
 

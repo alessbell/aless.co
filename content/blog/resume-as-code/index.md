@@ -6,7 +6,7 @@ draft: false
 keywords: ['programming']
 ---
 
-I avoid brand new tech until I have an itch to scratch: a small, self-contained problem that seems it might lend itself nicely to \$someTool. I'm usually unsure I'll be able to achieve what I have in mind. But _maybe..._
+I avoid brand new tech until I have an itch to scratch: a small, self-contained problem that seems it might lend itself nicely to $someTool. I'm usually unsure I'll be able to achieve what I have in mind. But _maybe..._
 
 This time, the problem was something that had annoyed me for as long as I'd been employed: resumes. Not the fact of them, or even writing them, necessarily. Just **managing different versions**.
 

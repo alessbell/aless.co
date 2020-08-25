@@ -36,7 +36,7 @@ const AboutPage = (): JSX.Element => {
     query ProfilePictureQuery {
       profilePicture: file(absolutePath: { regex: "/assets/selfie/" }) {
         childImageSharp {
-          fixed(height: 200, width: 200) {
+          fixed(height: 225, width: 200) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -84,7 +84,9 @@ const AboutPage = (): JSX.Element => {
           style={{
             float: 'left',
             marginRight: '1.5rem',
-            marginTop: '0.25rem',
+            marginTop: '0.1rem',
+            marginBottom: '0.2rem',
+            borderRadius: '8px',
           }}
           fixed={profilePicture.childImageSharp.fixed}
         />
@@ -128,8 +130,7 @@ const AboutPage = (): JSX.Element => {
       </p>
       <p>
         Finally, here{`'`}s a list of{' '}
-        <a href="/uses">tools and doodads I use</a> in the course of my life and
-        work.
+        <a href="/uses">tools and doodads I use</a>.
       </p>
       <p>This site contains no tracking or analytics💗</p>
     </Layout>

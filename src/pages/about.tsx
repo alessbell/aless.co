@@ -90,7 +90,7 @@ const AboutPage = (): JSX.Element => {
           }}
           fixed={profilePicture.childImageSharp.fixed}
         />
-        I{`'`}m Alessia Bellisario, a software engineer based in NYC.
+        I{`'`}m Alessia, a software engineer based in NYC.
         {goodreadsShelf && (
           <span>
             {' '}

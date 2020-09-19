@@ -20,12 +20,6 @@ declare global {
   interface Window {
     __onThemeChange: () => void;
     __theme: string;
-    _rcs?: {
-      inst?: {
-        render: () => void;
-        cssRendered: boolean;
-      };
-    };
   }
 }
 
@@ -71,6 +65,9 @@ const Layout: React.FunctionComponent = ({ children }) => {
               padding: 0 1.5rem;
               margin: 0;
               background-color: var(--bg);
+            }
+            *:focus {
+              outline: blue auto;
             }
             body.light {
               --bg: #ffffff;

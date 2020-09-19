@@ -4,10 +4,9 @@
 
   <p>
     <a href="https://app.netlify.com/sites/alessia/deploys" title="Netlify Status"><img src="https://api.netlify.com/api/v1/badges/4245956d-8b21-4b31-a405-05ca5fa8799a/deploy-status"/></a>
-    <a href="https://circleci.com/gh/alessbell/aless.co/tree/main" title="CircleCI Build"><img src="https://circleci.com/gh/alessbell/aless.co.svg?style=shield"/></a>
+    <a href="https://github.com/alessbell/aless.co/actions?query=workflow%3ATests" title="Tests"><img src="https://github.com/alessbell/aless.co/workflows/Tests/badge.svg"/></a>
     <a href="https://codecov.io/gh/alessbell/aless.co" title="Code Coverage"><img src="https://codecov.io/gh/alessbell/aless.co/branch/main/graph/badge.svg"/></a>
     <a href="https://github.com/prettier/prettier" title="Prettier Code Formatting"><img src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-round"/></a>
-    <a href="https://david-dm.org/alessbell/aless.co" title="Dependencies Status"><img src="https://david-dm.org/alessbell/aless.co/status.svg"/></a>
   </p>
 
 </div>

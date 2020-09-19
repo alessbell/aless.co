@@ -1,4 +1,4 @@
-name: Lint, test and upload Codecov report
+name: Tests
 on: [push]
 jobs:
   run:

@@ -8,6 +8,15 @@ beforeEach(() => {
   (useStaticQuery as jest.Mock).mockImplementation(() => metadataMock);
 });
 
+beforeAll(() => {
+  // eslint-disable-next-line no-global-assign
+  document = { ...window.document };
+});
+
+afterAll(() => {
+  jest.resetAllMocks();
+});
+
 describe('Layout', () => {
   test('renders', () => {
     render(

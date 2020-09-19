@@ -9,7 +9,7 @@ type FrontMatter = {
   title: string;
   spoiler: string;
   date: string;
-  keywords: string[];
+  keywords?: string[];
 };
 
 type Article = {
@@ -71,7 +71,7 @@ const BlogPostTemplate = ({
       <small style={{ marginRight: '0.6rem', fontSize: '0.9rem' }}>
         {frontmatter.date}
       </small>
-      {frontmatter.keywords.map((keyword, i) => (
+      {frontmatter.keywords?.map((keyword, i) => (
         <Tag key={i}>{keyword}</Tag>
       ))}
     </div>

@@ -10,6 +10,7 @@ beforeEach(() => {
 
 const post = {
   excerpt: 'Some excerpt',
+  body: 'Some body',
   frontmatter: {
     title: 'Title A',
     spoiler: 'Spoiler alert',
@@ -61,6 +62,7 @@ describe('Blog post', () => {
     expect(screen.getByText(/title a/i)).toBeInTheDocument();
     expect(screen.getByText(/spoiler alert/i)).toBeInTheDocument();
     expect(screen.getByText(/july 12, 1962/i)).toBeInTheDocument();
+    expect(screen.getByText(/some body/i)).toBeInTheDocument();
     expect(screen.getByText(/some title 1/i)).toHaveAttribute(
       'href',
       '/some-slug-1'
@@ -71,5 +73,26 @@ describe('Blog post', () => {
     );
     expect(screen.getByText(/some title 1/i)).toHaveAttribute('rel', 'prev');
     expect(screen.getByText(/some title 3/i)).toHaveAttribute('rel', 'next');
+  });
+  test('renders without slug in pathcontext', () => {
+    render(
+      <BlogPost
+        data={{
+          mdx: {
+            excerpt: post.excerpt,
+            body: post.body,
+            frontmatter: {
+              title: post.frontmatter.title,
+              spoiler: post.frontmatter.spoiler,
+              date: post.frontmatter.date,
+            },
+          },
+          site: { siteMetadata: { siteUrl: 'https://aless.co' } },
+        }}
+        pathContext={{ slug: undefined }}
+        pageContext={{ previous, next }}
+      />
+    );
+    expect(screen.getByText('anti/pattern')).toBeInTheDocument();
   });
 });

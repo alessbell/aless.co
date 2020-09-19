@@ -24,4 +24,12 @@ module.exports = {
     'src/pages/**/*',
     'src/templates/**/*',
   ],
+  coverageThreshold: {
+    global: {
+      branches: 80,
+      functions: 88,
+      lines: 95,
+      statements: 95,
+    },
+  },
 };

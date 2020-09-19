@@ -49,7 +49,7 @@ const UsesPage = (): JSX.Element => {
           }
         }
       }
-      vscode: file(absolutePath: { regex: "/assets/vscode/" }) {
+      vscode: file(absolutePath: { regex: "/assets/vscode2/" }) {
         childImageSharp {
           fluid(maxWidth: 640) {
             ...GatsbyImageSharpFluid_noBase64
@@ -234,7 +234,7 @@ const UsesPage = (): JSX.Element => {
         >
           bias lighting strips
         </a>{' '}
-        on the back, which I swear by.
+        on the back.
       </p>
       <h3>💾 Software 🌸</h3>
       <p>
@@ -249,23 +249,23 @@ const UsesPage = (): JSX.Element => {
           >
             Microsoft{`'`}s Visual Studio Code
           </a>
-          : I use Sarah Drasner{`'`}s{' '}
+          : I use dark theme{' '}
           <a
-            href="https://github.com/sdras/night-owl-vscode-theme"
+            href="https://marketplace.visualstudio.com/items?itemName=cev.overnight"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Night Owl
+            Overnight
           </a>{' '}
-          theme, combined with{' '}
+          combined with{' '}
           <a
-            href="https://www.typography.com/fonts/operator/styles"
+            href="https://gumroad.com/l/dank-mono"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Operator Mono
-          </a>{' '}
-          from Hoefler&Co. My editor settings are in this{' '}
+            Dank Mono
+          </a>
+          . My editor settings are in this{' '}
           <a
             href="https://gist.github.com/alessbell/448846c679de7134cf0b67e28e553e25#file-settings-json"
             target="_blank"
@@ -274,7 +274,10 @@ const UsesPage = (): JSX.Element => {
             public gist
           </a>
           .
-          <Img fluid={vscode.childImageSharp.fluid} />
+          <Img
+            style={{ marginTop: '1rem' }}
+            fluid={vscode.childImageSharp.fluid}
+          />
         </li>
         <li>
           <a

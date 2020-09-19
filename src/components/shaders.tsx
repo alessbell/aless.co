@@ -6,24 +6,6 @@ const m = 0.3;
 const interval = 2000;
 
 const shaders = Shaders.create({
-  redWave: {
-    frag: glsl`
-    precision highp float;
-    varying vec2 uv;
-    uniform float red;
-    void main() {
-      gl_FragColor = vec4(red * ${m}, uv.x, uv.y, 1.0);
-    }`,
-  },
-  greenWave: {
-    frag: glsl`
-    precision highp float;
-    varying vec2 uv;
-    uniform float green;
-    void main() {
-      gl_FragColor = vec4(uv.x, green * ${m}, uv.y, 1);
-    }`,
-  },
   blueWave: {
     frag: glsl`
     precision highp float;
@@ -34,26 +16,6 @@ const shaders = Shaders.create({
     }`,
   },
 });
-
-const RedWave = () => {
-  const time = useTimer();
-  return (
-    <Node
-      shader={shaders && shaders.redWave}
-      uniforms={{ red: 0.9 + 0.9 * Math.cos(time / interval) }}
-    />
-  );
-};
-
-const GreenWave = () => {
-  const time = useTimer();
-  return (
-    <Node
-      shader={shaders && shaders.greenWave}
-      uniforms={{ green: 0.9 + 0.9 * Math.cos(time / interval) }}
-    />
-  );
-};
 
 const BlueWave = () => {
   const time = useTimer();
@@ -67,6 +29,4 @@ const BlueWave = () => {
 
 export default {
   BlueWave: React.memo(BlueWave),
-  RedWave: React.memo(RedWave),
-  GreenWave: React.memo(GreenWave),
 };

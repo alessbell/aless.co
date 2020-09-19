@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { useStaticQuery } from 'gatsby';
 import { metadataMock } from '../config/metadata-mock';
 import Homepage from '../../src/pages/index';
@@ -74,7 +75,6 @@ describe('Homepage', () => {
       screen.getByText('A blog by Alessia Bellisario')
     ).toBeInTheDocument();
     expect(screen.getAllByText(/post/i)).toHaveLength(3);
-
     posts.forEach(({ node: { frontmatter, fields } }) => {
       expect(
         screen.getByText(frontmatter.title || fields.slug)
@@ -84,5 +84,13 @@ describe('Homepage', () => {
       ).toHaveAttribute('href', fields.slug);
       expect(screen.getByText(frontmatter.spoiler)).toBeInTheDocument();
     });
+    userEvent.click(screen.getByText(/filter by tag/i));
+    expect(
+      (screen.getByText(/filter by tag/i) as Element).closest('details')
+    ).not.toHaveAttribute('open');
+    userEvent.click(screen.getByText(/filter by tag/i) as Element);
+    expect(
+      (screen.getByText(/filter by tag/i) as Element).closest('details')
+    ).toHaveAttribute('open');
   });
 });

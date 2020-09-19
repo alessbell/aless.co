@@ -70,6 +70,7 @@ export const Tag = styled.code<{ active?: boolean; link?: boolean }>`
   height: fit-content;
   margin-right: 0.5rem;
   margin-bottom: 0.5rem;
+  padding: 0.125rem 0.275rem;
   line-height: initial;
   white-space: nowrap;
 

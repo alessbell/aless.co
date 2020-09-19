@@ -77,7 +77,7 @@
     "serve": "gatsby serve -p 8000",
     "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\"",
     "type-check": "tsc --noEmit",
-    "test": "jest --coverage",
+    "test": "npm run test:clear-cache && jest --coverage",
     "test:clear-cache": "rm -rf $(npx jest --showConfig | jq '.configs[0].cacheDirectory')",
     "clean": "gatsby clean",
     "lint": "eslint '{src,__tests__}/**/*.{js,jsx,ts,tsx}'"
@@ -89,8 +89,10 @@
   },
   "devDependencies": {
     "@hot-loader/react-dom": "16.13.0",
+    "@testing-library/dom": "7.24.2",
     "@testing-library/jest-dom": "5.11.4",
     "@testing-library/react": "11.0.4",
+    "@testing-library/user-event": "12.1.5",
     "@types/gl-react": "3.15.3",
     "@types/gl-react-dom": "3.15.3",
     "@types/jest": "26.0.14",

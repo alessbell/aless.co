@@ -19,9 +19,9 @@ const InnerWrapper = styled.span`
 
 const Header = (): JSX.Element => {
   return (
-    <Wrapper>
+    <Wrapper data-testid="header">
       <InnerWrapper>
-        <Surface width={253} height={47}>
+        <Surface width={253} height={50}>
           {shaders[0]}
         </Surface>
       </InnerWrapper>

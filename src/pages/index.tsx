@@ -137,8 +137,8 @@ const BlogIndex = ({
                 <p style={{ marginBottom: '5px' }}>{frontmatter.spoiler}</p>
                 <div
                   style={{
-                    display: 'flex',
-                    flexDirection: 'row',
+                    display: 'inline',
+                    // flexDirection: 'row',
                     lineHeight: 'initial',
                   }}
                 >

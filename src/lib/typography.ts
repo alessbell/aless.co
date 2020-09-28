@@ -3,18 +3,26 @@ import { BORDER_COLOR } from '../components/styles';
 import '../css/font-face.css';
 
 export const fonts = {
-  GTPressuraRegular: 'GT Pressura Mono Regular',
-  GTPressuraBold: 'GT Pressura Mono Bold',
-  UntitledRegular: 'Untitled Sans',
-  code: 'League Mono',
+  GTPressuraRegular: `GT Pressura Mono Regular`,
+  GTPressuraBold: `GT Pressura Mono Bold`,
+  code: `"Lucida Console", Monaco, monospace`,
 };
 
 const typography = new Typography({
   baseFontSize: '19px',
   baseLineHeight: 1.55,
   headerLineHeight: 1.4,
-  headerFontFamily: [fonts.GTPressuraBold, 'monospace'],
-  bodyFontFamily: [fonts.UntitledRegular, 'sans-serif'],
+  headerFontFamily: [fonts.GTPressuraBold],
+  bodyFontFamily: [
+    `system-ui`,
+    `-apple-system`,
+    `BlinkMacSystemFont`,
+    `Segoe UI`,
+    `Roboto`,
+    `Ubuntu`,
+    `Helvetica Neue`,
+    `sans-serif`,
+  ],
 
   overrideStyles: () => ({
     'h1,h2': {
@@ -24,7 +32,7 @@ const typography = new Typography({
       textShadow: 'var(--textShadow)',
     },
     h3: {
-      fontFamily: `${fonts.GTPressuraRegular}, monospace`,
+      fontFamily: `${fonts.GTPressuraBold}, monospace`,
       fontWeight: '400',
       marginTop: '0',
       fontSize: '1.15rem',
@@ -65,7 +73,7 @@ const typography = new Typography({
     },
     'pre,code': {
       fontSize: '0.9rem',
-      fontFamily: `${fonts.code}, monospace`,
+      fontFamily: `${fonts.code}`,
     },
     'th:first-child, td:first-child': {
       paddingLeft: '1rem',
@@ -75,7 +83,7 @@ const typography = new Typography({
     },
     '.gatsby-code-title': {
       fontSize: '0.9rem',
-      fontFamily: `${fonts.code}, monospace`,
+      fontFamily: `${fonts.code}`,
     },
   }),
 });

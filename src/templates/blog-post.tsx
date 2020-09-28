@@ -62,10 +62,8 @@ const BlogPostTemplate = ({
     <h3>{frontmatter.spoiler}</h3>
     <div
       style={{
-        display: 'flex',
-        flexDirection: 'row',
+        display: 'inline',
         lineHeight: 'initial',
-        marginBottom: '1.5rem',
       }}
     >
       <small style={{ marginRight: '0.6rem', fontSize: '0.9rem' }}>
@@ -76,7 +74,7 @@ const BlogPostTemplate = ({
       ))}
     </div>
     {body && (
-      <div className="post-content">
+      <div className="post-content" style={{ marginTop: '1.5rem' }}>
         <MDXRenderer>{body}</MDXRenderer>
       </div>
     )}

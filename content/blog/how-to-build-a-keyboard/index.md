@@ -1,5 +1,5 @@
 ---
-title: 'How to Build a Keyboard, Part 1'
+title: 'How to Build a Keyboard, Pt.1'
 date: '2019-05-27T19:09:59.546Z'
 spoiler: 'Learn to Solder'
 draft: false

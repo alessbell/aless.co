@@ -191,6 +191,7 @@ export default class Toggle extends React.PureComponent<
   };
 
   public render(): JSX.Element {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { className, icons, ...inputProps } = this.props;
     const classes =
       'react-toggle' +

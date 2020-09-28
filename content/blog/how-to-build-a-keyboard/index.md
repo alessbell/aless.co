@@ -39,7 +39,7 @@ I knew I'd have to solder the switches to the board, something I'd never done be
 - the ["Blink" Learn to Solder Kit](https://www.amazon.com/gp/product/B017S00DJ2/ref=ppx_yo_dt_b_asin_title_o07_s00?ie=UTF8&psc=1)
 - a pair of [micro wire cutters](https://www.amazon.com/gp/product/B00FZPDG1K/ref=ppx_yo_dt_b_asin_title_o06_s00?ie=UTF8&psc=1)
 - this [fan](https://www.amazon.com/gp/product/B0711LFYJ1/ref=ppx_yo_dt_b_asin_title_o09_s00?ie=UTF8&psc=1) to remove solder fumes
-- a now-discontinued \$17 soldering iron kit that came with an iron, some solder, and a carrying case
+- a now-discontinued $17 soldering iron kit that came with an iron, some solder, and a carrying case
 
 I found the learn to solder kit to be very approachable: it comes with a single small PCB, 3x LEDs, 3x resistors, 3x push button switches and a 3V coin battery and battery holder. I watched a few YouTube videos of people soldering and came across the great [Adafruit Guide to Excellent Soldering](https://learn.adafruit.com/adafruit-guide-excellent-soldering/common-problems) before I gave it a shot. In about ten minutes, I had turned a pile of loose parts into a tidy row of buttons hooked up to a battery that could summon light from LEDs. 🤯
 

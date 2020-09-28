@@ -138,7 +138,6 @@ const BlogIndex = ({
                 <div
                   style={{
                     display: 'inline',
-                    // flexDirection: 'row',
                     lineHeight: 'initial',
                   }}
                 >

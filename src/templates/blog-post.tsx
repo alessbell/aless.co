@@ -63,9 +63,7 @@ const BlogPostTemplate = ({
     <div
       style={{
         display: 'inline',
-        // flexDirection: 'row',
         lineHeight: 'initial',
-        // marginBottom: '3.5rem',
       }}
     >
       <small style={{ marginRight: '0.6rem', fontSize: '0.9rem' }}>

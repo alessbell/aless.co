@@ -8,6 +8,7 @@ module.exports = {
     'prettier/@typescript-eslint',
     'plugin:prettier/recommended',
     'plugin:testing-library/react',
+    'plugin:react-hooks/recommended',
   ],
   settings: {
     react: {

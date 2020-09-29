@@ -111,6 +111,7 @@
     "eslint": "7.10.0",
     "eslint-config-prettier": "6.12.0",
     "eslint-plugin-jest": "24.0.2",
+    "eslint-plugin-jest-dom": "3.2.3",
     "eslint-plugin-prettier": "3.1.4",
     "eslint-plugin-react": "7.21.2",
     "eslint-plugin-react-hooks": "4.1.2",

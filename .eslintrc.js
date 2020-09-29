@@ -9,6 +9,7 @@ module.exports = {
     'plugin:prettier/recommended',
     'plugin:testing-library/react',
     'plugin:react-hooks/recommended',
+    'plugin:jest-dom/recommended',
   ],
   settings: {
     react: {
@@ -21,7 +22,13 @@ module.exports = {
     es6: true,
     'jest/globals': true,
   },
-  plugins: ['jest', '@typescript-eslint', 'react', 'testing-library'],
+  plugins: [
+    'jest',
+    '@typescript-eslint',
+    'react',
+    'testing-library',
+    'jest-dom',
+  ],
   parserOptions: {
     ecmaFeatures: {
       jsx: true,

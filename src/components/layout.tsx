@@ -30,11 +30,11 @@ const Layout: React.FunctionComponent = ({ children }) => {
 
   if (typeof document !== `undefined`) {
     window.__onThemeChange = () => setTheme(window.__theme);
-
-    React.useEffect(() => {
-      setTheme(window.__theme);
-    });
   }
+
+  React.useEffect(() => {
+    setTheme(window.__theme);
+  }, [setTheme]);
 
   const data: LayoutData = useStaticQuery(graphql`
     query LayoutQuery {

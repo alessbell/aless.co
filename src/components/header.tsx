@@ -21,7 +21,7 @@ const Header = (): JSX.Element => {
   return (
     <Wrapper data-testid="header">
       <InnerWrapper>
-        <Surface width={253} height={50}>
+        <Surface width={250} height={47}>
           {shaders[0]}
         </Surface>
       </InnerWrapper>

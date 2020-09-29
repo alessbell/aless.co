@@ -1,18 +1,16 @@
 import Typography from 'typography';
 import { BORDER_COLOR } from '../components/styles';
-import '../css/font-face.css';
 
 export const fonts = {
-  GTPressuraRegular: `GT Pressura Mono Regular`,
-  GTPressuraBold: `GT Pressura Mono Bold`,
-  code: `"Lucida Console", Monaco, monospace`,
-};
-
-const typography = new Typography({
-  baseFontSize: '19px',
-  baseLineHeight: 1.55,
-  headerLineHeight: 1.4,
-  headerFontFamily: [fonts.GTPressuraBold],
+  headerFontFamily: [
+    `SFMono-Regular`,
+    `Menlo`,
+    `Monaco`,
+    `Consolas`,
+    `"Liberation Mono"`,
+    `"Courier New"`,
+    `monospace`,
+  ],
   bodyFontFamily: [
     `system-ui`,
     `-apple-system`,
@@ -23,19 +21,27 @@ const typography = new Typography({
     `Helvetica Neue`,
     `sans-serif`,
   ],
+};
+
+const typography = new Typography({
+  baseFontSize: '19px',
+  baseLineHeight: 1.55,
+  headerLineHeight: 1.4,
+  headerFontFamily: fonts.headerFontFamily,
+  bodyFontFamily: fonts.bodyFontFamily,
 
   overrideStyles: () => ({
     'h1,h2': {
       color: BORDER_COLOR,
-      fontSize: '1.75rem',
+      fontSize: '1.6rem',
       position: 'relative',
       textShadow: 'var(--textShadow)',
     },
     h3: {
-      fontFamily: `${fonts.GTPressuraBold}, monospace`,
-      fontWeight: '400',
+      fontFamily: `${fonts.headerFontFamily.join(', ')}`,
+      fontWeight: 'bold',
       marginTop: '0',
-      fontSize: '1.15rem',
+      fontSize: '1rem',
     },
     'div,h3,h4,h5,h6,small,figcaption,strong,p,ul,ol': {
       color: 'var(--textNormal)',
@@ -73,7 +79,7 @@ const typography = new Typography({
     },
     'pre,code': {
       fontSize: '0.9rem',
-      fontFamily: `${fonts.code}`,
+      fontFamily: `${fonts.headerFontFamily.join(', ')}`,
     },
     'th:first-child, td:first-child': {
       paddingLeft: '1rem',
@@ -83,7 +89,7 @@ const typography = new Typography({
     },
     '.gatsby-code-title': {
       fontSize: '0.9rem',
-      fontFamily: `${fonts.code}`,
+      fontFamily: `${fonts.headerFontFamily.join(', ')}`,
     },
   }),
 });

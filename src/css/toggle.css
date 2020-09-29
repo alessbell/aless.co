@@ -92,11 +92,3 @@
 .react-toggle--checked .react-toggle-thumb {
   transform: translateX(26px);
 }
-
-/* .react-toggle--focus .react-toggle-thumb {
-  box-shadow: 0px 0px 2px 3px var(--codeBg);
-}
-
-.react-toggle:active .react-toggle-thumb {
-  box-shadow: 0px 0px 5px 5px var(--codeBg);
-} */

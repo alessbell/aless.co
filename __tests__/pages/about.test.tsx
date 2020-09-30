@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useStaticQuery } from 'gatsby';
 import { metadataMock } from '../config/metadata-mock';
-import { render, screen } from '@testing-library/react';
+import { render, screen } from '../utils';
 import About from '../../src/pages/about';
 
 const book = {

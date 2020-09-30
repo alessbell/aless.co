@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { render } from '@testing-library/react';
+import { render } from '../utils';
 import Shaders from '../../src/components/shaders';
 
 const shaders = Object.values(Shaders).map((S, idx) => <S key={idx} />);

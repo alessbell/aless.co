@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen } from '../utils';
 import { useStaticQuery } from 'gatsby';
 import { metadataMock } from '../config/metadata-mock';
 import BlogPost from '../../src/templates/blog-post';

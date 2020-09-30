@@ -1,6 +1,7 @@
 import * as React from 'react';
-import { graphql, Link } from 'gatsby';
-import { parse } from 'query-string';
+import { graphql } from 'gatsby';
+import { ArrayParam, useQueryParam, withDefault } from 'use-query-params';
+// import { parse } from 'query-string';
 import slugify from 'slugify';
 import FlipMove from 'react-flip-move';
 import Layout from '../components/layout';
@@ -31,21 +32,7 @@ export type BlogIndexProps = {
   };
 };
 
-const TagLink = ({ tag, tags }: { tag: string; tags: string[] }) => {
-  const slug = slugify(tag);
-  const active = tags.includes(slug);
-  const qs = active
-    ? `${tags.length > 1 ? tags.filter((t) => t !== slug).join(',') : ``}`
-    : `${tags.length > 0 ? [...tags, slug].join(',') : slug}`;
-  return (
-    <Tag active={active} link={true}>
-      <Link to={qs.length > 0 ? `/?tags=${qs}` : `/`}>{tag}</Link>
-    </Tag>
-  );
-};
-
-// persist the state of the search/toggle
-let search = '';
+// persist the state of the toggle
 let detailsToggleState = true;
 
 const BlogIndex = ({
@@ -54,28 +41,15 @@ const BlogIndex = ({
   },
 }: BlogIndexProps): JSX.Element => {
   const keywords = group.map((item) => item.tag);
-  const [tags, setTags] = React.useState<string[]>([]);
+  const [tags, setTags] = useQueryParam<(string | null)[]>(
+    'tags',
+    withDefault(ArrayParam, [])
+  );
   const [detailsToggle, setDetailsToggle] = React.useState(detailsToggleState);
 
   React.useEffect(() => {
     detailsToggleState = detailsToggle;
   });
-
-  if (typeof location !== 'undefined') {
-    search = location.search;
-  }
-
-  React.useEffect(() => {
-    if (search === '') {
-      setTags([]);
-    }
-    const { tags: qsTags } = parse(search, { arrayFormat: 'comma' });
-    if (Array.isArray(qsTags)) {
-      setTags(qsTags);
-    } else if (typeof qsTags === 'string') {
-      setTags([qsTags]);
-    }
-  }, [search]);
 
   return (
     <Layout>
@@ -105,7 +79,22 @@ const BlogIndex = ({
           }}
         >
           {keywords.map((t, idx) => {
-            return <TagLink key={idx} tag={t} tags={tags} />;
+            const slug = slugify(t);
+            return (
+              <Tag
+                key={idx}
+                active={tags.includes(slug)}
+                onClick={() => {
+                  if (!tags.includes(slug)) {
+                    setTags([...tags, slug]);
+                  } else {
+                    setTags(tags.filter((t) => t != slug));
+                  }
+                }}
+              >
+                {t}
+              </Tag>
+            );
           })}
         </div>
       </details>
@@ -127,14 +116,19 @@ const BlogIndex = ({
             });
             return contains;
           })
-          .map(({ node: { frontmatter, fields, id } }) => {
-            const title = frontmatter.title || fields.slug;
-            return (
+          .map(
+            ({
+              node: {
+                id,
+                fields: { slug },
+                frontmatter: { title, date, keywords, spoiler },
+              },
+            }) => (
               <div key={id} style={{ margin: '1.5rem 0' }}>
                 <h3>
-                  <BlogLink to={fields.slug}>{title}</BlogLink>
+                  <BlogLink to={slug}>{title}</BlogLink>
                 </h3>
-                <p style={{ marginBottom: '5px' }}>{frontmatter.spoiler}</p>
+                <p style={{ marginBottom: '5px' }}>{spoiler}</p>
                 <div
                   style={{
                     display: 'inline',
@@ -142,15 +136,15 @@ const BlogIndex = ({
                   }}
                 >
                   <small style={{ marginRight: '0.6rem', fontSize: '0.9rem' }}>
-                    {frontmatter.date}
+                    {date}
                   </small>
-                  {frontmatter.keywords.map((keyword, i) => (
+                  {keywords.map((keyword, i) => (
                     <Tag key={i}>{keyword}</Tag>
                   ))}
                 </div>
               </div>
-            );
-          })}
+            )
+          )}
       </FlipMove>
     </Layout>
   );

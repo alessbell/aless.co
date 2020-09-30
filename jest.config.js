@@ -1,4 +1,6 @@
 module.exports = {
+  reporters: ['default', '@jamesacarr/jest-reporter-github-actions'],
+  testLocationInResults: true,
   transform: {
     '^.+\\.jsx?$': `<rootDir>/jest-preprocess.ts`,
     '^.+\\.tsx?$': `ts-jest`,
@@ -11,6 +13,7 @@ module.exports = {
   transformIgnorePatterns: [`node_modules/(?!(gatsby|gatsby-plugin-mdx)/)`],
   globals: {
     __BASE_PATH__: ``,
+    __PATH_PREFIX__: ``,
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'json', 'jsx'],
   testMatch: ['**/*.test.(tsx|ts)'],

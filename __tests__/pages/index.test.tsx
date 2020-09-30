@@ -74,6 +74,8 @@ describe('Homepage', () => {
     expect(
       screen.getByText('A blog by Alessia Bellisario')
     ).toBeInTheDocument();
+
+    // displays 3 posts
     expect(screen.getAllByText(/post/i)).toHaveLength(3);
     posts.forEach(({ node: { frontmatter, fields } }) => {
       expect(
@@ -84,6 +86,8 @@ describe('Homepage', () => {
       ).toHaveAttribute('href', fields.slug);
       expect(screen.getByText(frontmatter.spoiler)).toBeInTheDocument();
     });
+
+    // can open and close details
     userEvent.click(screen.getByText(/filter by tag/i));
     expect(
       (screen.getByText(/filter by tag/i) as Element).closest('details')
@@ -92,5 +96,8 @@ describe('Homepage', () => {
     expect(
       (screen.getByText(/filter by tag/i) as Element).closest('details')
     ).toHaveAttribute('open');
+
+    userEvent.click(screen.getByText('some keyword'));
+    // userEvent.click(screen.getAllByText('some keyword')[0]);
   });
 });

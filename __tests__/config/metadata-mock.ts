@@ -3,7 +3,7 @@ export const metadataMock = {
     siteMetadata: {
       title: `anti/pattern`,
       repository: `https://github.com/alessbell/aless.co`,
-      commit: `master`,
+      commit: `main`,
       siteUrl: `https://aless.co`,
     },
   },

@@ -6,7 +6,7 @@ draft: false
 keywords: ['programming']
 ---
 
-I avoid brand new tech until I have an itch to scratch: a small, self-contained problem that seems it might lend itself nicely to $someTool. I'm usually unsure I'll be able to achieve what I have in mind. But _maybe..._
+I avoid brand new tech until I have an itch to scratch: a small, self-contained problem that seems it might lend itself nicely to \$someTool. I'm usually unsure I'll be able to achieve what I have in mind. But _maybe..._
 
 This time, the problem was something that had annoyed me for as long as I'd been employed: resumes. Not the fact of them, or even writing them, necessarily. Just **managing different versions**.
 
@@ -34,7 +34,7 @@ I had no idea how feasible this all was, still knowing little to nothing about t
 
 tl;dr my ideal workflow was possible, so I built it 🐙💜
 
-If you'd like to browse the code, steps 1 and 2 are achieved by the [main workflow in `alessbell/resume`](https://github.com/alessbell/resume/blob/master/.github/workflows/main.yml). Step 3 is handled by actions in this blog's repository, namely [`/commit-resume`](https://github.com/alessbell/aless.co/blob/main/commit-resume/entrypoint.sh). For a walk-through of the code, keep reading 😎
+If you'd like to browse the code, steps 1 and 2 are achieved by the [main workflow in `alessbell/resume`](https://github.com/alessbell/resume/blob/main/.github/workflows/main.yml). Step 3 is handled by actions in this blog's repository, namely [`/commit-resume`](https://github.com/alessbell/aless.co/blob/main/commit-resume/entrypoint.sh). For a walk-through of the code, keep reading 😎
 
 ![The first PR created by my GitHub action: updating a PDF with the one it downloaded from the latest automated release in another repository ✨](./resume-pr-1.png)
 
@@ -80,7 +80,7 @@ In order to keep the version of my resume displayed on this website up-to-date, 
 
 Luckily, such an event exists: [`repository_dispatch`](https://developer.github.com/v3/repos/#create-a-repository-dispatch-event) triggers a webhook event "when you want to trigger a GitHub Actions workflow for activity that happens outside of GitHub," or, in this case, in a different repository's action. A simple curl request with the correct auth token, headers and body does the trick.
 
-This is the [whole bash script](https://github.com/alessbell/resume/blob/master/ping-repo/entrypoint.sh) from `alessbell/resume/ping-repo`:
+This is the [whole bash script](https://github.com/alessbell/resume/blob/main/ping-repo/entrypoint.sh) from `alessbell/resume/ping-repo`:
 
 ```bash:title=entrypoint.sh
 #!/bin/bash

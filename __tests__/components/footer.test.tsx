@@ -12,7 +12,7 @@ beforeEach(() => {
 
 describe('Footer', () => {
   test('renders', () => {
-    render(<Footer commit="master" repository={REPOSITORY} />);
+    render(<Footer commit="main" repository={REPOSITORY} />);
     expect(screen.getByText(/twitter/)).toHaveAttribute(
       'href',
       'https://twitter.com/alessbell'

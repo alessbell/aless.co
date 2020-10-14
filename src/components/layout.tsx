@@ -2,19 +2,10 @@ import * as React from 'react';
 import { Global, css } from '@emotion/core';
 import { useStaticQuery, graphql } from 'gatsby';
 import { H1, Link, LeftBar, RightBar, TopBar, BottomBar } from './styles';
+import { LayoutQueryQuery } from '../../graphql-types';
 import Header from './header';
 import Toggle from './toggle';
 import Footer from './footer';
-
-type LayoutData = {
-  site: {
-    siteMetadata: {
-      title: string;
-      commit: string;
-      repository: string;
-    };
-  };
-};
 
 declare global {
   interface Window {
@@ -36,7 +27,7 @@ const Layout: React.FunctionComponent = ({ children }) => {
     setTheme(window.__theme);
   }, [setTheme]);
 
-  const data: LayoutData = useStaticQuery(graphql`
+  const data: LayoutQueryQuery = useStaticQuery(graphql`
     query LayoutQuery {
       site {
         siteMetadata {
@@ -298,7 +289,7 @@ const Layout: React.FunctionComponent = ({ children }) => {
             >
               <H1>
                 <Link id="title" to={`/`}>
-                  {data.site.siteMetadata.title}
+                  {data?.site?.siteMetadata?.title}
                 </Link>
               </H1>
               {typeof document !== `undefined` && <Header />}
@@ -308,8 +299,8 @@ const Layout: React.FunctionComponent = ({ children }) => {
           </header>
           {children}
           <Footer
-            commit={data.site.siteMetadata.commit}
-            repository={data.site.siteMetadata.repository}
+            commit={data?.site?.siteMetadata?.commit}
+            repository={data?.site?.siteMetadata?.repository}
           />
         </div>
         <TopBar />

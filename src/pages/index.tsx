@@ -1,36 +1,12 @@
 import * as React from 'react';
 import { graphql } from 'gatsby';
 import { ArrayParam, useQueryParam, withDefault } from 'use-query-params';
-// import { parse } from 'query-string';
 import slugify from 'slugify';
 import FlipMove from 'react-flip-move';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import { Tag, BlogLink } from '../components/styles';
-
-export type Edge = {
-  node: {
-    frontmatter: {
-      title: string;
-      spoiler: string;
-      date: string;
-      keywords: string[];
-    };
-    fields: {
-      slug: string;
-    };
-    id: string;
-  };
-};
-
-export type BlogIndexProps = {
-  data: {
-    allMdx: {
-      edges: Edge[];
-      group: { tag: string }[];
-    };
-  };
-};
+import { Unnamed_1_Query } from '../../graphql-types';
 
 // persist the state of the toggle
 let detailsToggleState = true;
@@ -39,7 +15,9 @@ const BlogIndex = ({
   data: {
     allMdx: { edges, group },
   },
-}: BlogIndexProps): JSX.Element => {
+}: {
+  data: Unnamed_1_Query;
+}): JSX.Element => {
   const keywords = group.map((item) => item.tag);
   const [tags, setTags] = useQueryParam<(string | null)[]>(
     'tags',
@@ -79,6 +57,7 @@ const BlogIndex = ({
           }}
         >
           {keywords.map((t, idx) => {
+            if (!t) return null;
             const slug = slugify(t);
             return (
               <Tag
@@ -109,42 +88,43 @@ const BlogIndex = ({
               return true;
             }
             let contains = false;
-            node.frontmatter.keywords.forEach((keyword) => {
-              if (tags.includes(slugify(keyword))) {
+            node.frontmatter?.keywords?.forEach((keyword) => {
+              if (tags.includes(slugify(keyword || ''))) {
                 contains = true;
               }
             });
             return contains;
           })
-          .map(
-            ({
-              node: {
-                id,
-                fields: { slug },
-                frontmatter: { title, date, keywords, spoiler },
-              },
-            }) => (
-              <div key={id} style={{ margin: '1.5rem 0' }}>
-                <h3>
-                  <BlogLink to={slug}>{title}</BlogLink>
-                </h3>
-                <p style={{ marginBottom: '5px' }}>{spoiler}</p>
-                <div
-                  style={{
-                    display: 'inline',
-                    lineHeight: 'initial',
-                  }}
-                >
-                  <small style={{ marginRight: '0.6rem', fontSize: '0.9rem' }}>
-                    {date}
-                  </small>
-                  {keywords.map((keyword, i) => (
-                    <Tag key={i}>{keyword}</Tag>
-                  ))}
-                </div>
-              </div>
-            )
-          )}
+          .map(({ node: { id, fields, frontmatter } }) => (
+            <div key={id} style={{ margin: '1.5rem 0' }}>
+              {fields?.slug &&
+              frontmatter?.title &&
+              frontmatter?.spoiler &&
+              frontmatter?.date ? (
+                <>
+                  <h3>
+                    <BlogLink to={fields.slug}>{frontmatter.title}</BlogLink>
+                  </h3>
+                  <p style={{ marginBottom: '5px' }}>{frontmatter.spoiler}</p>
+                  <div
+                    style={{
+                      display: 'inline',
+                      lineHeight: 'initial',
+                    }}
+                  >
+                    <small
+                      style={{ marginRight: '0.6rem', fontSize: '0.9rem' }}
+                    >
+                      {frontmatter.date}
+                    </small>
+                    {frontmatter?.keywords?.map((keyword, i) => (
+                      <Tag key={i}>{keyword}</Tag>
+                    ))}
+                  </div>
+                </>
+              ) : null}
+            </div>
+          ))}
       </FlipMove>
     </Layout>
   );
@@ -160,7 +140,6 @@ export const pageQuery = graphql`
     ) {
       edges {
         node {
-          excerpt
           fields {
             slug
           }

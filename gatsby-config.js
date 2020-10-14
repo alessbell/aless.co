@@ -28,6 +28,16 @@ const config = {
     commit: process.env.VERCEL_GITHUB_COMMIT_SHA || `main`,
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-graphql-codegen`,
+      options: {
+        documentPaths: [
+          './src/**/!(*.d).{js,jsx,ts,tsx}',
+          './.cache/fragments/*.js',
+          './node_modules/gatsby-*/**/*.js',
+        ],
+      },
+    },
     `@pauliescanlon/gatsby-mdx-embed`,
     {
       resolve: `gatsby-source-filesystem`,

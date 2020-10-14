@@ -1,45 +1,22 @@
 import * as React from 'react';
 import { Helmet } from 'react-helmet';
-import { FixedObject } from 'gatsby-image';
 import { useStaticQuery, graphql } from 'gatsby';
-
-export type SEOProps = {
-  /** Description text */
-  description?: string;
-  /** Link for Og Image */
-  ogImageProp?: string;
-  /** Language text */
-  lang?: string;
-  /** SEO keywords */
-  keywords?: string[];
-  /** Document title */
-  title: string;
-};
-
-type SEOData = {
-  site: {
-    siteMetadata: {
-      title: string;
-      description: string;
-      author: string;
-      siteUrl: string;
-    };
-  };
-  ogImageDefault: {
-    childImageSharp: {
-      fixed: FixedObject;
-    };
-  };
-};
+import { DefaultSeoQueryQuery } from '../graphql-types';
 
 const SEO = ({
+  title,
   description,
   ogImageProp,
   lang = 'en',
   keywords = [],
-  title,
-}: SEOProps): JSX.Element => {
-  const data: SEOData = useStaticQuery(graphql`
+}: {
+  title: string;
+  description?: string;
+  ogImageProp?: string;
+  lang?: string;
+  keywords?: (string | null | undefined)[];
+}): JSX.Element => {
+  const data: DefaultSeoQueryQuery = useStaticQuery(graphql`
     query DefaultSEOQuery {
       site {
         siteMetadata {
@@ -59,12 +36,12 @@ const SEO = ({
     }
   `);
 
-  const metaDescription = description || data.site.siteMetadata.description;
-  const author = data.site.siteMetadata.author;
+  const metaDescription = description || data?.site?.siteMetadata?.description;
+  const author = data?.site?.siteMetadata?.author;
   const ogImage =
     ogImageProp ||
-    data.site.siteMetadata.siteUrl.concat(
-      data.ogImageDefault.childImageSharp.fixed.src
+    data?.site?.siteMetadata?.siteUrl?.concat(
+      data?.ogImageDefault?.childImageSharp?.fixed?.src || ''
     );
 
   return (
@@ -73,11 +50,11 @@ const SEO = ({
         lang,
       }}
       title={title}
-      titleTemplate={`%s | ${data.site.siteMetadata.title}`}
+      titleTemplate={`%s | ${data?.site?.siteMetadata?.title}`}
       meta={[
         {
           name: `description`,
-          content: metaDescription,
+          content: metaDescription || '',
         },
         {
           property: `og:title`,
@@ -85,7 +62,7 @@ const SEO = ({
         },
         {
           property: `og:description`,
-          content: metaDescription,
+          content: metaDescription || '',
         },
         {
           property: `og:type`,
@@ -93,16 +70,16 @@ const SEO = ({
         },
         {
           name: `og:image`,
-          content: ogImage,
+          content: ogImage || '',
         },
         {
           name: `image`,
           property: `og:image`,
-          content: ogImage,
+          content: ogImage || '',
         },
         {
           name: `author`,
-          content: author,
+          content: author || '',
         },
         {
           name: `twitter:card`,
@@ -110,24 +87,24 @@ const SEO = ({
         },
         {
           name: `twitter:creator`,
-          content: author,
+          content: author || '',
         },
         {
           name: `twitter:title`,
-          content: title,
+          content: title || '',
         },
         {
           name: `twitter:description`,
-          content: metaDescription,
+          content: metaDescription || '',
         },
         {
           name: `twitter:image`,
-          content: ogImage,
+          content: ogImage || '',
         },
       ].concat(
         keywords.length > 0
           ? {
-              content: keywords.join(`, `),
+              content: keywords.filter((k) => typeof k === 'string').join(`, `),
               name: `keywords`,
             }
           : []

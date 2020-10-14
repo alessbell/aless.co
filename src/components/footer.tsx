@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import { Link } from 'gatsby';
 import { Space, FooterWrapper } from './styles';
 
-export interface AnchorProps extends React.HTMLAttributes<HTMLAnchorElement> {
+interface AnchorProps extends React.HTMLAttributes<HTMLAnchorElement> {
   link: string;
   name: string;
   rel?: 'noopener';
@@ -16,11 +16,6 @@ const Commit = styled.div`
   }
 `;
 
-export type FooterProps = {
-  commit: string;
-  repository: string;
-};
-
 const Anchor = ({ link, name, rel, target = '_self' }: AnchorProps) => (
   <a
     href={link}
@@ -31,7 +26,13 @@ const Anchor = ({ link, name, rel, target = '_self' }: AnchorProps) => (
   </a>
 );
 
-const Footer = ({ commit, repository }: FooterProps): JSX.Element => (
+const Footer = ({
+  commit,
+  repository,
+}: {
+  commit?: string | null;
+  repository?: string | null;
+}): JSX.Element => (
   <FooterWrapper>
     <Link to="/about">about</Link>
 
@@ -61,18 +62,20 @@ const Footer = ({ commit, repository }: FooterProps): JSX.Element => (
 
     <a href="/rss.xml">rss</a>
 
-    <Commit>
-      deployed commit:{' '}
-      <code>
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href={`${repository}/commit/${commit}`}
-        >
-          {commit.substring(0, 7)}
-        </a>
-      </code>
-    </Commit>
+    {commit && repository ? (
+      <Commit>
+        deployed commit:{' '}
+        <code>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href={`${repository}/commit/${commit}`}
+          >
+            {commit?.substring(0, 7)}
+          </a>
+        </code>
+      </Commit>
+    ) : null}
   </FooterWrapper>
 );
 

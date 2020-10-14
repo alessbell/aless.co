@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Helmet } from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
-import { DefaultSeoQueryQuery } from '../graphql-types';
+import { DefaultSeoQueryQuery } from '../../graphql-types';
 
 const SEO = ({
   title,

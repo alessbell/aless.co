@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import Img, { FixedObject } from 'gatsby-image';
-import { ProfilePictureQueryQuery } from '../graphql-types';
+import { ProfilePictureQueryQuery } from '../../graphql-types';
 import SEO from '../components/seo';
 import Layout from '../components/layout';
 

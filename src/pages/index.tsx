@@ -6,7 +6,7 @@ import FlipMove from 'react-flip-move';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import { Tag, BlogLink } from '../components/styles';
-import { Unnamed_1_Query } from '../graphql-types';
+import { Unnamed_1_Query } from '../../graphql-types';
 
 // persist the state of the toggle
 let detailsToggleState = true;
@@ -140,7 +140,6 @@ export const pageQuery = graphql`
     ) {
       edges {
         node {
-          excerpt
           fields {
             slug
           }

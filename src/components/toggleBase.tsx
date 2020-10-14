@@ -201,6 +201,7 @@ export default class Toggle extends React.PureComponent<
       (className ? ' ' + className : '');
     return (
       <div
+        data-testid="toggle"
         className={classes}
         onClick={this.handleClick}
         onTouchStart={this.handleTouchStart}

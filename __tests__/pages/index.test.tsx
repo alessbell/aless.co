@@ -46,7 +46,6 @@ const posts = [
       frontmatter: {
         title: 'Third post',
         date: 'January 3, 1980',
-        spoiler: '3...',
         keywords: ['keyword three'],
       },
       fields: {
@@ -78,7 +77,8 @@ describe('Homepage', () => {
       screen.getByText('A blog by Alessia Bellisario')
     ).toBeInTheDocument();
 
-    // displays 3 posts
+    // displays 3 posts, and expects all to be there...
+    // ...even the node without a spoiler
     expect(screen.getAllByText(/post/i)).toHaveLength(3);
     posts.forEach(({ node: { frontmatter, fields } }) => {
       expect(
@@ -87,8 +87,16 @@ describe('Homepage', () => {
       expect(
         screen.getByText(frontmatter.title || fields.slug)
       ).toHaveAttribute('href', fields.slug);
-      expect(screen.getByText(frontmatter.spoiler)).toBeInTheDocument();
     });
+
+    // expects the spoilers that do exist (they are optional)
+    // to be in the document
+    expect(
+      screen.getByText(posts[0].node.frontmatter.spoiler || '')
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(posts[1].node.frontmatter.spoiler || '')
+    ).toBeInTheDocument();
 
     // can open and close details
     userEvent.click(screen.getByText(/filter by tag/i));

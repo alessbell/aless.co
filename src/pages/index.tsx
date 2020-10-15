@@ -97,10 +97,7 @@ const BlogIndex = ({
           })
           .map(({ node: { id, fields, frontmatter } }) => (
             <div key={id} style={{ margin: '1.5rem 0' }}>
-              {fields?.slug &&
-              frontmatter?.title &&
-              frontmatter?.spoiler &&
-              frontmatter?.date ? (
+              {fields?.slug && frontmatter?.title ? (
                 <>
                   <h3>
                     <BlogLink to={fields.slug}>{frontmatter.title}</BlogLink>

@@ -92,7 +92,7 @@
   "devDependencies": {
     "@hot-loader/react-dom": "16.13.0",
     "@jamesacarr/jest-reporter-github-actions": "0.0.1",
-    "@testing-library/dom": "7.25.0",
+    "@testing-library/dom": "7.26.0",
     "@testing-library/jest-dom": "5.11.4",
     "@testing-library/react": "11.0.4",
     "@testing-library/user-event": "12.1.7",

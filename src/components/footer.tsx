@@ -34,7 +34,7 @@ const Footer = ({
   repository?: string | null;
 }): JSX.Element => (
   <FooterWrapper>
-    <Link to="/about">about</Link>
+    <Link to="/about/">about</Link>
 
     <Space color="orange">•</Space>
 

@@ -21,6 +21,6 @@ describe('Footer', () => {
       'href',
       'https://github.com/alessbell'
     );
-    expect(screen.getByText(/about/)).toHaveAttribute('href', '/about');
+    expect(screen.getByText(/about/)).toHaveAttribute('href', '/about/');
   });
 });

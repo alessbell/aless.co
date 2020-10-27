@@ -1,13 +1,10 @@
 import React from 'react';
-// import Img, { FixedObject } from 'gatsby-image';
 import Image from 'next/image';
 import Link from 'next/link';
 
 import SEO from '../components/seo';
 import Layout from '../components/layout';
 
-// omit generated profilePicture type because of bad schema typing:
-// https://github.com/gatsbyjs/gatsby/issues/17003
 const AboutPage = (): JSX.Element => {
   return (
     <Layout>

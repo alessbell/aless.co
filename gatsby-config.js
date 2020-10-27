@@ -22,20 +22,6 @@ const config = {
   plugins: [
     `@pauliescanlon/gatsby-mdx-embed`,
     {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/content/blog`,
-        name: `blog`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/content/assets`,
-        name: `assets`,
-      },
-    },
-    {
       resolve: `gatsby-source-goodreads`,
       options: {
         developerKey,
@@ -43,18 +29,6 @@ const config = {
         userShelf: `currently-reading`,
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
-    `gatsby-plugin-typescript`,
-    `gatsby-plugin-react-helmet`,
-    {
-      resolve: `gatsby-plugin-react-helmet-canonical-urls`,
-      options: {
-        siteUrl: `https://aless.co`,
-      },
-    },
-    `gatsby-plugin-catch-links`,
-    `gatsby-plugin-emotion`,
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
@@ -79,7 +53,6 @@ const config = {
             },
           },
           `gatsby-remark-copy-linked-files`,
-          `gatsby-remark-smartypants`,
           {
             resolve: `gatsby-remark-twitter-cards`,
             options: {
@@ -119,24 +92,6 @@ const config = {
             },
           },
         ],
-      },
-    },
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `anti/pattern: A blog by Alessia Bellisario`,
-        short_name: `Alessia's Blog`,
-        start_url: '/',
-        background_color: '#fff',
-        theme_color: '#525dce',
-        display: 'standalone',
-        icon: 'static/favicon-32x32.png',
-      },
-    },
-    {
-      resolve: `gatsby-plugin-typography`,
-      options: {
-        pathToConfigModule: `src/lib/typography`,
       },
     },
     {
@@ -197,7 +152,6 @@ const config = {
       },
     },
     `gatsby-plugin-sitemap`,
-    `gatsby-plugin-remove-serviceworker`,
   ],
 };
 

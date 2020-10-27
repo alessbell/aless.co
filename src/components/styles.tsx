@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import styled from 'styled-components';
 import BaseLink from 'next/link';
 
 const BORDER_WIDTH = '5px';

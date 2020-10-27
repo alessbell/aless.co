@@ -11,40 +11,40 @@ export const getPostSlugs = (): string[] => {
   return fs.readdirSync(postsDirectory);
 };
 
-// export const getPostBySlug = (slug) => {
-//   const realSlug = slug.replace(/\.md$/, '');
-//   const fullPath = join(postsDirectory, `${realSlug}.md`);
-//   const fileContents = fs.readFileSync(fullPath, 'utf8');
-//   const { data, content } = matter(fileContents);
-//   const date = format(parseISO(data.date), 'MMMM dd, yyyy');
-
-//   return { slug: realSlug, frontmatter: { ...data, date }, content };
-// };
-
-export function getPostBySlug(slug, fields = []) {
+export const getPostBySlug = (slug) => {
   const realSlug = slug.replace(/\.md$/, '');
   const fullPath = join(postsDirectory, `${realSlug}.md`);
   const fileContents = fs.readFileSync(fullPath, 'utf8');
   const { data, content } = matter(fileContents);
+  const date = format(parseISO(data.date), 'MMMM dd, yyyy');
 
-  const items = {};
+  return { slug: realSlug, frontmatter: { ...data, date }, content };
+};
 
-  // Ensure only the minimal needed data is exposed
-  fields.forEach((field) => {
-    if (field === 'slug') {
-      items[field] = realSlug;
-    }
-    if (field === 'content') {
-      items[field] = content;
-    }
+// export function getPostBySlug(slug, fields = []) {
+//   const realSlug = slug.replace(/\.md$/, '');
+//   const fullPath = join(postsDirectory, `${realSlug}.md`);
+//   const fileContents = fs.readFileSync(fullPath, 'utf8');
+//   const { data, content } = matter(fileContents);
 
-    if (data[field]) {
-      items[field] = data[field];
-    }
-  });
+//   const items = {};
 
-  return items;
-}
+//   // Ensure only the minimal needed data is exposed
+//   fields.forEach((field) => {
+//     if (field === 'slug') {
+//       items[field] = realSlug;
+//     }
+//     if (field === 'content') {
+//       items[field] = content;
+//     }
+
+//     if (data[field]) {
+//       items[field] = data[field];
+//     }
+//   });
+
+//   return items;
+// }
 
 export function getAllPosts(fields = []) {
   const slugs = getPostSlugs();

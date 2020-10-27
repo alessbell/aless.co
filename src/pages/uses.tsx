@@ -1,5 +1,4 @@
 import React from 'react';
-// import Img, { FluidObject, FixedObject } from 'gatsby-image';
 import SEO from '../components/seo';
 import Layout from '../components/layout';
 

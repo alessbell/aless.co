@@ -11,7 +11,6 @@ import { Tag, BlogLink } from '../components/styles';
 let detailsToggleState = true;
 
 const BlogIndex = (props): JSX.Element => {
-  console.log(props);
   const keywords = props?.group?.map((item) => item.tag);
   const [tags, setTags] = useQueryParam<(string | null)[]>(
     'tags',

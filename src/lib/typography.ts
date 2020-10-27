@@ -1,4 +1,3 @@
-import Typography from 'typography';
 import { BORDER_COLOR } from '../components/styles';
 
 export const fonts = {
@@ -38,13 +37,10 @@ const typography = new Typography({
       textShadow: 'var(--textShadow)',
     },
     h3: {
-      fontFamily: `${fonts.headerFontFamily.join(', ')}`,
+      // fontFamily: `${fonts.headerFontFamily.join(', ')}`,
       fontWeight: 'bold',
       marginTop: '0',
       fontSize: '1rem',
-    },
-    'div,h3,h4,h5,h6,small,figcaption,strong,p,ul,ol': {
-      color: 'var(--textNormal)',
     },
     'h1,h2,h3': {
       marginBottom: '0.5rem',
@@ -68,12 +64,12 @@ const typography = new Typography({
       fontSize: '0.75rem',
       marginTop: '0.5rem',
     },
-    a: {
-      color: 'var(--blue)',
-      textDecoration: '#FF7EDB underline wavy',
-      WebkitTextDecoration: '#FF7EDB underline wavy',
-      textUnderlinePosition: 'under',
-    },
+    // a: {
+    //   color: 'var(--blue)',
+    //   textDecoration: '#FF7EDB underline wavy',
+    //   WebkitTextDecoration: '#FF7EDB underline wavy',
+    //   textUnderlinePosition: 'under',
+    // },
     footer: {
       fontSize: '16px',
     },
@@ -93,12 +89,3 @@ const typography = new Typography({
     },
   }),
 });
-
-// Hot reload typography in development.
-if (process.env.NODE_ENV !== 'production') {
-  typography.injectStyles();
-}
-
-export default typography;
-export const rhythm = typography.rhythm;
-export const scale = typography.scale;

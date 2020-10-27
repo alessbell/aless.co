@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from '@emotion/styled';
+import styled from 'styled-components';
 import { Surface } from 'gl-react-dom';
 import Shaders from './shaders';
 

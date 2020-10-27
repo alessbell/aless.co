@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { Link as BaseLink } from 'gatsby';
+import BaseLink from 'next/link';
 
 const BORDER_WIDTH = '5px';
 export const BORDER_COLOR = '#FE4450';

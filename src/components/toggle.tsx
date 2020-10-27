@@ -1,9 +1,6 @@
 import * as React from 'react';
 import ToggleBase from './toggleBase';
 import { ThemeContext } from './layout';
-import sunglasses from '../../content/assets/sunglasses.png';
-import sparkles from '../../content/assets/sparkles.png';
-import '../css/toggle.css';
 
 declare global {
   interface Window {
@@ -19,7 +16,7 @@ const Toggle = (): JSX.Element => {
         icons={{
           checked: (
             <img
-              src={sparkles}
+              src="/assets/sparkles.png"
               width="16"
               height="16"
               role="presentation"
@@ -28,7 +25,7 @@ const Toggle = (): JSX.Element => {
           ),
           unchecked: (
             <img
-              src={sunglasses}
+              src="/assets/sunglasses.png"
               width="16"
               height="16"
               role="presentation"

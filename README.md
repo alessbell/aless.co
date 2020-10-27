@@ -12,7 +12,7 @@
 
 A blog by me! Built with:
 
-- [Gatsby](https://github.com/gatsbyjs/gatsby)
+- [Next.js](https://github.com/vercel/next.js)
 - [TypeScript](https://www.typescriptlang.org/)
 - [GraphQL](https://graphql.org/)
 - [Emotion](https://github.com/emotion-js/emotion)

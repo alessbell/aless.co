@@ -1,24 +1,17 @@
 import * as React from 'react';
-import { graphql } from 'gatsby';
+// import { graphql } from 'gatsby';
 import { ArrayParam, useQueryParam, withDefault } from 'use-query-params';
 import slugify from 'slugify';
 import FlipMove from 'react-flip-move';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import { Tag, BlogLink } from '../components/styles';
-import { Unnamed_1_Query } from '../../graphql-types';
 
 // persist the state of the toggle
 let detailsToggleState = true;
 
-const BlogIndex = ({
-  data: {
-    allMdx: { edges, group },
-  },
-}: {
-  data: Unnamed_1_Query;
-}): JSX.Element => {
-  const keywords = group.map((item) => item.tag);
+const BlogIndex = (props): JSX.Element => {
+  const keywords = props?.group?.map((item) => item.tag);
   const [tags, setTags] = useQueryParam<(string | null)[]>(
     'tags',
     withDefault(ArrayParam, [])
@@ -100,7 +93,7 @@ const BlogIndex = ({
               {fields?.slug && frontmatter?.title ? (
                 <>
                   <h3>
-                    <BlogLink to={fields.slug}>{frontmatter.title}</BlogLink>
+                    <BlogLink href={fields.slug}>{frontmatter.title}</BlogLink>
                   </h3>
                   <p style={{ marginBottom: '5px' }}>{frontmatter.spoiler}</p>
                   <div
@@ -128,30 +121,3 @@ const BlogIndex = ({
 };
 
 export default BlogIndex;
-
-export const pageQuery = graphql`
-  query {
-    allMdx(
-      sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { draft: { ne: true } } }
-    ) {
-      edges {
-        node {
-          fields {
-            slug
-          }
-          frontmatter {
-            date(formatString: "MMMM D, YYYY")
-            spoiler
-            title
-            keywords
-          }
-          id
-        }
-      }
-      group(field: frontmatter___keywords) {
-        tag: fieldValue
-      }
-    }
-  }
-`;

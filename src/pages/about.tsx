@@ -1,7 +1,8 @@
 import * as React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import Img, { FixedObject } from 'gatsby-image';
-import { Link } from 'gatsby';
+import Link from 'next/link';
+
 import { ProfilePictureQueryQuery } from '../../graphql-types';
 import SEO from '../components/seo';
 import Layout from '../components/layout';
@@ -53,6 +54,7 @@ const AboutPage = (): JSX.Element => {
         keywords={[
           `blog`,
           `rust`,
+          `nextjs`,
           `gatsby`,
           `webassembly`,
           `javascript`,
@@ -119,7 +121,7 @@ const AboutPage = (): JSX.Element => {
       </p>
       <p>
         Finally, here{`'`}s a list of{' '}
-        <Link to="/uses/">tools and doodads I use</Link>.
+        <Link href="/uses/">tools and doodads I use</Link>.
       </p>
       <p>This site contains no tracking or analytics💗</p>
     </Layout>

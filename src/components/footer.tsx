@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styled from '@emotion/styled';
-import { Link } from 'gatsby';
+import Link from 'next/link';
 import { Space, FooterWrapper } from './styles';
 
 interface AnchorProps extends React.HTMLAttributes<HTMLAnchorElement> {
@@ -34,7 +34,7 @@ const Footer = ({
   repository?: string | null;
 }): JSX.Element => (
   <FooterWrapper>
-    <Link to="/about/">about</Link>
+    <Link href="/about/">about</Link>
 
     <Space color="orange">•</Space>
 

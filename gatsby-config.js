@@ -19,25 +19,7 @@ if (!developerKey) {
 }
 
 const config = {
-  siteMetadata: {
-    title: `anti/pattern`,
-    author: `Alessia Bellisario`,
-    siteUrl: `https://aless.co`,
-    description: `Alessia Bellisario is a software engineer in NYC writing about code, keyboards and drawing machines`,
-    repository: `https://github.com/alessbell/aless.co`,
-    commit: process.env.VERCEL_GITHUB_COMMIT_SHA || `main`,
-  },
   plugins: [
-    {
-      resolve: `gatsby-plugin-graphql-codegen`,
-      options: {
-        documentPaths: [
-          './src/**/!(*.d).{js,jsx,ts,tsx}',
-          './.cache/fragments/*.js',
-          './node_modules/gatsby-*/**/*.js',
-        ],
-      },
-    },
     `@pauliescanlon/gatsby-mdx-embed`,
     {
       resolve: `gatsby-source-filesystem`,

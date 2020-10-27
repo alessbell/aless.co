@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Global, css } from '@emotion/core';
-import { useStaticQuery, graphql } from 'gatsby';
+// import { useStaticQuery, graphql } from 'gatsby';
 import { H1, Link, LeftBar, RightBar, TopBar, BottomBar } from './styles';
 import { LayoutQueryQuery } from '../../graphql-types';
 import Header from './header';

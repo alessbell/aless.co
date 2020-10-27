@@ -1,5 +1,5 @@
 /* istanbul ignore file */
-import * as React from 'react';
+import React from 'react';
 
 /*
  * Copyright (c) 2015 instructure-react

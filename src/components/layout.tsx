@@ -1,8 +1,6 @@
-import * as React from 'react';
+import React from 'react';
 import { Global, css } from '@emotion/core';
-// import { useStaticQuery, graphql } from 'gatsby';
 import { H1, Link, LeftBar, RightBar, TopBar, BottomBar } from './styles';
-import { LayoutQueryQuery } from '../../graphql-types';
 import Header from './header';
 import Toggle from './toggle';
 import Footer from './footer';
@@ -26,18 +24,6 @@ const Layout: React.FunctionComponent = ({ children }) => {
   React.useEffect(() => {
     setTheme(window.__theme);
   }, [setTheme]);
-
-  const data: LayoutQueryQuery = useStaticQuery(graphql`
-    query LayoutQuery {
-      site {
-        siteMetadata {
-          title
-          commit
-          repository
-        }
-      }
-    }
-  `);
 
   return (
     <ThemeContext.Provider value={theme}>
@@ -288,8 +274,9 @@ const Layout: React.FunctionComponent = ({ children }) => {
               }}
             >
               <H1>
-                <Link id="title" to={`/`}>
-                  {data?.site?.siteMetadata?.title}
+                <Link href={`/`}>
+                  {/* {data?.site?.siteMetadata?.title} */}
+                  test
                 </Link>
               </H1>
               {typeof document !== `undefined` && <Header />}
@@ -298,10 +285,10 @@ const Layout: React.FunctionComponent = ({ children }) => {
             <h3>A blog by Alessia Bellisario</h3>
           </header>
           {children}
-          <Footer
+          {/* <Footer
             commit={data?.site?.siteMetadata?.commit}
             repository={data?.site?.siteMetadata?.repository}
-          />
+          /> */}
         </div>
         <TopBar />
         <BottomBar />

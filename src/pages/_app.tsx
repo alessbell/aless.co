@@ -1,7 +1,13 @@
 import React from 'react';
+import { AppProps } from 'next/app';
+import { QueryParamProviderComponent } from '../components/QueryParamProvider';
 
-const MyApp = ({ Component, pageProps }) => {
-  return <Component {...pageProps} />;
+const App = ({ Component, pageProps }: AppProps): JSX.Element => {
+  return (
+    <QueryParamProviderComponent>
+      <Component {...pageProps} />
+    </QueryParamProviderComponent>
+  );
 };
 
-export default MyApp;
+export default App;

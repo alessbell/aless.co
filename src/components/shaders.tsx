@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { Shaders, Node, GLSL as glsl } from 'gl-react';
 import useTimer from '../lib/useTimer';
 

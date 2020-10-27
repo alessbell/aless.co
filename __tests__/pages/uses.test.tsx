@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { useStaticQuery } from 'gatsby';
 import { render, screen } from '../utils';
 import Uses from '../../src/pages/uses';

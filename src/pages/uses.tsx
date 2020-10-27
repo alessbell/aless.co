@@ -1,79 +1,55 @@
-import * as React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
-import Img, { FluidObject, FixedObject } from 'gatsby-image';
+import React from 'react';
+// import Img, { FluidObject, FixedObject } from 'gatsby-image';
 import SEO from '../components/seo';
 import Layout from '../components/layout';
 
-type KeyboardPictureData = {
-  keyboard: {
-    childImageSharp: {
-      fluid: FluidObject;
-    };
-  };
-  desk: {
-    childImageSharp: {
-      fluid: FluidObject;
-    };
-  };
-  vscode: {
-    childImageSharp: {
-      fluid: FluidObject;
-    };
-  };
-  ogImage: {
-    childImageSharp: {
-      fixed: FixedObject;
-    };
-  };
-};
-
 const UsesPage = (): JSX.Element => {
-  const {
-    desk,
-    vscode,
-    keyboard,
-    ogImage,
-  }: KeyboardPictureData = useStaticQuery(graphql`
-    query keyboardQuery {
-      keyboard: file(absolutePath: { regex: "/assets/keyboard/" }) {
-        childImageSharp {
-          fluid(maxWidth: 640) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      desk: file(absolutePath: { regex: "/assets/desk.JPG/" }) {
-        childImageSharp {
-          fluid(maxWidth: 640) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      vscode: file(absolutePath: { regex: "/assets/vscode2/" }) {
-        childImageSharp {
-          fluid(maxWidth: 640) {
-            ...GatsbyImageSharpFluid_noBase64
-          }
-        }
-      }
-      ogImage: file(
-        absolutePath: { regex: "/assets/things-i-use-twitter-card/" }
-      ) {
-        childImageSharp {
-          fixed(height: 630, width: 1200) {
-            src
-          }
-        }
-      }
-    }
-  `);
+  // const {
+  //   desk,
+  //   vscode,
+  //   keyboard,
+  //   ogImage,
+  // }: KeyboardPictureData = useStaticQuery(graphql`
+  //   query keyboardQuery {
+  //     keyboard: file(absolutePath: { regex: "/assets/keyboard/" }) {
+  //       childImageSharp {
+  //         fluid(maxWidth: 640) {
+  //           ...GatsbyImageSharpFluid
+  //         }
+  //       }
+  //     }
+  //     desk: file(absolutePath: { regex: "/assets/desk.JPG/" }) {
+  //       childImageSharp {
+  //         fluid(maxWidth: 640) {
+  //           ...GatsbyImageSharpFluid
+  //         }
+  //       }
+  //     }
+  //     vscode: file(absolutePath: { regex: "/assets/vscode2/" }) {
+  //       childImageSharp {
+  //         fluid(maxWidth: 640) {
+  //           ...GatsbyImageSharpFluid_noBase64
+  //         }
+  //       }
+  //     }
+  //     ogImage: file(
+  //       absolutePath: { regex: "/assets/things-i-use-twitter-card/" }
+  //     ) {
+  //       childImageSharp {
+  //         fixed(height: 630, width: 1200) {
+  //           src
+  //         }
+  //       }
+  //     }
+  //   }
+  // `);
 
   return (
     <Layout>
       <SEO
-        ogImageProp={ogImage.childImageSharp.fixed.src}
+        // ogImageProp={ogImage.childImageSharp.fixed.src}
+        // keywords={[`setup`, `gear`, `mechanical keyboards`]}
         title="Things I Use"
-        keywords={[`setup`, `gear`, `mechanical keyboards`]}
       />
       <h2>Things I Use</h2>
       <p>
@@ -86,9 +62,7 @@ const UsesPage = (): JSX.Element => {
         <b>late 2019 16{`"`} MacBook Pros</b> with 2.3GHz 8-core Intel Core i9
         processors and 1TB SSDs.
       </p>
-      <p>
-        <Img fluid={desk.childImageSharp.fluid} />
-      </p>
+      <p>{/* <Img fluid={desk.childImageSharp.fluid} /> */}</p>
       <p>
         I use a{' '}
         <a
@@ -161,9 +135,7 @@ const UsesPage = (): JSX.Element => {
         . It{`'`}s taken its fair share of scuffs with the soldering I do, and
         has kept the desk in reasonably good shape.
       </p>
-      <p>
-        <Img fluid={keyboard.childImageSharp.fluid} />
-      </p>
+      <p>{/* <Img fluid={keyboard.childImageSharp.fluid} /> */}</p>
       <p>
         What to write about this quirky little keyboard? I built it in{' '}
         <a
@@ -274,10 +246,10 @@ const UsesPage = (): JSX.Element => {
             public gist
           </a>
           .
-          <Img
+          {/* <Img
             style={{ marginTop: '1rem' }}
             fluid={vscode.childImageSharp.fluid}
-          />
+          /> */}
         </li>
         <li>
           <a

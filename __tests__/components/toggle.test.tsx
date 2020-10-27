@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { render, screen } from '../utils';
 import userEvent from '@testing-library/user-event';
 import Toggle from '../../src/components/toggle';

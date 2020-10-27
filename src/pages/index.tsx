@@ -1,16 +1,17 @@
-import * as React from 'react';
-// import { graphql } from 'gatsby';
+import React from 'react';
 import { ArrayParam, useQueryParam, withDefault } from 'use-query-params';
 import slugify from 'slugify';
 import FlipMove from 'react-flip-move';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
+import { getAllPosts } from '../lib/blog';
 import { Tag, BlogLink } from '../components/styles';
 
 // persist the state of the toggle
 let detailsToggleState = true;
 
 const BlogIndex = (props): JSX.Element => {
+  console.log(props);
   const keywords = props?.group?.map((item) => item.tag);
   const [tags, setTags] = useQueryParam<(string | null)[]>(
     'tags',
@@ -26,14 +27,14 @@ const BlogIndex = (props): JSX.Element => {
     <Layout>
       <SEO
         title="A blog by Alessia Bellisario"
-        keywords={[
-          `blog`,
-          `rust`,
-          `gatsby`,
-          `javascript`,
-          `react`,
-          ...keywords,
-        ]}
+        // keywords={[
+        //   `blog`,
+        //   `rust`,
+        //   `gatsby`,
+        //   `javascript`,
+        //   `react`,
+        //   ...keywords,
+        // ]}
       />
       <details
         open={detailsToggle}
@@ -49,7 +50,7 @@ const BlogIndex = (props): JSX.Element => {
             flexWrap: 'wrap',
           }}
         >
-          {keywords.map((t, idx) => {
+          {/* {keywords.map((t, idx) => {
             if (!t) return null;
             const slug = slugify(t);
             return (
@@ -67,7 +68,7 @@ const BlogIndex = (props): JSX.Element => {
                 {t}
               </Tag>
             );
-          })}
+          })} */}
         </div>
       </details>
       <FlipMove
@@ -75,7 +76,7 @@ const BlogIndex = (props): JSX.Element => {
         enterAnimation="fade"
         leaveAnimation="fade"
       >
-        {edges
+        {/* {edges
           .filter(({ node }) => {
             if (tags.length === 0) {
               return true;
@@ -114,10 +115,27 @@ const BlogIndex = (props): JSX.Element => {
                 </>
               ) : null}
             </div>
-          ))}
+          ))} */}
       </FlipMove>
     </Layout>
   );
 };
 
 export default BlogIndex;
+
+export async function getStaticProps() {
+  // const allPosts = getAllPosts([
+  //   'title',
+  //   'date',
+  //   'slug',
+  //   'author',
+  //   'coverImage',
+  //   'excerpt',
+  // ]);
+
+  const allPosts = getAllPosts();
+
+  return {
+    props: { allPosts },
+  };
+}

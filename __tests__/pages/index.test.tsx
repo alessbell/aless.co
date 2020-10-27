@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import userEvent from '@testing-library/user-event';
 import { decodeQueryParams } from 'serialize-query-params';
 import { useStaticQuery } from 'gatsby';

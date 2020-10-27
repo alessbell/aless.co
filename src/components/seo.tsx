@@ -1,5 +1,4 @@
-import * as React from 'react';
-import { DefaultSeoQueryQuery } from '../../graphql-types';
+import React from 'react';
 
 // const SEO = ({
 //   title,
@@ -14,26 +13,6 @@ import { DefaultSeoQueryQuery } from '../../graphql-types';
 //   lang?: string;
 //   keywords?: (string | null | undefined)[];
 // }): JSX.Element => {
-//   const data: DefaultSeoQueryQuery = useStaticQuery(graphql`
-//     query DefaultSEOQuery {
-//       site {
-//         siteMetadata {
-//           title
-//           description
-//           author
-//           siteUrl
-//         }
-//       }
-//       ogImageDefault: file(absolutePath: { regex: "/assets/og-image/" }) {
-//         childImageSharp {
-//           fixed(height: 630, width: 1200) {
-//             src
-//           }
-//         }
-//       }
-//     }
-//   `);
-
 //   const metaDescription = description || data?.site?.siteMetadata?.description;
 //   const author = data?.site?.siteMetadata?.author;
 //   const ogImage =
@@ -80,7 +59,13 @@ import { DefaultSeoQueryQuery } from '../../graphql-types';
 import Head from 'next/head';
 import config from '../config';
 
-export default function SEO({ description, title }) {
+export default function SEO({
+  description,
+  title,
+}: {
+  description?: string;
+  title: string;
+}): JSX.Element {
   const siteTitle = config.title;
 
   return (

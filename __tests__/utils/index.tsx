@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-import * as React from 'react';
+import React from 'react';
 import { render, screen, cleanup, waitFor } from '@testing-library/react';
 import {
   Router,

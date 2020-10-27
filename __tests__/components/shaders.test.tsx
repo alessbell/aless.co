@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { render } from '../utils';
 import Shaders from '../../src/components/shaders';
 

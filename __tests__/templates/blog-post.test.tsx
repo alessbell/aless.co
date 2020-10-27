@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { render, screen } from '../utils';
 import { useStaticQuery } from 'gatsby';
 import { metadataMock } from '../config/metadata-mock';

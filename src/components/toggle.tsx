@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import ToggleBase from './toggleBase';
 import { ThemeContext } from './layout';
 
@@ -34,9 +34,9 @@ const Toggle = (): JSX.Element => {
           ),
         }}
         checked={theme === 'dark'}
-        onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-          window.__setPreferredTheme(e.target.checked ? 'dark' : 'light')
-        }
+        // onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+        //   window.__setPreferredTheme(e.target.checked ? 'dark' : 'light')
+        // }
       />
     </div>
   );

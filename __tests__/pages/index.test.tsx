@@ -1,16 +1,7 @@
 import React from 'react';
 import userEvent from '@testing-library/user-event';
-import { decodeQueryParams } from 'serialize-query-params';
-import { useStaticQuery } from 'gatsby';
-import { ArrayParam } from 'use-query-params';
-import { parse } from 'query-string';
 import { render, screen, waitFor } from '../utils';
-import { metadataMock } from '../config/metadata-mock';
 import Homepage from '../../src/pages/index';
-
-beforeEach(() => {
-  (useStaticQuery as jest.Mock).mockImplementation(() => metadataMock);
-});
 
 const posts = [
   {
@@ -108,44 +99,6 @@ describe('Homepage', () => {
       (screen.getByText(/filter by tag/i) as Element).closest('details')
     ).toHaveAttribute('open');
 
-    expect(
-      decodeQueryParams({ tags: ArrayParam }, parse(history.location.search))
-    ).toEqual({ tags: undefined });
-
     userEvent.click(screen.getAllByText('some keyword')[0]);
-    await waitFor(() => {
-      expect(
-        decodeQueryParams({ tags: ArrayParam }, parse(history.location.search))
-      ).toEqual({ tags: ['some-keyword'] });
-    });
-  });
-  test('renders filtered list using query params', async () => {
-    const { history } = render(
-      <Homepage
-        data={{
-          allMdx: {
-            edges: posts,
-            group: [
-              { tag: 'some keyword' },
-              { tag: 'some other keyword' },
-              { tag: 'keyword three' },
-            ],
-          },
-        }}
-      />,
-      '?tags=some-keyword'
-    );
-
-    await waitFor(() => {
-      expect(
-        decodeQueryParams({ tags: ArrayParam }, parse(history.location.search))
-      ).toEqual({ tags: ['some-keyword'] });
-    });
-    userEvent.click(screen.getAllByText('some keyword')[0]);
-    await waitFor(() => {
-      expect(
-        decodeQueryParams({ tags: ArrayParam }, parse(history.location.search))
-      ).toEqual({ tags: undefined });
-    });
   });
 });

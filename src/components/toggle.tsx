@@ -34,9 +34,10 @@ const Toggle = (): JSX.Element => {
           ),
         }}
         checked={theme === 'dark'}
-        // onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-        //   window.__setPreferredTheme(e.target.checked ? 'dark' : 'light')
-        // }
+        onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+          // window.__setPreferredTheme(e.target.checked ? 'dark' : 'light')
+          console.log('test', e.target.checked)
+        }
       />
     </div>
   );

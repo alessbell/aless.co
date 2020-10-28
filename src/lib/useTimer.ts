@@ -1,5 +1,5 @@
 import React from 'react';
-import * as raf from 'raf';
+import raf from 'raf';
 
 let startTime: number;
 let r: number;

@@ -17,7 +17,7 @@ He had chosen a flashy pattern of multicoloured, and crucially, _blank_ keycaps.
 My first mechanical keybord was one I would purchase preassembled: a WASD 87-key "v2" build. It (not coincidentally) also had blank keycaps, though I went with the slightly quieter but still satisfyingly tacticle Cherry MX Brown switches. I was a fast typist, but I found myself hedging: I got my initials in highlighter yellow as a visual anchor 💛
 
 <!-- ![My first mechanical keyboard: WASD 87-key with Cherry MX Brown switches and seafoam green, pink, purple, grey and yellow keycaps](./wasd1.jpg) -->
-<Image src="/blog/how-to-build-a-keyboard/wasd1.jpg" width="400">
+<Image src="/blog/how-to-build-a-keyboard/wasd1.jpg" width="640">
 
 I loved it and used it every day for almost two years. And then I saw the Planck.
 
@@ -49,7 +49,7 @@ My first attempt at soldering was passable! I did have one joint I needed to fid
 I was ready to try my luck with the Planck PCB. Something I didn't fully appreciate at the time is that it comes with all the components that _aren't_ switches **already soldered**: resistors, diodes and a microcontroller. And like most boards compatible with Cherry MX-style switches, the Planck's switches are **plate mounted**, meaning the switch first snaps onto a metal or plastic plate to position it securely before its pins are soldered to the PCB below.
 
 <!-- ![Planck build in progress, with switches mounted to the plate and soldered to the PCB. As this was my first build, I didn't take nearly close enough shots to capture the details, but in this case it's for the best :)](./olkb3.jpg) -->
-<Image src="/blog/how-to-build-a-keyboard/olkb3.jpg" width="400">
+<Image src="/blog/how-to-build-a-keyboard/olkb3.jpg" width="640">
 
 ## Grid or MIT?
 
@@ -58,14 +58,14 @@ There are two main layouts for the Planck: **grid**, consisting of 48 keys (4x12
 I went with the MIT layout, so I had 47 x 2 pins per switch = **94 pins to solder** (!). This sounded like a lot, but once I got into a flow state (pun regrettably intended), I blinked and was suddenly done.
 
 <!-- ![Planck keyboard, Cherry MX Blue switches soldered and the top plate sitting in the case. No keycaps yet](./olkb4.jpg) -->
-<Image src="/blog/how-to-build-a-keyboard/olkb4.jpg" width="400">
+<Image src="/blog/how-to-build-a-keyboard/olkb4.jpg" width="640">
 
 All that was left was the task of re-learning how to type! I underestimated how steep the learning curve would be: the default layout is intuitive once you're used to it, but to compensate for the fact of so few _physical_ keys, the Planck has three layers of "keys" in software embedded on the board, also known as **firmware**. There are "raise" and "lower" keys on either side of the spacebar that allow you to access these layers, mostly consisting of special characters and numbers, via key combinations.
 
 I also came across several mentions of **flashing** the board, or loading new firmware instructions ("flashing" for "flash memory"), but I was able to bypass what is usually the final step of a keyboard build in this case as the Planck comes pre-flashed with a [well-designed standard layout](https://qmk.fm/keyboards/planck/).
 
 <!-- ![My second keyboard, a Planck OLKB, with beige XDA PBT blank keycaps which have a uniform profile](./olkb2.jpg) -->
-<Image src="/blog/how-to-build-a-keyboard/olkb2.jpg" width="400">
+<Image src="/blog/how-to-build-a-keyboard/olkb2.jpg" width="640">
 
 After around a year and a half of daily use, I can confirm Plancks are great everyday keyboards. I'm able to switch between staggered and ortholinear layouts with brief periods of slower than normal typing speeds, and since only switch soldering is required, Plancks are also a great introductory soldering project.
 

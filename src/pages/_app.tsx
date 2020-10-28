@@ -1,10 +1,10 @@
 import React from 'react';
 import NextApp from 'next/app';
 import { createGlobalStyle } from 'styled-components';
-// import { AppProps } from 'next/app';
 import Head from '../components/head';
 import { ThemeProvider, getThemePreference } from '../lib/useTheme';
-import { QueryParamProviderComponent } from '../components/QueryParamProvider';
+
+import '../css/toggle.css';
 
 const HEADER_FONT_FAMILIES = [
   `SFMono-Regular`,
@@ -107,22 +107,67 @@ const GlobalStyle = createGlobalStyle`
       display: none;
   } */
 
-  a {
-    color: 'var(--blue)';
-    text-decoration: '#FF7EDB underline wavy';
-    --webkit-text-decoration: '#FF7EDB underline wavy';
-    text-underline-position: 'under';
+  * {
+    box-sizing: inherit;
+  }
+
+  html {
+    font: 118.75%/1.55 ${BODY_FONT_FAMILIES.join(', ')};
+  }
+  img {
+    max-width: 100%;
   }
   body {
     padding: 0 1.5rem;
     margin: 0;
     background-color: var(--bg);
-    font-family: ${BODY_FONT_FAMILIES.join(', ')};
+    font-feature-settings: "kern", "liga", "clig", "calt";
+    font-kerning: normal;
+    word-wrap: break-word;
+    /* font-size: 19px; */
+    /* font-family: ${BODY_FONT_FAMILIES.join(', ')}; */
   }
   *:focus {
     outline: blue auto;
   }
+  a {
+    color: var(--blue);
+    text-decoration: #FF7EDB underline wavy;
+    --webkit-text-decoration: #FF7EDB underline wavy;
+    text-underline-position: under;
+  }
+  h1,h2 {
+    color: BORDER_COLOR;
+    font-size: 1.6rem;
+    position: relative;
+    text-shadow: var(--textShadow);
+  }
+  h3 {
+    font-family: ${HEADER_FONT_FAMILIES.join(', ')};
+    font-weight: bold;
+    margin-top: 0;
+    font-size: 1rem;
+  }
+  h1,h2,h3 {
+    margin-bottom: 0.5rem;
+  }
+  h2,h4,h5,h6 {
+    margin-top: 2.5rem;
+  }
+  p,ul,ol {
+    margin-bottom: 1.25rem;
+  }
+  ul {
+    list-style-type: circle;
+  }
+  strong {
+    font-style: bold,
+  }
   h1,h2,h3,h4,h5,h6 {
+    font-family: ${HEADER_FONT_FAMILIES.join(', ')};
+  }
+  pre,code {
+    font-size: 0.9rem;
     font-family: ${HEADER_FONT_FAMILIES.join(', ')};
   }
   div,h3,h4,h5,h6,small,figcaption,strong,p,ul,ol {
@@ -233,18 +278,6 @@ const GlobalStyle = createGlobalStyle`
     color: unset;
     white-space: unset;
   }
-  /* Gatsby Image */
-  .gatsby-resp-image-image {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100%;
-  }
-
-  .youtube-mdx-embed,
-  .twitter-tweet-mdx-embed {
-    margin-bottom: 1.5rem;
-  }
 
   .post-content > h3 {
     color: var(--blue);
@@ -266,7 +299,9 @@ const GlobalStyle = createGlobalStyle`
       }
     }
   }
-  transition: 'color 1s ease-out, background 1s ease-out';
+
+  transition: color 1s ease-out, background 1s ease-out;
+
   .gatsby-code-title {
     padding-top: var(
       --grvsc-padding-top,
@@ -305,14 +340,6 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-// const App = ({ Component, pageProps }: AppProps): JSX.Element => {
-//   return (
-//     <QueryParamProviderComponent>
-//       <Component {...pageProps} />
-//     </QueryParamProviderComponent>
-//   );
-// };
-
 class App extends NextApp {
   static async getInitialProps({ Component, ctx }) {
     let pageProps = {};
@@ -333,12 +360,7 @@ class App extends NextApp {
         <Head />
         <GlobalStyle />
         <ThemeProvider preferredTheme={preferredTheme}>
-          <QueryParamProviderComponent>
-            <Component
-              // eslint-disable-next-line react/jsx-props-no-spreading
-              {...pageProps}
-            />
-          </QueryParamProviderComponent>
+          <Component {...pageProps} />
         </ThemeProvider>
       </>
     );

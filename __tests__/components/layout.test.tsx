@@ -1,12 +1,6 @@
 import React from 'react';
-import { useStaticQuery } from 'gatsby';
 import { render, screen } from '../utils';
 import Layout from '../../src/components/layout';
-import { metadataMock } from '../config/metadata-mock';
-
-beforeEach(() => {
-  (useStaticQuery as jest.Mock).mockImplementation(() => metadataMock);
-});
 
 beforeAll(() => {
   // eslint-disable-next-line no-global-assign

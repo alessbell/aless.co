@@ -8,7 +8,7 @@ keywords: ['programming']
 > **Law of the Instrument**: "I suppose it is tempting, if the only tool you have is a hammer, to treat everything as if it were a nail." - Abraham Maslow, 1966
 
 <!-- ![Proof of concept: generating my first Open Graph images for Twitter cards with Rust and WebAssembly](./demo2.png) -->
-<Image src="/blog/gatsby-wasm-plugin/demo2.png" width="400">
+<Image src="/blog/gatsby-wasm-plugin/demo2.png" width="640">
 
 ## The Problem
 
@@ -26,7 +26,7 @@ After taking a look through the README, `gatsby-remark-social-cards` fit all my 
 
 ## Bitmap Fonts
 
-<Image src="/blog/gatsby-wasm-plugin/bitmap-font.jpg" width="400">
+<Image src="/blog/gatsby-wasm-plugin/bitmap-font.jpg" width="640">
 
 Bitmap fonts are comprised of a matrix of pixels, so they can't be scaled or styled like vector/"scalable" fonts (think TTF/OTF). In practice, this means a standalone font file is needed for every combination of font size, color and weight. Indeed, the plugin I was examining had a `/fonts` folder containing **twenty different `.fnt` files** for a single typeface styled twenty different ways 😲
 
@@ -121,7 +121,7 @@ module.exports = ({ markdownNode }, config) => {
 I no longer needed to use bitmap fonts, but `jimp` was the perfect library to stitch everything together. I was amazed at how easy it was: I **initialized a Jimp image for the card background** from the user-provided image (or created one consisting of a solid color), then called my Wasm function and **read the text as a buffer of pixel data into a second Jimp image**. Finally, I'd **composite the latter over the former**, a one-liner with `jimp`, save the final image and voilà.
 
 <!-- ![The resulting image for this post, using the same typeface and gradient that appear elsewhere on this website 😍](./twitter-card.png) -->
-<Image src="/blog/gatsby-wasm-plugin/twitter-card.png" width="400">
+<Image src="/blog/gatsby-wasm-plugin/twitter-card.png" width="640">
 
 Once I saw the result, I was glad I had ventured down this particular rabbit hole!
 
@@ -130,7 +130,7 @@ Once I saw the result, I was glad I had ventured down this particular rabbit hol
 There were a few bumps along the road, mainly falling into the category of missing or incorrectly rendered glyphs:
 
 <!-- ![The image on the left is supposed to say "2019", while the image on the right is missing glyphs "d", "q" and "w"](./glitches.png) -->
-<Image src="/blog/gatsby-wasm-plugin/glitches.png" width="400">
+<Image src="/blog/gatsby-wasm-plugin/glitches.png" width="640">
 
 After some head scratching, I chalked it up to a bug in `fonterator` and moved to `rusttype` as my underlying text rendering crate which fixed things (I would also realize I needed something like `glyph_brush_layout` to handle layout/text wrapping). I still don't know exactly what the issue with `fonterator` was, but I received the following thoughtful comment from the folks at the font editor FontForge via Twitter:
 

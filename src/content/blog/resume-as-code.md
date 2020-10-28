@@ -37,7 +37,7 @@ tl;dr my ideal workflow was possible, so I built it 🐙💜
 If you'd like to browse the code, steps 1 and 2 are achieved by the [main workflow in `alessbell/resume`](https://github.com/alessbell/resume/blob/main/.github/workflows/main.yml). Step 3 is handled by actions in this blog's repository, namely [`/commit-resume`](https://github.com/alessbell/aless.co/blob/main/commit-resume/entrypoint.sh). For a walk-through of the code, keep reading 😎
 
 <!-- ![The first PR created by my GitHub action: updating a PDF with the one it downloaded from the latest automated release in another repository ✨](./resume-pr-1.png) -->
-<Image src="/blog/resume-as-code/resume-pr-1.png" width="400">
+<Image src="/blog/resume-as-code/resume-pr-1.png" width="640">
 
 ### 1. Compile the PDF and Automate Releases
 

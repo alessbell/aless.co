@@ -1,12 +1,6 @@
 import React from 'react';
-import { useStaticQuery } from 'gatsby';
 import { render, screen } from '../utils';
-import { metadataMock } from '../config/metadata-mock';
 import NotFound from '../../src/pages/404';
-
-beforeEach(() => {
-  (useStaticQuery as jest.Mock).mockImplementation(() => metadataMock);
-});
 
 describe('404 page', () => {
   test('renders', () => {

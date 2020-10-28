@@ -40,18 +40,6 @@ const AboutPage = (): JSX.Element => {
         <Image src="/assets/selfie.jpg" width="200" height="200" />
       </div>
       {/* <p>
-        {profilePicture?.childImageSharp?.fixed ? (
-          <Img
-            style={{
-              float: 'left',
-              marginRight: '1.5rem',
-              marginTop: '0.1rem',
-              marginBottom: '0.2rem',
-              borderRadius: '8px',
-            }}
-            fixed={profilePicture.childImageSharp.fixed}
-          />
-        ) : null}
         I{`'`}m Alessia, a software engineer based in NYC.
         {goodreadsShelf?.reviews && goodreadsShelf.reviews[0] ? (
           <span>

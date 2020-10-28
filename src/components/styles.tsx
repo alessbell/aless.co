@@ -47,6 +47,9 @@ export const FooterWrapper = styled.footer`
   }
 `;
 export const H1 = styled.h1`
+  margin: 0;
+  padding: 0;
+  top: 0;
   font-size: 34px;
   position: relative;
   z-index: 1;

@@ -1,29 +1,10 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import React from 'react';
 import { render, screen, cleanup, waitFor } from '@testing-library/react';
-import {
-  Router,
-  LocationProvider,
-  createHistory,
-  createMemorySource,
-} from '@reach/router';
-import { QueryParamProvider } from 'use-query-params';
 
-function renderWithRouter(ui: React.ReactElement, initialRoute = '/') {
-  const history = createHistory(createMemorySource(initialRoute));
+function renderWithRouter(ui: React.ReactElement) {
   const Component: React.FC<Record<string, unknown>> = () => ui;
-  return {
-    ...render(
-      <LocationProvider history={history}>
-        <Router>
-          <QueryParamProvider {...{ default: true }} reachHistory={history}>
-            <Component default />
-          </QueryParamProvider>
-        </Router>
-      </LocationProvider>
-    ),
-    history,
-  };
+  return { ...render(<Component default />) };
 }
 
 export { renderWithRouter as render, screen, cleanup, waitFor };

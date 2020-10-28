@@ -8,7 +8,7 @@ keywords: ['programming']
 It started with a Slack message. A colleague of mine, Christine, had heard about an organization called [Technovation](https://technovationchallenge.org/). Based in San Francisco and with 10 to 18-year-old participants in dozens of countries, Technovation is a competition in which young women build a startup and a mobile app over the course of several months with the guidance of female technologists. This year, the Montreal organizers were seeking companies in the local startup community to mentor teams. Would we be willing to take on a team at Breather?
 
 <!-- ![Answer: yes! (shared with permission)](./slack.png) -->
-<Image src="/blog/teach-a-girl-to-program/slack.png" width="400">
+<Image src="/blog/teach-a-girl-to-program/slack.png" width="640">
 
 True to startup form, we arrived at a decision quickly. I pinged Christine to let her know I’d love to help: I had mentored at a few [Canada Learning Code](https://www.canadalearningcode.ca/) workshops and was excited at the prospect of coaching a team of young women. Ever the daughter of a high school teacher and a programmer by day, I thought it would be challenging but fun in the way a really good Sudoku puzzle is.
 
@@ -19,7 +19,7 @@ On October 24 and 25, 2015, a few dozen young women gathered at Montreal’s La 
 The students had to choose a problem domain right away--they could change it later on--but our team quickly decided on building a tool to aid in the process of **finding internships or jobs for teenagers**, a time when they’re beginning to make important decisions about pursuing a career they may or may not have already identified. As part of secondaire 4 and 5 (grades 11 and 12), students at their high school were beginning to search for part-time positions. The whole process left something to be desired: most students found placements through their parents’ professional networks which limited the kinds of careers they were exposed to.
 
 <!-- ![An explanation of icon fonts quickly devolves into a primer on minification. Day zero. (shared with permission)](./teamhackathon.jpeg) -->
-<Image src="/blog/teach-a-girl-to-program/teamhackathon.jpeg" width="400">
+<Image src="/blog/teach-a-girl-to-program/teamhackathon.jpeg" width="640">
 
 One of the first exercises our team completed came from Google’s design sprint methodology: the students were tasked with quickly and independently sketching the six primary screens of their app-to-be. When the timer buzzed, everyone glanced around at each other’s pages. To their amazement, they had all drawn more or less the same screens: a **search view** with a list of results, a **map with pins** for local establishments that are hiring, a **user profile page**, and so on. This came as a pleasant surprise, if not a relief; for a brief moment, their problem seemed to have a straightforward solution. Think Instagram for jobs.
 
@@ -42,7 +42,7 @@ Tech companies often talk about nurturing relationships with “users”, but th
 Teaching is not Sudoku. It’s more like stand-up comedy with higher stakes, where your performance is evaluated every 30 seconds and your score conveyed via the facial expressions of smart young people you want nothing more than to help succeed as much as you possibly can.
 
 <!-- ![Teaching our students how to use Slack the way real startups do](./goats.png) -->
-<Image src="/blog/teach-a-girl-to-program/goats.png" width="400">
+<Image src="/blog/teach-a-girl-to-program/goats.png" width="640">
 
 ## Teaching a Programmer to Teach
 
@@ -51,7 +51,7 @@ I knew one thing I'd learned from my dad, a high school English teacher of over 
 The night before our first lesson on git, I spent hours crafting slides that answered all of the questions I was too self-conscious to ask in my earliest programming days. Is there a difference between git and GitHub? How do you combine branches once you’re done building a feature? And what exactly is a branch?
 
 <!-- ![Git basics, distilled into a deck](./introtogit.png) -->
-<Image src="/blog/teach-a-girl-to-program/introtogit.png" width="400">
+<Image src="/blog/teach-a-girl-to-program/introtogit.png" width="640">
 
 Armed with my [deck](https://github.com/alessbell/git_prez/blob/master/git.pdf), a carefully prepared exercise set up in its own [repository](https://github.com/futurenowteam/collaborative_writing) and an irrational confidence in my ability to convey the particulars of a complex decade-old version control system in under two hours, I was as prepared as I’d ever be.
 
@@ -60,7 +60,7 @@ Once the lesson was underway, and much to my relief, they dug into the material 
 In retrospect, the _how_ of Technovation, the way we learned and worked as a team, was probably as critical as the content of the curriculum. Learning and building through iterative processes allows for faster progress.
 
 <!-- ![One of many weekend work sessions at Breather HQ](./saturdaywork.jpeg) -->
-<Image src="/blog/teach-a-girl-to-program/saturdaywork.jpeg" width="400">
+<Image src="/blog/teach-a-girl-to-program/saturdaywork.jpeg" width="640">
 
 ## Survey, Test, Interview, Repeat
 

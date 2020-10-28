@@ -47,10 +47,7 @@ const Layout: React.FunctionComponent = ({ children }) => {
               }}
             >
               <H1>
-                <Link href={`/`}>
-                  {/* {data?.site?.siteMetadata?.title} */}
-                  test
-                </Link>
+                <Link href={`/`}>{config.title}</Link>
               </H1>
               {typeof document !== `undefined` && <Header />}
               {theme !== 'null' && <Toggle />}

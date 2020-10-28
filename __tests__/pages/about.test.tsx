@@ -1,6 +1,4 @@
 import React from 'react';
-import { useStaticQuery } from 'gatsby';
-import { metadataMock } from '../config/metadata-mock';
 import { render, screen } from '../utils';
 import About from '../../src/pages/about';
 
@@ -9,29 +7,6 @@ const book = {
   title:
     'How Do We Look: The Body, the Divine, and the Question of Civilization',
 };
-
-beforeEach(() => {
-  (useStaticQuery as jest.Mock).mockImplementation(() => ({
-    ...metadataMock,
-    profilePicture: {
-      childImageSharp: {
-        fixed: {
-          src: '/static/12345/5b62b/selfie.jpg',
-        },
-      },
-    },
-    ogImage: {
-      childImageSharp: {
-        fixed: {
-          src: '/static/12345/5b62b/selfie.jpg',
-        },
-      },
-    },
-    goodreadsShelf: {
-      reviews: [{ book }],
-    },
-  }));
-});
 
 describe('About page', () => {
   test('renders', () => {

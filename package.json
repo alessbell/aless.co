@@ -91,7 +91,7 @@
   },
   "devDependencies": {
     "@hot-loader/react-dom": "17.0.0",
-    "@jamesacarr/jest-reporter-github-actions": "0.0.1",
+    "@jamesacarr/jest-reporter-github-actions": "0.0.2",
     "@testing-library/dom": "7.26.3",
     "@testing-library/jest-dom": "5.11.5",
     "@testing-library/react": "11.1.0",

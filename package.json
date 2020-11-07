@@ -111,7 +111,7 @@
     "babel-plugin-emotion": "10.0.33",
     "babel-preset-gatsby": "0.5.14",
     "csstype": "3.0.4",
-    "eslint": "7.12.1",
+    "eslint": "7.13.0",
     "eslint-config-prettier": "6.15.0",
     "eslint-plugin-jest": "24.1.0",
     "eslint-plugin-jest-dom": "3.2.4",

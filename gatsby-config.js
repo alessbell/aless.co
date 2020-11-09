@@ -77,10 +77,8 @@ const config = {
       resolve: `gatsby-plugin-mdx`,
       options: {
         extensions: ['.md', '.mdx'],
-        options: {
-          defaultLayouts: {
-            default: require.resolve('./src/templates/blog-post.tsx'),
-          },
+        defaultLayouts: {
+          default: require.resolve('./src/templates/blog-post.tsx'),
         },
         gatsbyRemarkPlugins: [
           {

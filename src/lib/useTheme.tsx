@@ -8,11 +8,14 @@ import React, {
 
 import { setCookie, parseCookies, destroyCookie } from './cookies';
 
-const context = createContext();
+const context = createContext('light');
 
 export const getThemePreference = (ctx) => parseCookies(ctx).theme;
 
-export const ThemeProvider = ({ children, ...props }) => {
+export const ThemeProvider: React.FC<{ preferredTheme: string }> = ({
+  children,
+  ...props
+}) => {
   const [preferredTheme, setPreferredTheme] = useState(
     () => props.preferredTheme
   );
@@ -32,7 +35,7 @@ export const ThemeProvider = ({ children, ...props }) => {
       }
 
       if (preference) {
-        setCookie(null, 'theme', preference);
+        setCookie(null, 'theme', preference, {});
       } else {
         destroyCookie(null, 'theme');
       }

@@ -1,4 +1,3 @@
-// src/lib/blog.js// Install gray-matter and date-fns
 import matter from 'gray-matter';
 import { parseISO, format } from 'date-fns';
 import fs from 'fs';
@@ -11,7 +10,9 @@ export const getPostSlugs = (): string[] => {
   return fs.readdirSync(postsDirectory);
 };
 
-export const getPostBySlug = (slug) => {
+export const getPostBySlug = (
+  slug: string
+): { slug: string; frontmatter: { date: string }; content: string } => {
   const realSlug = slug.replace(/\.md$/, '');
   const fullPath = join(postsDirectory, `${realSlug}.md`);
   const fileContents = fs.readFileSync(fullPath, 'utf8');
@@ -46,11 +47,12 @@ export const getPostBySlug = (slug) => {
 //   return items;
 // }
 
-export function getAllPosts(fields = []) {
+export function getAllPosts(fields: string[] = []) {
   const slugs = getPostSlugs();
-  const posts = slugs
-    .map((slug) => getPostBySlug(slug, fields))
-    // sort posts by date in descending order
-    .sort((post1, post2) => (post1.date > post2.date ? '-1' : '1'));
+  const posts = slugs.map((slug) => getPostBySlug(slug));
+  // sort posts by date in descending order
+  // .sort((post1, post2) =>
+  //   post1.frontmatter.date > post2.frontmatter.date ? '-1' : '1'
+  // );
   return posts;
 }

@@ -3,102 +3,102 @@ import userEvent from '@testing-library/user-event';
 import { render, screen, waitFor } from '../utils';
 import Homepage from '../../src/pages/index';
 
-const posts = [
-  {
-    node: {
-      frontmatter: {
-        title: 'First post',
-        date: 'January 1, 1980',
-        spoiler: '1...',
-        keywords: ['some keyword'],
-      },
-      fields: {
-        slug: '/first-post',
-      },
-      id: '123',
-    },
-  },
-  {
-    node: {
-      frontmatter: {
-        title: 'Second post',
-        date: 'January 2, 1980',
-        spoiler: '2...',
-        keywords: ['some other keyword'],
-      },
-      fields: {
-        slug: '/second-post',
-      },
-      id: '456',
-    },
-  },
-  {
-    node: {
-      frontmatter: {
-        title: 'Third post',
-        date: 'January 3, 1980',
-        keywords: ['keyword three'],
-      },
-      fields: {
-        slug: '/third-post',
-      },
-      id: '789',
-    },
-  },
-];
+// const posts = [
+//   {
+//     node: {
+//       frontmatter: {
+//         title: 'First post',
+//         date: 'January 1, 1980',
+//         spoiler: '1...',
+//         keywords: ['some keyword'],
+//       },
+//       fields: {
+//         slug: '/first-post',
+//       },
+//       id: '123',
+//     },
+//   },
+//   {
+//     node: {
+//       frontmatter: {
+//         title: 'Second post',
+//         date: 'January 2, 1980',
+//         spoiler: '2...',
+//         keywords: ['some other keyword'],
+//       },
+//       fields: {
+//         slug: '/second-post',
+//       },
+//       id: '456',
+//     },
+//   },
+//   {
+//     node: {
+//       frontmatter: {
+//         title: 'Third post',
+//         date: 'January 3, 1980',
+//         keywords: ['keyword three'],
+//       },
+//       fields: {
+//         slug: '/third-post',
+//       },
+//       id: '789',
+//     },
+//   },
+// ];
 
-describe('Homepage', () => {
-  test('renders post list and previews', async () => {
-    const { history } = render(
-      <Homepage
-        data={{
-          allMdx: {
-            edges: posts,
-            group: [
-              { tag: 'some keyword' },
-              { tag: 'some other keyword' },
-              { tag: 'keyword three' },
-            ],
-          },
-        }}
-      />
-    );
-    expect(screen.getByText('anti/pattern')).toBeInTheDocument();
-    expect(
-      screen.getByText('A blog by Alessia Bellisario')
-    ).toBeInTheDocument();
+// describe('Homepage', () => {
+//   test('renders post list and previews', async () => {
+//     const { history } = render(
+//       <Homepage
+//         data={{
+//           allMdx: {
+//             edges: posts,
+//             group: [
+//               { tag: 'some keyword' },
+//               { tag: 'some other keyword' },
+//               { tag: 'keyword three' },
+//             ],
+//           },
+//         }}
+//       />
+//     );
+//     expect(screen.getByText('anti/pattern')).toBeInTheDocument();
+//     expect(
+//       screen.getByText('A blog by Alessia Bellisario')
+//     ).toBeInTheDocument();
 
-    // displays 3 posts, and expects all to be there...
-    // ...even the node without a spoiler
-    expect(screen.getAllByText(/post/i)).toHaveLength(3);
-    posts.forEach(({ node: { frontmatter, fields } }) => {
-      expect(
-        screen.getByText(frontmatter.title || fields.slug)
-      ).toBeInTheDocument();
-      expect(
-        screen.getByText(frontmatter.title || fields.slug)
-      ).toHaveAttribute('href', fields.slug);
-    });
+//     // displays 3 posts, and expects all to be there...
+//     // ...even the node without a spoiler
+//     expect(screen.getAllByText(/post/i)).toHaveLength(3);
+//     posts.forEach(({ node: { frontmatter, fields } }) => {
+//       expect(
+//         screen.getByText(frontmatter.title || fields.slug)
+//       ).toBeInTheDocument();
+//       expect(
+//         screen.getByText(frontmatter.title || fields.slug)
+//       ).toHaveAttribute('href', fields.slug);
+//     });
 
-    // expects the spoilers that do exist (they are optional)
-    // to be in the document
-    expect(
-      screen.getByText(posts[0].node.frontmatter.spoiler || '')
-    ).toBeInTheDocument();
-    expect(
-      screen.getByText(posts[1].node.frontmatter.spoiler || '')
-    ).toBeInTheDocument();
+//     // expects the spoilers that do exist (they are optional)
+//     // to be in the document
+//     expect(
+//       screen.getByText(posts[0].node.frontmatter.spoiler || '')
+//     ).toBeInTheDocument();
+//     expect(
+//       screen.getByText(posts[1].node.frontmatter.spoiler || '')
+//     ).toBeInTheDocument();
 
-    // can open and close details
-    userEvent.click(screen.getByText(/filter by tag/i));
-    expect(
-      (screen.getByText(/filter by tag/i) as Element).closest('details')
-    ).not.toHaveAttribute('open');
-    userEvent.click(screen.getByText(/filter by tag/i) as Element);
-    expect(
-      (screen.getByText(/filter by tag/i) as Element).closest('details')
-    ).toHaveAttribute('open');
+//     // can open and close details
+//     userEvent.click(screen.getByText(/filter by tag/i));
+//     expect(
+//       (screen.getByText(/filter by tag/i) as Element).closest('details')
+//     ).not.toHaveAttribute('open');
+//     userEvent.click(screen.getByText(/filter by tag/i) as Element);
+//     expect(
+//       (screen.getByText(/filter by tag/i) as Element).closest('details')
+//     ).toHaveAttribute('open');
 
-    userEvent.click(screen.getAllByText('some keyword')[0]);
-  });
-});
+//     userEvent.click(screen.getAllByText('some keyword')[0]);
+//   });
+// });

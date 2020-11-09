@@ -1,6 +1,6 @@
 const babelOptions = {
-  plugins: ['emotion'],
-  presets: ['babel-preset-gatsby'],
+  plugins: ['styled-components'],
+  presets: ['next/babel'],
 };
 
 module.exports = require('babel-jest').createTransformer(babelOptions);

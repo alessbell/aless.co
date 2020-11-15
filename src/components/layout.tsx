@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Global, css } from '@emotion/core';
+import { Global, css } from '@emotion/react';
 import { useStaticQuery, graphql } from 'gatsby';
 import { H1, Link, LeftBar, RightBar, TopBar, BottomBar } from './styles';
 import Header from './header';

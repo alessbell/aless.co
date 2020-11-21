@@ -118,7 +118,7 @@
     "eslint-plugin-prettier": "3.1.4",
     "eslint-plugin-react": "7.21.5",
     "eslint-plugin-react-hooks": "4.2.0",
-    "eslint-plugin-testing-library": "3.10.0",
+    "eslint-plugin-testing-library": "3.10.1",
     "flow-bin": "0.138.0",
     "husky": "4.3.0",
     "identity-obj-proxy": "3.0.0",

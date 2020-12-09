@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Helmet } from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
-import { DefaultSeoQueryQuery } from '../../graphql-types';
+import { Maybe, SiteSiteMetadata, ImageSharp } from '../../graphql-types';
 
 const SEO = ({
   title,
@@ -16,7 +16,10 @@ const SEO = ({
   lang?: string;
   keywords?: (string | null | undefined)[];
 }): JSX.Element => {
-  const data: DefaultSeoQueryQuery = useStaticQuery(graphql`
+  const data: {
+    site: { siteMetadata: SiteSiteMetadata };
+    ogImageDefault: { childImageSharp?: Maybe<ImageSharp> };
+  } = useStaticQuery(graphql`
     query DefaultSEOQuery {
       site {
         siteMetadata {

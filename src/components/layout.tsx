@@ -2,7 +2,6 @@ import * as React from 'react';
 import { Global, css } from '@emotion/core';
 import { useStaticQuery, graphql } from 'gatsby';
 import { H1, Link, LeftBar, RightBar, TopBar, BottomBar } from './styles';
-import { LayoutQueryQuery } from '../../graphql-types';
 import Header from './header';
 import Toggle from './toggle';
 import Footer from './footer';
@@ -27,7 +26,11 @@ const Layout: React.FunctionComponent = ({ children }) => {
     setTheme(window.__theme);
   }, [setTheme]);
 
-  const data: LayoutQueryQuery = useStaticQuery(graphql`
+  const data: {
+    site?: {
+      siteMetadata?: { title: string; commit: string; repository: string };
+    };
+  } = useStaticQuery(graphql`
     query LayoutQuery {
       site {
         siteMetadata {

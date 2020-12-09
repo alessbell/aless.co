@@ -72,7 +72,7 @@
   "license": "MIT",
   "main": "n/a",
   "scripts": {
-    "build": "GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true gatsby build --log-pages",
+    "build": "GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true npm run clean && gatsby build --log-pages",
     "dev": "npm run start",
     "start": "gatsby develop",
     "mobiledev": "gatsby develop --host 0.0.0.0",

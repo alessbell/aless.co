@@ -2,19 +2,29 @@ import * as React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import Img, { FixedObject } from 'gatsby-image';
 import { Link } from 'gatsby';
-import { ProfilePictureQueryQuery } from '../../graphql-types';
+import { Maybe, GoodreadsShelf } from '../../graphql-types';
 import SEO from '../components/seo';
 import Layout from '../components/layout';
 
-// omit generated profilePicture type because of bad schema typing:
-// https://github.com/gatsbyjs/gatsby/issues/17003
+type ProfilePictureData = {
+  profilePicture: {
+    childImageSharp: {
+      fixed: FixedObject;
+    };
+  };
+  ogImage: {
+    childImageSharp: {
+      fixed: FixedObject;
+    };
+  };
+};
 const AboutPage = (): JSX.Element => {
   const {
     profilePicture,
     ogImage,
     goodreadsShelf,
-  }: Omit<ProfilePictureQueryQuery, 'profilePicture'> & {
-    profilePicture: { childImageSharp: { fixed: FixedObject } };
+  }: ProfilePictureData & {
+    goodreadsShelf?: Maybe<GoodreadsShelf>;
   } = useStaticQuery(graphql`
     query ProfilePictureQuery {
       profilePicture: file(absolutePath: { regex: "/assets/selfie/" }) {

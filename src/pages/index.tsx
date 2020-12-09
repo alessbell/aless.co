@@ -6,7 +6,7 @@ import FlipMove from 'react-flip-move';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import { Tag, BlogLink } from '../components/styles';
-import { Unnamed_1_Query } from '../../graphql-types';
+import { MdxFrontmatter } from '../../graphql-types';
 
 // persist the state of the toggle
 let detailsToggleState = true;
@@ -16,7 +16,18 @@ const BlogIndex = ({
     allMdx: { edges, group },
   },
 }: {
-  data: Unnamed_1_Query;
+  data: {
+    allMdx: {
+      edges: Array<{
+        node: {
+          id: string;
+          fields: { slug: string };
+          frontmatter: MdxFrontmatter;
+        };
+      }>;
+      group: Array<{ tag: string }>;
+    };
+  };
 }): JSX.Element => {
   const keywords = group.map((item) => item.tag);
   const [tags, setTags] = useQueryParam<(string | null)[]>(

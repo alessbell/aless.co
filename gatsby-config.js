@@ -38,6 +38,7 @@ const config = {
   },
   plugins: [
     `gatsby-plugin-graphql-codegen`,
+    `gatsby-plugin-csp`,
     `@pauliescanlon/gatsby-mdx-embed`,
     {
       resolve: `gatsby-source-filesystem`,

@@ -182,7 +182,7 @@ export type DirectoryEdge = {
   previous?: Maybe<Directory>;
 };
 
-export type DirectoryFieldsEnum =
+export type DirectoryFieldsEnum = 
   | 'sourceInstanceName'
   | 'absolutePath'
   | 'relativePath'
@@ -492,7 +492,7 @@ export type FileEdge = {
   previous?: Maybe<File>;
 };
 
-export type FileFieldsEnum =
+export type FileFieldsEnum = 
   | 'sourceInstanceName'
   | 'absolutePath'
   | 'relativePath'
@@ -902,7 +902,7 @@ export type GoodreadsShelfEdge = {
   previous?: Maybe<GoodreadsShelf>;
 };
 
-export type GoodreadsShelfFieldsEnum =
+export type GoodreadsShelfFieldsEnum = 
   | 'id'
   | 'parent___id'
   | 'parent___parent___id'
@@ -1192,7 +1192,7 @@ export type GrvscCodeBlockEdge = {
   previous?: Maybe<GrvscCodeBlock>;
 };
 
-export type GrvscCodeBlockFieldsEnum =
+export type GrvscCodeBlockFieldsEnum = 
   | 'id'
   | 'parent___id'
   | 'parent___parent___id'
@@ -1445,7 +1445,7 @@ export type GrvscCodeBlockTokenizedLinesTokensFilterListInput = {
   elemMatch?: Maybe<GrvscCodeBlockTokenizedLinesTokensFilterInput>;
 };
 
-export type HeadingsMdx =
+export type HeadingsMdx = 
   | 'h1'
   | 'h2'
   | 'h3'
@@ -1453,7 +1453,7 @@ export type HeadingsMdx =
   | 'h5'
   | 'h6';
 
-export type ImageCropFocus =
+export type ImageCropFocus = 
   | 'CENTER'
   | 'NORTH'
   | 'NORTHEAST'
@@ -1466,26 +1466,26 @@ export type ImageCropFocus =
   | 'ENTROPY'
   | 'ATTENTION';
 
-export type ImageFit =
+export type ImageFit = 
   | 'COVER'
   | 'CONTAIN'
   | 'FILL'
   | 'INSIDE'
   | 'OUTSIDE';
 
-export type ImageFormat =
+export type ImageFormat = 
   | 'NO_CHANGE'
   | 'AUTO'
   | 'JPG'
   | 'PNG'
   | 'WEBP';
 
-export type ImageLayout =
+export type ImageLayout = 
   | 'FIXED'
   | 'FLUID'
   | 'CONSTRAINED';
 
-export type ImagePlaceholder =
+export type ImagePlaceholder = 
   | 'DOMINANT_COLOR'
   | 'TRACED_SVG'
   | 'BLURRED'
@@ -1674,7 +1674,7 @@ export type ImageSharpEdge = {
   previous?: Maybe<ImageSharp>;
 };
 
-export type ImageSharpFieldsEnum =
+export type ImageSharpFieldsEnum = 
   | 'fixed___base64'
   | 'fixed___tracedSVG'
   | 'fixed___aspectRatio'
@@ -2102,7 +2102,7 @@ export type MdxFields = {
   slug?: Maybe<Scalars['String']>;
 };
 
-export type MdxFieldsEnum =
+export type MdxFieldsEnum = 
   | 'rawBody'
   | 'fileAbsolutePath'
   | 'frontmatter___title'
@@ -2414,7 +2414,7 @@ export type Potrace = {
   background?: Maybe<Scalars['String']>;
 };
 
-export type PotraceTurnPolicy =
+export type PotraceTurnPolicy = 
   | 'TURNPOLICY_BLACK'
   | 'TURNPOLICY_WHITE'
   | 'TURNPOLICY_LEFT'
@@ -2552,6 +2552,7 @@ export type QuerySiteArgs = {
   siteMetadata?: Maybe<SiteSiteMetadataFilterInput>;
   port?: Maybe<IntQueryOperatorInput>;
   host?: Maybe<StringQueryOperatorInput>;
+  flags?: Maybe<SiteFlagsFilterInput>;
   polyfill?: Maybe<BooleanQueryOperatorInput>;
   pathPrefix?: Maybe<StringQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
@@ -2737,6 +2738,7 @@ export type Site = Node & {
   siteMetadata?: Maybe<SiteSiteMetadata>;
   port?: Maybe<Scalars['Int']>;
   host?: Maybe<Scalars['String']>;
+  flags?: Maybe<SiteFlags>;
   polyfill?: Maybe<Scalars['Boolean']>;
   pathPrefix?: Maybe<Scalars['String']>;
   id: Scalars['ID'];
@@ -2796,7 +2798,7 @@ export type SiteBuildMetadataEdge = {
   previous?: Maybe<SiteBuildMetadata>;
 };
 
-export type SiteBuildMetadataFieldsEnum =
+export type SiteBuildMetadataFieldsEnum = 
   | 'id'
   | 'parent___id'
   | 'parent___parent___id'
@@ -2934,7 +2936,7 @@ export type SiteEdge = {
   previous?: Maybe<Site>;
 };
 
-export type SiteFieldsEnum =
+export type SiteFieldsEnum = 
   | 'buildTime'
   | 'siteMetadata___title'
   | 'siteMetadata___description'
@@ -2944,6 +2946,13 @@ export type SiteFieldsEnum =
   | 'siteMetadata___commit'
   | 'port'
   | 'host'
+  | 'flags___PRESERVE_WEBPACK_CACHE'
+  | 'flags___FAST_DEV'
+  | 'flags___LAZY_IMAGES'
+  | 'flags___DEV_SSR'
+  | 'flags___QUERY_ON_DEMAND'
+  | 'flags___PRESERVE_FILE_DOWNLOAD_CACHE'
+  | 'flags___FAST_REFRESH'
   | 'polyfill'
   | 'pathPrefix'
   | 'id'
@@ -3038,6 +3047,7 @@ export type SiteFilterInput = {
   siteMetadata?: Maybe<SiteSiteMetadataFilterInput>;
   port?: Maybe<IntQueryOperatorInput>;
   host?: Maybe<StringQueryOperatorInput>;
+  flags?: Maybe<SiteFlagsFilterInput>;
   polyfill?: Maybe<BooleanQueryOperatorInput>;
   pathPrefix?: Maybe<StringQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
@@ -3191,7 +3201,7 @@ export type SitePageEdge = {
   previous?: Maybe<SitePage>;
 };
 
-export type SitePageFieldsEnum =
+export type SitePageFieldsEnum = 
   | 'path'
   | 'component'
   | 'internalComponentName'
@@ -3472,7 +3482,7 @@ export type SitePluginEdge = {
   previous?: Maybe<SitePlugin>;
 };
 
-export type SitePluginFieldsEnum =
+export type SitePluginFieldsEnum = 
   | 'id'
   | 'parent___id'
   | 'parent___parent___id'
@@ -3851,7 +3861,7 @@ export type SiteSortInput = {
   order?: Maybe<Array<Maybe<SortOrderEnum>>>;
 };
 
-export type SortOrderEnum =
+export type SortOrderEnum = 
   | 'ASC'
   | 'DESC';
 
@@ -3872,39 +3882,6 @@ export type TransformOptions = {
   cropFocus?: Maybe<ImageCropFocus>;
   fit?: Maybe<ImageFit>;
 };
-
-export type LayoutQueryQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type LayoutQueryQuery = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title' | 'commit' | 'repository'>> }> };
-
-export type DefaultSeoQueryQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type DefaultSeoQueryQuery = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title' | 'description' | 'author' | 'siteUrl'>> }>, ogImageDefault?: Maybe<{ childImageSharp?: Maybe<{ fixed?: Maybe<Pick<ImageSharpFixed, 'src'>> }> }> };
-
-export type ProfilePictureQueryQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type ProfilePictureQueryQuery = { profilePicture?: Maybe<{ childImageSharp?: Maybe<{ fixed?: Maybe<GatsbyImageSharpFixed_WithWebp_TracedSvgFragment> }> }>, ogImage?: Maybe<{ childImageSharp?: Maybe<{ fixed?: Maybe<Pick<ImageSharpFixed, 'src'>> }> }>, goodreadsShelf?: Maybe<{ reviews?: Maybe<Array<Maybe<{ book?: Maybe<Pick<GoodreadsShelfReviewsBook, 'link' | 'title'>> }>>> }> };
-
-export type Unnamed_1_QueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type Unnamed_1_Query = { allMdx: { edges: Array<{ node: (
-        Pick<Mdx, 'id'>
-        & { fields?: Maybe<Pick<MdxFields, 'slug'>>, frontmatter?: Maybe<Pick<MdxFrontmatter, 'date' | 'spoiler' | 'title' | 'keywords'>> }
-      ) }>, group: Array<{ tag: MdxGroupConnection['fieldValue'] }> } };
-
-export type KeyboardQueryQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type KeyboardQueryQuery = { keyboard?: Maybe<{ childImageSharp?: Maybe<{ fluid?: Maybe<GatsbyImageSharpFluidFragment> }> }>, desk?: Maybe<{ childImageSharp?: Maybe<{ fluid?: Maybe<GatsbyImageSharpFluidFragment> }> }>, vscode?: Maybe<{ childImageSharp?: Maybe<{ fluid?: Maybe<GatsbyImageSharpFluid_NoBase64Fragment> }> }>, ogImage?: Maybe<{ childImageSharp?: Maybe<{ fixed?: Maybe<Pick<ImageSharpFixed, 'src'>> }> }> };
-
-export type Unnamed_2_QueryVariables = Exact<{
-  slug: Scalars['String'];
-}>;
-
 
 export type WebPOptions = {
   quality?: Maybe<Scalars['Int']>;

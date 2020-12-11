@@ -19,6 +19,15 @@ if (!developerKey) {
 }
 
 const config = {
+  flags: {
+    PRESERVE_WEBPACK_CACHE: true,
+    FAST_DEV: true,
+    LAZY_IMAGES: true,
+    DEV_SSR: true,
+    QUERY_ON_DEMAND: true,
+    PRESERVE_FILE_DOWNLOAD_CACHE: true,
+    FAST_REFRESH: true,
+  },
   siteMetadata: {
     title: `anti/pattern`,
     author: `Alessia Bellisario`,

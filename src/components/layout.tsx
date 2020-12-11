@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Global, css } from '@emotion/core';
+import { Global, css } from '@emotion/react';
 import { useStaticQuery, graphql } from 'gatsby';
 import { H1, Link, LeftBar, RightBar, TopBar, BottomBar } from './styles';
 import Header from './header';
@@ -226,10 +226,12 @@ const Layout: React.FunctionComponent = ({ children }) => {
             }
 
             @media (hover: hover) {
-              a:hover {
-                color: black;
-                background-color: yellow;
-                border-radius: 0.3rem;
+              a {
+                &:hover {
+                  color: black;
+                  background-color: yellow;
+                  border-radius: 0.3rem;
+                }
               }
 
               h1 {
@@ -241,6 +243,7 @@ const Layout: React.FunctionComponent = ({ children }) => {
                 }
               }
             }
+
             transition: 'color 1s ease-out, background 1s ease-out';
             .gatsby-code-title {
               padding-top: var(

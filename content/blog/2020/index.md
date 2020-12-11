@@ -35,7 +35,7 @@ He is now also one of just a handful of people who have witnessed my rendition o
 
 I won't attempt to recap our whole trip: we bought Japan Rail passes and got to experience the unmatched convenience + punctuality of the Shinkansen while visiting Kyoto, Hiroshima, Hakone, Niseko, Sapporo and more over the course of two weeks. We met so many friendly people along the way, narrowly making it back via Hawai'i as the US borders closed to non-citizens who had visited China in the previous two weeks: on our date of re-entry, our initial Beijing layover was 16 days prior.
 
-![Entering this small restaurant in Kyoto felt like walking into a friend's living room, the regulars greeted us with beers](japan11.jpg)
+![Entering this small restaurant in Kyoto felt like walking into a friend's living room, the regulars greeting us with beers](japan11.jpg)
 
 We didn't get to see the Great Wall, but we had two days in Honolulu we weren't planning for -- two rather than one due to a time zone mix-up. Best mistake ever!
 
@@ -55,7 +55,7 @@ Everyone made it out unscathed, thankfully. The fire came just two weeks after I
 
 ### Project Cupid
 
-By July, with no end to the pandemic in sight, Carla and I decided to use the reservation we'd made as a hedge as part of New York State's [Project Cupid](nyc.gov/Cupid) to obtain a marriage license via Zoom.
+By July, with no end to the pandemic in sight, Carla and I decided to use the reservation we'd made as a hedge with New York State's [Project Cupid](nyc.gov/Cupid) to obtain a marriage license via Zoom.
 
 Once we'd gotten the license -- issued by a bureaucrat via DocuSign -- we only needed 1. a minister registered with the city and state to perform Zoom weddings and 2. at least one witness physically located in New York state. We were lucky to find [Reverend Annie](https://www.revannienyc.com/) online and called on our friends Nicole and Josh.
 

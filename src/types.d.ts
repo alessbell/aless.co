@@ -7,6 +7,11 @@ declare module 'gatsby-plugin-mdx' {
   export class MDXRenderer extends React.Component<MDXRendererProps> {}
 }
 
+declare module '*.svg' {
+  const content: unknown;
+  export default content;
+}
+
 declare module '@mdx-js/react' {
   import * as React from 'react';
   type ComponentType =

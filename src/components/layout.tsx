@@ -56,7 +56,7 @@ const Layout: React.FunctionComponent = ({ children }) => {
         <Global
           styles={css`
             body {
-              padding: 0 1.5rem;
+              padding: 0 1.15rem;
               margin: 0;
               background-color: var(--bg);
             }
@@ -102,6 +102,12 @@ const Layout: React.FunctionComponent = ({ children }) => {
               --vsCodeBoxShadowColor1: #ff000042;
               --vsCodeBoxShadowColor2: #004cff59;
               --codeTitleBg: black;
+
+              .webring-link {
+                > img {
+                  filter: invert(1);
+                }
+              }
             }
             details,
             summary {
@@ -219,6 +225,26 @@ const Layout: React.FunctionComponent = ({ children }) => {
             .youtube-mdx-embed,
             .twitter-tweet-mdx-embed {
               margin-bottom: 1.5rem;
+            }
+
+            .webrings {
+              @media (min-width: 44em) {
+                position: fixed;
+                bottom: 0;
+                right: 0;
+                padding-bottom: 10px;
+                padding-right: 16px;
+              }
+              margin-top: 1.5rem;
+            }
+
+            .webring-link {
+              &:hover {
+                background-color: initial;
+              }
+              > img {
+                margin-bottom: 0;
+              }
             }
 
             .post-content > h3 {

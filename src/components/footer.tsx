@@ -2,6 +2,8 @@ import * as React from 'react';
 import styled from '@emotion/styled';
 import { Link } from 'gatsby';
 import { Space, FooterWrapper } from './styles';
+import rcLogo from './icons/rc.svg';
+import iconBlack from './icons/icon.black.svg';
 
 interface AnchorProps extends React.HTMLAttributes<HTMLAnchorElement> {
   link: string;
@@ -76,6 +78,27 @@ const Footer = ({
         </code>
       </Commit>
     ) : null}
+    <div className="webrings">
+      <a
+        className="webring-link"
+        href="https://webring.xxiivv.com/#random"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <img
+          src={iconBlack as string}
+          style={{ width: '55px', marginRight: '4px', marginBottom: '-9px' }}
+        />
+      </a>
+      <a
+        className="webring-link"
+        href="https://webring.recurse.com"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <img src={rcLogo as string} style={{ width: '36px' }} />
+      </a>
+    </div>
   </FooterWrapper>
 );
 

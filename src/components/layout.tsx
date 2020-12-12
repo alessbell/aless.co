@@ -56,7 +56,7 @@ const Layout: React.FunctionComponent = ({ children }) => {
         <Global
           styles={css`
             body {
-              padding: 0 1rem;
+              padding: 0 1.15rem;
               margin: 0;
               background-color: var(--bg);
             }
@@ -102,6 +102,12 @@ const Layout: React.FunctionComponent = ({ children }) => {
               --vsCodeBoxShadowColor1: #ff000042;
               --vsCodeBoxShadowColor2: #004cff59;
               --codeTitleBg: black;
+
+              .webring-link {
+                > img {
+                  filter: invert(1);
+                }
+              }
             }
             details,
             summary {
@@ -238,6 +244,7 @@ const Layout: React.FunctionComponent = ({ children }) => {
               }
               > img {
                 margin-bottom: 0;
+              }
             }
 
             .post-content > h3 {

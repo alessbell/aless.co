@@ -56,7 +56,7 @@ const Layout: React.FunctionComponent = ({ children }) => {
         <Global
           styles={css`
             body {
-              padding: 0 1.15rem;
+              padding: 0 1.5rem;
               margin: 0;
               background-color: var(--bg);
             }

@@ -44,7 +44,7 @@
     "gatsby-source-filesystem": "2.8.1",
     "gatsby-source-goodreads": "0.2.0",
     "gatsby-transformer-sharp": "2.9.0",
-    "gl-react": "4.0.1",
+    "gl-react": "4.1.0",
     "gl-react-dom": "4.0.1",
     "query-string": "6.13.7",
     "raf": "3.4.1",

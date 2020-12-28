@@ -1,10 +1,10 @@
-import * as React from 'react';
+import React from 'react';
 
 import { greet } from '../../crate/pkg/mazes';
 
-import { RecursiveBacktracker } from '../lib/mazes/algorithms';
-import { Mask } from '../lib/mazes/masks';
-import { MaskedGrid } from '../lib/mazes/grids';
+// import { RecursiveBacktracker } from '../lib/mazes/algorithms';
+// import { Mask } from '../lib/mazes/masks';
+// import { MaskedGrid } from '../lib/mazes/grids';
 
 const WasmMazes = () => {
   React.useEffect(() => {
@@ -13,34 +13,35 @@ const WasmMazes = () => {
     }
   }, []);
 
-  const canvasRef = React.useRef(null);
-  const maze = new RecursiveBacktracker();
+  return <h1>hi</h1>;
 
-  // 2020 masked grid
-  const s = `XXX...XXXX....XXXXX...XXXX....XX XX.....XX......XXX.....XX......X X......XX......XX......XX......X X.......X......XX.......X......X ........X...............X....... ............X...............X... ...........XXX.............XXX.. ....X......XXX......X......XXX.. ...XX......XXX.....XX......XXX.. ...XX......XXX.....XX......XXX.. ...XX......XXX.....XX......XXX.. XXXXX......XXX..XXXXX......XXX.. XXXX.......XXX..XXXX.......XXX.. XXX........XXX..XXX........XXX.. XX.....X...XXX..XX.....X...XXX.. X.....XX....X...X.....XX....X... ......XX..............XX........ .....XXXX............XXXX....... ...............X...............X ..............XX..............XX ..............XX..............XX`;
+  // const canvasRef = React.useRef(null);
+  // const maze = new RecursiveBacktracker();
 
-  const mask = Mask.from_txt(s);
-  const grid = React.useMemo(() => new MaskedGrid(mask), [mask]);
+  // // 2020 masked grid
+  // const s = `XXX...XXXX....XXXXX...XXXX....XX XX.....XX......XXX.....XX......X X......XX......XX......XX......X X.......X......XX.......X......X ........X...............X....... ............X...............X... ...........XXX.............XXX.. ....X......XXX......X......XXX.. ...XX......XXX.....XX......XXX.. ...XX......XXX.....XX......XXX.. ...XX......XXX.....XX......XXX.. XXXXX......XXX..XXXXX......XXX.. XXXX.......XXX..XXXX.......XXX.. XXX........XXX..XXX........XXX.. XX.....X...XXX..XX.....X...XXX.. X.....XX....X...X.....XX....X... ......XX..............XX........ .....XXXX............XXXX....... ...............X...............X ..............XX..............XX ..............XX..............XX`;
 
-  maze.on(grid);
+  // const mask = Mask.from_txt(s);
+  // const grid = React.useMemo(() => new MaskedGrid(mask), [mask]);
 
-  React.useEffect(() => {
-    const canvas = canvasRef.current;
-    const context = canvas.getContext('2d');
+  // maze.on(grid);
 
-    //Our first draw
+  // React.useEffect(() => {
+  //   const canvas = canvasRef.current;
+  //   const context = canvas.getContext('2d');
 
-    context.fillStyle = '#fff555';
-    context.fillRect(0, 0, context.canvas.width, context.canvas.height);
-    context.lineWidth = 0.015;
-    context.lineCap = 'square';
-    context.lineJoin = 'miter';
+  //   //Our first draw
 
-    const lines = grid.toImg(context, 0.15, 'black');
-    console.log(lines);
-  }, [grid]);
+  //   context.fillStyle = '#fff555';
+  //   context.fillRect(0, 0, context.canvas.width, context.canvas.height);
+  //   context.lineWidth = 0.015;
+  //   context.lineCap = 'square';
+  //   context.lineJoin = 'miter';
 
-  return <canvas ref={canvasRef} />;
+  //   const lines = grid.toImg(context, 0.15, 'black');
+  //   console.log(lines);
+  // }, [grid]);
+  // return <canvas ref={canvasRef} />;
 };
 
 export default WasmMazes;

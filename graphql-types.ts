@@ -710,8 +710,8 @@ export type FileFieldsEnum =
   | 'childMdx___frontmatter___title'
   | 'childMdx___frontmatter___date'
   | 'childMdx___frontmatter___spoiler'
-  | 'childMdx___frontmatter___draft'
   | 'childMdx___frontmatter___keywords'
+  | 'childMdx___frontmatter___draft'
   | 'childMdx___slug'
   | 'childMdx___body'
   | 'childMdx___excerpt'
@@ -2108,8 +2108,8 @@ export type MdxFieldsEnum =
   | 'frontmatter___title'
   | 'frontmatter___date'
   | 'frontmatter___spoiler'
-  | 'frontmatter___draft'
   | 'frontmatter___keywords'
+  | 'frontmatter___draft'
   | 'slug'
   | 'body'
   | 'excerpt'
@@ -2308,8 +2308,8 @@ export type MdxFrontmatter = {
   title: Scalars['String'];
   date?: Maybe<Scalars['Date']>;
   spoiler?: Maybe<Scalars['String']>;
-  draft?: Maybe<Scalars['Boolean']>;
   keywords?: Maybe<Array<Maybe<Scalars['String']>>>;
+  draft?: Maybe<Scalars['Boolean']>;
 };
 
 
@@ -2324,8 +2324,8 @@ export type MdxFrontmatterFilterInput = {
   title?: Maybe<StringQueryOperatorInput>;
   date?: Maybe<DateQueryOperatorInput>;
   spoiler?: Maybe<StringQueryOperatorInput>;
-  draft?: Maybe<BooleanQueryOperatorInput>;
   keywords?: Maybe<StringQueryOperatorInput>;
+  draft?: Maybe<BooleanQueryOperatorInput>;
 };
 
 export type MdxGroupConnection = {

@@ -9,3 +9,19 @@ yarn-error.log
 .vscode
 coverage
 .goodreads.json
+
+# borrowed from wasm-pack project sandspiel
+# https://github.com/MaxBittker/sandspiel/blob/master/.gitignore
+/target
+**/*.rs.bk
+Cargo.lock
+wasm-pack.log
+**/pkg
+pkg/
+bin/
+node_modules
+dist
+crate/pkg
+crate/target
+crate/wasm-pack.log
+crate/Cargo.lock

@@ -1,10 +1,8 @@
 import * as React from 'react';
-import Loadable from '@loadable/component';
-
-const MazeComponent = Loadable(() => import('../components/wasm-mazes'));
+import { Wasm } from '../components/wasm-mazes';
 
 const Canvas = () => {
-  return <MazeComponent />;
+  return <Wasm />;
 };
 
 export default Canvas;

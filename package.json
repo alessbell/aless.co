@@ -118,7 +118,7 @@
     "eslint-plugin-react-hooks": "4.2.0",
     "eslint-plugin-testing-library": "3.10.1",
     "flow-bin": "0.141.0",
-    "husky": "4.3.6",
+    "husky": "4.3.7",
     "identity-obj-proxy": "3.0.0",
     "jest": "26.6.3",
     "jest-canvas-mock": "2.3.0",

@@ -79,12 +79,8 @@
     "test": "npm run test:clear-cache && jest --coverage",
     "test:clear-cache": "rm -rf $(npx jest --showConfig | jq '.configs[0].cacheDirectory')",
     "clean": "gatsby clean",
-    "lint": "eslint '{src,__tests__}/**/*.{js,jsx,ts,tsx}'"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run type-check && npm run lint"
-    }
+    "lint": "eslint '{src,__tests__}/**/*.{js,jsx,ts,tsx}'",
+    "prepare": "husky install"
   },
   "devDependencies": {
     "@emotion/jest": "11.2.1",

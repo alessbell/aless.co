@@ -1,23 +1,3 @@
-let goodreadsConfig;
-
-try {
-  // Load the Contentful config from the .contentful.json
-  goodreadsConfig = require('./.goodreads');
-} catch (_) {
-  // empty
-}
-
-// Overwrite the Goodreads config with environment variables if they exist
-goodreadsConfig = {
-  developerKey: process.env.GOODREADS_KEY || goodreadsConfig.developerKey,
-};
-
-const { developerKey } = goodreadsConfig;
-
-if (!developerKey) {
-  throw new Error('Goodreads developerKey needs to be provided.');
-}
-
 const config = {
   siteMetadata: {
     title: `anti/pattern`,
@@ -28,7 +8,6 @@ const config = {
     commit: process.env.VERCEL_GITHUB_COMMIT_SHA || `main`,
   },
   plugins: [
-    `gatsby-plugin-graphql-codegen`,
     `@pauliescanlon/gatsby-mdx-embed`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -42,14 +21,6 @@ const config = {
       options: {
         path: `${__dirname}/content/assets`,
         name: `assets`,
-      },
-    },
-    {
-      resolve: `gatsby-source-goodreads`,
-      options: {
-        developerKey,
-        goodReadsUserId: `108030826`,
-        userShelf: `currently-reading`,
       },
     },
     `gatsby-transformer-sharp`,

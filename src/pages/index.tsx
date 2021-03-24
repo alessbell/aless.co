@@ -6,7 +6,14 @@ import FlipMove from 'react-flip-move';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import { Tag, BlogLink } from '../components/styles';
-import { MdxFrontmatter } from '../../graphql-types';
+
+export type MdxFrontmatter = {
+  title: Scalars['String'];
+  date?: Maybe<Scalars['Date']>;
+  spoiler?: Maybe<Scalars['String']>;
+  draft?: Maybe<Scalars['Boolean']>;
+  keywords?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
 
 // persist the state of the toggle
 let detailsToggleState = true;

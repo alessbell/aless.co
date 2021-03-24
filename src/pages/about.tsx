@@ -2,7 +2,6 @@ import * as React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import Img, { FixedObject } from 'gatsby-image';
 import { Link } from 'gatsby';
-import { Maybe, GoodreadsShelf } from '../../graphql-types';
 import SEO from '../components/seo';
 import Layout from '../components/layout';
 
@@ -22,10 +21,7 @@ const AboutPage = (): JSX.Element => {
   const {
     profilePicture,
     ogImage,
-    goodreadsShelf,
-  }: ProfilePictureData & {
-    goodreadsShelf?: Maybe<GoodreadsShelf>;
-  } = useStaticQuery(graphql`
+  }: ProfilePictureData = useStaticQuery(graphql`
     query ProfilePictureQuery {
       profilePicture: file(absolutePath: { regex: "/assets/selfie/" }) {
         childImageSharp {
@@ -42,14 +38,6 @@ const AboutPage = (): JSX.Element => {
         childImageSharp {
           fixed(height: 630, width: 1200) {
             src
-          }
-        }
-      }
-      goodreadsShelf {
-        reviews {
-          book {
-            link
-            title
           }
         }
       }
@@ -90,20 +78,6 @@ const AboutPage = (): JSX.Element => {
           />
         ) : null}
         I{`'`}m Alessia, a software engineer based in NYC.
-        {goodreadsShelf?.reviews && goodreadsShelf.reviews[0] ? (
-          <span>
-            {' '}
-            I{`'`}m currently reading{' '}
-            <a
-              href={goodreadsShelf.reviews[0].book?.link || ''}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {goodreadsShelf.reviews[0].book?.title || ''}
-            </a>
-            .
-          </span>
-        ) : null}
       </p>
       <p>
         I work on the{' '}

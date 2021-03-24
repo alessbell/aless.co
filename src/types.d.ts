@@ -12,6 +12,26 @@ declare module '*.svg' {
   export default content;
 }
 
+type Maybe<T> = T | null;
+type Scalars = {
+  ID: string;
+  String: string;
+  Boolean: boolean;
+  Int: number;
+  Float: number;
+  /**
+   * A date string, such as 2007-12-03, compliant with the ISO 8601 standard for
+   * representation of dates and times using the Gregorian calendar.
+   */
+  // eslint-disable-next-line
+  Date: any;
+  /** The `JSON` scalar type represents JSON values as specified by
+   * [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
+   */
+  // eslint-disable-next-line
+  JSON: any;
+};
+
 declare module '@mdx-js/react' {
   import * as React from 'react';
   type ComponentType =

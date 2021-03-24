@@ -22,7 +22,6 @@
     "gatsby-plugin-catch-links": "3.1.0",
     "gatsby-plugin-emotion": "6.1.0",
     "gatsby-plugin-feed": "3.1.0",
-    "gatsby-plugin-graphql-codegen": "2.7.1",
     "gatsby-plugin-manifest": "3.1.0",
     "gatsby-plugin-mdx": "2.1.0",
     "gatsby-plugin-offline": "4.1.0",
@@ -42,7 +41,6 @@
     "gatsby-remark-twitter-cards": "0.6.1",
     "gatsby-remark-vscode": "3.2.0",
     "gatsby-source-filesystem": "3.1.0",
-    "gatsby-source-goodreads": "0.2.0",
     "gatsby-transformer-sharp": "3.1.0",
     "gl-react": "5.0.0",
     "gl-react-dom": "5.0.0",
@@ -70,6 +68,7 @@
   "license": "MIT",
   "main": "n/a",
   "scripts": {
+    "postinstall": "husky install",
     "build": "GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true npm run clean && gatsby build --log-pages",
     "dev": "npm run start",
     "start": "gatsby develop",

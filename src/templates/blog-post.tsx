@@ -35,8 +35,6 @@ type BlogPostData = {
   pageContext: {
     previous: Article;
     next: Article;
-  };
-  pathContext: {
     slug?: string;
   };
 };
@@ -48,8 +46,7 @@ const BlogPostTemplate = ({
       siteMetadata: { siteUrl },
     },
   },
-  pageContext: { previous, next },
-  pathContext: { slug },
+  pageContext: { previous, next, slug },
 }: BlogPostData): JSX.Element => (
   <Layout>
     <SEO

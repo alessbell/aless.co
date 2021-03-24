@@ -51,8 +51,7 @@ describe('Blog post', () => {
           mdx: post,
           site: { siteMetadata: { siteUrl: 'https://aless.co' } },
         }}
-        pathContext={{ slug: '/some-slug-2/' }}
-        pageContext={{ previous, next }}
+        pageContext={{ previous, next, slug: '/some-slug-2/' }}
       />
     );
     expect(screen.getByText('anti/pattern')).toBeInTheDocument();
@@ -74,7 +73,7 @@ describe('Blog post', () => {
     expect(screen.getByText(/some title 1/i)).toHaveAttribute('rel', 'prev');
     expect(screen.getByText(/some title 3/i)).toHaveAttribute('rel', 'next');
   });
-  test('renders without slug in pathcontext', () => {
+  test('renders without slug in pagecontext', () => {
     render(
       <BlogPost
         data={{
@@ -89,8 +88,7 @@ describe('Blog post', () => {
           },
           site: { siteMetadata: { siteUrl: 'https://aless.co' } },
         }}
-        pathContext={{ slug: undefined }}
-        pageContext={{ previous, next }}
+        pageContext={{ previous, next, slug: undefined }}
       />
     );
     expect(screen.getByText('anti/pattern')).toBeInTheDocument();

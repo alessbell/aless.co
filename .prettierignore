@@ -6,4 +6,3 @@ node_modules
 tsconfig.json
 .vscode
 coverage
-graphql-types.ts

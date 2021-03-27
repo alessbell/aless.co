@@ -56,7 +56,7 @@
     "theme-bluloco-light": "https://github.com/uloco/theme-bluloco-light.git",
     "to-style": "1.3.3",
     "typography": "0.16.19",
-    "use-query-params": "1.2.0"
+    "use-query-params": "1.2.2"
   },
   "keywords": [
     "gatsby",

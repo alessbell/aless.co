@@ -29,7 +29,7 @@
     "gatsby-plugin-react-helmet-canonical-urls": "1.4.0",
     "gatsby-plugin-remove-serviceworker": "1.0.0",
     "gatsby-plugin-sharp": "3.1.2",
-    "gatsby-plugin-sitemap": "3.1.0",
+    "gatsby-plugin-sitemap": "4.0.0",
     "gatsby-plugin-typescript": "3.1.0",
     "gatsby-plugin-typography": "3.1.0",
     "gatsby-remark-autolink-headers": "4.0.0",

@@ -51,7 +51,7 @@
     "react-flip-move": "3.0.4",
     "react-helmet": "6.1.0",
     "react-typography": "0.16.19",
-    "slugify": "1.5.0",
+    "slugify": "1.5.2",
     "synthwave-vscode": "https://github.com/robb0wen/synthwave-vscode.git",
     "theme-bluloco-light": "https://github.com/uloco/theme-bluloco-light.git",
     "to-style": "1.3.3",

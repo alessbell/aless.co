@@ -61,6 +61,7 @@ const BlogIndex = ({
         ]}
       />
       <details
+        data-testid="details"
         open={detailsToggle}
         style={{ margin: '2rem 0', fontSize: '0.9rem' }}
       >

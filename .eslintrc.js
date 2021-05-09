@@ -38,12 +38,17 @@ module.exports = {
   rules: {
     'react/prop-types': 'off', // Disable prop-types as we use TypeScript for type checking
     '@typescript-eslint/no-explicit-any': 2,
-    'testing-library/no-debug': 'error',
+    'testing-library/no-await-sync-events': 'error',
+    'testing-library/no-manual-cleanup': 'error',
+    'testing-library/no-node-access': 'error',
     'testing-library/no-render-in-setup': 'error',
-    'testing-library/no-wait-for-empty-callback': 'error',
+    'testing-library/no-wait-for-multiple-assertions': 'error',
+    'testing-library/no-wait-for-side-effects': 'error',
+    'testing-library/no-wait-for-snapshot': 'error',
     'testing-library/prefer-wait-for': 'error',
     'testing-library/prefer-explicit-assert': 'error',
     'testing-library/prefer-presence-queries': 'error',
+    'testing-library/prefer-user-event': 'error',
     'testing-library/prefer-screen-queries': 'error',
   },
   overrides: [

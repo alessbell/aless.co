@@ -100,13 +100,11 @@ describe('Homepage', () => {
 
     // can open and close details
     userEvent.click(screen.getByText(/filter by tag/i));
-    expect(
-      (screen.getByText(/filter by tag/i) as Element).closest('details')
-    ).not.toHaveAttribute('open');
+    expect(screen.getByTestId(/details/i) as Element).not.toHaveAttribute(
+      'open'
+    );
     userEvent.click(screen.getByText(/filter by tag/i) as Element);
-    expect(
-      (screen.getByText(/filter by tag/i) as Element).closest('details')
-    ).toHaveAttribute('open');
+    expect(screen.getByTestId(/details/i) as Element).toHaveAttribute('open');
 
     expect(
       decodeQueryParams({ tags: ArrayParam }, parse(history.location.search))

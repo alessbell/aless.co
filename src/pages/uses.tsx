@@ -28,45 +28,41 @@ type KeyboardPictureData = {
 };
 
 const UsesPage = (): JSX.Element => {
-  const {
-    desk,
-    vscode,
-    keyboard,
-    ogImage,
-  }: KeyboardPictureData = useStaticQuery(graphql`
-    query keyboardQuery {
-      keyboard: file(absolutePath: { regex: "/assets/keyboard/" }) {
-        childImageSharp {
-          fluid(maxWidth: 640) {
-            ...GatsbyImageSharpFluid
+  const { desk, vscode, keyboard, ogImage }: KeyboardPictureData =
+    useStaticQuery(graphql`
+      query keyboardQuery {
+        keyboard: file(absolutePath: { regex: "/assets/keyboard/" }) {
+          childImageSharp {
+            fluid(maxWidth: 640) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        desk: file(absolutePath: { regex: "/assets/desk.JPG/" }) {
+          childImageSharp {
+            fluid(maxWidth: 640) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        vscode: file(absolutePath: { regex: "/assets/vscode2/" }) {
+          childImageSharp {
+            fluid(maxWidth: 640) {
+              ...GatsbyImageSharpFluid_noBase64
+            }
+          }
+        }
+        ogImage: file(
+          absolutePath: { regex: "/assets/things-i-use-twitter-card/" }
+        ) {
+          childImageSharp {
+            fixed(height: 630, width: 1200) {
+              src
+            }
           }
         }
       }
-      desk: file(absolutePath: { regex: "/assets/desk.JPG/" }) {
-        childImageSharp {
-          fluid(maxWidth: 640) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      vscode: file(absolutePath: { regex: "/assets/vscode2/" }) {
-        childImageSharp {
-          fluid(maxWidth: 640) {
-            ...GatsbyImageSharpFluid_noBase64
-          }
-        }
-      }
-      ogImage: file(
-        absolutePath: { regex: "/assets/things-i-use-twitter-card/" }
-      ) {
-        childImageSharp {
-          fixed(height: 630, width: 1200) {
-            src
-          }
-        }
-      }
-    }
-  `);
+    `);
 
   return (
     <Layout>

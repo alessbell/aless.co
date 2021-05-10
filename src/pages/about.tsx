@@ -18,31 +18,29 @@ type ProfilePictureData = {
   };
 };
 const AboutPage = (): JSX.Element => {
-  const {
-    profilePicture,
-    ogImage,
-  }: ProfilePictureData = useStaticQuery(graphql`
-    query ProfilePictureQuery {
-      profilePicture: file(absolutePath: { regex: "/assets/selfie/" }) {
-        childImageSharp {
-          fixed(
-            height: 225
-            width: 200
-            traceSVG: { color: "#d3c8ac", blackOnWhite: false }
-          ) {
-            ...GatsbyImageSharpFixed_withWebp_tracedSVG
+  const { profilePicture, ogImage }: ProfilePictureData =
+    useStaticQuery(graphql`
+      query ProfilePictureQuery {
+        profilePicture: file(absolutePath: { regex: "/assets/selfie/" }) {
+          childImageSharp {
+            fixed(
+              height: 225
+              width: 200
+              traceSVG: { color: "#d3c8ac", blackOnWhite: false }
+            ) {
+              ...GatsbyImageSharpFixed_withWebp_tracedSVG
+            }
+          }
+        }
+        ogImage: file(absolutePath: { regex: "/assets/about-twitter-card/" }) {
+          childImageSharp {
+            fixed(height: 630, width: 1200) {
+              src
+            }
           }
         }
       }
-      ogImage: file(absolutePath: { regex: "/assets/about-twitter-card/" }) {
-        childImageSharp {
-          fixed(height: 630, width: 1200) {
-            src
-          }
-        }
-      }
-    }
-  `);
+    `);
   return (
     <Layout>
       <SEO

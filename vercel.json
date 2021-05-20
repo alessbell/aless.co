@@ -1,0 +1,16 @@
+{
+  "redirects": [
+    {
+      "source": "/deck",
+      "destination": "https://next-i18n-presentation.vercel.app/slides/1"
+    },
+    {
+      "source": "/sandbox",
+      "destination": "https://codesandbox.io/s/serene-water-ldobx?file=/next-i18next.config.js"
+    },
+    {
+      "source": "/demo",
+      "destination": "https://csb-ldobx-6tpdmw4fb-alessbell.vercel.app/"
+    }
+  ]
+}

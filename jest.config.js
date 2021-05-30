@@ -2,7 +2,6 @@ module.exports = {
   reporters: ['default', '@jamesacarr/jest-reporter-github-actions'],
   testLocationInResults: true,
   transform: {
-    '^.+\\.jsx?$': `<rootDir>/jest-preprocess.ts`,
     '^.+\\.tsx?$': `ts-jest`,
   },
   moduleNameMapper: {
@@ -28,6 +27,7 @@ module.exports = {
     'src/pages/**/*',
     'src/templates/**/*',
   ],
+  testEnvironment: 'jsdom',
   coverageThreshold: {
     global: {
       branches: 80,

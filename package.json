@@ -90,7 +90,7 @@
     "@testing-library/react": "11.2.7",
     "@testing-library/user-event": "13.1.9",
     "@types/gl-react": "3.15.4",
-    "@types/gl-react-dom": "3.15.3",
+    "@types/gl-react-dom": "3.15.4",
     "@types/jest": "26.0.23",
     "@types/node": "14.17.4",
     "@types/raf": "3.4.0",

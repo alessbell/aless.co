@@ -38,14 +38,14 @@ const UsesPage = (): JSX.Element => {
             }
           }
         }
-        desk: file(absolutePath: { regex: "/assets/desk.JPG/" }) {
+        desk: file(absolutePath: { regex: "/assets/capisco.jpg/" }) {
           childImageSharp {
             fluid(maxWidth: 640) {
               ...GatsbyImageSharpFluid
             }
           }
         }
-        vscode: file(absolutePath: { regex: "/assets/vscode2/" }) {
+        vscode: file(absolutePath: { regex: "/assets/vsCode.png/" }) {
           childImageSharp {
             fluid(maxWidth: 640) {
               ...GatsbyImageSharpFluid_noBase64
@@ -74,9 +74,9 @@ const UsesPage = (): JSX.Element => {
       <h2>Things I Use</h2>
       <p>
         I thought I{"'"}d write down a few trinkets and more useful tools I{"'"}
-        m a fan of and use in my day-to-day. 🌻
+        m a fan of in my day-to-day.
       </p>
-      <h3>🖥 Hardware and Desk 🖨</h3>
+      <h3>Hardware and Desk</h3>
       <p>
         For personal and work machines, I use{' '}
         <b>late 2019 16{`"`} MacBook Pros</b> with 2.3GHz 8-core Intel Core i9
@@ -104,11 +104,11 @@ const UsesPage = (): JSX.Element => {
         </a>{' '}
         when standing and a{' '}
         <a
-          href="https://drop.com/buy/56882"
+          href="https://www.fully.com/hag-capisco-chair.html"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Massdrop Flex Task Chair
+          Capisco Chair by HÅG
         </a>{' '}
         when sitting. I use this{' '}
         <a
@@ -126,7 +126,7 @@ const UsesPage = (): JSX.Element => {
         >
           CalDigit Thunderbolt 3 Dock
         </a>{' '}
-        to connect all my peripherals (two monitors,{' '}
+        to connect all my peripherals (monitor,{' '}
         <a
           href="https://www.amazon.com/gp/product/B07K95WFWM/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1"
           target="_blank"
@@ -134,8 +134,7 @@ const UsesPage = (): JSX.Element => {
         >
           Logitech C920S HD Pro Webcam
         </a>
-        , keyboards, drawing machines, phones, etc.) to my MacBook with a single
-        Thunderbolt cable. I use the{' '}
+        , etc.) to my MacBook with a single Thunderbolt cable. I use the{' '}
         <a
           href="https://www.amazon.com/gp/product/B071YZJ1G1/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1"
           target="_blank"
@@ -146,59 +145,15 @@ const UsesPage = (): JSX.Element => {
         and don{"'"}t think I{"'"}ll ever use another mouse again.
       </p>
       <p>
-        Finally, I use a{' '}
+        A{' '}
         <a
           href="https://www.amazon.com/gp/product/B00L5I8RII/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1"
           target="_blank"
           rel="noopener noreferrer"
         >
           US Art Supply green self-healing cutting mat
-        </a>
-        . It{`'`}s taken its fair share of scuffs with the soldering I do, and
-        has kept the desk in reasonably good shape.
-      </p>
-      <p>
-        <Img fluid={keyboard.childImageSharp.fluid} />
-      </p>
-      <p>
-        What to write about this quirky little keyboard? I built it in{' '}
-        <a
-          href="https://twitter.com/alessbell/status/1122223104451928064"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          April 2019
-        </a>
-        . It{"'"}s a <b>Levinson split ortholinear keyboard</b> with{' '}
-        <a
-          href="https://input.club/the-comparative-guide-to-mechanical-switches/tactile/halo-true/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Halo True
         </a>{' '}
-        switches and{' '}
-        <a
-          href="https://drop.com/buy/82783"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          WinMix Retro Beige DSA keycaps
-        </a>
-        . I bought most of the parts on{' '}
-        <a
-          href="https://keeb.io/products/levinson-lets-split-w-led-backlight"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          keeb.io
-        </a>
-        ; while building it, I made a mistake early on so the plate on the left
-        half doesn{"'"}t match the right (stainless vs. acrylic). This has only
-        endeared it to me more. It{"'"}s a <i>lot</i> of fun to use.
-      </p>
-      <p>
-        My lancscape monitor is an{' '}
+        saves my desk from bumps and scrapes, and my monitor is an{' '}
         <a
           href="https://www.amazon.com/gp/product/B078GVTD9N/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1"
           target="_blank"
@@ -206,33 +161,17 @@ const UsesPage = (): JSX.Element => {
         >
           LG 27{`"`} 4K
         </a>{' '}
-        and the other is a{' '}
-        <a
-          href="https://www.amazon.com/gp/product/B00PC9HFNY/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Dell 24{`"`} Ultra HD 4K
-        </a>
-        . They{"'"}re rigged to the desk with an{' '}
-        <a
-          href="https://www.amazon.com/gp/product/B00MIBN71I/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Amazon dual monitor stand
-        </a>{' '}
-        and both have{' '}
+        and has a{' '}
         <a
           href="https://www.amazon.com/gp/product/B01LR3O8SI/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1"
           target="_blank"
           rel="noopener noreferrer"
         >
-          bias lighting strips
+          bias lighting strip
         </a>{' '}
         on the back.
       </p>
-      <h3>💾 Software 🌸</h3>
+      <h3>Software</h3>
       <p>
         I spend most of my (computer-)days in a few apps, both native Mac + web:
       </p>
@@ -247,29 +186,20 @@ const UsesPage = (): JSX.Element => {
           </a>
           : I use dark theme{' '}
           <a
-            href="https://marketplace.visualstudio.com/items?itemName=cev.overnight"
+            href="https://marketplace.visualstudio.com/items?itemName=GitHub.github-vscode-theme"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Overnight
+            GitHub Dark Dimmed
           </a>{' '}
           combined with{' '}
           <a
-            href="https://gumroad.com/l/dank-mono"
+            href="https://developer.apple.com/fonts/"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Dank Mono
+            SF Mono
           </a>
-          . My editor settings are in this{' '}
-          <a
-            href="https://gist.github.com/alessbell/448846c679de7134cf0b67e28e553e25#file-settings-json"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            public gist
-          </a>
-          .
           <Img
             style={{ marginTop: '1rem' }}
             fluid={vscode.childImageSharp.fluid}
@@ -290,8 +220,7 @@ const UsesPage = (): JSX.Element => {
             rel="noopener noreferrer"
           >
             fish shell
-          </a>{' '}
-          💗🐟
+          </a>
         </li>
         <li>
           <a
@@ -299,7 +228,7 @@ const UsesPage = (): JSX.Element => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Firefox Nightly 🦊
+            Firefox Nightly
           </a>
         </li>
         <li>
@@ -308,7 +237,7 @@ const UsesPage = (): JSX.Element => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Fastmail 💌
+            Fastmail
           </a>
         </li>
         <li>

@@ -4,12 +4,7 @@ import Img, { FluidObject, FixedObject } from 'gatsby-image';
 import SEO from '../components/seo';
 import Layout from '../components/layout';
 
-type KeyboardPictureData = {
-  keyboard: {
-    childImageSharp: {
-      fluid: FluidObject;
-    };
-  };
+type imageData = {
   desk: {
     childImageSharp: {
       fluid: FluidObject;
@@ -28,41 +23,33 @@ type KeyboardPictureData = {
 };
 
 const UsesPage = (): JSX.Element => {
-  const { desk, vscode, keyboard, ogImage }: KeyboardPictureData =
-    useStaticQuery(graphql`
-      query keyboardQuery {
-        keyboard: file(absolutePath: { regex: "/assets/keyboard/" }) {
-          childImageSharp {
-            fluid(maxWidth: 640) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-        desk: file(absolutePath: { regex: "/assets/capisco.jpg/" }) {
-          childImageSharp {
-            fluid(maxWidth: 640) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-        vscode: file(absolutePath: { regex: "/assets/vsCode.png/" }) {
-          childImageSharp {
-            fluid(maxWidth: 640) {
-              ...GatsbyImageSharpFluid_noBase64
-            }
-          }
-        }
-        ogImage: file(
-          absolutePath: { regex: "/assets/things-i-use-twitter-card/" }
-        ) {
-          childImageSharp {
-            fixed(height: 630, width: 1200) {
-              src
-            }
+  const { desk, vscode, ogImage }: imageData = useStaticQuery(graphql`
+    query imageQuery {
+      desk: file(absolutePath: { regex: "/assets/capisco.jpg/" }) {
+        childImageSharp {
+          fluid(maxWidth: 640) {
+            ...GatsbyImageSharpFluid
           }
         }
       }
-    `);
+      vscode: file(absolutePath: { regex: "/assets/vsCode.png/" }) {
+        childImageSharp {
+          fluid(maxWidth: 640) {
+            ...GatsbyImageSharpFluid_noBase64
+          }
+        }
+      }
+      ogImage: file(
+        absolutePath: { regex: "/assets/things-i-use-twitter-card/" }
+      ) {
+        childImageSharp {
+          fixed(height: 630, width: 1200) {
+            src
+          }
+        }
+      }
+    }
+  `);
 
   return (
     <Layout>

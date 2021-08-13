@@ -163,12 +163,16 @@ const Layout: React.FunctionComponent = ({ children }) => {
             blockquote {
               margin: 1.5rem 0;
               color: #525252;
-              margin-left: 0;
               font-size: 1.1rem;
               padding-left: 1rem;
               border-left: 6px solid var(--blue);
               font-style: italic;
               margin-left: -1.2rem;
+            }
+            ul {
+              @media (min-width: 52em) {
+                margin-left: -0rem;
+              }
             }
             /* Inline code */
             code {

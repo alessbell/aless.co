@@ -32,7 +32,7 @@ const UsesPage = (): JSX.Element => {
           }
         }
       }
-      vscode: file(absolutePath: { regex: "/assets/vsCode.png/" }) {
+      vscode: file(absolutePath: { regex: "/assets/vscode/" }) {
         childImageSharp {
           fluid(maxWidth: 640) {
             ...GatsbyImageSharpFluid_noBase64

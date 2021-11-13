@@ -108,7 +108,7 @@
     "eslint-plugin-jest-dom": "3.9.2",
     "eslint-plugin-prettier": "4.0.0",
     "eslint-plugin-react": "7.27.0",
-    "eslint-plugin-react-hooks": "4.2.0",
+    "eslint-plugin-react-hooks": "4.3.0",
     "eslint-plugin-testing-library": "5.0.0",
     "flow-bin": "0.163.0",
     "husky": "7.0.4",

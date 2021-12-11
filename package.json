@@ -86,7 +86,7 @@
     "@hot-loader/react-dom": "17.0.1",
     "@jamesacarr/jest-reporter-github-actions": "0.0.4",
     "@testing-library/dom": "7.31.2",
-    "@testing-library/jest-dom": "5.16.0",
+    "@testing-library/jest-dom": "5.16.1",
     "@testing-library/react": "11.2.7",
     "@testing-library/user-event": "13.5.0",
     "@types/gl-react": "3.15.4",

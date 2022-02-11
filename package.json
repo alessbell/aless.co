@@ -39,7 +39,7 @@
     "gatsby-remark-images": "5.1.0",
     "gatsby-remark-smartypants": "4.1.0",
     "gatsby-remark-twitter-cards": "0.6.1",
-    "gatsby-remark-vscode": "3.3.0",
+    "gatsby-remark-vscode": "3.3.1",
     "gatsby-source-filesystem": "3.4.0",
     "gatsby-transformer-sharp": "3.4.0",
     "gl-react": "5.0.0",

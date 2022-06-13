@@ -21,14 +21,10 @@ const AboutPage = (): JSX.Element => {
   const { profilePicture, ogImage }: ProfilePictureData =
     useStaticQuery(graphql`
       query ProfilePictureQuery {
-        profilePicture: file(absolutePath: { regex: "/assets/selfie/" }) {
+        profilePicture: file(absolutePath: { regex: "/assets/alessia2022/" }) {
           childImageSharp {
-            fixed(
-              height: 225
-              width: 200
-              traceSVG: { color: "#d3c8ac", blackOnWhite: false }
-            ) {
-              ...GatsbyImageSharpFixed_withWebp_tracedSVG
+            fixed(height: 250, width: 225) {
+              ...GatsbyImageSharpFixed_withWebp
             }
           }
         }
@@ -70,7 +66,6 @@ const AboutPage = (): JSX.Element => {
               marginRight: '1.5rem',
               marginTop: '0.1rem',
               marginBottom: '0.2rem',
-              borderRadius: '8px',
             }}
             fixed={profilePicture.childImageSharp.fixed}
           />
@@ -79,18 +74,33 @@ const AboutPage = (): JSX.Element => {
       </p>
       <p>
         I work on the{' '}
-        <a href="https://venmo.com/" target="_blank" rel="noopener noreferrer">
-          Venmo
+        <a
+          href="https://github.com/apollographql/apollo-client"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Apollo Client
         </a>{' '}
-        team at PayPal as a senior engineer. In April 2019 I attended the{' '}
+        team at{' '}
+        <a
+          href="https://apollographql.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Apollo GraphQL
+        </a>{' '}
+        as a Senior Open Source Engineer.
+      </p>
+      <p>
+        In April 2019 I attended the{' '}
         <a
           href="https://recurse.com/"
           target="_blank"
           rel="noopener noreferrer"
         >
           Recurse Center
-        </a>{' '}
-        - I{`'`}m always happy to chat about RC with anyone considering
+        </a>
+        . I{`'`}m always happy to chat about RC with anyone considering
         applying.
       </p>
       <p>

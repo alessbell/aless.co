@@ -11,6 +11,10 @@
     {
       "source": "/demo",
       "destination": "https://csb-ldobx-6tpdmw4fb-alessbell.vercel.app/"
+    },
+    {
+      "source": "/sea-slides",
+      "destination": "https://how-to-computer.netlify.app/"
     }
   ]
 }

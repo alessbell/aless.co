@@ -1,5 +1,6 @@
 import glob from 'fast-glob'
 import * as path from 'path'
+import { getAllIssues } from './github'
 
 async function importArticle(articleFilename) {
   let { meta, default: component } = await import(`../pages/${articleFilename}`)
@@ -17,5 +18,10 @@ export async function getAllArticles() {
 
   let articles = await Promise.all(articleFilenames.map(importArticle))
 
-  return articles.sort((a, z) => new Date(z.date) - new Date(a.date))
+  // fetch closed GitHub issues
+  let issues = await getAllIssues()
+
+  return [...articles, ...issues].sort(
+    (a, z) => new Date(z.date) - new Date(a.date)
+  )
 }

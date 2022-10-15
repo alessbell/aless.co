@@ -6,12 +6,7 @@ import clsx from 'clsx'
 import { Button } from '@/components/Button'
 import { Card } from '@/components/Card'
 import { Container } from '@/components/Container'
-import {
-  TwitterIcon,
-  InstagramIcon,
-  GitHubIcon,
-  LinkedInIcon,
-} from '@/components/SocialIcons'
+import { TwitterIcon, GitHubIcon, LinkedInIcon } from '@/components/SocialIcons'
 import image1 from '@/images/photos/image-1.jpg'
 import image2 from '@/images/photos/image-2.jpg'
 import image3 from '@/images/photos/image-3.jpg'
@@ -19,6 +14,7 @@ import image4 from '@/images/photos/image-4.jpg'
 import image5 from '@/images/photos/image-5.jpg'
 import logoApollo from '@/images/logos/apollo.svg'
 import logoVenmo from '@/images/logos/venmo.svg'
+import logoBreather from '@/images/logos/breather.webp'
 import { generateRssFeed } from '@/lib/generateRssFeed'
 import { getAllArticles } from '@/lib/getAllArticles'
 import { formatDate } from '@/lib/formatDate'
@@ -154,7 +150,7 @@ function Resume() {
     {
       company: 'Breather',
       title: 'Senior Web Engineer',
-      logo: logoVenmo,
+      logo: logoBreather,
       start: '2015',
       end: '2020',
     },
@@ -205,7 +201,7 @@ function Resume() {
         variant="secondary"
         className="group mt-6 w-full"
       >
-        Download CV
+        Download Resume
         <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
       </Button>
     </div>

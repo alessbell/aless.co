@@ -244,12 +244,10 @@ export default function Home({ articles }) {
   return (
     <>
       <Head>
-        <title>
-          Alessia Bellisario - Software designer, founder, and amateur astronaut
-        </title>
+        <title>Alessia Bellisario</title>
         <meta
           name="description"
-          content="I’m Spencer, a software designer and entrepreneur based in New York City. I’m the founder and CEO of Planetaria, where we develop technologies that empower regular people to explore space on their own terms."
+          content="Alessia Bellisario is a software engineer in NYC writing about code and drawing machines."
         />
       </Head>
       <Container className="mt-9">

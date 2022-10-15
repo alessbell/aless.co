@@ -2,6 +2,8 @@ import React from 'react'
 import { bundleMDX } from 'mdx-bundler'
 import remarkGfm from 'remark-gfm'
 import rehypePrism from '@mapbox/rehype-prism'
+import rehypeSlug from 'rehype-slug'
+import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import { getMDXComponent } from 'mdx-bundler/client'
 import { ArticleLayout } from '@/components/ArticleLayout'
 import { getAllIssues } from '@/lib/github'
@@ -14,8 +16,19 @@ const toCode = async (post) => {
       // The syntax might look weird, but it protects you in case we add/remove
       // plugins in the future.
       options.remarkPlugins = [...(options.remarkPlugins ?? []), remarkGfm]
-      options.rehypePlugins = [...(options.rehypePlugins ?? []), rehypePrism]
-
+      options.rehypePlugins = [
+        ...(options.rehypePlugins ?? []),
+        rehypeSlug,
+        rehypePrism,
+        [
+          rehypeAutolinkHeadings,
+          {
+            properties: {
+              className: ['anchor'],
+            },
+          },
+        ],
+      ]
       return options
     },
   })

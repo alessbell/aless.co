@@ -3,7 +3,7 @@
   "description": "alessia bellisario's blog",
   "version": "1.0.0",
   "engines": {
-    "node": "14.x"
+    "node": "16.x"
   },
   "author": "Alessia Bellisario <github@bellisar.io>",
   "repository": {
@@ -92,7 +92,7 @@
     "@types/gl-react": "3.15.4",
     "@types/gl-react-dom": "3.15.4",
     "@types/jest": "27.0.2",
-    "@types/node": "14.17.19",
+    "@types/node": "16.11.66",
     "@types/raf": "3.4.0",
     "@types/react": "17.0.39",
     "@types/react-dom": "17.0.11",

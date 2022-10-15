@@ -1,4 +1,10 @@
 import { ArticleLayout } from '@/components/ArticleLayout'
+import Image from 'next/future/image'
+import slack from './slack.png'
+import teamhackathon from './teamhackathon.jpeg'
+import goats from './goats.png'
+import introtogit from './introtogit.png'
+import saturdaywork from './saturdaywork.jpeg'
 
 export const meta = {
   author: 'Alessia Bellisario',
@@ -11,7 +17,7 @@ export default (props) => <ArticleLayout meta={meta} {...props} />
 
 It started with a Slack message. A colleague of mine, Christine, had heard about an organization called [Technovation](https://technovationchallenge.org/). Based in San Francisco and with 10 to 18-year-old participants in dozens of countries, Technovation is a competition in which young women build a startup and a mobile app over the course of several months with the guidance of female technologists. This year, the Montreal organizers were seeking companies in the local startup community to mentor teams. Would we be willing to take on a team at Breather?
 
-![Answer: yes! (shared with permission)](./slack.png)
+<Image src={slack} alt="" />
 
 True to startup form, we arrived at a decision quickly. I pinged Christine to let her know I’d love to help: I had mentored at a few [Canada Learning Code](https://www.canadalearningcode.ca/) workshops and was excited at the prospect of coaching a team of young women. Ever the daughter of a high school teacher and a programmer by day, I thought it would be challenging but fun in the way a really good Sudoku puzzle is.
 
@@ -21,7 +27,7 @@ On October 24 and 25, 2015, a few dozen young women gathered at Montreal’s La 
 
 The students had to choose a problem domain right away--they could change it later on--but our team quickly decided on building a tool to aid in the process of **finding internships or jobs for teenagers**, a time when they’re beginning to make important decisions about pursuing a career they may or may not have already identified. As part of secondaire 4 and 5 (grades 11 and 12), students at their high school were beginning to search for part-time positions. The whole process left something to be desired: most students found placements through their parents’ professional networks which limited the kinds of careers they were exposed to.
 
-![An explanation of icon fonts quickly devolves into a primer on minification. Day zero. (shared with permission)](./teamhackathon.jpeg)
+<Image src={teamhackathon} alt="" />
 
 One of the first exercises our team completed came from Google’s design sprint methodology: the students were tasked with quickly and independently sketching the six primary screens of their app-to-be. When the timer buzzed, everyone glanced around at each other’s pages. To their amazement, they had all drawn more or less the same screens: a **search view** with a list of results, a **map with pins** for local establishments that are hiring, a **user profile page**, and so on. This came as a pleasant surprise, if not a relief; for a brief moment, their problem seemed to have a straightforward solution. Think Instagram for jobs.
 
@@ -37,16 +43,11 @@ I knew that teaching in its current state didn't "scale" in the same way, but I 
 
 Take Ms. Mabel Hefty. A fifth grade teacher at Punahou School in Honolulu in the 1970s, Ms. Hefty probably taught several hundred students in her career. One of them happened to be a young person named Barack Obama, who says she was the first person who taught him that he had something to say. Of course, President Obama had other great teachers and mentors throughout his life, though he often cites Ms. Hefty as his favorite. But the more I considered the potential impact of a great educator, the more I thought: if Internet scale is a proxy for impact, Ms. Hefty’s might rival Facebook’s.
 
-<Tweet
-  align="center"
-  tweetLink="https://twitter.com/potus44/status/727561463993270272?lang=en"
-/>
-
 Tech companies often talk about nurturing relationships with “users”, but the word itself is revealing. If I deploy a bug to production, I never have to watch a user’s face twist in frustration as they struggle to accomplish a simple task. But when I occasionally mangled the explanation of some technical concept and reflexively asked our students “Does that make sense?”, I had to look on in mild horror as five young people turned my poorly-chosen words over in their heads, vaguely pained and confused.
 
 Teaching is not Sudoku. It’s more like stand-up comedy with higher stakes, where your performance is evaluated every 30 seconds and your score conveyed via the facial expressions of smart young people you want nothing more than to help succeed as much as you possibly can.
 
-![Teaching our students how to use Slack the way real startups do](./goats.png)
+<Image src={goats} alt="" />
 
 ## Teaching a Programmer to Teach
 
@@ -54,7 +55,7 @@ I knew one thing I'd learned from my dad, a high school English teacher of over 
 
 The night before our first lesson on git, I spent hours crafting slides that answered all of the questions I was too self-conscious to ask in my earliest programming days. Is there a difference between git and GitHub? How do you combine branches once you’re done building a feature? And what exactly is a branch?
 
-![Git basics, distilled into a deck](./introtogit.png)
+<Image src={introtogit} alt="Git basics, distilled into a deck" />
 
 Armed with my [deck](https://github.com/alessbell/git_prez/blob/master/git.pdf), a carefully prepared exercise set up in its own [repository](https://github.com/futurenowteam/collaborative_writing) and an irrational confidence in my ability to convey the particulars of a complex decade-old version control system in under two hours, I was as prepared as I’d ever be.
 
@@ -62,7 +63,10 @@ Once the lesson was underway, and much to my relief, they dug into the material 
 
 In retrospect, the _how_ of Technovation, the way we learned and worked as a team, was probably as critical as the content of the curriculum. Learning and building through iterative processes allows for faster progress.
 
-![One of many weekend work sessions at Breather HQ](./saturdaywork.jpeg)
+<Image
+  src={saturdaywork}
+  alt="One of many weekend work sessions at Breather HQ"
+/>
 
 ## Survey, Test, Interview, Repeat
 
@@ -71,10 +75,6 @@ And it wasn’t just in the programming portion that we embraced this approach. 
 A large portion of the six months of Techovation were spent this way: survey, test, interview, repeat. After testing our ideas, we realized the importance of two things: 1) that students have the opportunity to interact with professionals of diverse backgrounds, and 2) that students feel comfortable communicating on the platform.
 
 The solution our team arrived at was a digital network in which a high school student has access to school alumni who are organized by industry and students are prompted with helpful conversation starters when they’d like to ask a question of one. Under the hood, it’s a responsive web app built with Meteor (here’s the [source code](https://github.com/futurenowteam/futurenow.com)).
-
-<YouTube youTubeId="hKmiHX_SWYk" />
-
-<YouTube youTubeId="3fqeyTYEk70" />
 
 This was maybe the most exciting takeaway of Technovation: as programming becomes a tool more and more people use to create, the kinds of software being made will naturally diversify. As our team learned, some of the hardest problems in software are in understanding the needs and aspirations of those you hope to serve.
 

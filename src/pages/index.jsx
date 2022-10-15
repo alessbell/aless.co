@@ -15,7 +15,7 @@ import image5 from '@/images/photos/image-5.jpg'
 import logoApollo from '@/images/logos/apollo.svg'
 import logoVenmo from '@/images/logos/venmo.svg'
 import logoBreather from '@/images/logos/breather.webp'
-import { generateRssFeed } from '@/lib/generateRssFeed'
+// import { generateRssFeed } from '@/lib/generateRssFeed'
 import { getAllArticles } from '@/lib/getAllArticles'
 import { formatDate } from '@/lib/formatDate'
 
@@ -296,9 +296,9 @@ export default function Home({ articles }) {
 }
 
 export async function getStaticProps() {
-  if (process.env.NODE_ENV === 'production') {
-    await generateRssFeed()
-  }
+  // if (process.env.NODE_ENV === 'production') {
+  //   await generateRssFeed()
+  // }
 
   return {
     props: {

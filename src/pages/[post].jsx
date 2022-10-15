@@ -31,9 +31,24 @@ export default function Post({ meta, code }) {
   )
 }
 
-export async function getServerSideProps(context) {
+// from lee robinson's site
+
+export async function getStaticPaths() {
   const issues = await getAllIssues()
-  const issue = issues.find((i) => i.slug === context.params.post)
+  return {
+    paths: issues.map((i) => ({ params: { post: i.slug } })),
+    fallback: 'blocking',
+  }
+}
+
+export async function getStaticProps({ params }) {
+  const issues = await getAllIssues()
+  const issue = issues.find((i) => i.slug === params.post)
+
+  if (!issue) {
+    return { notFound: true }
+  }
+
   const { code, frontmatter } = await toCode(issue.component)
 
   return {
@@ -41,6 +56,6 @@ export async function getServerSideProps(context) {
       meta: issue,
       code,
       frontmatter,
-    }, // will be passed to the page component as props
+    },
   }
 }

@@ -1,6 +1,3 @@
-import { cache } from './cache'
-// const GITHUB_TOKEN = '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'
-
 const toSlug = (str) =>
   str
     .replace(/ \./g, ' ')
@@ -10,14 +7,9 @@ const toSlug = (str) =>
     .toLowerCase()
 
 const api = async (url) => {
-  if (cache.has(url)) {
-    return cache.get(url)
-  } else {
-    const baseUrl = 'https://api.github.com'
-    const data = await fetch(`${baseUrl}/${url}`).then((res) => res.json())
-    cache.set(url, data)
-    return data
-  }
+  const baseUrl = 'https://api.github.com'
+  const data = await fetch(`${baseUrl}/${url}`).then((res) => res.json())
+  return data
 }
 
 const preparePosts = (posts) => {

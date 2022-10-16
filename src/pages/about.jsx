@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import clsx from 'clsx'
 
+import { Prose } from '@/components/Prose'
 import { Container } from '@/components/Container'
 import { TwitterIcon, GitHubIcon, LinkedInIcon } from '@/components/SocialIcons'
 import portraitImage from '@/images/avatar.png'
@@ -14,7 +15,7 @@ function SocialLink({ className, href, children, icon: Icon }) {
         href={href}
         target="_blank"
         rel="noopener noreferrer"
-        className="group flex text-sm font-medium text-zinc-800 transition hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500"
+        className="group flex font-medium text-zinc-800 transition hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500"
       >
         <Icon className="h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-teal-500" />
         <span className="ml-4">{children}</span>
@@ -56,61 +57,79 @@ export default function About() {
               />
             </div>
           </div>
-          <div className="lg:order-first lg:row-span-2">
+
+          <Prose className="lg:order-first lg:row-span-2">
             <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-              I’m Spencer Sharp. I live in New York City, where I design the
-              future.
+              I’m Alessia Bellisario, a software engineer based in New York
+              City.
             </h1>
             <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
               <p>
-                I’ve loved making things for as long as I can remember, and
-                wrote my first program when I was 6 years old, just two weeks
-                after my mom brought home the brand new Macintosh LC 550 that I
-                taught myself to type on.
+                I work on the{' '}
+                <a
+                  href="https://github.com/apollographql/apollo-client"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Apollo Client
+                </a>{' '}
+                team at{' '}
+                <a
+                  href="https://apollographql.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Apollo GraphQL
+                </a>{' '}
+                as a Senior Open Source Engineer.
               </p>
               <p>
-                The only thing I loved more than computers as a kid was space.
-                When I was 8, I climbed the 40-foot oak tree at the back of our
-                yard while wearing my older sister’s motorcycle helmet, counted
-                down from three, and jumped — hoping the tree was tall enough
-                that with just a bit of momentum I’d be able to get to orbit.
+                In April 2019 I attended the{' '}
+                <a
+                  href="https://recurse.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Recurse Center
+                </a>
+                . I{`'`}m always happy to chat about RC with anyone considering
+                applying.
               </p>
               <p>
-                I spent the next few summers indoors working on a rocket design,
-                while I recovered from the multiple surgeries it took to fix my
-                badly broken legs. It took nine iterations, but when I was 15 I
-                sent my dad’s Blackberry into orbit and was able to transmit a
-                photo back down to our family computer from space.
+                I{`'`}m using this space to write about programming—my current
+                interests include Rust and graphics—and building mechanical
+                keyboards. If any of this is of interest to you, say hi! You can
+                reach me at{' '}
+                <a href="mailto:web@bellisar.io">web[at]bellisar.io</a>.
               </p>
               <p>
-                Today, I’m the founder of Planetaria, where we’re working on
-                civilian space suits and manned shuttle kits you can assemble at
-                home so that the next generation of kids really <em>can</em>{' '}
-                make it to orbit — from the comfort of their own backyards.
+                Finally, here{`'`}s a list of{' '}
+                <Link href="/uses/">tools and doodads I use</Link>.
               </p>
+              <p>This site contains no tracking or analytics💗</p>
             </div>
-          </div>
+          </Prose>
           <div className="lg:pl-20">
             <ul role="list">
               <SocialLink
                 href="https://twitter.com/alessbell"
                 icon={TwitterIcon}
               >
-                Follow on Twitter
+                tweets 👀
               </SocialLink>
               <SocialLink
                 href="https://github.com/alessbell"
                 icon={GitHubIcon}
                 className="mt-4"
               >
-                Follow on GitHub
+                code ⚙️
               </SocialLink>
               <SocialLink
                 href="https://www.linkedin.com/in/alessiabellisario/"
                 icon={LinkedInIcon}
                 className="mt-4"
               >
-                Follow on LinkedIn
+                business friends 🤝
               </SocialLink>
               <SocialLink
                 href="mailto:web@bellisar.io"

@@ -30,86 +30,66 @@ export default function Uses() {
     <>
       <Head>
         <title>Uses - Alessia Bellisario</title>
-        <meta
-          name="description"
-          content="Software I use, gadgets I love, and other things I recommend."
-        />
+        <meta name="description" content="Things I Use" />
       </Head>
       <SimpleLayout
-        title="Software I use, gadgets I love, and other things I recommend."
-        intro="I get asked a lot about the things I use to build software, stay productive, or buy to fool myself into thinking I’m being productive when I’m really just procrastinating. Here’s a big list of all of my favorite stuff."
+        title="Things I Use"
+        intro="I thought I'd write down a few trinkets and more useful tools I'm a fan of in my day-to-day."
       >
         <div className="space-y-20">
           <ToolsSection title="Workstation">
-            <Tool title="16” MacBook Pro, M1 Max, 64GB RAM (2021)">
-              I was using an Intel-based 16” MacBook Pro prior to this and the
-              difference is night and day. I’ve never heard the fans turn on a
-              single time, even under the incredibly heavy loads I put it
-              through with our various launch simulations.
+            <Tool title="13” MacBook Pro, M1, 16GB RAM (2020)">
+              My personal machine is a late 2019 16&quot; MacBook Pro and the
+              difference between it and my work machine, the 2020 M1 MPB, is
+              night and day.
             </Tool>
-            <Tool title="Apple Pro Display XDR (Standard Glass)">
-              The only display on the market if you want something HiDPI and
-              bigger than 27”. When you’re working at planetary scale, every
-              pixel you can get counts.
+            <Tool title="Samsung J791 Series 34-Inch Ultrawide QHD (3440x1440)">
+              I recently upgraded to an ultrawide monitor since the 2020 M1 macs
+              can only drive one external display. I&apos;m enjoying it more
+              than the more cumbersome two monitor set-up I had before.
             </Tool>
-            <Tool title="IBM Model M SSK Industrial Keyboard">
-              They don’t make keyboards the way they used to. I buy these any
-              time I see them go up for sale and keep them in storage in case I
-              need parts or need to retire my main.
+            <Tool title="OLKB Planck Keyboard">
+              I&apos;ve built a few keyboards and let my now 14 month old son
+              slam his fists on a few... the keyboard that has stood the test of
+              his manual QA (read: the one I have left to use) is the first
+              board I soldered, a Planck 40% ortholinear layout.
             </Tool>
-            <Tool title="Apple Magic Trackpad">
-              Something about all the gestures makes me feel like a wizard with
-              special powers. I really like feeling like a wizard with special
-              powers.
+            <Tool title="Logitech MX Master 2S Wireless Mouse">
+              I don&apos;t think I&apos;ll use another mouse again.
             </Tool>
-            <Tool title="Herman Miller Aeron Chair">
-              If I’m going to slouch in the worst ergonomic position imaginable
-              all day, I might as well do it in an expensive chair.
+            <Tool title="Capisco Chair by HÅG">
+              It&apos;s comfortable, has a nice foot rest and is easy to
+              transition between sitting and standing heights.
             </Tool>
           </ToolsSection>
           <ToolsSection title="Development tools">
-            <Tool title="Sublime Text 4">
-              I don’t care if it’s missing all of the fancy IDE features
-              everyone else relies on, Sublime Text is still the best text
-              editor ever made.
+            <Tool title="Microsoft's Visual Studio Code">
+              I use dark theme{' '}
+              <a
+                href="https://marketplace.visualstudio.com/items?itemName=GitHub.github-vscode-theme"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                GitHub Dark Dimmed
+              </a>{' '}
+              combined with{' '}
+              <a
+                href="https://developer.apple.com/fonts/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                SF Mono
+              </a>
+              .
             </Tool>
             <Tool title="iTerm2">
-              I’m honestly not even sure what features I get with this that
-              aren’t just part of the macOS Terminal but it’s what I use.
+              I&apos;ve been using it almost since the day I started
+              programming.
             </Tool>
-            <Tool title="TablePlus">
-              Great software for working with databases. Has saved me from
-              building about a thousand admin interfaces for my various projects
-              over the years.
-            </Tool>
-          </ToolsSection>
-          <ToolsSection title="Design">
-            <Tool title="Figma">
-              We started using Figma as just a design tool but now it’s become
-              our virtual whiteboard for the entire company. Never would have
-              expected the collaboration features to be the real hook.
-            </Tool>
-          </ToolsSection>
-          <ToolsSection title="Productivity">
-            <Tool title="Alfred">
-              It’s not the newest kid on the block but it’s still the fastest.
-              The Sublime Text of the application launcher world.
-            </Tool>
-            <Tool title="Reflect">
-              Using a daily notes system instead of trying to keep things
-              organized by topics has been super powerful for me. And with
-              Reflect, it’s still easy for me to keep all of that stuff
-              discoverable by topic even though all of my writing happens in the
-              daily note.
-            </Tool>
-            <Tool title="SavvyCal">
-              Great tool for scheduling meetings while protecting my calendar
-              and making sure I still have lots of time for deep work during the
-              week.
-            </Tool>
-            <Tool title="Focus">
-              Simple tool for blocking distracting websites when I need to just
-              do the work and get some momentum going.
+            <Tool title="Insomnia">A REST client for MacOS.</Tool>
+            <Tool title="Dash">
+              A Mac app that gives you offline access to 200+ API documentation
+              sets.
             </Tool>
           </ToolsSection>
         </div>

@@ -8,7 +8,7 @@
 
 </div>
 
-A blog by me! Built with:
+A blog! Built with:
 
 - [Next.js](https://github.com/gatsbyjs/gatsby)
 - [MDX](https://github.com/mdx-js/mdx)

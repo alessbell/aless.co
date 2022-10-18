@@ -4,7 +4,7 @@ on:
     types: [closed, edited, deleted]
 jobs:
   run:
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     if: ${{ github.event.issue.author_association == 'OWNER' }}
     steps:
       - name: Cancel Workflow

@@ -4,7 +4,6 @@
 
   <p>
     <a href="https://github.com/alessbell/aless.co/actions?query=workflow%3ATests" title="Tests"><img src="https://github.com/alessbell/aless.co/workflows/Tests/badge.svg"/></a>
-    <a href="https://github.com/prettier/prettier" title="Prettier Code Formatting"><img src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-round"/></a>
   </p>
 
 </div>

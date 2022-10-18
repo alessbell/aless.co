@@ -31,6 +31,23 @@ export default function Uses() {
       <Head>
         <title>Uses - Alessia Bellisario</title>
         <meta name="description" content="Things I Use" />
+        <meta name="description" content="Things I Use" />
+        <meta name="og:description" content="Things I Use" />
+        <meta
+          property="og:image"
+          content={`https://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/og?title=Things I Use`}
+        />
+        <meta name="og:site_name" content="Alessia Bellisario" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Alessia Bellisario" />
+        <meta property="twitter:title" content="Alessia Bellisario" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@alessbell" />
+        <meta name="twitter:description" content="Things I Use" />
+        <meta
+          property="twitter:image"
+          content={`https://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/og?title=Things I Use`}
+        />
       </Head>
       <SimpleLayout
         title="Things I Use"

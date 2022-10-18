@@ -1,0 +1,20 @@
+name: Deploy
+on:
+  issues:
+    types: [closed, edited, deleted]
+jobs:
+  run:
+    runs-on: macos-latest
+    if: ${{ github.event.issue.author_association == 'OWNER' }}
+    steps:
+      - name: Cancel Workflow
+        uses: styfle/cancel-workflow-action@0.11.0
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Deploy to Vercel
+        uses: BetaHuhn/deploy-to-vercel-action@v1.7.1
+        with:
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}

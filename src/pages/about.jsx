@@ -42,7 +42,7 @@ export default function About() {
         <title>About - Alessia Bellisario</title>
         <meta
           name="description"
-          content="I’m Alessia Bellisario. I live in New York City, where I design the future."
+          content="I’m Alessia, a software engineer based in New York City."
         />
       </Head>
       <Container className="mt-16 sm:mt-32">
@@ -96,17 +96,15 @@ export default function About() {
                 applying.
               </p>
               <p>
-                I{`'`}m using this space to write about programming—my current
-                interests include Rust and graphics—and building mechanical
-                keyboards. If any of this is of interest to you, say hi! You can
-                reach me at{' '}
+                I{`'`}m using this space to write about programming and
+                occasionally building mechanical keyboards. If any of this is of
+                interest to you, say hi! You can reach me at{' '}
                 <a href="mailto:web@bellisar.io">web[at]bellisar.io</a>.
               </p>
               <p>
-                Finally, here{`'`}s a list of{' '}
-                <Link href="/uses/">tools and doodads I use</Link>.
+                Last but not least, this site contains no tracking or analytics
+                💖
               </p>
-              <p>This site contains no tracking or analytics💗</p>
             </div>
           </Prose>
           <div className="lg:pl-20">

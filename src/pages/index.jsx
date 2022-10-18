@@ -270,7 +270,7 @@ function Photos() {
   return (
     <div className="mt-16 sm:mt-20">
       <div className="-my-4 flex justify-center gap-5 overflow-hidden py-4 sm:gap-8">
-        {[image1, image2, image3, image4, image5].map((image, imageIndex) => (
+        {[image5, image4, image2, image3, image1].map((image, imageIndex) => (
           <div
             key={image.src}
             className={clsx(
@@ -299,18 +299,21 @@ export default function Home({ articles }) {
         <title>Alessia Bellisario</title>
         <meta
           name="description"
-          content="Alessia Bellisario is a software engineer in NYC writing about code and drawing machines."
+          content="I’m Alessia, a software engineer based in New York City."
+        />
+        <meta
+          property="og:image"
+          content={`https://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/og?title=aless.co`}
         />
       </Head>
       <Container className="mt-9">
-        <div className="max-w-2xl">
+        <div className="max-w-lg">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-            A blog by Alessia Bellisario
+            Alessia Bellisario
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
             I’m Alessia, a software engineer based in New York City. I’m
-            currently an Open Source Engineer working on Apollo Client at Apollo
-            GraphQL.
+            currently working on Apollo Client at Apollo GraphQL.
           </p>
           <div className="mt-6 flex gap-6">
             <SocialLink

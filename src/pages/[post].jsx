@@ -1,10 +1,13 @@
 import React from 'react'
+import Head from 'next/head'
 import { bundleMDX } from 'mdx-bundler'
+import { getMDXComponent } from 'mdx-bundler/client'
+
 import remarkGfm from 'remark-gfm'
 import rehypePrism from '@mapbox/rehype-prism'
 import rehypeSlug from 'rehype-slug'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
-import { getMDXComponent } from 'mdx-bundler/client'
+
 import { ArticleLayout } from '@/components/ArticleLayout'
 import { getAllIssues } from '@/lib/github'
 
@@ -43,8 +46,6 @@ export default function Post({ meta, code }) {
     </ArticleLayout>
   )
 }
-
-// from lee robinson's site
 
 export async function getStaticPaths() {
   const issues = await getAllIssues()

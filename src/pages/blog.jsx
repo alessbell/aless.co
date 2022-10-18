@@ -39,12 +39,12 @@ export default function ArticlesIndex({ articles }) {
         <title>Articles - Alessia Bellisario</title>
         <meta
           name="description"
-          content="All of my long-form thoughts on programming, leadership, product design, and more, collected in chronological order."
+          content="I’m Alessia, a software engineer based in New York City."
         />
       </Head>
       <SimpleLayout
-        title="Writing on software design, company building, and the aerospace industry."
-        intro="All of my long-form thoughts on programming, leadership, product design, and more, collected in chronological order."
+        title="Blog"
+        intro="I've been writing online since 2014. Herein lies a haphazard collection of thoughts on web development accompanied by my annual Year in Review posts. Thanks for visiting 🌈"
       >
         <div className="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40">
           <div className="flex max-w-3xl flex-col space-y-16">

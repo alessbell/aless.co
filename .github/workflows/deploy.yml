@@ -5,7 +5,7 @@ on:
 jobs:
   run:
     runs-on: ubuntu-latest
-    if: ${{ github.event.issue.author_association == 'OWNER' }}
+    if: ${{ github.event.issue.author_association == 'OWNER' && github.event.issue.state == 'closed' }}
     steps:
       - name: Cancel Workflow
         uses: styfle/cancel-workflow-action@0.11.0

@@ -12,12 +12,61 @@ import image2 from '@/images/photos/image-7.jpg'
 import image3 from '@/images/photos/image-9.jpg'
 import image4 from '@/images/photos/image-11.jpg'
 import image5 from '@/images/photos/image-10.jpg'
-import logoApollo from '@/images/logos/apollo.svg'
-import logoVenmo from '@/images/logos/venmo.svg'
-import logoBreather from '@/images/logos/breather.webp'
 // import { generateRssFeed } from '@/lib/generateRssFeed'
 import { getAllArticles } from '@/lib/getAllArticles'
 import { formatDate } from '@/lib/formatDate'
+
+function ApolloLogo(props) {
+  return (
+    <svg
+      width="26"
+      height="26"
+      viewBox="0 0 256 256"
+      xmlns="http://www.w3.org/2000/svg"
+      preserveAspectRatio="xMidYMid"
+    >
+      <path
+        fill="#3f20ba"
+        className="dark:fill-zinc-300 dark:stroke-zinc-500"
+        d="M160.227 178.519h27.63L143.75 64.049h-30.549l-44.107 114.47h27.632l7.208-19.39h41.675l-7.544-21.456h-27.44l17.85-49.254 31.752 90.1zm91.112-84.751a6.641 6.641 0 0 0-8.185-4.627 6.648 6.648 0 0 0-4.628 8.183A114.646 114.646 0 0 1 242.704 128c0 63.248-51.456 114.702-114.704 114.702-63.248 0-114.703-51.454-114.703-114.702C13.297 64.751 64.752 13.296 128 13.296c26.793 0 52.718 9.518 73.179 26.456a15.938 15.938 0 0 0-1.238 6.173c0 8.835 7.162 15.997 15.997 15.997s15.997-7.162 15.997-15.997-7.162-15.997-15.997-15.997c-1.701 0-3.338.271-4.876.763C188.022 11.056 158.513 0 128 0 57.421 0 0 57.42 0 128c0 70.579 57.421 127.999 128 127.999 70.579 0 128-57.42 128-127.999a127.95 127.95 0 0 0-4.661-34.232z"
+      />
+    </svg>
+  )
+}
+function VenmoLogo(props) {
+  return (
+    <svg
+      width="512px"
+      height="512px"
+      viewBox="0 0 512 512"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <path
+        fill="#0074de"
+        className="dark:fill-zinc-300 dark:stroke-zinc-500"
+        d="M444.17,32H70.28C49.85,32,32,46.7,32,66.89V441.6C32,461.91,49.85,480,70.28,480H444.06C464.6,480,480,461.8,480,441.61V66.89C480.12,46.7,464.6,32,444.17,32ZM278,387H174.32L132.75,138.44l90.75-8.62,22,176.87c20.53-33.45,45.88-86,45.88-121.87,0-19.62-3.36-33-8.61-44L365.4,124.1c9.56,15.78,13.86,32,13.86,52.57C379.25,242.17,323.34,327.26,278,387Z"
+      />
+    </svg>
+  )
+}
+function BreatherLogo(props) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24px"
+      height="24px"
+      viewBox="0 0 24 24"
+      {...props}
+    >
+      <path
+        fill="#1FA561"
+        className="dark:fill-zinc-300 dark:stroke-zinc-500"
+        d="M13.09,22.64c-0.111,0-0.258-0.037-0.332-0.111c-0.111-0.074-0.147-0.221-0.147-0.332v-2.765 c0-0.184,0.147-0.369,0.332-0.442l3.909-1.069c0.332-0.074,0.553-0.442,0.442-0.774c-0.074-0.332-0.442-0.553-0.774-0.442 l-3.355,0.885c-0.147,0.037-0.295,0-0.369-0.074c-0.111-0.074-0.184-0.221-0.184-0.369V16.04c0-0.184,0.147-0.369,0.332-0.442 l5.199-1.438c0.332-0.111,0.516-0.442,0.442-0.774c-0.111-0.332-0.442-0.516-0.774-0.442l-4.609,1.291 c-0.147,0.037-0.295,0-0.406-0.074c-0.111-0.074-0.184-0.221-0.184-0.369v-1.069c0-0.184,0.147-0.369,0.332-0.442l3.909-1.032 c0.332-0.074,0.553-0.442,0.442-0.774c-0.074-0.332-0.442-0.553-0.774-0.442l-3.355,0.885c-0.147,0.037-0.295,0-0.369-0.074 c-0.111-0.074-0.184-0.221-0.184-0.369V9.403c0-0.184,0.147-0.369,0.332-0.442l2.507-0.664c0.332-0.074,0.553-0.442,0.442-0.774 C15.819,7.19,15.45,6.969,15.118,7.08l-1.954,0.516c-0.147,0.037-0.258,0-0.369-0.074c-0.111-0.074-0.184-0.221-0.184-0.369V4.462 c0-0.369-0.295-0.627-0.627-0.627c-0.369,0-0.627,0.295-0.627,0.627v2.692c0,0.147-0.074,0.258-0.184,0.369 c-0.111,0.074-0.258,0.111-0.369,0.074L8.85,7.08C8.518,7.006,8.149,7.19,8.075,7.522C8.001,7.854,8.186,8.223,8.518,8.296 l2.507,0.664c0.184,0.037,0.332,0.221,0.332,0.442v1.069c0,0.147-0.074,0.258-0.184,0.369c-0.111,0.074-0.258,0.111-0.406,0.074 l-3.355-0.811c-0.332-0.074-0.701,0.111-0.774,0.442c-0.074,0.332,0.111,0.701,0.442,0.774l3.945,1.032 c0.184,0.037,0.332,0.221,0.332,0.442v1.069c0,0.147-0.074,0.258-0.184,0.369c-0.111,0.074-0.258,0.111-0.406,0.074l-4.646-1.291 c-0.332-0.111-0.701,0.111-0.774,0.442c-0.111,0.332,0.111,0.701,0.442,0.774l5.199,1.438c0.184,0.037,0.332,0.221,0.332,0.442 v1.106c0,0.147-0.074,0.258-0.184,0.369c-0.111,0.074-0.258,0.111-0.406,0.074l-3.319-0.959c-0.332-0.074-0.701,0.111-0.774,0.442 c-0.074,0.332,0.111,0.701,0.442,0.774l3.945,1.069c0.184,0.037,0.332,0.221,0.332,0.442v2.765c0,0.111-0.037,0.258-0.147,0.332 c-0.111,0.074-0.221,0.111-0.332,0.111c-5.383-0.553-9.587-5.125-9.587-10.656c0-5.9,4.794-10.73,10.73-10.73 c5.9,0,10.73,4.794,10.73,10.73C22.677,17.515,18.473,22.05,13.09,22.64 M11.984,0C5.383,0,0,5.383,0,11.984 s5.383,11.984,11.984,11.984s11.984-5.383,11.984-11.984C23.968,5.347,18.584,0,11.984,0"
+      ></path>
+    </svg>
+  )
+}
 
 function MailIcon(props) {
   return (
@@ -137,8 +186,8 @@ function Resume() {
   let resume = [
     {
       company: 'Apollo',
-      title: 'Open Source Engineer',
-      logo: logoApollo,
+      title: 'Senior Open Source Engineer',
+      Logo: ApolloLogo,
       start: '2022',
       end: {
         label: 'Present',
@@ -148,14 +197,14 @@ function Resume() {
     {
       company: 'Venmo',
       title: 'Staff Product Engineer',
-      logo: logoVenmo,
+      Logo: VenmoLogo,
       start: '2020',
       end: '2022',
     },
     {
       company: 'Breather',
       title: 'Senior Web Engineer',
-      logo: logoBreather,
+      Logo: BreatherLogo,
       start: '2015',
       end: '2020',
     },
@@ -168,33 +217,34 @@ function Resume() {
         <span className="ml-3">Work</span>
       </h2>
       <ol className="mt-6 space-y-4">
-        {resume.map((role, roleIndex) => (
+        {resume.map((Role, roleIndex) => (
           <li key={roleIndex} className="flex gap-4">
             <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-              <Image src={role.logo} alt="" className="h-7 w-7" />
+              {/* <Image src={Role.logo} alt="" className="h-7 w-7" /> */}
+              <Role.Logo className="h-6 w-6" />
             </div>
             <dl className="flex flex-auto flex-wrap gap-x-2">
               <dt className="sr-only">Company</dt>
               <dd className="w-full flex-none font-medium text-zinc-900 dark:text-zinc-100">
-                {role.company}
+                {Role.company}
               </dd>
               <dt className="sr-only">Role</dt>
               <dd className="text-xs text-zinc-500 dark:text-zinc-400">
-                {role.title}
+                {Role.title}
               </dd>
               <dt className="sr-only">Date</dt>
               <dd
                 className="ml-auto text-xs text-zinc-400 dark:text-zinc-500"
-                aria-label={`${role.start.label ?? role.start} until ${
-                  role.end.label ?? role.end
+                aria-label={`${Role.start.label ?? Role.start} until ${
+                  Role.end.label ?? Role.end
                 }`}
               >
-                <time dateTime={role.start.dateTime ?? role.start}>
-                  {role.start.label ?? role.start}
+                <time dateTime={Role.start.dateTime ?? Role.start}>
+                  {Role.start.label ?? Role.start}
                 </time>{' '}
                 <span aria-hidden="true">—</span>{' '}
-                <time dateTime={role.end.dateTime ?? role.end}>
-                  {role.end.label ?? role.end}
+                <time dateTime={Role.end.dateTime ?? Role.end}>
+                  {Role.end.label ?? Role.end}
                 </time>
               </dd>
             </dl>
@@ -230,6 +280,7 @@ function Photos() {
           >
             <Image
               src={image}
+              priority
               alt=""
               sizes="(min-width: 640px) 18rem, 11rem"
               className="absolute inset-0 h-full w-full object-cover"

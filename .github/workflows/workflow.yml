@@ -4,6 +4,8 @@ jobs:
   run:
     runs-on: macos-latest
     steps:
+      - name: Cancel Previous Runs
+        uses: styfle/cancel-workflow-action
       - uses: actions/checkout@v3
       - name: Cache node modules
         uses: actions/cache@v3

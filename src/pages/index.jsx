@@ -310,11 +310,8 @@ export default function Home({ articles }) {
         />
         <meta name="og:site_name" content="Alessia Bellisario" />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Things I Use - Alessia Bellisario" />
-        <meta
-          property="twitter:title"
-          content="Things I Use - Alessia Bellisario"
-        />
+        <meta property="og:title" content="Alessia Bellisario" />
+        <meta property="twitter:title" content="Alessia Bellisario" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@alessbell" />
         <meta

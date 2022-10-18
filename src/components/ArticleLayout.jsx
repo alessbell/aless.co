@@ -35,13 +35,21 @@ export function ArticleLayout({
       <Head>
         <title>{`${meta.title} - Alessia Bellisario`}</title>
         <meta name="description" content={meta.description} />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@alessbell" />
-        <meta name="twitter:title" content={`${meta.title}`} />
+        <meta name="og:description" content={meta.description} />
+        <meta name="og:type" content="article" />
+        <meta name="og:site_name" content="Alessia Bellisario" />
+        <meta name="og:title" content={`${meta.title} - Alessia Bellisario`} />
         <meta
           property="og:image"
           content={`https://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/og?title=${meta.title}`}
         />
+        <meta
+          name="twitter:title"
+          content={`${meta.title} - Alessia Bellisario`}
+        />
+        <meta name="twitter:description" content={meta.description} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@alessbell" />
         <meta
           property="twitter:image"
           content={`https://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/og?title=${meta.title}`}

@@ -40,11 +40,11 @@ export function ArticleLayout({
         <meta name="twitter:title" content={`${meta.title}`} />
         <meta
           property="og:image"
-          content={`${process.env.NEXT_PUBLIC_VERCEL_URL}/api/og?title=${meta.title}`}
+          content={`https://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/og?title=${meta.title}`}
         />
         <meta
           property="twitter:image"
-          content={`${process.env.NEXT_PUBLIC_VERCEL_URL}/api/og?title=${meta.title}`}
+          content={`https://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/og?title=${meta.title}`}
         />
       </Head>
       <Container className="mt-16 lg:mt-32">

@@ -18,16 +18,17 @@ export default async function handler(req) {
     (
       <div
         style={{
-          background: 'linear-gradient(to right, #c6ffdd, #fbd786, #f7797d)',
+          background: 'linear-gradient(to right, #a5b4fc, #f9a8d4, #a5b4fc)',
           height: '100%',
           width: '100%',
-          fontSize: 85,
+          textAlign: 'left',
+          fontSize: 100,
           fontFamily: '"GT Pressura Mono"',
-          color: '#000080',
-          paddingTop: '50px',
+          color: '#312e81',
+          paddingTop: '70px',
           paddingBottom: '50px',
-          paddingLeft: '75px',
-          paddingRight: '75px',
+          paddingLeft: '100px',
+          paddingRight: '100px',
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'center',

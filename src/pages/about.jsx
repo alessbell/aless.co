@@ -7,6 +7,7 @@ import { Prose } from '@/components/Prose'
 import { Container } from '@/components/Container'
 import { TwitterIcon, GitHubIcon, LinkedInIcon } from '@/components/SocialIcons'
 import portraitImage from '@/images/avatar.png'
+// import portraitImage from '@/images/profile.jpg'
 
 function SocialLink({ className, href, children, icon: Icon }) {
   return (
@@ -43,6 +44,32 @@ export default function About() {
         <meta
           name="description"
           content="I’m Alessia, a software engineer based in New York City."
+        />
+        <meta
+          name="description"
+          content="I’m Alessia, a software engineer based in New York City."
+        />
+        <meta
+          name="og:description"
+          content="I’m Alessia, a software engineer based in New York City."
+        />
+        <meta
+          property="og:image"
+          content={`https://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/og?title=About`}
+        />
+        <meta name="og:site_name" content="Alessia Bellisario" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="About - Alessia Bellisario" />
+        <meta property="twitter:title" content="About - Alessia Bellisario" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@alessbell" />
+        <meta
+          name="twitter:description"
+          content="I’m Alessia, a software engineer based in New York City."
+        />
+        <meta
+          property="twitter:image"
+          content={`https://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/og?title=About`}
         />
       </Head>
       <Container className="mt-16 sm:mt-32">
@@ -101,10 +128,7 @@ export default function About() {
                 interest to you, say hi! You can reach me at{' '}
                 <a href="mailto:web@bellisar.io">web[at]bellisar.io</a>.
               </p>
-              <p>
-                Last but not least, this site contains no tracking or analytics
-                💖
-              </p>
+              <p>Finally, this site contains no tracking or analytics 💖</p>
             </div>
           </Prose>
           <div className="lg:pl-20">

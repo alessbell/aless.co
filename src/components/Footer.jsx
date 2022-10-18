@@ -19,7 +19,7 @@ function RCIcon(props) {
       xmlns="http://www.w3.org/2000/svg"
       height="1125"
       width="900"
-      viewBox="0 0 1125 900"
+      viewBox="0 0 1350 900"
       {...props}
     >
       <path
@@ -38,8 +38,8 @@ function XXIIVVIcon(props) {
   return (
     <svg
       width="300px"
-      height="250px"
-      viewBox="0 0 300 250"
+      height="210px"
+      viewBox="0 0 300 210"
       xmlns="http://www.w3.org/2000/svg"
       strokeWidth="28px"
       strokeLinecap="square"

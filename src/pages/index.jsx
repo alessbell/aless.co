@@ -156,7 +156,11 @@ function SocialLink({ icon: Icon, ...props }) {
 function Newsletter() {
   return (
     <form
-      action="/thank-you"
+      action="https://www.getrevue.co/profile/alessbell/add_subscriber"
+      method="post"
+      target="_blank"
+      id="revue-form"
+      name="revue-form"
       className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40"
     >
       <h2 className="flex font-semibold text-zinc-900 dark:text-zinc-100">
@@ -169,6 +173,7 @@ function Newsletter() {
       <div className="mt-6 flex">
         <input
           type="email"
+          name="member[email]"
           placeholder="Email address"
           aria-label="Email address"
           required
@@ -360,7 +365,7 @@ export default function Home({ articles }) {
             ))}
           </div>
           <div className="space-y-10 lg:pl-16 xl:pl-24">
-            {/* <Newsletter /> */}
+            <Newsletter />
             <Resume />
           </div>
         </div>

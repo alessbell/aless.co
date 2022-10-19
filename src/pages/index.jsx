@@ -10,8 +10,8 @@ import { TwitterIcon, GitHubIcon, LinkedInIcon } from '@/components/SocialIcons'
 import image1 from '@/images/photos/image-6.jpg'
 import image2 from '@/images/photos/image-7.jpg'
 import image3 from '@/images/photos/image-9.jpg'
-import image4 from '@/images/photos/image-11.jpg'
 import image5 from '@/images/photos/image-10.jpg'
+import image4 from '@/images/photos/image-12.jpg'
 // import { generateRssFeed } from '@/lib/generateRssFeed'
 import { getAllArticles } from '@/lib/getAllArticles'
 import { formatDate } from '@/lib/formatDate'
@@ -135,7 +135,7 @@ function Article({ article }) {
         {formatDate(article.date)}
       </Card.Eyebrow>
       <Card.Description>{article.description}</Card.Description>
-      <Card.Cta>Read article</Card.Cta>
+      <Card.Cta>Read post</Card.Cta>
     </Card>
   )
 }
@@ -156,19 +156,25 @@ function SocialLink({ icon: Icon, ...props }) {
 function Newsletter() {
   return (
     <form
-      action="/thank-you"
+      action="https://www.getrevue.co/profile/alessbell/add_subscriber"
+      method="post"
+      target="_blank"
+      id="revue-form"
+      name="revue-form"
       className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40"
     >
       <h2 className="flex font-semibold text-zinc-900 dark:text-zinc-100">
         <MailIcon className="h-6 w-6 flex-none" />
-        <span className="ml-3">Stay up to date</span>
+        <span className="ml-3">Get emails from me</span>
       </h2>
       <p className="mt-2 text-zinc-600 dark:text-zinc-400">
-        Get notified when I publish something new, and unsubscribe at any time.
+        I send anywhere from 1-4 newsletter updates a year - no spam,
+        unsubscribe any time.
       </p>
       <div className="mt-6 flex">
         <input
           type="email"
+          name="member[email]"
           placeholder="Email address"
           aria-label="Email address"
           required
@@ -269,7 +275,7 @@ function Photos() {
   return (
     <div className="mt-16 sm:mt-20">
       <div className="-my-4 flex justify-center gap-5 overflow-hidden py-4 sm:gap-8">
-        {[image5, image4, image2, image3, image1].map((image, imageIndex) => (
+        {[image5, image3, image2, image4, image1].map((image, imageIndex) => (
           <div
             key={image.src}
             className={clsx(
@@ -360,7 +366,7 @@ export default function Home({ articles }) {
             ))}
           </div>
           <div className="space-y-10 lg:pl-16 xl:pl-24">
-            {/* <Newsletter /> */}
+            <Newsletter />
             <Resume />
           </div>
         </div>

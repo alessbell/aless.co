@@ -165,10 +165,11 @@ function Newsletter() {
     >
       <h2 className="flex font-semibold text-zinc-900 dark:text-zinc-100">
         <MailIcon className="h-6 w-6 flex-none" />
-        <span className="ml-3">Stay up to date</span>
+        <span className="ml-3">Get emails from me</span>
       </h2>
       <p className="mt-2 text-zinc-600 dark:text-zinc-400">
-        Get notified when I publish something new, and unsubscribe at any time.
+        I send anywhere from 1-4 newsletter updates a year - no spam,
+        unsubscribe any time.
       </p>
       <div className="mt-6 flex">
         <input

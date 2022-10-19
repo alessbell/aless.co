@@ -10,8 +10,8 @@ import { TwitterIcon, GitHubIcon, LinkedInIcon } from '@/components/SocialIcons'
 import image1 from '@/images/photos/image-6.jpg'
 import image2 from '@/images/photos/image-7.jpg'
 import image3 from '@/images/photos/image-9.jpg'
-import image4 from '@/images/photos/image-11.jpg'
 import image5 from '@/images/photos/image-10.jpg'
+import image4 from '@/images/photos/image-12.jpg'
 // import { generateRssFeed } from '@/lib/generateRssFeed'
 import { getAllArticles } from '@/lib/getAllArticles'
 import { formatDate } from '@/lib/formatDate'
@@ -275,7 +275,7 @@ function Photos() {
   return (
     <div className="mt-16 sm:mt-20">
       <div className="-my-4 flex justify-center gap-5 overflow-hidden py-4 sm:gap-8">
-        {[image5, image4, image2, image3, image1].map((image, imageIndex) => (
+        {[image5, image3, image2, image4, image1].map((image, imageIndex) => (
           <div
             key={image.src}
             className={clsx(

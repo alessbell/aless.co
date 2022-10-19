@@ -8,7 +8,11 @@ const toSlug = (str) =>
 
 const api = async (url) => {
   const baseUrl = 'https://api.github.com'
-  const data = await fetch(`${baseUrl}/${url}`).then((res) => res.json())
+  const data = await fetch(`${baseUrl}/${url}`, {
+    headers: {
+      Authorization: `token ${process.env.GITHUB_TOKEN}`,
+    },
+  }).then((res) => res.json())
   return data
 }
 

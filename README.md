@@ -10,6 +10,6 @@
 
 A blog! Built with:
 
-- [Next.js v13](https://github.com/gatsbyjs/gatsby)
+- [Next.js](https://github.com/gatsbyjs/gatsby)
 - [MDX](https://github.com/mdx-js/mdx)
 - [Vercel](https://vercel.com)

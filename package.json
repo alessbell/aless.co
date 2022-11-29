@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "license": "MIT",
   "engines": {
-    "node": "16.x"
+    "node": "18.x"
   },
   "author": "Alessia Bellisario <github@bellisar.io>",
   "repository": {

@@ -21,7 +21,7 @@
     "@headlessui/react": "1.7.5",
     "@mapbox/rehype-prism": "0.8.0",
     "@mdx-js/loader": "2.1.5",
-    "@next/mdx": "13.0.5",
+    "@next/mdx": "13.0.6",
     "@tailwindcss/typography": "0.5.8",
     "@vercel/og": "0.0.21",
     "autoprefixer": "10.4.13",
@@ -30,7 +30,7 @@
     "feed": "4.2.2",
     "focus-visible": "5.2.0",
     "mdx-bundler": "9.0.1",
-    "next": "13.0.5",
+    "next": "13.0.6",
     "postcss-focus-visible": "7.1.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -41,7 +41,7 @@
   },
   "devDependencies": {
     "eslint": "8.29.0",
-    "eslint-config-next": "13.0.5",
+    "eslint-config-next": "13.0.6",
     "prettier": "2.8.1",
     "prettier-plugin-tailwindcss": "0.2.1"
   }

@@ -20,7 +20,7 @@
   "dependencies": {
     "@headlessui/react": "1.7.5",
     "@mapbox/rehype-prism": "0.8.0",
-    "@mdx-js/loader": "2.1.5",
+    "@mdx-js/loader": "2.2.1",
     "@next/mdx": "13.0.7",
     "@tailwindcss/typography": "0.5.8",
     "@vercel/og": "0.0.21",

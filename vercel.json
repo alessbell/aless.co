@@ -34,7 +34,7 @@
     },
     {
       "source": "/sea-slides",
-      "destination": "https://how-to-computer.netlify.app/"
+      "destination": "https://sea-presentation.vercel.app/"
     }
   ]
 }

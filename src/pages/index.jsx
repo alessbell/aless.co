@@ -153,41 +153,6 @@ function SocialLink({ icon: Icon, ...props }) {
   )
 }
 
-function Newsletter() {
-  return (
-    <form
-      action="https://www.getrevue.co/profile/alessbell/add_subscriber"
-      method="post"
-      target="_blank"
-      id="revue-form"
-      name="revue-form"
-      className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40"
-    >
-      <h2 className="flex font-semibold text-zinc-900 dark:text-zinc-100">
-        <MailIcon className="h-6 w-6 flex-none" />
-        <span className="ml-3">Get emails from me</span>
-      </h2>
-      <p className="mt-2 text-zinc-600 dark:text-zinc-400">
-        I send anywhere from 1-4 newsletter updates a year - no spam,
-        unsubscribe any time.
-      </p>
-      <div className="mt-6 flex">
-        <input
-          type="email"
-          name="member[email]"
-          placeholder="Email address"
-          aria-label="Email address"
-          required
-          className="min-w-0 flex-auto appearance-none rounded-md border border-zinc-900/10 bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-zinc-800/5 placeholder:text-zinc-400 focus:border-blue-500 focus:outline-none focus:ring-4 focus:ring-blue-500/10 dark:border-zinc-700 dark:bg-zinc-700/[0.15] dark:text-zinc-200 dark:placeholder:text-zinc-500 dark:focus:border-blue-400 dark:focus:ring-blue-400/10"
-        />
-        <Button type="submit" className="ml-4 flex-none">
-          Join
-        </Button>
-      </div>
-    </form>
-  )
-}
-
 function Resume() {
   let resume = [
     {
@@ -366,7 +331,6 @@ export default function Home({ articles }) {
             ))}
           </div>
           <div className="space-y-10 lg:pl-16 xl:pl-24">
-            <Newsletter />
             <Resume />
           </div>
         </div>

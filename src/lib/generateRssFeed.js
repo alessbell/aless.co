@@ -1,12 +1,14 @@
 import ReactDOMServer from 'react-dom/server'
 import { Feed } from 'feed'
-import { mkdir, writeFile } from 'fs/promises'
+import { writeFile } from 'fs/promises'
+import { getMDXComponent } from 'mdx-bundler/client'
 
-import { getAllArticles } from './getAllArticles'
+import { toCode } from '@/lib/mdxToHTML'
+import { getAllArticles } from '@/lib/getAllArticles'
 
 export async function generateRssFeed() {
   let articles = await getAllArticles()
-  let siteUrl = process.env.NEXT_PUBLIC_SITE_URL
+  let siteUrl = process.env.NEXT_PUBLIC_VERCEL_URL
   let author = {
     name: 'Alessia Bellisario',
     email: 'web@bellisar.io',
@@ -14,7 +16,7 @@ export async function generateRssFeed() {
 
   let feed = new Feed({
     title: author.name,
-    description: 'Your blog description',
+    description: 'alessia bellisario\'s blog',
     author,
     id: siteUrl,
     link: siteUrl,
@@ -22,13 +24,20 @@ export async function generateRssFeed() {
     favicon: `${siteUrl}/favicon.ico`,
     copyright: `All rights reserved ${new Date().getFullYear()}`,
     feedLinks: {
-      rss2: `${siteUrl}/rss/feed.xml`,
-      json: `${siteUrl}/rss/feed.json`,
+      rss2: `${siteUrl}/rss.xml`,
     },
   })
 
   for (let article of articles) {
     let url = `${siteUrl}/${article.slug}`
+
+    // if we don't already have an MDX Component to render, generate it
+    // from the GitHub issues markdown
+    if (typeof article.component !== 'function') {
+      const { code } = await toCode(article.component)
+      article.component = getMDXComponent(code);
+    }
+
     let html = ReactDOMServer.renderToStaticMarkup(
       <article.component isRssFeed />
     )
@@ -45,9 +54,5 @@ export async function generateRssFeed() {
     })
   }
 
-  await mkdir('./public/rss', { recursive: true })
-  await Promise.all([
-    writeFile('./public/rss/feed.xml', feed.rss2(), 'utf8'),
-    writeFile('./public/rss/feed.json', feed.json1(), 'utf8'),
-  ])
+  await writeFile('./public/rss.xml', feed.rss2())
 }

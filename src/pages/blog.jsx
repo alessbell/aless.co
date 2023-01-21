@@ -4,6 +4,7 @@ import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
 import { getAllArticles } from '@/lib/getAllArticles'
 import { formatDate } from '@/lib/formatDate'
+import { generateRssFeed } from '@/lib/generateRssFeed'
 
 function Article({ article }) {
   return (
@@ -59,6 +60,7 @@ export default function ArticlesIndex({ articles }) {
 }
 
 export async function getStaticProps() {
+  await generateRssFeed();
   return {
     props: {
       articles: (await getAllArticles()).map(({ component, ...meta }) => meta),

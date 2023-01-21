@@ -1,0 +1,24 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+
+export const meta = {
+  author: 'Alessia Bellisario',
+  date: '2023-01-21',
+  title: 'Release Automation in @apollo/client',
+  // description: '',
+}
+
+export default (props) => <ArticleLayout meta={meta} {...props} />
+
+This post is about the steps I took to automate `@apollo/client`'s release process; hopefully it will save someone else a few minutes in the future who may be considering a similar workflow :)
+
+## Changesets
+
+After looking at a few alternatives, [Changesets](https://github.com/changesets/changesets) was clearly the library that would allow our team building `@apollo/client` to adapt our existing manual workflow in the most seamless way.
+
+It has an API for prereleases involving long-running integration branches we'll explore later on, allows changelog entries to be authored (and _edited_) in markdown which are written at the time the relevant code is committed, and gives maintainers the right granularity of control over the way changesets are batched.
+
+IMO, the prerelease workflow is the more interesting of the two to discuss since its API is still somewhat in development, so let's take a look at the release workflow first.
+
+## Releases
+
+

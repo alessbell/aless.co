@@ -13,6 +13,15 @@ const nextConfig = {
     newNextLinkBehavior: true,
     scrollRestoration: true,
   },
+  webpack: (config) => {
+    config.resolve.fallback = { fs: false };
+    config.experiments = {
+      asyncWebAssembly: true,
+      syncWebAssembly: true,
+      layers: true,
+    };
+    return config;
+  },
 }
 
 const withMDX = nextMDX({

@@ -1,8 +1,10 @@
 import ReactDOMServer from 'react-dom/server'
 import { Feed } from 'feed'
-import fs from 'fs'
+import { writeFile } from 'fs/promises'
+import { getMDXComponent } from 'mdx-bundler/client'
 
-import { getAllArticles } from './getAllArticles'
+import { toCode } from '@/lib/mdxToHTML'
+import { getAllArticles } from '@/lib/getAllArticles'
 
 export async function generateRssFeed() {
   let articles = await getAllArticles()
@@ -14,7 +16,7 @@ export async function generateRssFeed() {
 
   let feed = new Feed({
     title: author.name,
-    // description: 'Your blog description',
+    description: 'alessia bellisario\'s blog',
     author,
     id: siteUrl,
     link: siteUrl,
@@ -28,6 +30,14 @@ export async function generateRssFeed() {
 
   for (let article of articles) {
     let url = `${siteUrl}/${article.slug}`
+
+    // if we don't already have an MDX Component to render, generate it
+    // from the GitHub issues markdown
+    if (typeof article.component !== 'function') {
+      const { code } = await toCode(article.component)
+      article.component = getMDXComponent(code);
+    }
+
     let html = ReactDOMServer.renderToStaticMarkup(
       <article.component isRssFeed />
     )
@@ -44,5 +54,5 @@ export async function generateRssFeed() {
     })
   }
 
-  fs.writeFileSync('./public/rss.xml', feed.rss2())
+  await writeFile('./public/rss.xml', feed.rss2())
 }

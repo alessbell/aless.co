@@ -10,7 +10,9 @@ const api = async (url) => {
   const baseUrl = 'https://api.github.com'
   const data = await fetch(`${baseUrl}/${url}`, {
     headers: {
+      Accept: `application/vnd.github+json`,
       Authorization: `token ${process.env.GITHUB_TOKEN}`,
+      "X-GitHub-Api-Version": "2022-11-28"
     },
   }).then((res) => res.json())
   return data
@@ -33,6 +35,6 @@ const preparePosts = (posts) => {
 }
 
 export async function getAllIssues() {
-  let issues = await api('repos/alessbell/aless.co/issues?state=closed')
+  let issues = await api('repos/alessbell/aless.co/issues?state=closed&creator=alessbell')
   return preparePosts(issues)
 }

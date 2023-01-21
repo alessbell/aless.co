@@ -1,42 +1,9 @@
 import React from 'react'
-import Head from 'next/head'
-import { bundleMDX } from 'mdx-bundler'
 import { getMDXComponent } from 'mdx-bundler/client'
-
-import remarkGfm from 'remark-gfm'
-import rehypePrism from '@mapbox/rehype-prism'
-import rehypeSlug from 'rehype-slug'
-import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 
 import { ArticleLayout } from '@/components/ArticleLayout'
 import { getAllIssues } from '@/lib/github'
-
-const toCode = async (post) => {
-  const { code, frontmatter } = await bundleMDX({
-    source: post,
-    mdxOptions(options, frontmatter) {
-      // this is the recommended way to add custom remark/rehype plugins:
-      // The syntax might look weird, but it protects you in case we add/remove
-      // plugins in the future.
-      options.remarkPlugins = [...(options.remarkPlugins ?? []), remarkGfm]
-      options.rehypePlugins = [
-        ...(options.rehypePlugins ?? []),
-        rehypeSlug,
-        rehypePrism,
-        [
-          rehypeAutolinkHeadings,
-          {
-            properties: {
-              className: ['anchor'],
-            },
-          },
-        ],
-      ]
-      return options
-    },
-  })
-  return { code, frontmatter }
-}
+import { toCode } from '@/lib/mdxToHTML'
 
 export default function Post({ meta, code }) {
   const Component = React.useMemo(() => getMDXComponent(code), [code])

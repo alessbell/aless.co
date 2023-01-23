@@ -1,0 +1,60 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+
+export const meta = {
+  author: 'Alessia Bellisario',
+  date: '2023-01-21',
+  title: 'Automating Releases of @apollo/client',
+}
+
+export default (props) => <ArticleLayout meta={meta} {...props} />
+
+This post is about the steps I took to automate `@apollo/client`'s release process with a great tool called [Changesets](https://github.com/changesets/changesets). Hopefully it will save someone else considering a similar workflow a few minutes in the future!
+
+## Changesets
+
+After comparing several options, [Changesets](https://github.com/changesets/changesets) stood out as the library that would allow our team to adapt our existing manual workflow seamlessly.
+
+Some of its features include:
+1. an API for handling prereleases in long-running integration branches
+1. changelog entries are written in Markdown at the time code is committed so both changelog and release notes can contain formatted code blocks, links, and other contextual information related to the change
+1. gives maintainers an easy way to batch changes into releases
+1. many other nice to haves, including [snapshot releases](https://github.com/changesets/changesets/blob/main/docs/snapshot-releases.md)
+
+IMO, the prerelease workflow is more interesting to discuss since its API [may undergo significant changes in v3](https://github.com/changesets/changesets/issues/665) and it took a bit of experimentation before landing on our current approach, so let's take a look at the more straightforward release workflow first.
+
+## Releases
+
+The release workflow 
+
+```yaml
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  release:
+    name: Changesets Release
+    # Prevents action from creating a PR on forks
+    if: github.repository == 'apollographql/apollo-client'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+        with:
+          # Fetch entire git history so  Changesets can generate
+          # changelogs with the correct commits
+          fetch-depth: 0
+
+      - name: Append NPM token to .npmrc
+
+      - name: Setup Node.js 18.x
+
+      - name: Install dependencies
+
+      - name: Create release PR or publish to npm + GitHub
+
+      - name: Send a Slack notification on publish
+```

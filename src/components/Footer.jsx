@@ -112,7 +112,7 @@ export function Footer() {
                 <NavLink href="/about">About</NavLink>
                 <NavLink href="/blog">Blog</NavLink>
                 {/* <NavLink href="/projects">Projects</NavLink> */}
-                {/* <NavLink href="/speaking">Speaking</NavLink> */}
+                <NavLink href="/speaking">Speaking</NavLink>
                 <NavLink href="/uses">Uses</NavLink>
               </div>
               <div className="flex">

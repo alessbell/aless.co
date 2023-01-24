@@ -6,8 +6,8 @@ import clsx from 'clsx'
 import { Prose } from '@/components/Prose'
 import { Container } from '@/components/Container'
 import { TwitterIcon, GitHubIcon, LinkedInIcon } from '@/components/SocialIcons'
-import portraitImage from '@/images/avatar.png'
-// import portraitImage from '@/images/profile.jpg'
+// import portraitImage from '@/images/avatar.png'
+import portraitImage from '@/images/profile2.png'
 
 function SocialLink({ className, href, children, icon: Icon }) {
   return (
@@ -16,9 +16,9 @@ function SocialLink({ className, href, children, icon: Icon }) {
         href={href}
         target="_blank"
         rel="noopener noreferrer"
-        className="group flex font-medium text-zinc-800 transition hover:text-blue-500 dark:text-zinc-200 dark:hover:text-blue-500"
+        className="group flex font-medium text-zinc-800 transition hover:text-emerald-500 dark:text-zinc-200 dark:hover:text-emerald-500"
       >
-        <Icon className="h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-blue-500" />
+        <Icon className="h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-emerald-500" />
         <span className="ml-4">{children}</span>
       </Link>
     </li>
@@ -119,13 +119,13 @@ export default function About() {
                 >
                   Recurse Center
                 </a>
-                . I{`'`}m always happy to chat about RC with anyone considering
-                applying.
+                —I{`'`}m always happy to chat about RC with anyone considering
+                applying!
               </p>
               <p>
                 I{`'`}m using this space to write about programming and
                 occasionally building mechanical keyboards. If any of this is of
-                interest to you, say hi! You can reach me at{' '}
+                interest to you, say hi :^) You can reach me at{' '}
                 <a href="mailto:web@bellisar.io">web[at]bellisar.io</a>.
               </p>
               <p>Finally, this site contains no tracking or analytics 💖</p>

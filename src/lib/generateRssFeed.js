@@ -16,7 +16,7 @@ export async function generateRssFeed() {
 
   let feed = new Feed({
     title: author.name,
-    description: 'alessia bellisario\'s blog',
+    description: "alessia bellisario's blog",
     author,
     id: siteUrl,
     link: siteUrl,
@@ -35,7 +35,7 @@ export async function generateRssFeed() {
     // from the GitHub issues markdown
     if (typeof article.component !== 'function') {
       const { code } = await toCode(article.component)
-      article.component = getMDXComponent(code);
+      article.component = getMDXComponent(code)
     }
 
     let html = ReactDOMServer.renderToStaticMarkup(

@@ -12,7 +12,6 @@ import image2 from '@/images/photos/image-7.jpg'
 import image3 from '@/images/photos/image-9.jpg'
 import image5 from '@/images/photos/image-10.jpg'
 import image4 from '@/images/photos/image-12.jpg'
-// import { generateRssFeed } from '@/lib/generateRssFeed'
 import { getAllArticles } from '@/lib/getAllArticles'
 import { formatDate } from '@/lib/formatDate'
 
@@ -296,12 +295,12 @@ export default function Home({ articles }) {
       </Head>
       <Container className="mt-9">
         <div className="max-w-lg">
-          <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
+          <h1 className="bg-gradient-to-r from-blue-600 to-fuchsia-600 bg-clip-text text-4xl font-bold tracking-tight text-transparent dark:from-blue-300 dark:to-fuchsia-300 sm:text-5xl">
             Alessia Bellisario
           </h1>
-          <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            I’m Alessia, a software engineer based in New York City. I’m
-            currently working on Apollo Client at Apollo GraphQL.
+          <p className="mt-6 text-lg text-zinc-600 dark:text-zinc-400">
+            I’m Alessia, a software engineer based in New York City currently
+            building Apollo Client at Apollo GraphQL.
           </p>
           <div className="mt-6 flex gap-6">
             <SocialLink
@@ -340,10 +339,6 @@ export default function Home({ articles }) {
 }
 
 export async function getStaticProps() {
-  // if (process.env.NODE_ENV === 'production') {
-  //   await generateRssFeed()
-  // }
-
   return {
     props: {
       articles: (await getAllArticles())

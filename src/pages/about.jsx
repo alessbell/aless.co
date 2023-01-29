@@ -16,9 +16,9 @@ function SocialLink({ className, href, children, icon: Icon }) {
         href={href}
         target="_blank"
         rel="noopener noreferrer"
-        className="group flex font-medium text-zinc-800 transition hover:text-emerald-500 dark:text-zinc-200 dark:hover:text-emerald-500"
+        className="group flex font-medium text-zinc-800 transition hover:text-blue-500 dark:text-zinc-200 dark:hover:text-blue-500"
       >
-        <Icon className="h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-emerald-500" />
+        <Icon className="h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-blue-500" />
         <span className="ml-4">{children}</span>
       </Link>
     </li>
@@ -86,11 +86,11 @@ export default function About() {
           </div>
 
           <Prose className="lg:order-first lg:row-span-2">
-            <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
+            <h1 className="bg-gradient-to-r from-blue-600 to-fuchsia-600 bg-clip-text text-4xl font-bold tracking-tight text-transparent dark:from-blue-300 dark:to-fuchsia-300 sm:text-5xl">
               I’m Alessia Bellisario, a software engineer based in New York
               City.
             </h1>
-            <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
+            <div className="mt-6 space-y-7 text-lg text-zinc-600 dark:text-zinc-400">
               <p>
                 I work on the{' '}
                 <a
@@ -137,28 +137,28 @@ export default function About() {
                 href="https://twitter.com/alessbell"
                 icon={TwitterIcon}
               >
-                tweets 👀
+                tweets
               </SocialLink>
               <SocialLink
                 href="https://github.com/alessbell"
                 icon={GitHubIcon}
                 className="mt-4"
               >
-                code ⚙️
+                code
               </SocialLink>
               <SocialLink
                 href="https://www.linkedin.com/in/alessiabellisario/"
                 icon={LinkedInIcon}
                 className="mt-4"
               >
-                business friends 🤝
+                business friends
               </SocialLink>
               <SocialLink
                 href="mailto:web@bellisar.io"
                 icon={MailIcon}
-                className="mt-8 border-t border-zinc-100 pt-8 dark:border-zinc-700/40"
+                className="mt-4"
               >
-                web@bellisar.io
+                web[at]bellisar.io
               </SocialLink>
             </ul>
           </div>

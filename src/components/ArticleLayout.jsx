@@ -4,11 +4,7 @@ import { Container } from '@/components/Container'
 import { formatDate } from '@/lib/formatDate'
 import { Prose } from '@/components/Prose'
 
-export function ArticleLayout({
-  children,
-  meta,
-  isRssFeed = false,
-}) {
+export function ArticleLayout({ children, meta, isRssFeed = false }) {
   if (isRssFeed) {
     return children
   }
@@ -42,12 +38,12 @@ export function ArticleLayout({
           <div className="mx-auto max-w-2xl">
             <article>
               <header className="flex flex-col">
-                <h1 className="mt-6 text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
+                <h1 className="mt-6 bg-gradient-to-r from-blue-600 to-fuchsia-600 bg-clip-text text-4xl font-bold tracking-tight text-transparent dark:from-blue-300 dark:to-fuchsia-300 sm:text-5xl">
                   {meta.title}
                 </h1>
                 <time
                   dateTime={meta.date}
-                  className="order-first flex items-center text-base text-zinc-400 dark:text-zinc-500"
+                  className="order-first flex items-center text-lg text-zinc-400 dark:text-zinc-500"
                 >
                   <span className="h-4 w-0.5 rounded-full bg-zinc-200 dark:bg-zinc-500" />
                   <span className="ml-3">{formatDate(meta.date)}</span>

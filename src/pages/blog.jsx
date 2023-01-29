@@ -60,7 +60,7 @@ export default function ArticlesIndex({ articles }) {
 }
 
 export async function getStaticProps() {
-  await generateRssFeed();
+  await generateRssFeed()
   return {
     props: {
       articles: (await getAllArticles()).map(({ component, ...meta }) => meta),

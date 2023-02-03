@@ -93,7 +93,6 @@ export function Footer() {
                 <NavLink href="/uses">Uses</NavLink>
               </div>
               <div className="flex">
-                <a rel="me" href="https://recurse.social/@alessbell"></a>
                 <a
                   aria-label="Recurse Center Webring"
                   href="https://webring.recurse.com"

@@ -3,6 +3,11 @@ import remarkGfm from 'remark-gfm'
 import rehypePrism from '@mapbox/rehype-prism'
 import rehypeSlug from 'rehype-slug'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
+import bundleAnalyzer from '@next/bundle-analyzer'
+
+const withBundleAnalyzer = bundleAnalyzer({
+  enabled: process.env.ANALYZE === 'true',
+})
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -14,13 +19,13 @@ const nextConfig = {
     scrollRestoration: true,
   },
   webpack: (config) => {
-    config.resolve.fallback = { fs: false };
+    config.resolve.fallback = { fs: false }
     config.experiments = {
       asyncWebAssembly: true,
       syncWebAssembly: true,
       layers: true,
-    };
-    return config;
+    }
+    return config
   },
 }
 
@@ -43,4 +48,4 @@ const withMDX = nextMDX({
   },
 })
 
-export default withMDX(nextConfig)
+export default withBundleAnalyzer(withMDX(nextConfig))

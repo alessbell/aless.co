@@ -95,16 +95,18 @@ export function Footer() {
               <div className="flex">
                 <a rel="me" href="https://recurse.social/@alessbell"></a>
                 <a
+                  aria-label="Recurse Center Webring"
                   href="https://webring.recurse.com"
                   target="_blank"
                   rel="noreferrer"
                 >
                   <RCIcon className="h-12 w-12" />
                 </a>
-                <a rel="me" href="https://recurse.social/@alessbell">
+                <a aria-label="Mastodon" rel="me" href="https://recurse.social/@alessbell">
                   <MastodonIcon className="ml-2 h-12 w-12" />
                 </a>
                 <a
+                  aria-label="XXIIVV Webring"
                   href="https://webring.xxiivv.com/#random"
                   target="_blank"
                   rel="noreferrer"

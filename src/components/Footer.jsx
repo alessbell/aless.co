@@ -101,7 +101,11 @@ export function Footer() {
                 >
                   <RCIcon className="h-12 w-12" />
                 </a>
-                <a aria-label="Mastodon" rel="me" href="https://recurse.social/@alessbell">
+                <a
+                  aria-label="Mastodon"
+                  rel="me"
+                  href="https://recurse.social/@alessbell"
+                >
                   <MastodonIcon className="ml-2 h-12 w-12" />
                 </a>
                 <a

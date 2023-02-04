@@ -23,7 +23,7 @@ Some of its features include:
 1. a simple mechanism for batching changes into releases (changesets `.md` files themselves)
 1. many other nice to haves, including [snapshot releases](https://github.com/changesets/changesets/blob/main/docs/snapshot-releases.md)
 
-IMO, the prerelease workflow is more interesting to discuss since its API [may undergo significant changes in v3](https://github.com/changesets/changesets/issues/665) and it took a bit of experimentation before landing on our current approach, so let's take a look at the more straightforward release workflow first.
+IMO, the prerelease workflow is more interesting to discuss since its API [may undergo significant changes in v3](https://github.com/changesets/changesets/issues/665) and it took a bit of experimentation before landing on the current approach, so let's take a look at the more straightforward release workflow first.
 
 ## Releases
 
@@ -41,9 +41,9 @@ Here's an example of a recent Apollo Client changeset, `.changeset/gorgeous-buse
 Adds `TVariables` generic to `GraphQLRequest` and `MockedResponse` interfaces.
 ```
 
-In a monorepo, more than one package can be specified in the frontmatter block at the top. Once the PR containing the relevant change + changeset is merged to `main` our release workflow kicks off.
+In a monorepo, more than one package can be specified in the frontmatter block at the top. Once the PR containing the relevant change + changeset is merged to `main` the release workflow kicks off.
 
-Apollo Client's [release workflow](https://github.com/apollographql/apollo-client/blob/main/.github/workflows/release.yml) looks like this:
+Here's an abridged + commented version of Apollo Client's [release workflow](https://github.com/apollographql/apollo-client/blob/main/.github/workflows/release.yml):
 
 ```yaml
 name: Release
@@ -67,16 +67,10 @@ jobs:
           # changelogs with the correct commits
           fetch-depth: 0
 
-      # You can pass secrets.NPM_TOKEN directly to the
+      # You can pass NPM_TOKEN directly to the
       # changesets action, but if you have an existing .npmrc
       # checked in, you'll need to append the token since .npmrc wins
       - name: Append NPM token to .npmrc
-      # ...
-
-      - name: Setup Node.js 18.x
-      # ...
-
-      - name: Install dependencies
       # ...
 
       - name: Create release PR or publish to npm + GitHub
@@ -96,7 +90,8 @@ jobs:
       # optional: announce the release somewhere
       - name: Send a Slack notification on publish
         if: steps.changesets.outcome == 'success' && steps.changesets.outputs.published == 'true'
-        # send Slack/Discord/etc. message...
+        # send Slack/Discord/etc. message with
+        # ${{ fromJson(steps.changesets.outputs.publishedPackages)[0].version }}
 ```
 
 The first time this is run after merging a PR, changesets detects the new changeset file and opens a "Versions Packages" PR.
@@ -106,9 +101,9 @@ The first time this is run after merging a PR, changesets detects the new change
   alt="A screenshot of a Version Packages PR automatically created by the Changesets Action"
 />
 
-Every time our release workflow runs on push events to the `main` branch, any unreleased changeset files that are detected are incorportated into the "Version Packages" PR description that lists the changes, and Changesets is smart enough to increment the package(s) version number(s) to the correct version.
+Every time the release workflow runs on push events to the `main` branch, any unreleased changeset files are incorportated into the "Version Packages" PR and Changesets is smart enough to increment the package(s) version number(s) to the correct version.
 
-By that I mean: if you have two unreleased changesets, one a `minor` change and one a `patch`, that results in a new minor version 🎉 The automated "Version Packages" PR will update `CHANGELOG.md`, listing minor/patch changes in separate sections, and increment the version in `package.json` and lockfile, as well as removing the changeset markdown files for changes in the new release.
+By that I mean: if you have two unreleased changesets, one a `minor` change and one a `patch`, that results in a new minor version 🎉 The automated "Version Packages" PR will update `CHANGELOG.md` listing minor/patch changes in separate sections, increment the version in `package.json` and lockfile, as well as removing the changeset markdown files for changes in the new release.
 
 Merging this "Version Packages" PR is what will trigger the `changesets/action` to generate a new release 🥳
 
@@ -116,7 +111,7 @@ Merging this "Version Packages" PR is what will trigger the `changesets/action` 
 
 Prereleases work fairly similarly, but took some experimentation since entering "prerelease mode" generates a `pre.json` file that Changesets uses to track alpha releases.
 
-Here's an example from Apollo Client's current `release-3.8` branch:
+Here's an example `pre.json` from Apollo Client's current [`release-3.8`](https://github.com/apollographql/apollo-client/pull/10340) branch:
 
 ```json
 {
@@ -136,3 +131,59 @@ Here's an example from Apollo Client's current `release-3.8` branch:
   ]
 }
 ```
+
+In other simpler prerelease workflows I've seen in the wild, `pre.json` is repeatedly added and removed from the default branch, but that seemed like a nonstarter for Apollo Client with its many forks. I wanted to avoid ever committing `pre.json` to `main`.
+
+Instead, Apollo Client:
+
+1. enters pre mode on all `release-x` branches by default
+1. each new commit with a changeset opens a "Version Packages (alpha)" PR that functions the same as regular releases,
+1. _but_ the version is monotonically increased, ie `3.8.0-alpha.0`, `3.8.0-alpha.1`, and so on
+1. and only npm releases are generated (not GitHub releases)
+
+Apollo Client's [`prerelease.yml`](https://github.com/apollographql/apollo-client/blob/main/.github/workflows/prerelease.yml) looks like this:
+
+```yaml
+# Are we already in pre mode?
+- name: Check for pre.json file existence
+  id: check_files
+  uses: andstor/file-existence-action@v2.0.0
+  with:
+    files: '.changeset/pre.json'
+
+# If .changeset/pre.json does not exist and we did not recently exit
+# prerelease mode, enter prerelease mode with tag alpha
+- name: Enter alpha prerelease mode
+  if: steps.check_files.outputs.files_exists == 'false' && !contains(github.event.head_commit.message, 'Exit prerelease')
+  run: npx changeset pre enter alpha
+
+- name: Create alpha release PR
+  uses: changesets/action@v1
+  with:
+    version: npm run changeset-version
+  env:
+    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+# Read package version from package.json
+# in case we just published a new version
+# and want to pass it to a Discord, etc. bot to announce
+# since `steps.changesets.outputs.publishedPackages` is undefined
+# for prereleases (though we can read the version there
+# for non-pre releases)
+- name: get-npm-version
+  id: package-version
+  uses: martinbeentjes/npm-get-version-action@main
+
+- name: Run publish
+  id: changesets
+  # Only run publish if we're still in pre mode and the last commit was
+  # via an automatically created Version Packages PR
+  if: steps.check_files.outputs.files_exists == 'true' && startsWith(github.event.head_commit.message, 'Version Packages')
+  run: npm run changeset-publish
+```
+
+Exiting pre mode has [its own workflow](https://github.com/apollographql/apollo-client/blob/main/.github/workflows/exit-prerelease.yml#L1:L1) that does two things: remove `pre.json` and revert the package number in `package.json` and lockfile to the last released version in the `main` branch, and a separate workflow [`check-prerelease.yml`](https://github.com/apollographql/apollo-client/blob/main/.github/workflows/check-prerelease.yml#L1:L1) makes sure `pre.json` will never be accidentally merge to main.
+
+## Conclusion
+
+Working with Changesets has been a breath of fresh air! It's taken a lot of tedious and repetitive tasks out of the release process, and allowed us to focus on the fixes and features on our roadmap. Many thanks to the team that builds and maintains it 🙌

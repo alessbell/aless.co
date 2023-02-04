@@ -22,7 +22,7 @@ export default async function handler(req) {
           height: '100%',
           width: '100%',
           textAlign: 'left',
-          fontSize: 100,
+          fontSize: 90,
           fontFamily: '"GT Pressura Mono"',
           color: '#312e81',
           paddingLeft: '100px',

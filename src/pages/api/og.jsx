@@ -25,8 +25,6 @@ export default async function handler(req) {
           fontSize: 100,
           fontFamily: '"GT Pressura Mono"',
           color: '#312e81',
-          paddingTop: '70px',
-          paddingBottom: '50px',
           paddingLeft: '100px',
           paddingRight: '100px',
           display: 'flex',

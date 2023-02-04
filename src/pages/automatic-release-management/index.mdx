@@ -182,7 +182,7 @@ Apollo Client's [`prerelease.yml`](https://github.com/apollographql/apollo-clien
   run: npm run changeset-publish
 ```
 
-Exiting pre mode has [its own workflow](https://github.com/apollographql/apollo-client/blob/main/.github/workflows/exit-prerelease.yml#L1:L1) that does two things: remove `pre.json` and revert the package number in `package.json` and lockfile to the last released version in the `main` branch, and a separate workflow [`check-prerelease.yml`](https://github.com/apollographql/apollo-client/blob/main/.github/workflows/check-prerelease.yml#L1:L1) makes sure `pre.json` will never be accidentally merge to main.
+Exiting pre mode has [its own workflow](https://github.com/apollographql/apollo-client/blob/main/.github/workflows/exit-prerelease.yml#L1:L1) that does two things: removes `pre.json` and reverts the package number in `package.json` to the last released version in `main`, and a separate workflow [`check-prerelease.yml`](https://github.com/apollographql/apollo-client/blob/main/.github/workflows/check-prerelease.yml#L1:L1) makes sure `pre.json` will never be accidentally merged to main.
 
 ## Conclusion
 

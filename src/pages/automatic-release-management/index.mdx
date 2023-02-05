@@ -10,11 +10,6 @@ export const meta = {
 
 export default (props) => <ArticleLayout meta={meta} {...props} />
 
-```js /age/#v /name/#v /setAge/#s /setName/#s /50/#i /'Taylor'/#i
-const [age, setAge] = useState(50)
-const [name, setName] = useState('Taylor')
-```
-
 This post is about the steps I took to automate [`@apollo/client`](https://github.com/apollographql/apollo-client)'s release process with a tool called [Changesets](https://github.com/changesets/changesets). Hopefully it will save someone else implementing a similar workflow a few minutes in the future :)
 
 ## Changesets

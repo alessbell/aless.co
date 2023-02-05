@@ -5,7 +5,7 @@ import rehypeSlug from 'rehype-slug'
 import rehypePrettyCode from 'rehype-pretty-code'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 
-const options = {
+const rehypeOptions = {
   // Use one of Shiki's packaged themes
   theme: 'one-dark-pro',
 
@@ -25,7 +25,7 @@ export const toCode = async (post) => {
         ...(options.rehypePlugins ?? []),
         rehypeSlug,
         rehypePrettyCode,
-        options,
+        rehypeOptions,
         [
           rehypeAutolinkHeadings,
           {

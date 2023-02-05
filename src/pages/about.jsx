@@ -108,7 +108,7 @@ export default function About() {
                 >
                   Apollo GraphQL
                 </a>{' '}
-                as a Senior Open Source Engineer.
+                as a Staff Open Source Engineer.
               </p>
               <p>
                 In April 2019 I attended the{' '}

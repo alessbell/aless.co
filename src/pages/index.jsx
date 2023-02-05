@@ -156,7 +156,7 @@ function Resume() {
   let resume = [
     {
       company: 'Apollo',
-      title: 'Senior Open Source Engineer',
+      title: 'Staff Open Source Engineer',
       Logo: ApolloLogo,
       start: '2022',
       end: {

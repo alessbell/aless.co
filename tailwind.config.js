@@ -127,7 +127,7 @@ module.exports = {
 
           // Images
           img: {
-            borderRadius: theme('borderRadius.3xl'),
+            borderRadius: theme('borderRadius.2xl'),
           },
 
           // Inline elements
@@ -222,9 +222,9 @@ module.exports = {
           pre: {
             color: 'var(--tw-prose-pre-code)',
             fontSize: theme('fontSize.sm')[0],
-            fontWeight: theme('fontWeight.medium'),
+            fontWeight: theme('fontWeight.semibold'),
             backgroundColor: 'var(--tw-prose-pre-bg)',
-            borderRadius: theme('borderRadius.3xl'),
+            borderRadius: theme('borderRadius.2xl'),
             padding: theme('spacing.8'),
             overflowX: 'auto',
             border: '1px solid',

@@ -1,9 +1,17 @@
 import { bundleMDX } from 'mdx-bundler'
 
 import remarkGfm from 'remark-gfm'
-import rehypePrism from '@mapbox/rehype-prism'
 import rehypeSlug from 'rehype-slug'
+import rehypePrettyCode from 'rehype-pretty-code'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
+
+const rehypeOptions = {
+  // Use one of Shiki's packaged themes
+  theme: 'one-dark-pro',
+
+  // Keep the background or use a custom background color?
+  keepBackground: true,
+}
 
 export const toCode = async (post) => {
   const { code, frontmatter } = await bundleMDX({
@@ -16,7 +24,8 @@ export const toCode = async (post) => {
       options.rehypePlugins = [
         ...(options.rehypePlugins ?? []),
         rehypeSlug,
-        rehypePrism,
+        rehypePrettyCode,
+        rehypeOptions,
         [
           rehypeAutolinkHeadings,
           {

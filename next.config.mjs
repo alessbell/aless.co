@@ -1,13 +1,21 @@
 import nextMDX from '@next/mdx'
 import remarkGfm from 'remark-gfm'
-import rehypePrism from '@mapbox/rehype-prism'
 import rehypeSlug from 'rehype-slug'
+import rehypePrettyCode from 'rehype-pretty-code'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import bundleAnalyzer from '@next/bundle-analyzer'
 
 const withBundleAnalyzer = bundleAnalyzer({
   enabled: process.env.ANALYZE === 'true',
 })
+
+const options = {
+  // Use one of Shiki's packaged themes
+  theme: 'one-dark-pro',
+
+  // Keep the background or use a custom background color?
+  keepBackground: true,
+}
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -32,7 +40,8 @@ const withMDX = nextMDX({
     remarkPlugins: [remarkGfm],
     rehypePlugins: [
       rehypeSlug,
-      rehypePrism,
+      rehypePrettyCode,
+      options,
       [
         rehypeAutolinkHeadings,
         {

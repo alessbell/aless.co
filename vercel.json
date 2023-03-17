@@ -35,6 +35,10 @@
     {
       "source": "/sea-slides",
       "destination": "https://sea-presentation.vercel.app/"
+    },
+    {
+      "source": "/defer",
+      "destination": "https://defer-presentation.vercel.app/"
     }
   ]
 }

@@ -2,9 +2,16 @@ const { fontFamily } = require('tailwindcss/defaultTheme')
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./src/**/*.{js,jsx}'],
+  content: [
+    './app/**/*.{ts,tsx,jsx}',
+    './components/**/*.{ts,tsx,jsx}',
+    './content/**/*.mdx',
+  ],
   darkMode: 'class',
   plugins: [require('@tailwindcss/typography')],
+  future: {
+    hoverOnlyWhenSupported: true,
+  },
   theme: {
     fontSize: {
       xs: ['0.8125rem', { lineHeight: '1.5rem' }],

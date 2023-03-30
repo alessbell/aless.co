@@ -39,18 +39,18 @@ export default function Speaking() {
         <div className="space-y-20">
           <SpeakingSection title="Meetups">
             <Appearance
-              href="#"
+              href="https://defer-presentation.vercel.app/"
               title="@defer all the (slow) things"
-              // description="A technical deep-dive into HelioStream, the real-time streaming library I wrote for transmitting live video back to Earth."
-              event="Chicago JavaScript"
-              cta="Upcoming (March 2023)"
+              description="An overview of GraphQL's proposed @defer directive, now available in Apollo Client and GraphOS."
+              event="ChicagoJS"
+              cta="View slides"
             />
           </SpeakingSection>
           <SpeakingSection title="Conferences">
             <Appearance
               href="https://youtu.be/tq9MfIG-VXw?t=14526"
               title="Next i18n: Performant, Rich Translations in Next.js"
-              // description="They say that if you’re not embarassed by your first version, you’re doing it wrong. Well when you’re selling DIY space shuttle kits it turns out it’s a bit more complicated."
+              description="Inter­nation­ali­zation isn't a feature, it’s an architecture."
               event="JS@PayPal Worldwide Virtual Conference (2021)"
               cta="Watch video"
             />

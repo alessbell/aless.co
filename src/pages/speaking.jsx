@@ -42,7 +42,7 @@ export default function Speaking() {
               href="https://defer-presentation.vercel.app/"
               title="@defer all the (slow) things"
               description="An overview of GraphQL's proposed @defer directive, now available in Apollo Client and GraphOS."
-              event="ChicagoJS"
+              event="ChicagoJS (2023)"
               cta="View slides"
             />
           </SpeakingSection>

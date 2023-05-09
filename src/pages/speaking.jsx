@@ -39,6 +39,13 @@ export default function Speaking() {
         <div className="space-y-20">
           <SpeakingSection title="Upcoming">
             <Appearance
+              title="Suspense + GraphQL = Superpowers"
+              event="React Rally (August 2023)"
+              // description="The Apollo Client team will show you how we built a non-trivial app using Apollo Client’s new Suspense features and GraphQL features like the @defer directive."
+              href="https://www.reactrally.com/speakers"
+              cta="View React Rally site"
+            />
+            <Appearance
               title="How to Use Suspense and GraphQL with Apollo to Build Great User Experiences"
               event="React Advanced London (October 2023)"
               description="The Apollo Client team will show you how we built a non-trivial app using Apollo Client’s new Suspense features and GraphQL features like the @defer directive."

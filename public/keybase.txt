@@ -72,3 +72,78 @@ appending to this document.
 View my publicly-auditable identity here: https://keybase.io/alessbell
 
 ==================================================================
+
+==================================================================
+https://keybase.io/alessbell
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://bellisar.io
+  * I am alessbell (https://keybase.io/alessbell) on keybase.
+  * I have a public key with fingerprint C17E E29A 032F 3EDD BE06  0672 0DFC 06C9 78EE B5E9
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0101d651de48302f5b380642a31f90c64b600f6bd1ae257249c09cc028e2357928860a",
+      "fingerprint": "c17ee29a032f3eddbe0606720dfc06c978eeb5e9",
+      "host": "keybase.io",
+      "key_id": "0dfc06c978eeb5e9",
+      "kid": "0101d651de48302f5b380642a31f90c64b600f6bd1ae257249c09cc028e2357928860a",
+      "uid": "9bcdb63e60663590e6bf1fb40aad5400",
+      "username": "alessbell"
+    },
+    "service": {
+      "hostname": "bellisar.io",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1686921316,
+  "expire_in": 157680000,
+  "prev": "f613905b79ca94549a0c24a0db0df6f8af6ebb6e1c98e3add9c2faa938f390f7",
+  "seqno": 23,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.1.13
+Comment: https://keybase.io/crypto
+
+yMNAAnicrVJrTBxVFOahyNLiEpH6KNUwFHm44p3H3p3ZxgduCxLaoHaptWiWedxZ
+RpZ9zMwuS5c2EsUGS9UUAoWoTbSgRiwJiIgILi2tQVKpFWlli6GKLRilMbaRZmtx
+pq2//Ov9c3PP+b7vfOfcM5YcH5MUm3w1YTy41L8YOzF6wB8jNFUIIYzzCLWYNYRV
+oesXcglIUR1VkoBZMYADXIBmXEAUTQJCNHMkDSBFsCQuMoCHFAcBECEn4CwizBaC
+YnjA8DwgaESQZgtD0DQELGbCRMntRLJXltyqJsvjFoQIhgUkIZJIEDgEIIAWAggi
+DyDPWGiEODNiNGKlR9EZmjmOVVC+5NFi2sNxw95/8f+zb/91OYbjBQ6SSDMJSTMD
+EOREXOQowLKCmQJABypIdrPVSEOzLqQoHHK5sF0mTAsHJB7pk9VbuQnRs5LCyjf6
+8coe1cN7XFqiUlW9ilUnqrVeHVmDOMdNDQcnuQVtjhojgGRF8rgxK64heVXSRXFI
+Q4bASRyaMBT0SjJySDrCbIE00I5eBwU0SRHiJAPMnIXhWYYyU9o/8ATFAoHT5glF
+mhUh4jiIcJ6hEckKAsMTIssyJC1qPNGC6V353B7MSpCaT9apaSqS082qfhlhu46M
+Pn9LTGxSTMKtcfqCxSQZUv5du3cuGFfErCfi2ZVnwnNXd2xKIlObG4qUPez51sKZ
+YqL8iyMPrI17juoBpeGgvPpw6ld51uUew0Anszdkw0F5yeqddv/W7W+lTuY5EuZW
+nTvePuPv/6arKX0h32cvH3O0wrDxvuX86cSm8ubj2ae3b6u4y1dmo1NObbnYckmZ
+OLqz1WBLrptO7g6tivs72nY5vjvYmpAYdZb8aN84NJCS92Hk7jOfDN+2o37DLFFA
+PzmxUPRT7kOLod+fCow39J/c43iv37cwPUg2nF4c/NL7RupS//nNg5smips6d68X
+f3jTNtL7W+aBtIysaNuQYa287cSscfnSyECp7+jcfGV7/Kn27tfWlAwcm928/7v3
+rS23fxskDR+k1ii/FoePFRir86pqdqcHHg51GA5Zz3zfk3vBt8VfPjpurVon9T5O
+NK5/+7Ajp5f8+c9DqvhC2Lm/y9/FV+RkDRe0Xfl662Ls9CDvrtt3h7Gs+tpJptm+
+sWsqTb2HqzGuBPNyROPnhsSOXy4W1Zoy5HRqasO1c5askeAa2/yLkeXIcO2+isZ7
+XaOv/JFS+0h40lDn9YeHp+ZzLZ2Bhb5WY7H9r8JZU8vL86r90Y6zJzKinldHMq0v
+ZSr31787VE1Fr3SFpp4mD4rjxEz2wTLXR0OPPdg+tje7tPHZ12cKK5cidxLjn66L
+1H98Nj+tbzKt73L4s38AclC+fg==
+=cN2p
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/alessbell
+
+==================================================================

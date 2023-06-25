@@ -280,11 +280,8 @@ export const metadata = {
 }
 
 export default async function Home() {
-  const articles = await getAllArticles()
-    .slice(0, 4)
-    .map(({ component, ...meta }) => meta)
-
-  console.log({ articles })
+  const _articles = await getAllArticles()
+  const articles = _articles.slice(0, 4).map(({ component, ...meta }) => meta)
 
   return (
     <>

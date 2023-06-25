@@ -8,7 +8,7 @@
     ],
     "allowJs": true,
     "skipLibCheck": true,
-    "strict": false,
+    "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "esModuleInterop": true,
@@ -19,25 +19,28 @@
     "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
-      "contentlayer/generated": [
-        "./.contentlayer/generated"
-      ],
-      "~/*": ["./*"]
+      "~/*": [
+        "./*"
+      ]
     },
     "incremental": true,
     "plugins": [
       {
         "name": "next"
       }
-    ]
+    ],
+    "strictNullChecks": true
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    ".contentlayer/generated"
-, "app/projects/page.jsx", "app/projects/page.jsx", "components/Card.jsx"  ],
+    ".contentlayer/generated",
+    "app/projects/page.jsx",
+    "app/projects/page.jsx",
+    "components/Card.jsx"
+, "app/uses/page.jsx"  ],
   "exclude": [
     "node_modules"
   ]

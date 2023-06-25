@@ -1,6 +1,8 @@
+'use client'
+
 import Image from 'next/image'
 import Link from 'next/link'
-import { useRouter } from 'next/router'
+// import { useRouter } from 'next/router'
 import { Popover, Transition } from '@headlessui/react'
 import clsx from 'clsx'
 
@@ -136,7 +138,8 @@ function MobileNavigation(props) {
 }
 
 function NavItem({ href, children }) {
-  let isActive = useRouter().pathname === href
+  let isActive = true
+  // let isActive = useRouter().pathname === href
 
   return (
     <li>
@@ -248,7 +251,8 @@ function Avatar({ large = false, className, ...props }) {
 }
 
 export function Header() {
-  let isHomePage = useRouter().pathname === '/'
+  // let isHomePage = useRouter().pathname === '/'
+  let isHomePage = true
 
   let headerRef = useRef()
   let avatarRef = useRef()

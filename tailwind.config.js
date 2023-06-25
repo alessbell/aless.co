@@ -3,9 +3,9 @@ const { fontFamily } = require('tailwindcss/defaultTheme')
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    './app/**/*.{ts,tsx,jsx}',
-    './components/**/*.{ts,tsx,jsx}',
-    './content/**/*.mdx',
+    './app/**/*.{js,ts,jsx,tsx}',
+    './components/**/*.{js,ts,jsx,tsx}',
+    './pages/**/*.{js,ts,jsx,tsx}',
   ],
   darkMode: 'class',
   plugins: [require('@tailwindcss/typography')],

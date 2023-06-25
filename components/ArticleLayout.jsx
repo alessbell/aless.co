@@ -1,4 +1,4 @@
-import Head from 'next/head'
+// import Head from 'next/head'
 
 import { Container } from 'components/Container'
 import { formatDate } from 'lib/formatDate'

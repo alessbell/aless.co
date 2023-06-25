@@ -23,18 +23,17 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   experimental: {
-    appDir: true,
-    newNextLinkBehavior: true,
+    mdxRs: true,
     // syncWebAssembly: true,
     // asyncWebAssembly: true,
-    scrollRestoration: true,
+    // scrollRestoration: true,
   },
-  webpack: (config) => {
-    config.experiments = {
-      layers: true,
-    }
-    return config
-  },
+  // webpack: (config) => {
+  //   config.experiments = {
+  //     layers: true,
+  //   }
+  //   return config
+  // },
 }
 
 const withMDX = nextMDX({

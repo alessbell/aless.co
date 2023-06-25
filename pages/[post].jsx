@@ -3,7 +3,7 @@ import { getMDXComponent } from 'mdx-bundler/client'
 
 import { ArticleLayout } from 'components/ArticleLayout'
 import { getAllIssues } from 'lib/github'
-import { toCode } from 'lib/mdxToHTML'
+// import { toCode } from 'lib/mdxToHTML'
 
 export default function Post({ meta, code }) {
   const Component = React.useMemo(() => getMDXComponent(code), [code])

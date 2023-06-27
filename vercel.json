@@ -39,6 +39,10 @@
     {
       "source": "/defer",
       "destination": "https://github.com/alessbell/defer-presentation"
+    },
+    {
+      "source": "/nyc",
+      "destination": "https://alessia.notion.site/Ghost-Castle-User-Guide-6476e1a84524471fab29c8806743de36"
     }
   ]
 }

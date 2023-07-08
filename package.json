@@ -47,7 +47,7 @@
     "@next/bundle-analyzer": "13.4.6",
     "eslint": "8.44.0",
     "eslint-config-next": "13.4.6",
-    "prettier": "2.8.8",
+    "prettier": "3.0.0",
     "prettier-plugin-tailwindcss": "0.3.0"
   }
 }

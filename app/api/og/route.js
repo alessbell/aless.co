@@ -9,7 +9,7 @@ const font = fetch(
   new URL('../../public/fonts/GT-Pressura-Mono-Regular.ttf', import.meta.url)
 ).then((res) => res.arrayBuffer())
 
-export default async function handler(req) {
+export async function GET(req) {
   const fontData = await font
   const { searchParams } = req.nextUrl
   const title = searchParams.get('title')

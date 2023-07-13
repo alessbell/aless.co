@@ -1,42 +1,20 @@
 import React from 'react'
-import { getMDXComponent } from 'mdx-bundler/client'
+import { notFound } from 'next/navigation'
+import { getAllArticles } from '~/lib/getAllArticles'
 
-import { ArticleLayout } from '~/components/ArticleLayout'
-import { getAllIssues } from '~/lib/github'
-import { toCode } from '~/lib/mdxToHTML'
-
-export default function Post({ meta, code }) {
-  const Component = React.useMemo(() => getMDXComponent(code), [code])
-  return (
-    <ArticleLayout meta={meta}>
-      <Component />
-    </ArticleLayout>
-  )
+export async function generateStaticParams() {
+  const issues = await getAllArticles()
+  return issues.map((i) => ({ params: { slug: i.slug } }))
 }
 
-export async function getStaticPaths() {
-  const issues = await getAllIssues()
-  return {
-    paths: issues.map((i) => ({ params: { post: i.slug } })),
-    fallback: 'blocking',
-  }
-}
-
-export async function getStaticProps({ params }) {
-  const issues = await getAllIssues()
-  const issue = issues.find((i) => i.slug === params.post)
+export default async function Post({ params }) {
+  const issues = await getAllArticles()
+  const issue = issues.find((i) => i.slug === params.slug)
 
   if (!issue) {
-    return { notFound: true }
+    notFound()
   }
 
-  const { code, frontmatter } = await toCode(issue.component)
-
-  return {
-    props: {
-      meta: issue,
-      code,
-      frontmatter,
-    },
-  }
+  const Component = issue.component
+  return <Component />
 }

@@ -33,7 +33,11 @@ function Article({ article }) {
   )
 }
 
-export default function ArticlesIndex({ articles }) {
+export default async function ArticlesIndex() {
+  // await generateRssFeed()
+  const articles = (await getAllArticles()).map(
+    ({ component, ...meta }) => meta
+  )
   return (
     <>
       <Head>
@@ -57,13 +61,4 @@ export default function ArticlesIndex({ articles }) {
       </SimpleLayout>
     </>
   )
-}
-
-export async function getStaticProps() {
-  // await generateRssFeed()
-  return {
-    props: {
-      articles: (await getAllArticles()).map(({ component, ...meta }) => meta),
-    },
-  }
 }

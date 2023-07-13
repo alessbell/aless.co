@@ -53,7 +53,7 @@ export const metadata = {
   },
 }
 
-export default function About() {
+export default async function About() {
   return (
     <>
       <Container className="mt-16 sm:mt-32">

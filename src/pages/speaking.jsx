@@ -62,7 +62,7 @@ export default function Speaking() {
               title="Suspense + GraphQL = Superpowers"
               event="React Rally 2023"
               description="A deep dive into an app built with Apollo Client’s new Suspense hooks and GraphQL features like the @defer directive."
-              href="https://www.youtube.com/live/pxCs9IAhciE?feature=share&t=9858"
+              href="https://www.youtube.com/watch?v=xqI3O8lqIxw"
               cta="Watch video"
             />
             <Appearance

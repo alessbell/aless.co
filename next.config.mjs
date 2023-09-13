@@ -24,7 +24,6 @@ const nextConfig = {
   swcMinify: true,
   experimental: {
     scrollRestoration: true,
-    mdxRs: true,
   },
   webpack: (config) => {
     config.experiments = {

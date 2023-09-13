@@ -23,7 +23,6 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   experimental: {
-    newNextLinkBehavior: true,
     scrollRestoration: true,
   },
   webpack: (config) => {

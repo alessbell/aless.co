@@ -45,7 +45,7 @@
   },
   "devDependencies": {
     "@next/bundle-analyzer": "13.4.19",
-    "esbuild": "0.19.2",
+    "esbuild": "0.19.3",
     "eslint": "8.49.0",
     "eslint-config-next": "13.4.19",
     "prettier": "3.0.3",

@@ -38,7 +38,7 @@
     },
     {
       "source": "/defer",
-      "destination": "https://github.com/alessbell/defer-presentation"
+      "destination": "https://defer-presentation.vercel.app/"
     },
     {
       "source": "/nyc",

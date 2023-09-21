@@ -36,13 +36,6 @@ export default function Speaking() {
         <div className="space-y-20">
           <SpeakingSection title="Upcoming">
             <Appearance
-              title="@defer all the slow things"
-              event="GraphQL Conf 2023"
-              description="A lightning talk on GraphQL's proposed @defer directive."
-              href="https://graphql.org/conf/"
-              cta="View GraphQL Conf site"
-            />
-            <Appearance
               title="Query Now, Render Later: Leveraging @defer for Efficient Data Delivery"
               event="GraphQL Summit 2023"
               description="An overview of GraphQL's proposed @defer directive, now available in Apollo Client and GraphOS."
@@ -58,7 +51,14 @@ export default function Speaking() {
             />
           </SpeakingSection>
           <SpeakingSection title="Past">
-          <Appearance
+            <Appearance
+              title="@defer all the slow things"
+              event="GraphQL Conf 2023"
+              description="A lightning talk on GraphQL's proposed @defer directive."
+              href="https://www.youtube.com/watch?v=b0iNvXu5ZlU"
+              cta="View GraphQL Conf site"
+              />
+            <Appearance
               title="Suspense + GraphQL = Superpowers"
               event="React Rally 2023"
               description="A deep dive into an app built with Apollo Client’s new Suspense hooks and GraphQL features like the @defer directive."

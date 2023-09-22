@@ -71,7 +71,7 @@ declare class ComputeDataWebWorker extends Worker {
 
   sumDailyTotals(
     data: Point[],
-    column: 'Demand__MW_' | 'Net_Generation__MW_'
+    column: 'Demand__MW_' | 'Net_Generation__MW_',
   ): Promise<{ [key: string]: number }>
 }
 

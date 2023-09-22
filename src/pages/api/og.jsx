@@ -6,7 +6,7 @@ export const config = {
 
 // Make sure the font exists in the specified path:
 const font = fetch(
-  new URL('../../fonts/GT-Pressura-Mono-Regular.ttf', import.meta.url)
+  new URL('../../fonts/GT-Pressura-Mono-Regular.ttf', import.meta.url),
 ).then((res) => res.arrayBuffer())
 
 export default async function handler(req) {
@@ -47,6 +47,6 @@ export default async function handler(req) {
           style: 'normal',
         },
       ],
-    }
+    },
   )
 }

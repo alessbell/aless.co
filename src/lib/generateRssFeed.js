@@ -39,7 +39,7 @@ export async function generateRssFeed() {
     }
 
     let html = ReactDOMServer.renderToStaticMarkup(
-      <article.component isRssFeed />
+      <article.component isRssFeed />,
     )
 
     feed.addItem({

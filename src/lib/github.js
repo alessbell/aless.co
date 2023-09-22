@@ -36,7 +36,7 @@ const preparePosts = (posts) => {
 
 export async function getAllIssues() {
   let issues = await api(
-    'repos/alessbell/aless.co/issues?state=closed&creator=alessbell'
+    'repos/alessbell/aless.co/issues?state=closed&creator=alessbell',
   )
   return preparePosts(issues)
 }

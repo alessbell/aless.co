@@ -22,6 +22,6 @@ export async function getAllArticles() {
   let issues = await getAllIssues()
 
   return [...articles, ...issues].sort(
-    (a, z) => new Date(z.date) - new Date(a.date)
+    (a, z) => new Date(z.date) - new Date(a.date),
   )
 }

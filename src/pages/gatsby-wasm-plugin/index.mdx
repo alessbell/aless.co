@@ -115,7 +115,7 @@ module.exports = ({ markdownNode }, config) => {
   const buffer = twitterCard.generate_text(
     post.title,
     // ...
-    fontToUint8Array
+    fontToUint8Array,
   )
   return Promise.all([generateBackground(), writeTextToCard(buffer)])
     .then(([base, text]) => base.composite(text, 0, 0))
@@ -123,7 +123,7 @@ module.exports = ({ markdownNode }, config) => {
       image
         .writeAsync(output)
         .then(() => console.log('Generated Twitter Card: ', output))
-        .catch((err) => err)
+        .catch((err) => err),
     )
     .catch(console.error)
 }

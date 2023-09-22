@@ -146,7 +146,7 @@ function NavItem({ href, children }) {
           'relative block px-3 py-2 transition',
           isActive
             ? 'text-blue-500 dark:text-blue-400'
-            : 'hover:text-blue-500 dark:hover:text-blue-400'
+            : 'hover:text-blue-500 dark:hover:text-blue-400',
         )}
       >
         {children}
@@ -218,7 +218,7 @@ function AvatarContainer({ className, ...props }) {
     <div
       className={clsx(
         className,
-        'h-10 w-10 rounded-full bg-white/90 p-0.5 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:ring-white/10'
+        'h-10 w-10 rounded-full bg-white/90 p-0.5 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:ring-white/10',
       )}
       {...props}
     />
@@ -239,7 +239,7 @@ function Avatar({ large = false, className, ...props }) {
         sizes={large ? '4rem' : '2.25rem'}
         className={clsx(
           'rounded-full bg-zinc-100 object-cover dark:bg-zinc-800',
-          large ? 'h-16 w-16' : 'h-9 w-9'
+          large ? 'h-16 w-16' : 'h-9 w-9',
         )}
         priority
       />
@@ -271,7 +271,7 @@ export function Header() {
       let scrollY = clamp(
         window.scrollY,
         0,
-        document.body.scrollHeight - window.innerHeight
+        document.body.scrollHeight - window.innerHeight,
       )
 
       if (isInitial.current) {
@@ -323,7 +323,7 @@ export function Header() {
 
       setProperty(
         '--avatar-image-transform',
-        `translate3d(${x}rem, 0, 0) scale(${scale})`
+        `translate3d(${x}rem, 0, 0) scale(${scale})`,
       )
 
       let borderScale = 1 / (toScale / scale)

@@ -12,3 +12,5 @@ jobs:
         run: bun install
       - name: Lint
         run: bun run lint
+      - name: Prettier check
+        run: bun run format:check

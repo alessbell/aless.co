@@ -57,7 +57,7 @@ export default function Speaking() {
               description="A lightning talk on GraphQL's proposed @defer directive."
               href="https://www.youtube.com/watch?v=b0iNvXu5ZlU"
               cta="View GraphQL Conf site"
-              />
+            />
             <Appearance
               title="Suspense + GraphQL = Superpowers"
               event="React Rally 2023"

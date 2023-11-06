@@ -34,14 +34,14 @@ export default function Speaking() {
       </Head>
       <SimpleLayout title="A few talks I've given">
         <div className="space-y-20">
-          <Appearance
-            title="How to Use Suspense and GraphQL with Apollo to Build Great User Experiences"
-            event="React Advanced London 2023"
-            description="The Apollo Client team will show you how we built a non-trivial app using Apollo Client’s new Suspense features and GraphQL features like the @defer directive."
-            href="https://portal.gitnation.org/contents/how-to-use-suspense-and-graphql-with-apollo-to-build-great-user-experiences"
-            cta="Watch video"
-          />
           <SpeakingSection title="Past">
+            <Appearance
+              title="How to Use Suspense and GraphQL with Apollo to Build Great User Experiences"
+              event="React Advanced London 2023"
+              description="The Apollo Client team will show you how we built a non-trivial app using Apollo Client’s new Suspense features and GraphQL features like the @defer directive."
+              href="https://portal.gitnation.org/contents/how-to-use-suspense-and-graphql-with-apollo-to-build-great-user-experiences"
+              cta="Watch video"
+            />
             <Appearance
               title="Query Now, Render Later: Leveraging @defer for Efficient Data Delivery"
               event="GraphQL Summit 2023"

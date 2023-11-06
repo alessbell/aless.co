@@ -1,10 +1,11 @@
-const { fontFamily } = require('tailwindcss/defaultTheme')
+// const { fontFamily } = require('tailwindcss/defaultTheme')
+import { fontFamily } from 'tailwindcss/defaultTheme'
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./src/**/*.{js,jsx}'],
   darkMode: 'class',
-  plugins: [require('@tailwindcss/typography')],
+  plugins: ['@tailwindcss/typography'],
   theme: {
     fontSize: {
       xs: ['0.8125rem', { lineHeight: '1.5rem' }],

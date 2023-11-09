@@ -86,11 +86,11 @@ export function Footer() {
           <Container.Inner>
             <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
               <div className="flex gap-6 font-medium text-zinc-800 dark:text-zinc-200">
-                <NavLink href="/about">About</NavLink>
-                <NavLink href="/blog">Blog</NavLink>
+                <NavLink href="/about">about</NavLink>
+                <NavLink href="/blog">blog</NavLink>
                 {/* <NavLink href="/projects">Projects</NavLink> */}
-                <NavLink href="/speaking">Speaking</NavLink>
-                <NavLink href="/uses">Uses</NavLink>
+                <NavLink href="/speaking">speaking</NavLink>
+                <NavLink href="/uses">uses</NavLink>
               </div>
               <div className="flex">
                 <a

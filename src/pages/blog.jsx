@@ -44,8 +44,8 @@ export default function ArticlesIndex({ articles }) {
         />
       </Head>
       <SimpleLayout
-        title="Blog"
-        intro="I've been writing online since 2014. Herein lies a haphazard collection of thoughts on web development accompanied by my annual Year in Review posts. Thanks for visiting 🌈"
+        title="blog"
+        intro="I've been writing sporadically online since 2014. Herein lies a collection of thoughts on web development accompanied by my annual Year in Review posts. Thanks for reading 🌈"
       >
         <div className="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40">
           <div className="flex max-w-3xl flex-col space-y-16">

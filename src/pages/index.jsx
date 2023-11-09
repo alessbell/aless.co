@@ -67,29 +67,6 @@ function BreatherLogo(props) {
   )
 }
 
-function MailIcon(props) {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-      {...props}
-    >
-      <path
-        d="M2.75 7.75a3 3 0 0 1 3-3h12.5a3 3 0 0 1 3 3v8.5a3 3 0 0 1-3 3H5.75a3 3 0 0 1-3-3v-8.5Z"
-        className="fill-zinc-100 stroke-zinc-400 dark:fill-zinc-100/10 dark:stroke-zinc-500"
-      />
-      <path
-        d="m4 6 6.024 5.479a2.915 2.915 0 0 0 3.952 0L20 6"
-        className="stroke-zinc-400 dark:stroke-zinc-500"
-      />
-    </svg>
-  )
-}
-
 function BriefcaseIcon(props) {
   return (
     <svg
@@ -156,7 +133,7 @@ function Resume() {
   let resume = [
     {
       company: 'Apollo',
-      title: 'Staff Open Source Engineer',
+      title: 'Staff Software Engineer',
       Logo: ApolloLogo,
       start: '2022',
       end: {
@@ -166,14 +143,14 @@ function Resume() {
     },
     {
       company: 'Venmo',
-      title: 'Staff Product Engineer',
+      title: 'Staff Software Engineer',
       Logo: VenmoLogo,
       start: '2020',
       end: '2022',
     },
     {
       company: 'Breather',
-      title: 'Senior Web Engineer',
+      title: 'Senior Software Engineer',
       Logo: BreatherLogo,
       start: '2015',
       end: '2020',
@@ -295,12 +272,12 @@ export default function Home({ articles }) {
       </Head>
       <Container className="mt-9">
         <div className="max-w-lg">
-          <h1 className="bg-gradient-to-r from-blue-600 to-fuchsia-600 bg-clip-text text-4xl font-bold tracking-tight text-transparent dark:from-blue-300 dark:to-fuchsia-300 sm:text-5xl">
+          <h1 className="font-mono bg-gradient-to-r from-blue-600 to-fuchsia-600 bg-clip-text text-4xl font-bold tracking-tight text-transparent dark:from-blue-300 dark:to-fuchsia-300 sm:text-5xl">
             Alessia Bellisario
           </h1>
           <p className="mt-6 text-lg text-zinc-600 dark:text-zinc-400">
             I’m Alessia, a software engineer based in New York City currently
-            building Apollo Client at Apollo GraphQL.
+            building Apollo Client.
           </p>
           <div className="mt-6 flex gap-6">
             <SocialLink

@@ -41,20 +41,6 @@ export default function Document() {
       <Head>
         <script dangerouslySetInnerHTML={{ __html: modeScript }} />
         <link
-          rel="preload"
-          href="/fonts/ibm-plex-sans-var.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="preload"
-          href="/fonts/ibm-plex-sans-var-italic.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
-        <link
           rel="alternate"
           type="application/rss+xml"
           href={`${process.env.NEXT_PUBLIC_SITE_URL}/rss/feed.xml`}

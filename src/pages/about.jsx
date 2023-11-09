@@ -6,8 +6,7 @@ import clsx from 'clsx'
 import { Prose } from '@/components/Prose'
 import { Container } from '@/components/Container'
 import { TwitterIcon, GitHubIcon, LinkedInIcon } from '@/components/SocialIcons'
-// import portraitImage from '@/images/avatar.png'
-import portraitImage from '@/images/profile2.png'
+import speakingImage from '@/images/profile3.JPG'
 
 function SocialLink({ className, href, children, icon: Icon }) {
   return (
@@ -77,7 +76,8 @@ export default function About() {
           <div className="lg:pl-20">
             <div className="max-w-xs px-2.5 lg:max-w-none">
               <Image
-                src={portraitImage}
+                priority
+                src={speakingImage}
                 alt=""
                 sizes="(min-width: 1024px) 32rem, 20rem"
                 className="aspect-square rotate-3 rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800"
@@ -86,13 +86,12 @@ export default function About() {
           </div>
 
           <Prose className="lg:order-first lg:row-span-2">
-            <h1 className="bg-gradient-to-r from-blue-600 to-fuchsia-600 bg-clip-text text-4xl font-bold tracking-tight text-transparent dark:from-blue-300 dark:to-fuchsia-300 sm:text-5xl">
-              I’m Alessia Bellisario, a software engineer based in New York
-              City.
+            <h1 className="font-mono bg-gradient-to-r from-blue-600 to-fuchsia-600 bg-clip-text text-4xl font-bold tracking-tight text-transparent dark:from-blue-300 dark:to-fuchsia-300 sm:text-5xl">
+              hey there 👋
             </h1>
             <div className="mt-6 space-y-7 text-lg text-zinc-600 dark:text-zinc-400">
               <p>
-                I work on the{' '}
+                I&rsquo;m Alessia :^) I work on the{' '}
                 <a
                   href="https://github.com/apollographql/apollo-client"
                   target="_blank"
@@ -106,9 +105,9 @@ export default function About() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Apollo GraphQL
+                  Apollo
                 </a>{' '}
-                as a Staff Open Source Engineer.
+                as a Staff Software Engineer.
               </p>
               <p>
                 In April 2019 I attended the{' '}
@@ -120,12 +119,11 @@ export default function About() {
                   Recurse Center
                 </a>
                 —I{`'`}m always happy to chat about RC with anyone considering
-                applying!
+                applying.
               </p>
               <p>
                 I{`'`}m using this space to write about programming and
-                occasionally building mechanical keyboards. If any of this is of
-                interest to you, say hi :^) You can reach me at{' '}
+                occasionally building mechanical keyboards. You can reach me at{' '}
                 <a href="mailto:web@bellisar.io">web[at]bellisar.io</a>.
               </p>
               <p>Finally, this site contains no tracking or analytics 💖</p>

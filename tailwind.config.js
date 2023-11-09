@@ -1,29 +1,35 @@
-// const { fontFamily } = require('tailwindcss/defaultTheme')
-import { fontFamily } from 'tailwindcss/defaultTheme'
+const { fontFamily } = require('tailwindcss/defaultTheme')
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./src/**/*.{js,jsx}'],
   darkMode: 'class',
-  plugins: ['@tailwindcss/typography'],
+  plugins: [require('@tailwindcss/typography')],
   theme: {
     fontSize: {
-      xs: ['0.8125rem', { lineHeight: '1.5rem' }],
-      sm: ['0.875rem', { lineHeight: '1.5rem' }],
-      base: ['1rem', { lineHeight: '1.75rem' }],
-      lg: ['1.125rem', { lineHeight: '1.75rem' }],
-      xl: ['1.25rem', { lineHeight: '2rem' }],
-      '2xl': ['1.5rem', { lineHeight: '2rem' }],
-      '3xl': ['1.875rem', { lineHeight: '2.25rem' }],
-      '4xl': ['2rem', { lineHeight: '2.5rem' }],
-      '5xl': ['3rem', { lineHeight: '3.5rem' }],
+      xs: ['0.8125rem', { lineHeight: '1.75rem' }],
+      sm: ['0.875rem', { lineHeight: '1.75rem' }],
+      base: ['1rem', { lineHeight: '2rem' }],
+      lg: ['1.25rem', { lineHeight: '2rem' }],
+      xl: ['1.375rem', { lineHeight: '2.25rem' }],
+      '2xl': ['1.5rem', { lineHeight: '2.25rem' }],
+      '3xl': ['1.875rem', { lineHeight: '2.5rem' }],
+      '4xl': ['2rem', { lineHeight: '2.75rem' }],
+      '5xl': ['3rem', { lineHeight: '3.75rem' }],
       '6xl': ['3.75rem', { lineHeight: '1' }],
       '7xl': ['4.5rem', { lineHeight: '1' }],
       '8xl': ['6rem', { lineHeight: '1' }],
       '9xl': ['8rem', { lineHeight: '1' }],
     },
     fontFamily: {
-      sans: ['IBM Plex Sans', ...fontFamily.sans],
+      sans: ['var(--font-noto-display)'],
+      mono: ['var(--font-noto-mono)'],
+    },
+    extends: {
+      fontFamily: {
+        sans: ['var(--font-noto-display'],
+        mono: ['var(--font-noto-mono'],
+      },
     },
     typography: (theme) => ({
       invert: {
@@ -95,7 +101,7 @@ module.exports = {
           // Base
           color: 'var(--tw-prose-body)',
           fontSize: theme('fontSize.lg')[0],
-          lineHeight: theme('lineHeight.7'),
+          lineHeight: theme('lineHeight.8'),
           '> *': {
             marginTop: theme('spacing.10'),
             marginBottom: theme('spacing.10'),
@@ -106,19 +112,22 @@ module.exports = {
           },
 
           // Headings
+          h1: {
+            // fontFamily: 'var(--font-noto-mono)',
+          },
           'h2, h3': {
             color: 'var(--tw-prose-headings)',
             fontWeight: theme('fontWeight.semibold'),
           },
           h2: {
             fontSize: theme('fontSize.xl')[0],
-            lineHeight: theme('lineHeight.7'),
+            lineHeight: theme('lineHeight.9'),
             marginTop: theme('spacing.12'),
             marginBottom: theme('spacing.4'),
           },
           h3: {
             fontSize: theme('fontSize.base')[0],
-            lineHeight: theme('lineHeight.7'),
+            lineHeight: theme('lineHeight.9'),
             marginTop: theme('spacing.16'),
             marginBottom: theme('spacing.4'),
           },
@@ -152,7 +161,7 @@ module.exports = {
           code: {
             display: 'inline-block',
             color: 'var(--tw-prose-code)',
-            fontSize: theme('fontSize.sm')[0],
+            fontSize: theme('fontSize.lg')[0],
             fontWeight: theme('fontWeight.semibold'),
             backgroundColor: 'var(--tw-prose-code-bg)',
             borderRadius: theme('borderRadius.lg'),
@@ -222,7 +231,7 @@ module.exports = {
           // Code blocks
           pre: {
             color: 'var(--tw-prose-pre-code)',
-            fontSize: theme('fontSize.sm')[0],
+            fontSize: theme('fontSize.base')[0],
             fontWeight: theme('fontWeight.semibold'),
             backgroundColor: 'var(--tw-prose-pre-bg)',
             borderRadius: theme('borderRadius.2xl'),

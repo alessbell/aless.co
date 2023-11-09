@@ -53,11 +53,11 @@ export default function Uses() {
         />
       </Head>
       <SimpleLayout
-        title="Things I Use"
-        intro="I thought I'd write down a few trinkets and more useful tools I'm a fan of in my day-to-day."
+        title="things I use"
+        intro="A few things I'm a fan of in my day-to-day."
       >
         <div className="space-y-20">
-          <ToolsSection title="Workstation">
+          <ToolsSection title="workstation">
             <Tool title="13” MacBook Pro, M1, 16GB RAM (2020)">
               My personal machine is a late 2019 16&quot; MacBook Pro and the
               difference between it and my work machine, the 2020 M1 MPB, is
@@ -82,7 +82,7 @@ export default function Uses() {
               transition between sitting and standing heights.
             </Tool>
           </ToolsSection>
-          <ToolsSection title="Development tools">
+          <ToolsSection title="development tools">
             <Tool title="Microsoft's Visual Studio Code">
               I use dark theme{' '}
               <a

@@ -1,8 +1,10 @@
+import Image from 'next/image'
 import Head from 'next/head'
 
 import { Card } from '@/components/Card'
 import { Section } from '@/components/Section'
 import { SimpleLayout } from '@/components/SimpleLayout'
+import speakingImage from '@/images/profile6.JPG'
 
 function SpeakingSection({ children, ...props }) {
   return (
@@ -15,7 +17,7 @@ function SpeakingSection({ children, ...props }) {
 function Appearance({ title, description, event, cta, href }) {
   return (
     <Card as="article">
-      <Card.Title as="h3" href={href}>
+      <Card.Title blank as="h3" href={href}>
         {title}
       </Card.Title>
       {event && <Card.Eyebrow decorate>{event}</Card.Eyebrow>}
@@ -32,9 +34,26 @@ export default function Speaking() {
         <title>Speaking - Alessia Bellisario</title>
         <meta name="description" content="A few talks I've given" />
       </Head>
-      <SimpleLayout title="A few talks I've given">
+      <SimpleLayout title="tech talks">
+        <div className="lg:pl-2"></div>
         <div className="space-y-20">
+          <Section border={false}>
+            <div className="max-w-xs px-2.5 lg:max-w-xl">
+              <Image
+                src={speakingImage}
+                alt=""
+                sizes="(min-width: 1024px) 32rem, 20rem"
+                className="rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800"
+              />
+            </div>
+          </Section>
           <SpeakingSection title="Past">
+            <Appearance
+              title="Panel Discussion: Open Source & “Perceived Competition” Between Projects"
+              event="React Advanced London 2023"
+              href="https://portal.gitnation.org/contents/open-source-and-perceived-competition-between-projects"
+              cta="Watch video"
+            />
             <Appearance
               title="How to Use Suspense and GraphQL with Apollo to Build Great User Experiences"
               event="React Advanced London 2023"
@@ -48,6 +67,13 @@ export default function Speaking() {
               description="An overview of GraphQL's proposed @defer directive, now available in Apollo Client and GraphOS."
               href="https://www.youtube.com/watch?v=n4mcAm4ukLU"
               cta="Watch video"
+            />
+            <Appearance
+              title="Apollo Client Office Hours with Alessia Bellisario"
+              // event="GraphQL Summit 2023"
+              description="Alessia Bellisario and Jeff Auriemma talk about Apollo Client. Originally streamed in Apollo’s Discord on October 6, 2023."
+              href="https://www.apollographql.com/blog/uncategorized/apollo-client-office-hours-with-alessia-bellisario/"
+              cta="Read transcript or listen to podcast"
             />
             <Appearance
               title="@defer all the slow things"

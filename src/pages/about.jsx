@@ -91,7 +91,7 @@ export default function About() {
             </h1>
             <div className="mt-6 space-y-7 text-lg text-zinc-600 dark:text-zinc-400">
               <p>
-                I&rsquo;m Alessia. I work on the{' '}
+                I&rsquo;m Alessia :^) I work on the{' '}
                 <a
                   href="https://github.com/apollographql/apollo-client"
                   target="_blank"
@@ -123,8 +123,7 @@ export default function About() {
               </p>
               <p>
                 I{`'`}m using this space to write about programming and
-                occasionally building mechanical keyboards. If any of this is of
-                interest to you, you can reach me at{' '}
+                occasionally building mechanical keyboards. You can reach me at{' '}
                 <a href="mailto:web@bellisar.io">web[at]bellisar.io</a>.
               </p>
               <p>Finally, this site contains no tracking or analytics 💖</p>

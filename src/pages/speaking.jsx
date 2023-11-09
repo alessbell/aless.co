@@ -69,6 +69,13 @@ export default function Speaking() {
               cta="Watch video"
             />
             <Appearance
+              title="Apollo Client Office Hours with Alessia Bellisario"
+              // event="GraphQL Summit 2023"
+              description="Alessia Bellisario and Jeff Auriemma talk about Apollo Client. Originally streamed in Apollo’s Discord on October 6, 2023."
+              href="https://www.apollographql.com/blog/uncategorized/apollo-client-office-hours-with-alessia-bellisario/"
+              cta="Read transcript or listen to podcast"
+            />
+            <Appearance
               title="@defer all the slow things"
               event="GraphQL Conf 2023"
               description="A lightning talk on GraphQL's proposed @defer directive."

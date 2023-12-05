@@ -6,4 +6,4 @@ node_modules
 tsconfig.json
 .vscode
 coverage
-# *.mdx
+*.mdx

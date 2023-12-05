@@ -186,7 +186,7 @@ module.exports = {
           // Figures
           figcaption: {
             color: 'var(--tw-prose-captions)',
-            fontSize: theme('fontSize.sm')[0],
+            fontSize: theme('fontSize.base')[0],
             lineHeight: theme('lineHeight.6'),
             marginTop: theme('spacing.3'),
           },

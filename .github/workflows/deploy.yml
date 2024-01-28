@@ -8,7 +8,7 @@ jobs:
     if: ${{ github.event.issue.author_association == 'OWNER' && github.event.issue.state == 'closed' }}
     steps:
       - name: Cancel Workflow
-        uses: styfle/cancel-workflow-action@0.12.0
+        uses: styfle/cancel-workflow-action@0.12.1
       - name: Checkout
         uses: actions/checkout@v4
       - name: Deploy to Vercel

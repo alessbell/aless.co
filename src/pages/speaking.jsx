@@ -49,6 +49,12 @@ export default function Speaking() {
           </Section>
           <SpeakingSection title="Past">
             <Appearance
+              title="How to Use Suspense and GraphQL with Apollo to Build Great User Experiences"
+              event="React Summit US 2023"
+              href="https://portal.gitnation.org/contents/how-to-use-suspense-and-graphql-with-apollo-to-build-great-user-experiences-1609"
+              cta="Watch video"
+            />
+            <Appearance
               title="Panel Discussion: Open Source & “Perceived Competition” Between Projects"
               event="React Advanced London 2023"
               href="https://portal.gitnation.org/contents/open-source-and-perceived-competition-between-projects"

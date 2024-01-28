@@ -25,7 +25,7 @@
     "@mdx-js/loader": "2.3.0",
     "@next/mdx": "14.1.0",
     "@tailwindcss/typography": "0.5.10",
-    "@vercel/og": "0.5.20",
+    "@vercel/og": "0.6.2",
     "autoprefixer": "10.4.16",
     "clsx": "2.1.0",
     "fast-glob": "3.3.2",

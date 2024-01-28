@@ -21,7 +21,7 @@
     "format:check": "prettier --check src"
   },
   "dependencies": {
-    "@headlessui/react": "1.7.17",
+    "@headlessui/react": "1.7.18",
     "@mdx-js/loader": "2.3.0",
     "@next/mdx": "14.1.0",
     "@tailwindcss/typography": "0.5.10",

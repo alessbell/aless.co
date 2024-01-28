@@ -21,12 +21,12 @@
     "format:check": "prettier --check src"
   },
   "dependencies": {
-    "@headlessui/react": "1.7.17",
+    "@headlessui/react": "1.7.18",
     "@mdx-js/loader": "2.3.0",
     "@next/mdx": "14.1.0",
     "@tailwindcss/typography": "0.5.10",
     "@vercel/og": "0.6.2",
-    "autoprefixer": "10.4.16",
+    "autoprefixer": "10.4.17",
     "clsx": "2.1.0",
     "fast-glob": "3.3.2",
     "feed": "4.2.2",
@@ -37,10 +37,10 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "rehype-autolink-headings": "7.1.0",
-    "rehype-pretty-code": "0.12.3",
+    "rehype-pretty-code": "0.12.6",
     "rehype-slug": "6.0.0",
     "remark-gfm": "3.0.1",
-    "sharp": "0.33.0",
+    "sharp": "0.33.2",
     "shiki": "0.14.7",
     "tailwindcss": "3.4.1"
   },

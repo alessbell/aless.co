@@ -86,7 +86,7 @@ export default function About() {
           </div>
 
           <Prose className="lg:order-first lg:row-span-2">
-            <h1 className="font-mono bg-gradient-to-r from-blue-600 to-fuchsia-600 bg-clip-text text-4xl font-bold tracking-tight text-transparent dark:from-blue-300 dark:to-fuchsia-300 sm:text-5xl">
+            <h1 className="bg-gradient-to-r from-blue-600 to-fuchsia-600 bg-clip-text font-mono text-4xl font-bold tracking-tight text-transparent dark:from-blue-300 dark:to-fuchsia-300 sm:text-5xl">
               hey there 👋
             </h1>
             <div className="mt-6 space-y-7 text-lg text-zinc-600 dark:text-zinc-400">

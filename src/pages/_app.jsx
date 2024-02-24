@@ -40,7 +40,7 @@ export default function App({ Component, pageProps, router }) {
         </div>
       </div>
       <div
-        className={`${notoDisplay.variable} ${notoMono.variable} font-mono relative font-sans`}
+        className={`${notoDisplay.variable} ${notoMono.variable} relative font-mono font-sans`}
       >
         <Header />
         <main>

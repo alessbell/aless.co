@@ -272,7 +272,7 @@ export default function Home({ articles }) {
       </Head>
       <Container className="mt-9">
         <div className="max-w-lg">
-          <h1 className="font-mono bg-gradient-to-r from-blue-600 to-fuchsia-600 bg-clip-text text-4xl font-bold tracking-tight text-transparent dark:from-blue-300 dark:to-fuchsia-300 sm:text-5xl">
+          <h1 className="bg-gradient-to-r from-blue-600 to-fuchsia-600 bg-clip-text font-mono text-4xl font-bold tracking-tight text-transparent dark:from-blue-300 dark:to-fuchsia-300 sm:text-5xl">
             Alessia Bellisario
           </h1>
           <p className="mt-6 text-lg text-zinc-600 dark:text-zinc-400">

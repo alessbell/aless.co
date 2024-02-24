@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "license": "MIT",
   "engines": {
-    "node": ">=18.x"
+    "node": "20.x"
   },
   "author": "Alessia Bellisario <github@bellisar.io>",
   "repository": {
@@ -26,7 +26,6 @@
     "@next/mdx": "14.1.0",
     "@tailwindcss/typography": "0.5.10",
     "@vercel/og": "0.6.2",
-    "@vercel/speed-insights": "1.0.10",
     "autoprefixer": "10.4.17",
     "clsx": "2.1.0",
     "fast-glob": "3.3.2",

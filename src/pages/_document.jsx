@@ -1,5 +1,4 @@
 import { Head, Html, Main, NextScript } from 'next/document'
-import { SpeedInsights } from '@vercel/speed-insights/next'
 
 const modeScript = `
   let darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
@@ -55,7 +54,6 @@ export default function Document() {
       <body className="flex h-full flex-col bg-zinc-50 dark:bg-black">
         <Main />
         <NextScript />
-        <SpeedInsights />
       </body>
     </Html>
   )

@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "@headlessui/react": "1.7.18",
-    "@mdx-js/loader": "2.3.0",
+    "@mdx-js/loader": "3.0.1",
     "@next/mdx": "14.1.4",
     "@tailwindcss/typography": "0.5.10",
     "@vercel/og": "0.6.2",

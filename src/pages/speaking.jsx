@@ -49,6 +49,18 @@ export default function Speaking() {
           </Section>
           <SpeakingSection title="Past">
             <Appearance
+              title="Schema-Driven Testing with Mock Service Worker"
+              event="GraphQL Conf 2024"
+              href="https://www.youtube.com/watch?v=hFmJgR0vssY"
+              cta="Watch video"
+            />
+            <Appearance
+              title="GraphQL in the World of React Server Components"
+              event="React Advanced 2024"
+              href="https://gitnation.com/contents/graphql-in-the-world-of-react-server-components"
+              cta="Watch video"
+            />
+            <Appearance
               title="How to Use Suspense and GraphQL with Apollo to Build Great User Experiences"
               event="React Summit US 2023"
               href="https://portal.gitnation.org/contents/how-to-use-suspense-and-graphql-with-apollo-to-build-great-user-experiences-1609"

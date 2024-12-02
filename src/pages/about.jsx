@@ -5,7 +5,7 @@ import clsx from 'clsx'
 
 import { Prose } from '@/components/Prose'
 import { Container } from '@/components/Container'
-import { TwitterIcon, GitHubIcon, LinkedInIcon } from '@/components/SocialIcons'
+import { GitHubIcon, LinkedInIcon, BlueskyIcon } from '@/components/SocialIcons'
 import speakingImage from '@/images/profile3.JPG'
 
 function SocialLink({ className, href, children, icon: Icon }) {
@@ -26,7 +26,7 @@ function SocialLink({ className, href, children, icon: Icon }) {
 
 function MailIcon(props) {
   return (
-    <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
+    <svg viewBox="0 0 21 21" aria-hidden="true" {...props}>
       <path
         fillRule="evenodd"
         d="M6 5a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3H6Zm.245 2.187a.75.75 0 0 0-.99 1.126l6.25 5.5a.75.75 0 0 0 .99 0l6.25-5.5a.75.75 0 0 0-.99-1.126L12 12.251 6.245 7.187Z"
@@ -91,23 +91,8 @@ export default function About() {
             </h1>
             <div className="mt-6 space-y-7 text-lg text-zinc-600 dark:text-zinc-400">
               <p>
-                I&rsquo;m Alessia :^) I work on the{' '}
-                <a
-                  href="https://github.com/apollographql/apollo-client"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Apollo Client
-                </a>{' '}
-                team at{' '}
-                <a
-                  href="https://apollographql.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Apollo
-                </a>{' '}
-                as a Staff Software Engineer.
+                I&rsquo;m Alessia. I work at Netflix as a Senior Software
+                Engineer.
               </p>
               <p>
                 In April 2019 I attended the{' '}
@@ -133,9 +118,9 @@ export default function About() {
             <ul role="list">
               <SocialLink
                 href="https://twitter.com/alessbell"
-                icon={TwitterIcon}
+                icon={BlueskyIcon}
               >
-                tweets
+                posts
               </SocialLink>
               <SocialLink
                 href="https://github.com/alessbell"

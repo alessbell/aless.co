@@ -6,7 +6,7 @@ import clsx from 'clsx'
 import { Button } from '@/components/Button'
 import { Card } from '@/components/Card'
 import { Container } from '@/components/Container'
-import { TwitterIcon, GitHubIcon, LinkedInIcon } from '@/components/SocialIcons'
+import { GitHubIcon, LinkedInIcon, BlueskyIcon } from '@/components/SocialIcons'
 import image1 from '@/images/photos/image-6.jpg'
 import image2 from '@/images/photos/image-7.jpg'
 import image3 from '@/images/photos/image-9.jpg'
@@ -14,6 +14,18 @@ import image5 from '@/images/photos/image-10.jpg'
 import image4 from '@/images/photos/image-12.jpg'
 import { getAllArticles } from '@/lib/getAllArticles'
 import { formatDate } from '@/lib/formatDate'
+
+function NetflixLogo(props) {
+  return (
+    <svg width="800px" height="800px" viewBox="0 0 32 32" {...props}>
+      <path
+        fill="#E50914"
+        className="dark:fill-zinc-100"
+        d="M7.188 0.005l6.333 17.948v-0.010l0.5 1.411c2.786 7.88 4.281 12.104 4.286 12.109 0.005 0 0.427 0.026 0.938 0.057 1.542 0.063 3.453 0.24 4.901 0.411 0.333 0.042 0.62 0.052 0.641 0.042l-6.859-19.453-3.234-9.135c-0.609-1.734-1.13-3.208-1.156-3.266l-0.042-0.12h-6.302zM18.531 0.016l-0.016 7.073-0.010 7.078-0.583-1.646-0.75 15.745c0.74 2.089 1.135 3.203 1.141 3.208s0.427 0.036 0.932 0.057c1.547 0.068 3.453 0.24 4.906 0.417 0.333 0.036 0.625 0.052 0.641 0.036 0.021-0.010 0.026-7.224 0.026-16.010l-0.010-15.958zM7.188 0.005v15.984c0 8.792 0.010 15.995 0.021 16.005s0.552-0.042 1.208-0.115c0.651-0.083 1.557-0.177 2.010-0.214 0.693-0.068 2.76-0.203 3-0.203 0.068 0 0.073-0.359 0.083-6.771l0.010-6.776 0.505 1.417 0.177 0.5 0.76-15.734-0.255-0.729-1.214-3.365z"
+      />
+    </svg>
+  )
+}
 
 function ApolloLogo(props) {
   return (
@@ -23,6 +35,7 @@ function ApolloLogo(props) {
       viewBox="0 0 256 256"
       xmlns="http://www.w3.org/2000/svg"
       preserveAspectRatio="xMidYMid"
+      {...props}
     >
       <path
         fill="#15252D"
@@ -118,12 +131,7 @@ function Article({ article }) {
 
 function SocialLink({ icon: Icon, ...props }) {
   return (
-    <Link
-      target="_blank"
-      rel="noopener noreferrer"
-      className="group -m-1 p-1"
-      {...props}
-    >
+    <Link target="_blank" rel="noopener noreferrer" {...props}>
       <Icon className="h-6 w-6 fill-zinc-500 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
     </Link>
   )
@@ -132,14 +140,21 @@ function SocialLink({ icon: Icon, ...props }) {
 function Resume() {
   let resume = [
     {
-      company: 'Apollo',
-      title: 'Staff Software Engineer',
-      Logo: ApolloLogo,
-      start: '2022',
+      company: 'Netflix',
+      title: 'Senior Software Engineer',
+      Logo: NetflixLogo,
+      start: '2024',
       end: {
         label: 'Present',
         dateTime: new Date().getFullYear(),
       },
+    },
+    {
+      company: 'Apollo',
+      title: 'Staff Software Engineer',
+      Logo: ApolloLogo,
+      start: '2022',
+      end: '2024',
     },
     {
       company: 'Venmo',
@@ -276,14 +291,13 @@ export default function Home({ articles }) {
             Alessia Bellisario
           </h1>
           <p className="mt-6 text-lg text-zinc-600 dark:text-zinc-400">
-            I’m Alessia, a software engineer based in New York City currently
-            building Apollo Client.
+            I’m Alessia, a software engineer in New York City.
           </p>
           <div className="mt-6 flex gap-6">
             <SocialLink
-              href="https://twitter.com/alessbell"
-              aria-label="Follow on Twitter"
-              icon={TwitterIcon}
+              href="https://bsky.app/profile/aless.co"
+              aria-label="Follow on Bluesky"
+              icon={BlueskyIcon}
             />
             <SocialLink
               href="https://github.com/alessbell"

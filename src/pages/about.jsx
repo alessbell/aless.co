@@ -6,7 +6,7 @@ import clsx from 'clsx'
 import { Prose } from '@/components/Prose'
 import { Container } from '@/components/Container'
 import { GitHubIcon, LinkedInIcon, BlueskyIcon } from '@/components/SocialIcons'
-import speakingImage from '@/images/profile3.JPG'
+import speakingImage from '@/images/profile8.JPG'
 
 function SocialLink({ className, href, children, icon: Icon }) {
   return (
@@ -91,8 +91,15 @@ export default function About() {
             </h1>
             <div className="mt-6 space-y-7 text-lg text-zinc-600 dark:text-zinc-400">
               <p>
-                I&rsquo;m Alessia. I work at Netflix as a Senior Software
-                Engineer.
+                I&rsquo;m Alessia. I work at{' '}
+                <a
+                  href="https://netflix.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Netflix
+                </a>{' '}
+                as a Senior Software Engineer on the XD Design Engineering team.
               </p>
               <p>
                 In April 2019 I attended the{' '}
@@ -107,8 +114,11 @@ export default function About() {
                 applying.
               </p>
               <p>
-                I{`'`}m using this space to write about programming and
-                occasionally building mechanical keyboards. You can reach me at{' '}
+                I{`'`}m using this space to write about programming{' '}
+                <span className="line-through">
+                  and occasionally building mechanical keyboards
+                </span>
+                . You can reach me at{' '}
                 <a href="mailto:web@bellisar.io">web[at]bellisar.io</a>.
               </p>
               <p>Finally, this site contains no tracking or analytics 💖</p>

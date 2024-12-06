@@ -4,7 +4,7 @@ import Head from 'next/head'
 import { Card } from '@/components/Card'
 import { Section } from '@/components/Section'
 import { SimpleLayout } from '@/components/SimpleLayout'
-import speakingImage from '@/images/profile7.JPG'
+import speakingImage from '@/images/profile7.jpg'
 
 function SpeakingSection({ children, ...props }) {
   return (

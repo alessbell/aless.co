@@ -6,7 +6,7 @@ import clsx from 'clsx'
 import { Prose } from '@/components/Prose'
 import { Container } from '@/components/Container'
 import { GitHubIcon, LinkedInIcon, BlueskyIcon } from '@/components/SocialIcons'
-import speakingImage from '@/images/profile8.JPG'
+import speakingImage from '@/images/profile8.jpg'
 
 function SocialLink({ className, href, children, icon: Icon }) {
   return (

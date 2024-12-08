@@ -23,16 +23,16 @@
   "dependencies": {
     "@headlessui/react": "1.7.19",
     "@mdx-js/loader": "2.3.0",
-    "@next/mdx": "14.2.8",
+    "@next/mdx": "14.2.20",
     "@tailwindcss/typography": "0.5.15",
-    "@vercel/og": "0.6.2",
+    "@vercel/og": "0.6.4",
     "autoprefixer": "10.4.20",
     "clsx": "2.1.1",
     "fast-glob": "3.3.2",
     "feed": "4.2.2",
     "focus-visible": "5.2.1",
     "mdx-bundler": "9.2.1",
-    "next": "14.2.8",
+    "next": "14.2.20",
     "postcss-focus-visible": "9.0.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -42,14 +42,14 @@
     "remark-gfm": "3.0.1",
     "sharp": "0.33.5",
     "shiki": "1.1.7",
-    "tailwindcss": "3.4.10"
+    "tailwindcss": "3.4.16"
   },
   "devDependencies": {
-    "@next/bundle-analyzer": "14.2.8",
+    "@next/bundle-analyzer": "14.2.20",
     "esbuild": "0.23.1",
-    "eslint": "8.57.0",
-    "eslint-config-next": "14.2.8",
+    "eslint": "8.57.1",
+    "eslint-config-next": "14.2.20",
     "prettier": "3.3.3",
-    "prettier-plugin-tailwindcss": "0.6.6"
+    "prettier-plugin-tailwindcss": "0.6.9"
   }
 }

@@ -46,10 +46,10 @@
   },
   "devDependencies": {
     "@next/bundle-analyzer": "14.2.20",
-    "esbuild": "0.23.1",
+    "esbuild": "0.24.0",
     "eslint": "8.57.1",
     "eslint-config-next": "14.2.20",
-    "prettier": "3.3.3",
+    "prettier": "3.4.2",
     "prettier-plugin-tailwindcss": "0.6.9"
   }
 }

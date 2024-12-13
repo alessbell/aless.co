@@ -100,6 +100,31 @@ export default function About() {
                   Netflix
                 </a>{' '}
                 as a Senior Software Engineer on the XD Design Engineering team.
+                Previously, I worked at{' '}
+                <a
+                  href="https://apollographql.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Apollo
+                </a>{' '}
+                building{' '}
+                <a
+                  href="https://github.com/apollographql/apollo-client"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Apollo Client
+                </a>{' '}
+                and before that I was a web platform lead at{' '}
+                <a
+                  href="https://venmo.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Venmo
+                </a>
+                .
               </p>
               <p>
                 In April 2019 I attended the{' '}
@@ -127,7 +152,7 @@ export default function About() {
           <div className="lg:pl-20">
             <ul role="list">
               <SocialLink
-                href="https://twitter.com/alessbell"
+                href="https://bsky.app/profile/aless.co"
                 icon={BlueskyIcon}
               >
                 posts

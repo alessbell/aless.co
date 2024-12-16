@@ -4,7 +4,7 @@ import Head from 'next/head'
 import { Card } from '@/components/Card'
 import { Section } from '@/components/Section'
 import { SimpleLayout } from '@/components/SimpleLayout'
-import speakingImage from '@/images/profile6.JPG'
+import speakingImage from '@/images/profile7.jpg'
 
 function SpeakingSection({ children, ...props }) {
   return (
@@ -48,6 +48,18 @@ export default function Speaking() {
             </div>
           </Section>
           <SpeakingSection title="Past">
+            <Appearance
+              title="Schema-Driven Testing with Mock Service Worker"
+              event="GraphQL Conf 2024"
+              href="https://www.youtube.com/watch?v=hFmJgR0vssY"
+              cta="Watch video"
+            />
+            <Appearance
+              title="GraphQL in the World of React Server Components"
+              event="React Advanced 2024"
+              href="https://gitnation.com/contents/graphql-in-the-world-of-react-server-components"
+              cta="Watch video"
+            />
             <Appearance
               title="How to Use Suspense and GraphQL with Apollo to Build Great User Experiences"
               event="React Summit US 2023"

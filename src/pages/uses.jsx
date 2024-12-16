@@ -77,10 +77,6 @@ export default function Uses() {
             <Tool title="Logitech MX Master 2S Wireless Mouse">
               I don&apos;t think I&apos;ll use another mouse again.
             </Tool>
-            <Tool title="Capisco Chair by HÅG">
-              It&apos;s comfortable, has a nice foot rest and is easy to
-              transition between sitting and standing heights.
-            </Tool>
           </ToolsSection>
           <ToolsSection title="development tools">
             <Tool title="Microsoft's Visual Studio Code">

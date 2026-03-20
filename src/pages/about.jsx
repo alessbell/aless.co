@@ -99,7 +99,7 @@ export default function About() {
                 >
                   Netflix
                 </a>{' '}
-                as a Senior Software Engineer on the XD Design Engineering team.
+                as a Senior Software Engineer on the Node.js Platform Team.
                 Previously, I worked at{' '}
                 <a
                   href="https://apollographql.com"

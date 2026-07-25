@@ -24,7 +24,7 @@
     "@headlessui/react": "1.7.19",
     "@mdx-js/loader": "2.3.0",
     "@next/mdx": "14.2.35",
-    "@tailwindcss/typography": "0.5.19",
+    "@tailwindcss/typography": "0.5.20",
     "@vercel/og": "0.6.4",
     "autoprefixer": "10.4.23",
     "clsx": "2.1.1",
